@@ -24,6 +24,14 @@ npx wrangler d1 execute cantine-marche --remote --file db/seed/0002_catalog.sql
 npm run deploy
 ```
 
+## Anteprima su GitHub Pages
+
+**https://asabatini89-del.github.io/cantinemarche/**
+
+Ad ogni push sul branch di default, [`.github/workflows/anteprima-pages.yml`](.github/workflows/anteprima-pages.yml) costruisce il sito vero su un D1 locale, salva tutte le pagine come HTML statico ([`scripts/build-static-preview.mjs`](scripts/build-static-preview.mjs): 467 pagine, comprese le paginazioni e i filtri singoli) e le pubblica su Pages. Ricerca libera, filtri combinati e invio dei moduli richiedono il server: nell'anteprima lo spiega un avviso. La versione completa è quella su Cloudflare.
+
+Prima volta: **Settings → Pages → Build and deployment → Source: GitHub Actions**, poi rilanciare il workflow da *Actions*.
+
 ## Il sito
 
 Identità “Catalogo ragionato”: vedi [`docs/05-identita.md`](docs/05-identita.md).

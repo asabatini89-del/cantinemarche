@@ -1,0 +1,55 @@
+# Anteprima statica del sito su GitHub Pages.
+# Costruisce il sito vero su D1 locale, ne salva tutte le pagine come HTML
+# (scripts/build-static-preview.mjs) e le pubblica su Pages.
+# Prerequisito, una volta sola: Settings → Pages → Source: "GitHub Actions".
+name: Anteprima su GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    # Solo il branch di default pubblica su Pages.
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Database locale (schema + catalogo)
+        run: npm run db:reset:local
+      - run: npm run build
+      - name: Avvia il sito (wrangler dev) e genera l'anteprima statica
+        run: |
+          npx wrangler dev --port 8788 > wrangler.log 2>&1 &
+          for i in $(seq 1 90); do curl -sf -o /dev/null http://localhost:8788/robots.txt && break; sleep 1; done
+          node scripts/build-static-preview.mjs --origin http://localhost:8788 --base "/${{ github.event.repository.name }}" --out preview-dist
+      - name: Log di wrangler in caso di errore
+        if: failure()
+        run: tail -n 100 wrangler.log || true
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: preview-dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

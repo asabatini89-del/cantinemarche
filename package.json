@@ -14,7 +14,8 @@
     "db:reset:local": "rm -rf .wrangler/state/v3/d1 && npm run db:migrate:local && npm run db:seed:local",
     "images:fetch": "node scripts/fetch-images.mjs",
     "images:upload:local": "node scripts/upload-media.mjs --local && wrangler d1 execute cantine-marche --local --file db/seed/0003_media.sql",
-    "images:upload:remote": "node scripts/upload-media.mjs --remote && wrangler d1 execute cantine-marche --remote --file db/seed/0003_media.sql"
+    "images:upload:remote": "node scripts/upload-media.mjs --remote && wrangler d1 execute cantine-marche --remote --file db/seed/0003_media.sql",
+    "preview:static": "node scripts/build-static-preview.mjs --origin http://localhost:8788 --out preview-dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
