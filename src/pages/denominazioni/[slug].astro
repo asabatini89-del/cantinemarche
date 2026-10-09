@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MarcheMap from '../../components/MarcheMap.astro';
+import WineryCard from '../../components/WineryCard.astro';
+import { getDenomination, listWineries, mapPoints } from '../../lib/db';
+import { parseFilters } from '../../lib/filters';
+import { coverFor } from '../../lib/palette';
+
+const d = await getDenomination(Astro.params.slug ?? '');
+if (!d) return new Response(null, { status: 404 });
+
+const filters = { ...parseFilters(new URL('http://x/')), denominazione: [d.id] };
+const [{ items, total }, points] = await Promise.all([listWineries(filters, 500), mapPoints(filters)]);
+const short = d.name.replace(/ (DOCG|DOC|IGT)$/, '');
+Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
+---
+<BaseLayout title={d.name} description={`${d.name}: le ${total} cantine delle Marche che la producono.`} canonical={`/denominazioni/${d.slug}`}>
+  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+    <nav aria-label="Percorso" class="meta text-grafite"><a href="/denominazioni" class="hover:underline">Le denominazioni</a> /</nav>
+    <div class="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div>
+        <p class="meta text-rosso">{d.level}</p>
+        <h1 class="display mt-3 text-6xl sm:text-7xl">{short}</h1>
+        {d.territory_slug && (
+          <a href={`/territori/${d.territory_slug}`} class={`mt-6 inline-flex items-baseline gap-3 px-3 py-2 ${coverFor(d.territory_id)}`}>
+            <span class="meta">Territorio</span><span class="font-serif text-xl italic">{d.territory_name}</span><span aria-hidden="true">→</span>
+          </a>
+        )}
+        <p class="mt-6 max-w-md text-lg leading-snug">{total === 0 ? 'Nessuna cantina del catalogo dichiara ancora questa denominazione.' : `${total} ${total === 1 ? 'cantina la produce' : 'cantine la producono'}, secondo le fonti raccolte.`}</p>
+        <p class="mt-2 max-w-md text-sm text-grafite">Il collegamento deriva dai vini indicati dalle cantine e dalle fonti dei consorzi: le cantine possono correggerlo dalla propria scheda.</p>
+      </div>
+      {points.length > 0 && <MarcheMap points={points} frame="points" label={`Mappa delle cantine ${d.name}`} />}
+    </div>
+  </div>
+
+  {items.length > 0 && (
+    <section aria-labelledby="h-cantine" class="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+      <h2 id="h-cantine" class="display border-b border-inchiostro pb-3 text-4xl">Chi la produce</h2>
+      <ul role="list" class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((w) => <li><WineryCard winery={w} /></li>)}
+      </ul>
+    </section>
+  )}
+</BaseLayout>

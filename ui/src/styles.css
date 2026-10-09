@@ -1,5 +1,0 @@
-/* UI kit: stessi token dell'app (src/styles/global.css) + sorgenti degli snippet. */
-@import "../../src/styles/global.css";
-
-@source "../snippets";
-@source "../preview.src.html";

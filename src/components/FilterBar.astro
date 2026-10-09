@@ -22,21 +22,21 @@ const groups = (options: Facet[]) => {
   for (const o of options) map.set(o.group ?? '', [...(map.get(o.group ?? '') ?? []), o]);
   return [...map];
 };
-const chip = 'chip snap-start inline-flex h-9 shrink-0 items-center gap-1.5 rounded-md border border-subtle bg-primary px-3 text-sm text-main transition-colors hover:border-main data-[active]:border-wine data-[active]:bg-wine data-[active]:text-primary';
-const option = 'inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-md border border-subtle px-3 py-2 text-sm peer-checked:border-wine peer-checked:bg-wine peer-checked:text-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-wine';
-const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full max-w-none overflow-y-auto rounded-t-md border border-subtle bg-primary p-0 text-main backdrop:bg-main/30 md:inset-0 md:m-auto md:h-fit md:w-[30rem] md:rounded-md';
+const chip = 'chip snap-start inline-flex h-9 shrink-0 items-center gap-1.5 border border-inchiostro bg-carta px-3 text-sm text-inchiostro transition-colors hover:bg-carta-2 data-[active]:border-inchiostro data-[active]:bg-inchiostro data-[active]:text-carta';
+const option = 'inline-flex min-h-10 cursor-pointer items-center gap-2 border border-inchiostro px-3 py-2 text-sm peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso';
+const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full max-w-none overflow-y-auto border border-inchiostro bg-carta p-0 text-inchiostro backdrop:bg-inchiostro/40 md:inset-0 md:m-auto md:h-fit md:w-[30rem]';
 ---
 <form id="filters" method="get" action="/cantine" role="search" aria-label="Filtra le cantine"
-  class="sticky top-0 z-30 border-b border-subtle bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/85">
+  class="sticky top-0 z-30 border-b border-inchiostro bg-carta/95 backdrop-blur supports-[backdrop-filter]:bg-carta/85">
   <div class="mx-auto max-w-6xl px-4 py-3 sm:px-6">
     <label for="q" class="sr-only">Cerca cantina, comune o vino</label>
     <div class="relative">
-      <svg class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <svg class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
         <circle cx="9" cy="9" r="6" /><path d="m14 14 4 4" />
       </svg>
       <input id="q" name="q" type="search" value={filters.q} inputmode="search" autocomplete="off" enterkeyhint="search"
         placeholder="Cantina, borgo o vino…"
-        class="h-11 w-full rounded-md border border-subtle bg-primary pl-9 pr-3 text-[15px] text-main placeholder:text-muted/80 focus:border-main focus:outline-none" />
+        class="h-11 w-full border border-inchiostro bg-carta pl-9 pr-3 text-[15px] text-inchiostro placeholder:text-grafite focus:border-rosso focus:outline-none" />
     </div>
 
     <div class="scroll-row -mx-4 mt-3 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 sm:mx-0 sm:scroll-px-0 sm:px-0">
@@ -50,29 +50,29 @@ const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full m
         );
       })}
 
-      <span class="my-1.5 w-px shrink-0 bg-subtle" aria-hidden="true"></span>
+      <span class="my-1.5 w-px shrink-0 bg-inchiostro" aria-hidden="true"></span>
 
       {facets.servizio.map((s) => (
         <label class="relative snap-start shrink-0">
           <input type="checkbox" name="servizio" value={s.value} checked={selected('servizio', s.value)} class="peer sr-only" data-autosubmit />
-          <span class="inline-flex h-9 cursor-pointer items-center rounded-md border border-subtle px-3 text-sm text-main transition-colors hover:border-main peer-checked:border-wine peer-checked:bg-wine peer-checked:text-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-wine">{s.label}</span>
+          <span class="inline-flex h-9 cursor-pointer items-center border border-inchiostro px-3 text-sm text-inchiostro transition-colors hover:bg-carta-2 peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso">{s.label}</span>
         </label>
       ))}
 
-      <a href="/cantine" class="snap-start inline-flex h-9 shrink-0 items-center px-2 text-sm text-muted underline decoration-subtle underline-offset-4 hover:text-main">Azzera</a>
+      <a href="/cantine" class="snap-start inline-flex h-9 shrink-0 items-center px-2 text-sm text-grafite underline decoration-inchiostro/40 underline-offset-4 hover:text-inchiostro">Azzera</a>
     </div>
 
-    <p class="meta mt-3 text-[10px] text-muted" aria-live="polite"><span class="text-main">{total}</span> {total === 1 ? 'cantina' : 'cantine'}</p>
+    <p class="meta mt-3 text-grafite" aria-live="polite"><span class="text-inchiostro">{total}</span> {total === 1 ? 'cantina trovata' : 'cantine trovate'}</p>
   </div>
 
   {panels.map((p) => (
     <div id={`f-${p.key}`} popover class={panelClass}>
       <fieldset class="p-5">
-        <legend class="meta float-left mb-4 w-full text-muted">{p.label}</legend>
+        <legend class="meta float-left mb-4 w-full text-grafite">{p.label}</legend>
         <div class="clear-both space-y-5">
           {groups(p.options).map(([group, options]) => (
             <div>
-              {group && <p class="meta mb-2 text-[10px] text-wine">{group}</p>}
+              {group && <p class="meta mb-2 text-rosso">{group}</p>}
               <div class="flex flex-wrap gap-2">
                 {options.map((o) => (
                   <label class="relative">
@@ -85,9 +85,9 @@ const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full m
           ))}
         </div>
       </fieldset>
-      <div class="sticky bottom-0 flex items-center justify-between gap-3 border-t border-subtle bg-primary p-4">
-        <button type="button" popovertarget={`f-${p.key}`} popovertargetaction="hide" class="h-11 px-2 text-sm text-muted hover:text-main">Chiudi</button>
-        <button type="submit" class="h-11 rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Mostra risultati</button>
+      <div class="sticky bottom-0 flex items-center justify-between gap-3 border-t border-inchiostro bg-carta p-4">
+        <button type="button" popovertarget={`f-${p.key}`} popovertargetaction="hide" class="h-11 px-2 text-sm text-grafite hover:text-inchiostro">Chiudi</button>
+        <button type="submit" class="btn-primary">Mostra risultati</button>
       </div>
     </div>
   ))}

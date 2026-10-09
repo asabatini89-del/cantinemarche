@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { listDenominations } from '../../lib/db';
+
+const all = await listDenominations();
+const levels = [
+  { level: 'DOCG', title: 'Origine controllata e garantita', note: 'Il livello più alto: disciplinare severo, controlli in bottiglia.' },
+  { level: 'DOC', title: 'Origine controllata', note: 'La spina dorsale del vino marchigiano.' },
+  { level: 'IGT', title: 'Indicazione geografica tipica', note: 'Dove i produttori si prendono qualche libertà.' },
+] as const;
+Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
+---
+<BaseLayout title="Le denominazioni" description="DOCG, DOC e IGT delle Marche, con le cantine che le producono." canonical="/denominazioni">
+  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+    <p class="meta text-grafite">Indice delle denominazioni · {all.length} voci</p>
+    <h1 class="display mt-3 text-5xl sm:text-7xl">Le denominazioni, <em>in ordine di garanzia.</em></h1>
+
+    {levels.map((l) => {
+      const list = all.filter((d) => d.level === l.level);
+      return list.length > 0 && (
+        <section aria-labelledby={`h-${l.level}`} class="mt-14 grid gap-6 lg:grid-cols-[1fr_2fr]">
+          <div>
+            <h2 id={`h-${l.level}`} class="display text-5xl text-rosso">{l.level}</h2>
+            <p class="mt-2 font-serif text-2xl italic">{l.title}</p>
+            <p class="mt-2 max-w-xs text-grafite">{l.note}</p>
+          </div>
+          <ol class="border-t border-inchiostro">
+            {list.map((d) => (
+              <li class="border-b border-inchiostro">
+                <a href={`/denominazioni/${d.slug}`} class="group grid grid-cols-[1fr_auto] items-baseline gap-x-4 py-3.5 hover:bg-carta-2 sm:grid-cols-[1fr_12rem_auto]">
+                  <span class="display text-2xl group-hover:text-rosso sm:text-[1.7rem]">{d.name.replace(/ (DOCG|DOC|IGT)$/, '')}</span>
+                  <span class="meta hidden text-grafite sm:block">{d.territory_name ?? '—'}</span>
+                  <span class="meta text-grafite">{d.winery_count > 0 ? `${d.winery_count} cantine` : 'da censire'}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      );
+    })}
+  </div>
+</BaseLayout>

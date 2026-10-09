@@ -1,0 +1,94 @@
+---
+// Mappa SVG delle Marche: province pastello, cantine come punti rossi.
+// Senza JS ogni punto è un link alla scheda; con JS un tocco apre un cartiglio.
+import type { MapPoint } from '../lib/db';
+import { PROVINCE_SHAPES, VIEWBOX, fitViewBox, project } from '../lib/map';
+import { PROVINCE_COVER, displayName } from '../lib/palette';
+
+interface Props {
+  points: MapPoint[];
+  /** 'all' = tutta la regione; 'points' = inquadra i punti */
+  frame?: 'all' | 'points';
+  highlight?: string | null; // codice provincia da evidenziare
+  label?: string;
+  interactive?: boolean;
+  /** Punto singolo (scheda cantina): più grande, con anello */
+  locator?: boolean;
+  class?: string;
+}
+const { points, frame = 'all', highlight = null, label = 'Mappa delle cantine delle Marche', interactive = true, locator = false, class: className = '' } = Astro.props;
+
+const projected = points.map((p) => ({ ...p, ...project(p.lng, p.lat) }));
+const vb = frame === 'points' && projected.length > 0 ? fitViewBox(projected) : VIEWBOX;
+const r = locator ? vb.w / 55 : Math.max(vb.w / 140, 2.4);
+const id = `map-${Math.random().toString(36).slice(2, 8)}`;
+---
+<figure class={`relative ${className}`} data-map={interactive ? id : undefined}>
+  <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} role="img" aria-label={label} class="block h-auto w-full">
+    <title>{label}</title>
+    <text x={vb.x + vb.w - 12} y={vb.y + 40} text-anchor="end" class="fill-grafite font-serif italic" font-size={vb.w / 26}>Adriatico</text>
+    <g>
+      {PROVINCE_SHAPES.map((p) => (
+        <path d={p.path}
+          class={`${PROVINCE_COVER[p.id]?.fill ?? 'fill-carta-2'} stroke-carta transition-opacity`}
+          stroke-width={vb.w / 400}
+          opacity={highlight && highlight !== p.id ? 0.35 : 1} />
+      ))}
+    </g>
+    <g>
+      {projected.map((p) => (
+        <a href={`/cantine/${p.slug}`} tabindex="-1" aria-hidden="true" data-name={displayName(p.name)} data-place={[p.municipality, p.province_code].filter(Boolean).join(' · ')} data-x={p.x} data-y={p.y}>
+          <circle cx={p.x} cy={p.y} r={r * 2.2} fill="transparent" />
+          {locator && <circle cx={p.x} cy={p.y} r={r * 2.2} class="fill-none stroke-rosso" stroke-width={r / 3} />}
+          <circle cx={p.x} cy={p.y} r={r} class="fill-rosso stroke-carta" stroke-width={r / 2.5} />
+        </a>
+      ))}
+    </g>
+    {frame === 'all' && (
+      <g aria-hidden="true">
+        {PROVINCE_SHAPES.map((p) => (
+          <text x={p.labelX} y={p.labelY} text-anchor="middle" class="fill-inchiostro stroke-carta font-mono uppercase" stroke-width="4" paint-order="stroke" font-size="13" letter-spacing="1.5" opacity={highlight && highlight !== p.id ? 0.4 : 0.8}>{p.name}</text>
+        ))}
+      </g>
+    )}
+  </svg>
+
+  {interactive && (
+    <div data-callout hidden class="absolute z-10 w-64 max-w-[calc(100%-1rem)] border border-inchiostro bg-carta p-4">
+      <p data-callout-place class="meta text-grafite"></p>
+      <p data-callout-name class="display mt-1 text-2xl"></p>
+      <a data-callout-link href="#" class="btn-primary mt-3 h-9 px-3">Apri la scheda</a>
+      <button type="button" data-callout-close class="meta absolute right-2 top-2 px-2 py-1 text-grafite hover:text-inchiostro" aria-label="Chiudi">✕</button>
+    </div>
+  )}
+</figure>
+
+<script>
+  // Cartiglio: un tocco su un punto mostra nome e link invece di navigare subito.
+  document.querySelectorAll<HTMLElement>('[data-map]').forEach((fig) => {
+    const svg = fig.querySelector('svg')!;
+    const box = fig.querySelector<HTMLElement>('[data-callout]')!;
+    const close = () => { box.hidden = true; };
+    fig.querySelectorAll<SVGAElement>('a[data-name]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        box.querySelector('[data-callout-name]')!.textContent = a.dataset.name ?? '';
+        box.querySelector('[data-callout-place]')!.textContent = a.dataset.place ?? '';
+        box.querySelector<HTMLAnchorElement>('[data-callout-link]')!.href = a.getAttribute('href')!;
+        const pt = svg.createSVGPoint();
+        pt.x = Number(a.dataset.x); pt.y = Number(a.dataset.y);
+        const screen = pt.matrixTransform(svg.getScreenCTM()!);
+        const rect = fig.getBoundingClientRect();
+        box.hidden = false;
+        const left = Math.min(Math.max(screen.x - rect.left - box.offsetWidth / 2, 8), rect.width - box.offsetWidth - 8);
+        const below = screen.y - rect.top + 14;
+        const top = below + box.offsetHeight > rect.height ? screen.y - rect.top - box.offsetHeight - 14 : below;
+        box.style.left = `${left}px`;
+        box.style.top = `${Math.max(top, 8)}px`;
+      });
+    });
+    box.querySelector('[data-callout-close]')!.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && close());
+    svg.addEventListener('click', (e) => { if (!(e.target as Element).closest('a')) close(); });
+  });
+</script>

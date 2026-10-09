@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getWinery } from '../../lib/db';
+import MarcheMap from '../../components/MarcheMap.astro';
+import WineryCard from '../../components/WineryCard.astro';
+import FormNotice from '../../components/FormNotice.astro';
+import { getWinery, nearbyWineries } from '../../lib/db';
+import { catalogNo, coverFor, displayName } from '../../lib/palette';
 
 const data = await getWinery(Astro.params.slug ?? '');
 if (!data) return new Response(null, { status: 404, statusText: 'Not found' });
 
 const { winery: w, denominations, grapes, services, wines, sources } = data;
-Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
+const title = displayName(w.name);
+const nearby = await nearbyWineries(w);
+const sent = Astro.url.searchParams.has('inviata');
+const error = Astro.url.searchParams.get('errore');
+// Le pagine con esito del form non vanno in cache condivisa.
+Astro.response.headers.set('Cache-Control', sent || error ? 'private, no-store' : 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
 
 const place = [w.municipality, w.province_code ? `(${w.province_code})` : null].filter(Boolean).join(' ');
 const telHref = w.phone ? `tel:${w.phone.split(/[\/,;]| - /)[0].replace(/[^\d+]/g, '')}` : null;
@@ -16,7 +25,8 @@ const mapsHref = hasCoords
   : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([w.name, w.address_line, place].filter(Boolean).join(', '))}`;
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
 const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : null);
-const VISIBLE_WINES = 9;
+const today = new Date().toISOString().slice(0, 10);
+const VISIBLE_WINES = 12;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -36,128 +46,173 @@ const jsonLd = {
   },
   ...(hasCoords && { geo: { '@type': 'GeoCoordinates', latitude: w.lat, longitude: w.lng } }),
 };
-const action = 'inline-flex h-11 items-center gap-2 rounded-md border border-subtle px-4 text-sm text-main transition-colors hover:border-main';
+const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[15px] focus:border-rosso focus:outline-none';
 ---
 <BaseLayout
-  title={w.name}
-  description={`${w.name}${place ? `, ${place}` : ''}: contatti, denominazioni e vini. Cantine delle Marche.`}
+  title={title}
+  description={`${w.name}${place ? `, ${place}` : ''}: contatti, denominazioni e vini. Dal catalogo ragionato delle cantine delle Marche.`}
   canonical={`/cantine/${w.slug}`}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <article class="mx-auto max-w-6xl px-4 pb-24 pt-6 sm:px-6">
-    <nav aria-label="Percorso" class="text-sm text-muted">
-      <a href="/cantine" class="underline-offset-4 hover:underline">Le cantine</a> <span aria-hidden="true">/</span>
-    </nav>
-
-    <header class="mt-6 border-b border-subtle pb-8">
-      {(w.province_name || w.territory_name) && (
-        <p class="meta text-muted">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
-      )}
-      <h1 class="mt-2 font-serif text-4xl font-medium leading-[1.05] sm:text-6xl">{w.name}</h1>
-      {(w.address_line || place) && <p class="mt-4 max-w-2xl text-lg text-muted">{w.address_line ?? place}</p>}
-
-      <div class="mt-6 flex flex-wrap gap-2">
-        <a href={mapsHref} target="_blank" rel="noopener" class="inline-flex h-11 items-center rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Indicazioni</a>
-        {telHref && <a href={telHref} class={action}>Chiama</a>}
-        {w.email && <a href={`mailto:${w.email}`} class={action}>Email</a>}
-        {w.website && <a href={w.website} target="_blank" rel="noopener" class={action}>Sito web <span aria-hidden="true">↗</span></a>}
+  <article>
+    <header class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+      <nav aria-label="Percorso" class="meta text-grafite"><a href="/cantine" class="hover:underline">Le cantine</a> / {catalogNo(w.num)}</nav>
+      <div class="mt-8 grid gap-10 border-b border-inchiostro pb-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end">
+        <div>
+          <p class="meta text-grafite">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
+          <h1 class="display mt-3 text-[3.2rem] sm:text-[5.2rem]">{title}</h1>
+          {(w.address_line || place) && <p class="mt-5 max-w-xl text-lg">{w.address_line ?? place}</p>}
+          <div class="mt-7 flex flex-wrap gap-2">
+            <a href={mapsHref} target="_blank" rel="noopener" class="btn-primary">Indicazioni</a>
+            {telHref && <a href={telHref} class="btn">Chiama</a>}
+            {w.email && <a href={`mailto:${w.email}`} class="btn">Scrivi</a>}
+            {w.website && <a href={w.website} target="_blank" rel="noopener" class="btn">Sito <span aria-hidden="true">↗</span></a>}
+            <a href="#visita" class="btn">Richiedi una visita</a>
+          </div>
+        </div>
+        {hasCoords && (
+          <div class="max-w-sm lg:justify-self-end">
+            <MarcheMap points={[{ slug: w.slug, name: w.name, municipality: w.municipality, province_code: w.province_code, lat: w.lat!, lng: w.lng! }]}
+              highlight={w.province_code} interactive={false} locator label={`Posizione di ${w.name} nelle Marche`} />
+            <p class="meta mt-1 text-grafite">{w.coordinate_status === 'approximate' ? 'Posizione approssimativa' : 'Posizione © OpenStreetMap'}</p>
+          </div>
+        )}
       </div>
     </header>
 
     {w.data_note && (
-      <p class="mt-6 rounded-md border border-subtle bg-secondary px-4 py-3 text-sm text-main">
-        <span class="meta mr-2 text-[10px] text-wine">Da verificare</span>{w.data_note}
-      </p>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="mt-6 border-l-2 border-rosso pl-4 text-sm"><span class="meta mr-2 text-rosso">Nota</span>{w.data_note}</p>
+      </div>
     )}
 
-    <div class="mt-10 grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-      <div class="space-y-12">
+    <div class="mx-auto mt-12 grid max-w-6xl gap-14 px-4 sm:px-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div class="space-y-14">
         {(denominations.length > 0 || grapes.length > 0) && (
-          <section aria-labelledby="h-vini-territorio">
-            <h2 id="h-vini-territorio" class="font-serif text-3xl">{denominations.length > 0 ? 'Denominazioni e vitigni' : 'Vitigni'}</h2>
-            <ul role="list" class="mt-5 flex flex-wrap gap-2">
+          <section aria-labelledby="h-denominazioni">
+            <h2 id="h-denominazioni" class="display text-4xl">{denominations.length > 0 ? <>Denominazioni <em>e vitigni</em></> : 'Vitigni'}</h2>
+            {denominations.length > 0 && <ul role="list" class="mt-5 border-t border-inchiostro">
               {denominations.map((d) => (
-                <li><a href={`/cantine?denominazione=${d.id}`} class="meta inline-flex rounded-md border border-subtle px-2.5 py-1.5 text-[10px] text-main hover:border-main">{d.name}</a></li>
+                <li class="border-b border-inchiostro">
+                  <a href={`/denominazioni/${d.id}`} class="group flex items-baseline justify-between gap-4 py-3 hover:bg-carta-2">
+                    <span class="font-serif text-2xl group-hover:text-rosso">{d.name.replace(/ (DOCG|DOC|IGT)$/, '')}</span>
+                    <span class="meta text-grafite">{d.level}</span>
+                  </a>
+                </li>
               ))}
-              {grapes.map((g) => (
-                <li><a href={`/cantine?vitigno=${g.id}`} class="meta inline-flex rounded-md border border-subtle bg-secondary px-2.5 py-1.5 text-[10px] text-muted hover:border-main hover:text-main">{g.name}</a></li>
-              ))}
-            </ul>
+            </ul>}
+            {grapes.length > 0 && (
+              <p class="meta mt-4 text-grafite">Vitigni: {grapes.map((g, i) => <>{i > 0 && ' / '}<a href={`/cantine?vitigno=${g.id}`} class="text-inchiostro hover:underline">{g.name}</a></>)}</p>
+            )}
           </section>
         )}
 
         <section aria-labelledby="h-vini">
-          <h2 id="h-vini" class="font-serif text-3xl">I vini</h2>
+          <h2 id="h-vini" class="display text-4xl">I vini</h2>
           {wines.length > 0 ? (
             <>
-              <p class="mt-2 text-sm text-muted">{wines.length} etichette rilevate sul sito della cantina. Le schede si aprono sul sito del produttore.</p>
-              <ul role="list" class="mt-5 grid gap-px overflow-hidden rounded-md border border-subtle bg-subtle sm:grid-cols-2 lg:grid-cols-3">
-                {wines.slice(0, VISIBLE_WINES).map((v) => (
-                  <li class="bg-primary">
-                    <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="flex h-full items-center justify-between gap-3 px-4 py-4 text-sm hover:bg-secondary">
-                      <span class="font-medium">{v.name}</span><span aria-hidden="true" class="text-muted">↗</span>
+              <p class="mt-2 text-grafite">{wines.length} {wines.length === 1 ? 'etichetta rilevata' : 'etichette rilevate'} sul sito della cantina, che resta la fonte per prezzi e disponibilità.</p>
+              <ol class="mt-5 border-t border-inchiostro sm:columns-2 sm:gap-8">
+                {wines.slice(0, VISIBLE_WINES).map((v, i) => (
+                  <li class="break-inside-avoid border-b border-inchiostro/25">
+                    <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
+                      <span class="meta w-6 shrink-0 text-grafite">{String(i + 1).padStart(2, '0')}</span>
+                      <span class="group-hover:underline">{v.name}</span>
+                      <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ol>
               {wines.length > VISIBLE_WINES && (
-                <details class="group mt-3">
-                  <summary class="inline-flex h-11 cursor-pointer list-none items-center rounded-md border border-subtle px-4 text-sm hover:border-main group-open:hidden">Mostra tutti i {wines.length} vini</summary>
-                  <ul role="list" class="grid gap-px overflow-hidden rounded-md border border-subtle bg-subtle sm:grid-cols-2 lg:grid-cols-3">
-                    {wines.slice(VISIBLE_WINES).map((v) => (
-                      <li class="bg-primary">
-                        <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="flex h-full items-center justify-between gap-3 px-4 py-4 text-sm hover:bg-secondary">
-                          <span class="font-medium">{v.name}</span><span aria-hidden="true" class="text-muted">↗</span>
+                <details class="group mt-2">
+                  <summary class="btn mt-3 cursor-pointer list-none group-open:hidden [&::-webkit-details-marker]:hidden">Mostra tutte le {wines.length} etichette</summary>
+                  <ol start={VISIBLE_WINES + 1} class="border-t border-inchiostro sm:columns-2 sm:gap-8">
+                    {wines.slice(VISIBLE_WINES).map((v, i) => (
+                      <li class="break-inside-avoid border-b border-inchiostro/25">
+                        <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
+                          <span class="meta w-6 shrink-0 text-grafite">{String(i + VISIBLE_WINES + 1).padStart(2, '0')}</span>
+                          <span class="group-hover:underline">{v.name}</span>
+                          <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
                         </a>
                       </li>
                     ))}
-                  </ul>
+                  </ol>
                 </details>
               )}
             </>
           ) : (
-            <p class="mt-4 rounded-md border border-subtle bg-secondary px-4 py-4 text-sm text-muted">Anteprime non ancora disponibili. Consulta i contatti per organizzare la tua visita.</p>
+            <p class="mt-4 max-w-lg text-grafite">Le etichette non sono ancora in catalogo. Nel frattempo, chiedile alla cantina: è il modo migliore per cominciare.</p>
+          )}
+        </section>
+
+        <section id="visita" aria-labelledby="h-visita" class="scroll-mt-6">
+          <h2 id="h-visita" class="display text-4xl">Richiedi <em>una visita</em></h2>
+          <p class="mt-2 max-w-lg text-grafite">La richiesta arriva alla redazione, che la inoltra alla cantina. Non è una prenotazione: ti risponderanno per confermare giorno e orario.</p>
+          <FormNotice sent={sent} error={error} sentText="Richiesta ricevuta. Ti scriveremo all’indirizzo che hai indicato." />
+          {!sent && (
+            <form method="post" action="/api/richiesta-visita" class="mt-6 grid gap-4 sm:grid-cols-2">
+              <input type="hidden" name="cantina" value={w.slug} />
+              <label class="block text-sm font-medium">Nome e cognome<input name="nome" required autocomplete="name" maxlength="200" class={field} /></label>
+              <label class="block text-sm font-medium">Email<input name="email" type="email" required autocomplete="email" maxlength="200" class={field} /></label>
+              <label class="block text-sm font-medium">Data desiderata <span class="font-normal text-grafite">(facoltativa)</span><input name="data" type="date" min={today} class={field} /></label>
+              <label class="block text-sm font-medium">Persone<input name="persone" type="number" min="1" max="50" value="2" inputmode="numeric" class={field} /></label>
+              <label class="block text-sm font-medium sm:col-span-2">Telefono <span class="font-normal text-grafite">(facoltativo)</span><input name="telefono" type="tel" autocomplete="tel" maxlength="40" class={field} /></label>
+              <label class="block text-sm font-medium sm:col-span-2">Messaggio<textarea name="messaggio" rows="4" maxlength="2000" placeholder="Degustazione, visita in vigna, acquisto…" class={`${field} h-auto py-2`}></textarea></label>
+              <label class="hidden" aria-hidden="true">Non compilare<input name="sito_web" tabindex="-1" autocomplete="off" /></label>
+              <label class="flex items-start gap-3 text-sm sm:col-span-2">
+                <input type="checkbox" name="consenso" value="si" required class="mt-1 size-4 accent-rosso" />
+                <span>Acconsento al trattamento dei miei dati per ricevere risposta, come descritto nell’<a href="/privacy" class="underline">informativa</a>.</span>
+              </label>
+              <div class="sm:col-span-2"><button type="submit" class="btn-primary">Invia la richiesta</button></div>
+            </form>
           )}
         </section>
       </div>
 
-      <aside class="space-y-8 lg:border-l lg:border-subtle lg:pl-8">
-        <section aria-labelledby="h-visita">
-          <h2 id="h-visita" class="meta text-muted">Visita</h2>
-          {services.length > 0
-            ? <ul role="list" class="mt-3 space-y-2">{services.map((s) => <li class="text-main">{s.name}</li>)}</ul>
-            : <p class="mt-3 text-sm text-muted">Concorda orari ed esperienze direttamente con la cantina.</p>}
-          <p class="mt-4 text-sm text-muted">
-            {hasCoords
-              ? (w.coordinate_status === 'approximate' ? 'Posizione approssimativa: controlla l’indirizzo prima di partire.' : 'Posizione da OpenStreetMap.')
-              : 'Posizione non ancora disponibile.'}
-          </p>
-        </section>
-
+      <aside class="space-y-10 lg:border-l lg:border-inchiostro lg:pl-8">
         <section aria-labelledby="h-contatti">
-          <h2 id="h-contatti" class="meta text-muted">Contatti</h2>
-          <dl class="mt-3 space-y-2 text-sm">
-            {w.phone && <div><dt class="sr-only">Telefono</dt><dd>{w.phone}</dd></div>}
-            {w.email && <div><dt class="sr-only">Email</dt><dd class="break-all">{w.email}</dd></div>}
-            {w.website && <div><dt class="sr-only">Sito</dt><dd class="break-all">{host(w.website)}</dd></div>}
+          <h2 id="h-contatti" class="meta text-grafite">Contatti</h2>
+          <dl class="mt-3 space-y-3">
+            {w.phone && <div><dt class="meta text-grafite">Telefono</dt><dd><a href={telHref!} class="hover:underline">{w.phone}</a></dd></div>}
+            {w.email && <div><dt class="meta text-grafite">Email</dt><dd class="break-all"><a href={`mailto:${w.email}`} class="hover:underline">{w.email}</a></dd></div>}
+            {w.website && <div><dt class="meta text-grafite">Sito</dt><dd class="break-all"><a href={w.website} target="_blank" rel="noopener" class="hover:underline">{host(w.website)}</a></dd></div>}
+            {!w.phone && !w.email && !w.website && <p class="text-grafite">Nessun contatto pubblico. Sei della cantina? Aggiungili tu.</p>}
           </dl>
         </section>
 
-        {sources.length > 0 && (
-          <section aria-labelledby="h-fonti">
-            <h2 id="h-fonti" class="meta text-muted">Fonti</h2>
-            <ul role="list" class="mt-3 space-y-1 text-sm">
-              {sources.map((s) => <li><a href={s} target="_blank" rel="noopener nofollow" class="text-muted underline decoration-subtle underline-offset-4 hover:text-main">{host(s)}</a></li>)}
-            </ul>
-            {w.checked_at && <p class="mt-3 text-xs text-muted">Verificate il {fmtDate(w.checked_at)}.</p>}
+        {services.length > 0 && (
+          <section aria-labelledby="h-servizi">
+            <h2 id="h-servizi" class="meta text-grafite">In cantina</h2>
+            <ul role="list" class="mt-3 space-y-1 font-serif text-2xl">{services.map((s) => <li>{s.name}</li>)}</ul>
           </section>
         )}
 
-        <p class="border-t border-subtle pt-6 text-sm text-muted">
-          <span class="font-semibold text-main">Sei il titolare?</span> A breve potrai rivendicare questa scheda e aggiornarla tu stesso.
-        </p>
+        {sources.length > 0 && (
+          <section aria-labelledby="h-fonti">
+            <h2 id="h-fonti" class="meta text-grafite">Fonti</h2>
+            <ol class="mt-3 space-y-1 text-sm">
+              {sources.map((s, i) => <li><sup class="mr-1 text-grafite">{i + 1}</sup><a href={s} target="_blank" rel="noopener nofollow" class="text-grafite underline decoration-inchiostro/30 hover:text-inchiostro">{host(s)}</a></li>)}
+            </ol>
+            {w.checked_at && <p class="meta mt-3 text-grafite">Verificate il {fmtDate(w.checked_at)}</p>}
+          </section>
+        )}
+
+        <section aria-labelledby="h-titolare" class={`p-5 ${coverFor(w.territory_id)}`}>
+          <h2 id="h-titolare" class="display text-3xl">Sei il titolare?</h2>
+          <p class="mt-2 text-sm">Rivendica la scheda per correggere i dati e aggiungere orari, foto ed esperienze.</p>
+          <a href={`/per-le-cantine?cantina=${w.slug}#modulo`} class="btn mt-4 h-10">Rivendica la scheda</a>
+        </section>
       </aside>
     </div>
+
+    {nearby.length > 0 && (
+      <section aria-labelledby="h-vicine" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <h2 id="h-vicine" class="display border-b border-inchiostro pb-3 text-4xl">Nei paraggi</h2>
+        <ul role="list" class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+          {nearby.map((n) => <li><WineryCard winery={n} /></li>)}
+        </ul>
+      </section>
+    )}
   </article>
 </BaseLayout>

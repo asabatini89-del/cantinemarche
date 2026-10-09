@@ -8,7 +8,7 @@
 |---------|--------|--------|
 | Framework | **Astro 7** + `@astrojs/cloudflare` | HTML server-rendered di default (SEO, LCP rapido) e JavaScript solo nelle "isole" interattive (mappa, filtri, carrello). Le pagine di contenuto (368 schede, territori, denominazioni) restano leggerissime. Astro è sviluppato sotto Cloudflare, quindi l'integrazione con Workers e i binding è di prima classe. |
 | Isole UI | **Preact** (+ `@preact/signals`) | API React a circa 4 KB. Basta per mappa, carrello, dashboard. |
-| Stile | **Tailwind CSS v4** con token in `@theme` | Design system "Editorial Gastronomy" in un solo file (`ui/src/styles.css`). |
+| Stile | **Tailwind CSS v4** con token in `@theme` | Identità “Catalogo ragionato” in un solo file (`src/styles/global.css`), vedi `docs/05-identita.md`. |
 | Runtime | **Cloudflare Workers** (static assets + SSR) | È il target consigliato da Cloudflare per i nuovi progetti (Pages è in convergenza su Workers). Asset statici serviti gratis dall'edge, SSR vicino all'utente. |
 | Database | **Cloudflare D1** (SQLite) + **Drizzle ORM** | Il portale attuale usa già D1 (vedi "Catalogo indisponibile" nella documentazione), quindi nessuna migrazione dati. Latenza bassa dal Worker, read replication globale, FTS5 per la ricerca, costo quasi nullo a questi volumi. Drizzle dà tipi TypeScript e migrazioni SQL versionate. |
 | File | **R2** + **Cloudflare Images** (trasformazioni via `/cdn-cgi/image/`) | Foto caricate dalle cantine, ridimensionate e convertite in AVIF/WebP al volo. Documenti di verifica claim in un bucket privato separato. |

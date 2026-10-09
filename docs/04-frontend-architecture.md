@@ -13,7 +13,7 @@ cantine-marche/
 │  └─ seed/                      # tassonomie + import delle 368 schede
 ├─ public/                       # favicon, manifest PWA, tiles/marche.pmtiles (o su R2)
 └─ src/
-   ├─ styles/global.css          # = ui/src/styles.css (token "Editorial Gastronomy")
+   ├─ styles/global.css          # token dell’identità “Catalogo ragionato”
    ├─ middleware.ts              # sessione, utente, ruolo, tenant → Astro.locals
    ├─ lib/
    │  ├─ db/schema.ts            # Drizzle (specchio di 0001_init.sql)

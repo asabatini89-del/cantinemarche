@@ -1,47 +1,76 @@
 /* =============================================================================
-   Cantine delle Marche — Design System "Editorial Gastronomy" (Tailwind v4)
-   Uso: classi bg-primary, bg-secondary, text-main, text-muted, text-wine,
-        bg-wine, border-subtle, font-serif, font-sans.
+   Cantine delle Marche — identità "Catalogo ragionato"
+   Un catalogo da editore colto: carta non patinata, inchiostro, un solo rosso
+   da frontespizio, copertine pastello per i territori, macchina da scrivere
+   per i metadati. Niente ombre, niente angoli arrotondati.
+   Guida completa: docs/05-identita.md
    ============================================================================= */
 @import "tailwindcss";
 
 @theme {
-  /* Palette */
-  --color-primary: #fbf9f5;   /* Warm Off-White · carta naturale (sfondo pagina) */
-  --color-secondary: #f3efe6; /* Warm Sand · superfici, placeholder immagini */
-  --color-main: #1a1815;      /* Deep Charcoal · testo principale */
-  --color-muted: #686257;     /* Muted Taupe · testo secondario (5,9:1 su primary) */
-  --color-wine: #5e1914;      /* Burgundy · Rosso Piceno, unico accento */
-  --color-wine-dark: #4a130f; /* hover/pressed dell'accento */
-  --color-subtle: #e6e0d3;    /* hairline 1px per card e contenitori */
+  /* Carta e inchiostro */
+  --color-carta: #f3eee3;      /* fondo: carta usomano */
+  --color-carta-2: #e9e2d3;    /* superfici, campi, righe alterne */
+  --color-inchiostro: #16130f; /* testo e filetti (16:1 sulla carta) */
+  --color-grafite: #5a554c;    /* testo secondario (6,4:1) — mai sulle copertine */
+  --color-rosso: #b8321c;      /* il rosso del frontespizio: azioni e accenti (5,2:1) */
+  --color-rosso-scuro: #962812;
 
-  /* Tipografia */
-  --font-serif: "Cormorant Garamond", "Newsreader", ui-serif, Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Copertine pastello: province e territori (solo testo inchiostro sopra) */
+  --color-salvia: #b7c3a3;
+  --color-cipria: #e6c2b4;
+  --color-ocra: #e2c07a;
+  --color-glicine: #c3b7d6;
+  --color-celeste: #b6cdd6;
+  --color-pistacchio: #d2d8a4;
+  --color-albicocca: #e8b48f;
 
-  /* Regola: angoli al massimo rounded-md */
-  --radius-md: 0.375rem;
+  /* Caratteri */
+  --font-serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Instrument Sans Variable", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "onum";
   }
   body {
-    @apply bg-primary font-sans text-main antialiased;
+    @apply bg-carta font-sans text-[15px] leading-relaxed text-inchiostro antialiased;
+  }
+  ::selection {
+    @apply bg-rosso text-carta;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-wine;
+    @apply outline-2 outline-offset-2 outline-rosso;
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
   }
 }
 
-/* Metadati / badge: uppercase, tracking-widest, text-xs */
+/* Metadati da macchina da scrivere: N° 042 · ANCONA · CASTELLI DI JESI */
 @utility meta {
-  @apply font-sans text-xs font-medium uppercase tracking-widest;
+  @apply font-mono text-[11px] font-normal uppercase tracking-[0.08em];
 }
 
-/* Riga orizzontale scorrevole senza scrollbar visibile (chip su mobile) */
+/* Titoli da frontespizio */
+@utility display {
+  @apply font-serif font-normal leading-[0.95] tracking-[-0.01em];
+}
+
+/* Pulsanti: rettangoli tipografici */
+@utility btn {
+  @apply inline-flex h-11 items-center justify-center gap-2 border border-inchiostro px-5 font-sans text-sm font-medium text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta;
+}
+@utility btn-primary {
+  @apply inline-flex h-11 items-center justify-center gap-2 border border-rosso bg-rosso px-5 font-sans text-sm font-medium text-carta transition-colors hover:border-rosso-scuro hover:bg-rosso-scuro;
+}
+
+/* Riga orizzontale scorrevole senza scrollbar (chip su mobile) */
 @utility scroll-row {
   scrollbar-width: none;
   &::-webkit-scrollbar {

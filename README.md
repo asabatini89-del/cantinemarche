@@ -24,13 +24,43 @@ npx wrangler d1 execute cantine-marche --remote --file db/seed/0002_catalog.sql
 npm run deploy
 ```
 
-## Stato
+## Il sito
 
-| Fatto | Prossimo |
+Identità “Catalogo ragionato”: vedi [`docs/05-identita.md`](docs/05-identita.md).
+
+![Home](docs/img/home-desktop.jpg)
+
+| Pagina | Cosa fa |
 |---|---|
-| Catalogo `/cantine` con ricerca full-text, filtri (provincia, denominazione, vitigno, servizi) nell'URL, paginazione | Home con mappa (MapLibre) e chip territori |
-| Scheda `/cantine/[slug]` con contatti, denominazioni, vini (link al sito della cantina), fonti, JSON-LD | Pagine `/territori` e `/denominazioni` |
-| Import dell'export del portale attuale con report delle anomalie ([`data/import-report.md`](data/import-report.md)) | Fase 2: account, claim, dashboard cantina |
+| `/` | Mappa SVG delle Marche con le 307 cantine geolocalizzate (cartiglio al tocco), ricerca, province, i sette territori, le DOCG |
+| `/cantine` | Catalogo dalla A alla Z: ricerca full-text, filtri provincia/denominazione/vitigno/servizi nell'URL, paginazione |
+| `/cantine/[slug]` | Scheda: contatti, mappa di posizione, denominazioni, vini (link al sito della cantina), fonti, cantine nei paraggi, **richiesta di visita** |
+| `/territori`, `/territori/[slug]` | I sette territori come collana: copertina, denominazioni, mappa inquadrata, elenco cantine |
+| `/denominazioni`, `/denominazioni/[slug]` | DOCG, DOC, IGT con le cantine che le producono |
+| `/per-le-cantine` | Pagina per i produttori + **modulo di rivendicazione** della scheda |
+| `/privacy` | Privacy, fonti e licenze (**bozza: completare i dati del titolare**) |
+| `/sitemap.xml`, `/robots.txt`, 404 | SEO e pagine di servizio |
+
+I moduli funzionano senza JavaScript, salvano su D1 (`visit_requests`, `contact_requests`), hanno honeypot anti-bot, limite di 5 invii l'ora per connessione (IP salvato solo come hash giornaliero) e protezione CSRF tramite controllo dell'Origin.
+
+Per leggere le richieste arrivate:
+
+```bash
+npx wrangler d1 execute cantine-marche --remote --command "SELECT created_at, name, email, winery_id, guests, preferred_date, message FROM visit_requests ORDER BY created_at DESC LIMIT 50"
+npx wrangler d1 execute cantine-marche --remote --command "SELECT created_at, kind, name, role, email, winery_id, winery_text FROM contact_requests ORDER BY created_at DESC LIMIT 50"
+```
+
+### Prima di andare online
+
+- [ ] `npx wrangler d1 create cantine-marche` e `database_id` in `wrangler.jsonc`
+- [ ] `site` in `astro.config.mjs` con il dominio definitivo
+- [ ] Completare `/privacy` con titolare del trattamento e contatti, e farla rivedere
+- [ ] Decidere chi legge le richieste: oggi restano in D1, senza notifica email (serve un provider, es. Resend)
+- [ ] Correggere alla fonte le anomalie elencate in [`data/import-report.md`](data/import-report.md)
+
+### Prossime fasi
+
+Fase 2 (account, verifica del claim, dashboard cantina) e Fase 3 (shop multi-vendor con Stripe Connect) sono progettate in `docs/` e lo schema D1 le prevede già. La pagina `/per-le-cantine` raccoglie già le rivendicazioni, da verificare a mano finché non c'è la dashboard.
 
 ## Contenuto del repository
 
@@ -40,32 +70,13 @@ npm run deploy
 | [`docs/02-stack.md`](docs/02-stack.md) | Stack consigliato, confronto D1/Supabase, CI/CD, budget di performance |
 | [`docs/03-database.md`](docs/03-database.md) | Modello dati (ERD), decisioni, query tipo, logica di split dei pagamenti |
 | [`docs/04-frontend-architecture.md`](docs/04-frontend-architecture.md) | Struttura dei file, route, strategia di rendering e cache, pattern mobile |
-| [`db/migrations/0001_init.sql`](db/migrations/0001_init.sql) | Schema D1 eseguibile per tutte e tre le fasi |
-| [`src/`](src/) | App Astro: `pages/cantine`, `components/` (WineryCard, FilterBar), `lib/db.ts` (query D1), `lib/filters.ts` |
+| [`db/migrations/`](db/migrations/) | Schema D1 per tutte e tre le fasi + richieste dai moduli pubblici |
+| [`src/`](src/) | App Astro: `pages/` (home, cantine, territori, denominazioni, per-le-cantine, api), `components/` (MarcheMap, WineryCard, FilterBar), `lib/` (D1, filtri, mappa, moduli) |
 | [`data/export-2026-10-09/`](data/export-2026-10-09/) | Export del portale attuale usato per l'import (cantine, anteprime, territori, denominazioni, licenze) |
 | [`scripts/build-seed.mjs`](scripts/build-seed.mjs) → [`db/seed/`](db/seed/) | Normalizzazione dell'export e generazione dei seed SQL, deterministica |
-| [`ui/`](ui/) | UI kit "Editorial Gastronomy": token Tailwind v4, snippet `WineryCard` e `FilterBar`, pagina di anteprima |
+| [`docs/05-identita.md`](docs/05-identita.md) | Identità visiva “Catalogo ragionato”: principi, colori, caratteri, componenti, voce |
 
-## Anteprima del UI kit
+## Note rispetto ai documenti di progetto
 
-```bash
-cd ui
-npm install
-npm run build        # genera dist/index.html + dist/styles.css
-open dist/index.html # oppure: npx serve dist
-```
-
-Gli snippet in `ui/snippets/` sono la fonte da cui nasceranno i componenti Astro (`WineryCard.astro`, `FilterBar.astro`).
-
-| Desktop | Mobile | Mobile · filtro aperto |
-|---|---|---|
-| ![Desktop](docs/img/ui-kit-desktop.png) | ![Mobile](docs/img/ui-kit-mobile.png) | ![Filtri](docs/img/ui-kit-mobile-filtri.png) |
-
-*Screenshot generati con i font di fallback: Cormorant e Plus Jakarta Sans vengono caricati da Google Fonts nel browser.*
-
-## Nota sul design
-
-La direzione "Editorial Gastronomy" di questo kit (carta `#FBF9F5`, bordeaux `#5E1914`, Cormorant Garamond + Plus Jakarta Sans, solo hairline e nessuna ombra, angoli al massimo `rounded-md`) **è diversa dall'identità del portale attualmente pubblicato** (`#fef2ea` / `#31060a` con corallo, senape e oliva, DM Sans + Knewave, bottoni a pillola, ombre sfalsate, mappa SVG illustrata). Prima di procedere con i componenti va deciso se:
-1. adottare il nuovo sistema ovunque (rebrand),
-2. mantenere l'identità attuale e prendere dal kit solo struttura e pattern UX,
-3. una via di mezzo, per esempio la mappa illustrata per la vista "territori" e la mappa vettoriale desaturata per la ricerca.
+- La mappa è un **SVG** delle province ISTAT con le cantine proiettate (proiezione stimata adattando le 307 coordinate ai poligoni: 306 cadono nella provincia giusta). Niente MapLibre né tile esterni: zero dipendenze, zero costi, coerente con l'identità. Le tile vettoriali restano un'opzione se servirà lo zoom stradale.
+- Nessun framework di isole (Preact): bastano HTML server-side e due script vanilla (filtri, cartiglio della mappa).

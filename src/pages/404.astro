@@ -2,10 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Pagina non trovata" noindex>
-  <div class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-    <p class="meta text-muted">Errore 404</p>
-    <h1 class="mt-2 font-serif text-5xl font-medium">Questa pagina non c'è.</h1>
-    <p class="mt-3 text-muted">Forse la cantina ha cambiato indirizzo. Riparti dal catalogo.</p>
-    <a href="/cantine" class="mt-8 inline-flex h-11 items-center rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Tutte le cantine</a>
+  <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+    <p class="meta text-grafite">Errore 404 · pagina mancante</p>
+    <h1 class="display mt-3 text-6xl sm:text-8xl">Questa pagina <em class="text-rosso">non è in catalogo.</em></h1>
+    <p class="mt-6 max-w-md text-lg">Forse la cantina ha cambiato nome, o il link è vecchio. Riparti dall’indice.</p>
+    <div class="mt-8 flex flex-wrap gap-2"><a href="/cantine" class="btn-primary">Tutte le cantine</a><a href="/" class="btn">La mappa</a></div>
   </div>
 </BaseLayout>
