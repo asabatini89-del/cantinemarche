@@ -10,11 +10,12 @@ export const POST: APIRoute = async ({ request }) => {
   const error = validateContact(form);
   if (error) return backTo(PAGE, { error });
 
-  const kind = form.get('motivo') === 'info' ? 'info' : 'claim';
+  const motivo = form.get('motivo');
+  const kind = motivo === 'info' ? 'info' : motivo === 'correzione' ? 'correction' : 'claim';
   const slug = text(form, 'cantina', 120);
   const winery = slug ? await wineryIdBySlug(slug) : null;
   const wineryText = text(form, 'cantina_nome', 160);
-  if (kind === 'claim' && !winery && !wineryText) return backTo(PAGE, { error: 'cantina' });
+  if (kind !== 'info' && !winery && !wineryText) return backTo(PAGE, { error: 'cantina' });
 
   const hash = await ipHash(request);
   if (await rateLimited(hash)) return backTo(PAGE, { error: 'troppe' });

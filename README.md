@@ -50,12 +50,28 @@ npx wrangler d1 execute cantine-marche --remote --command "SELECT created_at, na
 npx wrangler d1 execute cantine-marche --remote --command "SELECT created_at, kind, name, role, email, winery_id, winery_text FROM contact_requests ORDER BY created_at DESC LIMIT 50"
 ```
 
+### Immagini dai siti delle cantine
+
+La raccolta va lanciata da un computer con accesso a internet (da questo ambiente cloud i siti delle cantine e Firecrawl sono bloccati dalla policy di rete):
+
+```bash
+npm run images:fetch -- --limit 20          # prova su 20 cantine, poi senza --limit per tutte
+npm run images:fetch -- --firecrawl         # opzionale: siti in JavaScript via Firecrawl (FIRECRAWL_API_KEY)
+npx wrangler r2 bucket create cantine-media # una volta sola
+npm run images:upload:remote                # carica su R2 e popola la tabella media
+```
+
+`scripts/fetch-images.mjs` legge la home di ogni cantina, rispetta `robots.txt`, fa una richiesta alla volta per sito e prende og:image e immagini grandi. Scarta loghi, icone, banner, grafiche piatte e duplicati, poi converte in WebP (1600 e 640 px). Raccoglie anche le immagini delle bottiglie già presenti nell'export. Il lavoro è riprendibile e produce `media-out/report.md` con l'esito di ogni cantina e `db/seed/0003_media.sql`.
+
+In pagina ogni foto ha il credito con il link alla fonte e il collegamento “Chiedi una modifica o la rimozione”, che crea una richiesta di tipo `correction`. **Le foto restano opera delle cantine:** pubblicarle senza consenso espone a richieste di rimozione o risarcimento. Conviene evadere subito le richieste e, quando una cantina rivendica la scheda, chiederle di confermare o sostituire le foto.
+
 ### Prima di andare online
 
 - [ ] `npx wrangler d1 create cantine-marche` e `database_id` in `wrangler.jsonc`
 - [ ] `site` in `astro.config.mjs` con il dominio definitivo
 - [ ] Completare `/privacy` con titolare del trattamento e contatti, e farla rivedere
 - [ ] Decidere chi legge le richieste: oggi restano in D1, senza notifica email (serve un provider, es. Resend)
+- [ ] `npx wrangler r2 bucket create cantine-media` e raccolta delle immagini (vedi sopra)
 - [ ] Correggere alla fonte le anomalie elencate in [`data/import-report.md`](data/import-report.md)
 
 ### Prossime fasi

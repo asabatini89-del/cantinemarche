@@ -1,6 +1,6 @@
 ---
 // Voce di catalogo: numero, nome in corpo grande, luogo, denominazioni a macchina.
-// Nessuna foto finché la cantina non la carica (Fase 2).
+// Foto di copertina se presente (raccolta dal sito della cantina o caricata da lei).
 import type { WineryListItem } from '../lib/db';
 import { catalogNo, displayName } from '../lib/palette';
 
@@ -19,6 +19,10 @@ const facts = [
 ].filter(Boolean);
 ---
 <article class="group relative flex h-full flex-col border-t border-inchiostro pb-6 pt-3">
+  {w.cover_thumb && (
+    <img src={`/media/${w.cover_thumb}`} alt="" width="640" height="427" loading="lazy" decoding="async"
+      class="mb-3 aspect-[3/2] w-full bg-carta-2 object-cover" />
+  )}
   <div class="flex items-baseline justify-between gap-3">
     <p class="meta text-grafite">{catalogNo(w.num)}{w.province_name && ` · ${w.province_name}`}</p>
     {w.claim_status === 'claimed' && <p class="meta text-rosso">Verificata</p>}

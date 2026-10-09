@@ -9,7 +9,7 @@ import { catalogNo, coverFor, displayName } from '../../lib/palette';
 const data = await getWinery(Astro.params.slug ?? '');
 if (!data) return new Response(null, { status: 404, statusText: 'Not found' });
 
-const { winery: w, denominations, grapes, services, wines, sources } = data;
+const { winery: w, denominations, grapes, services, wines, sources, photos } = data;
 const title = displayName(w.name);
 const nearby = await nearbyWineries(w);
 const sent = Astro.url.searchParams.has('inviata');
@@ -27,6 +27,7 @@ const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./,
 const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : null);
 const today = new Date().toISOString().slice(0, 10);
 const VISIBLE_WINES = 12;
+const hasBottles = wines.some((v) => v.bottle_key);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -81,6 +82,29 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
       </div>
     </header>
 
+    {photos.length > 0 && (
+      <figure class="mx-auto mt-8 max-w-6xl px-4 sm:px-6">
+        <div class={`grid gap-2 ${photos.length > 1 ? 'sm:grid-cols-[2fr_1fr]' : ''}`}>
+          <img src={`/media/${photos[0].r2_key}`} srcset={`/media/${photos[0].thumb_key ?? photos[0].r2_key} 640w, /media/${photos[0].r2_key} 1600w`}
+            sizes="(min-width: 1152px) 760px, 100vw" alt={`${title}: foto dal sito della cantina`}
+            width={photos[0].width ?? 1600} height={photos[0].height ?? 1067} fetchpriority="high"
+            class="aspect-[3/2] h-full w-full bg-carta-2 object-cover" />
+          {photos.length > 1 && (
+            <div class="grid grid-cols-3 gap-2 sm:grid-cols-1">
+              {photos.slice(1, 4).map((p) => (
+                <img src={`/media/${p.thumb_key ?? p.r2_key}`} alt="" width="640" height="427" loading="lazy" decoding="async"
+                  class="aspect-[3/2] h-full w-full bg-carta-2 object-cover" />
+              ))}
+            </div>
+          )}
+        </div>
+        <figcaption class="meta mt-2 flex flex-wrap justify-between gap-x-6 gap-y-1 text-grafite">
+          <span>Foto: {photos[0].source_page ? <a href={photos[0].source_page} target="_blank" rel="noopener nofollow" class="underline decoration-inchiostro/30 hover:text-inchiostro">{host(photos[0].source_page)}</a> : 'sito della cantina'}</span>
+          <a href={`/per-le-cantine?cantina=${w.slug}&motivo=correzione#modulo`} class="hover:text-inchiostro hover:underline">Sei la cantina? Chiedi una modifica o la rimozione</a>
+        </figcaption>
+      </figure>
+    )}
+
     {w.data_note && (
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <p class="mt-6 border-l-2 border-rosso pl-4 text-sm"><span class="meta mr-2 text-rosso">Nota</span>{w.data_note}</p>
@@ -118,6 +142,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
                   <li class="break-inside-avoid border-b border-inchiostro/25">
                     <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
                       <span class="meta w-6 shrink-0 text-grafite">{String(i + 1).padStart(2, '0')}</span>
+                      {hasBottles && (v.bottle_key ? <img src={`/media/${v.bottle_key}`} alt="" width="16" height="48" loading="lazy" class="h-12 w-4 shrink-0 self-center object-contain" /> : <span class="w-4 shrink-0" aria-hidden="true"></span>)}
                       <span class="group-hover:underline">{v.name}</span>
                       <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
                     </a>
@@ -132,6 +157,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
                       <li class="break-inside-avoid border-b border-inchiostro/25">
                         <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
                           <span class="meta w-6 shrink-0 text-grafite">{String(i + VISIBLE_WINES + 1).padStart(2, '0')}</span>
+                          {hasBottles && (v.bottle_key ? <img src={`/media/${v.bottle_key}`} alt="" width="16" height="48" loading="lazy" class="h-12 w-4 shrink-0 self-center object-contain" /> : <span class="w-4 shrink-0" aria-hidden="true"></span>)}
                           <span class="group-hover:underline">{v.name}</span>
                           <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
                         </a>

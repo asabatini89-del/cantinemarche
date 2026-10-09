@@ -4,6 +4,10 @@
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "observability": { "enabled": true },
+  "r2_buckets": [
+    // Immagini delle cantine: npx wrangler r2 bucket create cantine-media
+    { "binding": "MEDIA", "bucket_name": "cantine-media" }
+  ],
   "d1_databases": [
     {
       "binding": "DB",

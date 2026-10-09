@@ -6,6 +6,7 @@ import { displayName } from '../lib/palette';
 
 const [stats, wineries] = await Promise.all([getStats(), wineryOptions()]);
 const preselected = Astro.url.searchParams.get('cantina') ?? '';
+const motivo = Astro.url.searchParams.get('motivo') ?? 'claim';
 const sent = Astro.url.searchParams.has('inviata');
 const error = Astro.url.searchParams.get('errore');
 Astro.response.headers.set('Cache-Control', 'private, no-store');
@@ -53,8 +54,9 @@ const steps = [
             <fieldset>
               <legend class="text-sm font-medium">Motivo</legend>
               <div class="mt-2 flex flex-wrap gap-4 text-sm">
-                <label class="flex items-center gap-2"><input type="radio" name="motivo" value="claim" checked class="accent-rosso" />Rivendicare una scheda</label>
-                <label class="flex items-center gap-2"><input type="radio" name="motivo" value="info" class="accent-rosso" />Solo informazioni</label>
+                <label class="flex items-center gap-2"><input type="radio" name="motivo" value="claim" checked={motivo !== 'info' && motivo !== 'correzione'} class="accent-rosso" />Rivendicare una scheda</label>
+                <label class="flex items-center gap-2"><input type="radio" name="motivo" value="correzione" checked={motivo === 'correzione'} class="accent-rosso" />Correggere o rimuovere dati e foto</label>
+                <label class="flex items-center gap-2"><input type="radio" name="motivo" value="info" checked={motivo === 'info'} class="accent-rosso" />Solo informazioni</label>
               </div>
             </fieldset>
             <label class="block text-sm font-medium">Cantina

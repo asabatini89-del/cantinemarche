@@ -26,6 +26,7 @@ export interface WineryListItem {
   wine_count: number;
   denominations: string | null; // "Nome DOC|Nome DOCG"
   services: string | null; // "Degustazioni|Vendita diretta"
+  cover_thumb: string | null; // chiave R2 della foto di copertina (640 px)
 }
 
 export interface Facet {
@@ -73,7 +74,8 @@ const LIST_COLUMNS = `w.id, w.slug, w.name, ${CATALOG_NO} AS num, w.municipality
   (SELECT group_concat(d.name, '|') FROM winery_denominations wd
      JOIN denominations d ON d.id = wd.denomination_id WHERE wd.winery_id = w.id) AS denominations,
   (SELECT group_concat(s.name, '|') FROM winery_services ws
-     JOIN services s ON s.id = ws.service_id WHERE ws.winery_id = w.id) AS services`;
+     JOIN services s ON s.id = ws.service_id WHERE ws.winery_id = w.id) AS services,
+  (SELECT COALESCE(m.thumb_key, m.r2_key) FROM media m WHERE m.id = w.cover_media_id) AS cover_thumb`;
 
 export async function listWineries(f: CatalogFilters, pageSize = PAGE_SIZE) {
   const w = where(f);
@@ -269,7 +271,7 @@ export async function getWinery(slug: string) {
     .first<WineryDetail>();
   if (!winery) return null;
 
-  const [den, grapes, services, wines] = await db().batch([
+  const [den, grapes, services, wines, photos] = await db().batch([
     db().prepare(
       `SELECT d.id, d.name, d.level FROM winery_denominations wd JOIN denominations d ON d.id = wd.denomination_id
        WHERE wd.winery_id = ? ORDER BY CASE d.level WHEN 'DOCG' THEN 0 WHEN 'DOC' THEN 1 ELSE 2 END, d.name`,
@@ -281,7 +283,13 @@ export async function getWinery(slug: string) {
       `SELECT s.id, s.name FROM winery_services ws JOIN services s ON s.id = ws.service_id WHERE ws.winery_id = ? ORDER BY s.name`,
     ).bind(winery.id),
     db().prepare(
-      `SELECT id, name, external_url FROM wines WHERE winery_id = ? AND status = 'published' ORDER BY sort`,
+      `SELECT v.id, v.name, v.external_url,
+              (SELECT m.r2_key FROM media m WHERE m.owner_type = 'wine' AND m.owner_id = v.id ORDER BY m.sort LIMIT 1) AS bottle_key
+       FROM wines v WHERE v.winery_id = ? AND v.status = 'published' ORDER BY v.sort`,
+    ).bind(winery.id),
+    db().prepare(
+      `SELECT id, r2_key, thumb_key, width, height, credit, source_page FROM media
+       WHERE owner_type = 'winery' AND owner_id = ? ORDER BY sort LIMIT 4`,
     ).bind(winery.id),
   ]);
   type Named = { id: string; name: string };
@@ -290,9 +298,20 @@ export async function getWinery(slug: string) {
     denominations: rows<Named & { level: string }>(den),
     grapes: rows<Named>(grapes),
     services: rows<Named>(services),
-    wines: rows<Named & { external_url: string | null }>(wines),
+    wines: rows<Named & { external_url: string | null; bottle_key: string | null }>(wines),
+    photos: rows<Photo>(photos),
     sources: winery.sources_json ? (JSON.parse(winery.sources_json) as string[]) : [],
   };
+}
+
+export interface Photo {
+  id: string;
+  r2_key: string;
+  thumb_key: string | null;
+  width: number | null;
+  height: number | null;
+  credit: string | null;
+  source_page: string | null;
 }
 
 /** Altre cantine nello stesso comune o, in mancanza, nella stessa provincia. */
