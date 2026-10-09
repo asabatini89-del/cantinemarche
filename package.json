@@ -1,0 +1,28 @@
+{
+  "name": "cantine-delle-marche",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler dev",
+    "deploy": "astro build && wrangler deploy",
+    "check": "astro check",
+    "seed:build": "node scripts/build-seed.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply cantine-marche --local",
+    "db:seed:local": "wrangler d1 execute cantine-marche --local --file db/seed/0001_taxonomies.sql && wrangler d1 execute cantine-marche --local --file db/seed/0002_catalog.sql",
+    "db:reset:local": "rm -rf .wrangler/state/v3/d1 && npm run db:migrate:local && npm run db:seed:local"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.3.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@cloudflare/workers-types": "^5.20261009.1",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.149.0"
+  }
+}

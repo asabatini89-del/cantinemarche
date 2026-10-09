@@ -1,0 +1,172 @@
+{
+  "project": "Cantine delle Marche",
+  "site": "https://cantine-delle-marche.andrea-s89.chatgpt.site",
+  "siteVersion": 14,
+  "sourceCommit": "5bee49221973e024ddb5393370ab4f43366a73aa",
+  "exportedAt": "2026-10-09T16:23:09.967Z",
+  "counts": {
+    "wineries": 368,
+    "liveWineries": 368,
+    "products": 1494,
+    "wineriesWithProducts": 120,
+    "coordinates": 307,
+    "territories": 7,
+    "denominations": 21,
+    "tables": 18
+  },
+  "database": [
+    {
+      "table": "audit",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, actor, action, created_at"
+    },
+    {
+      "table": "campaigns",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, winery_id, label, start_at, end_at, active"
+    },
+    {
+      "table": "contents",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, title, body, updated_at"
+    },
+    {
+      "table": "favorites",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, user_id, winery_id, created_at"
+    },
+    {
+      "table": "itineraries",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, user_id, title, visit_date, notes, stops, created_at, updated_at"
+    },
+    {
+      "table": "request_email",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "request_id, payload, status, attempts, provider_id, last_error, updated_at"
+    },
+    {
+      "table": "requests",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, kind, winery_id, name, email, payload, status, created_at, ip_hash"
+    },
+    {
+      "table": "shop_orders",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, tenant_id, buyer_id, status, currency, total_cents, items, provider_session_id, created_at, updated_at"
+    },
+    {
+      "table": "shop_products",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, tenant_id, sku, name, description, price_cents, currency, stock, volume_ml, vintage, published, updated_at"
+    },
+    {
+      "table": "shop_settings",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "tenant_id, enabled, description, shipping_notes, seller_name, vat_number, updated_at"
+    },
+    {
+      "table": "tenant_memberships",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, tenant_id, user_id, role, active, created_at"
+    },
+    {
+      "table": "tenant_profiles",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "tenant_id, payload, updated_at"
+    },
+    {
+      "table": "tenant_write_guards",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id"
+    },
+    {
+      "table": "tenants",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, winery_id, name, status, created_at"
+    },
+    {
+      "table": "user_profiles",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "user_id, email, name, consent_version, created_at, updated_at"
+    },
+    {
+      "table": "wineries",
+      "rows": 368,
+      "pages": 36,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, payload, updated_at"
+    },
+    {
+      "table": "winery_claims",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, user_id, winery_id, business_email, role, evidence, status, review_note, reviewed_by, created_at, reviewed_at"
+    },
+    {
+      "table": "winery_offers",
+      "rows": 0,
+      "pages": 1,
+      "truncatedValues": 0,
+      "paginationComplete": true,
+      "columns": "id, tenant_id, title, description, price_cents, start_date, end_date, published, updated_at"
+    }
+  ],
+  "notes": [
+    "Tutte le pagine live sono state lette fino a next_offset=null. Le righe omesse dalla prima risposta sono state recuperate nelle pagine successive. Nessun valore di cella troncato.",
+    "Letture successive: esportazione non transazionale.",
+    "Cantine: catalogo del progetto aggiornato con modifiche editoriali del database, secondo la logica del portale. Originali live preservati in database/wineries.json.",
+    "I prodotti osservati sui siti delle cantine sono distinti dai prodotti dello shop. Prezzi e disponibilità non sono dedotti.",
+    "Le fonti e gli stati di verifica sono preservati. Coordinate approximate, osm o missing conservano il significato originario.",
+    "fonti-progetto contiene anche report di test e validazione, distinti dalle tabelle live.",
+    "Credenziali e segreti di configurazione non sono inclusi."
+  ]
+}

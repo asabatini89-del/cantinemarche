@@ -3,6 +3,35 @@
 Piattaforma per il vino e l'enoturismo marchigiano: scoperta delle cantine (Fase 1), claim e dashboard per i produttori (Fase 2), marketplace multi-vendor e community (Fase 3).
 Lo stack previsto è Astro + Cloudflare Workers + D1/R2/KV, con deploy continuo da GitHub.
 
+## Avvio rapido
+
+```bash
+npm install
+npm run db:reset:local   # crea il D1 locale: schema + tassonomie + 365 cantine e 1.494 anteprime vini
+npm run dev              # http://localhost:4321/cantine  (Astro su workerd, binding D1 reale)
+```
+
+Altri comandi: `npm run build` (bundle per Workers), `npm run preview` (il worker compilato con `wrangler dev`), `npm run check` (typecheck), `npm run seed:build` (rigenera i seed dall'export).
+
+### Primo deploy su Cloudflare
+
+```bash
+npx wrangler login
+npx wrangler d1 create cantine-marche          # copia il database_id in wrangler.jsonc
+npx wrangler d1 migrations apply cantine-marche --remote
+npx wrangler d1 execute cantine-marche --remote --file db/seed/0001_taxonomies.sql
+npx wrangler d1 execute cantine-marche --remote --file db/seed/0002_catalog.sql
+npm run deploy
+```
+
+## Stato
+
+| Fatto | Prossimo |
+|---|---|
+| Catalogo `/cantine` con ricerca full-text, filtri (provincia, denominazione, vitigno, servizi) nell'URL, paginazione | Home con mappa (MapLibre) e chip territori |
+| Scheda `/cantine/[slug]` con contatti, denominazioni, vini (link al sito della cantina), fonti, JSON-LD | Pagine `/territori` e `/denominazioni` |
+| Import dell'export del portale attuale con report delle anomalie ([`data/import-report.md`](data/import-report.md)) | Fase 2: account, claim, dashboard cantina |
+
 ## Contenuto del repository
 
 | Percorso | Cosa contiene |
@@ -12,6 +41,9 @@ Lo stack previsto è Astro + Cloudflare Workers + D1/R2/KV, con deploy continuo 
 | [`docs/03-database.md`](docs/03-database.md) | Modello dati (ERD), decisioni, query tipo, logica di split dei pagamenti |
 | [`docs/04-frontend-architecture.md`](docs/04-frontend-architecture.md) | Struttura dei file, route, strategia di rendering e cache, pattern mobile |
 | [`db/migrations/0001_init.sql`](db/migrations/0001_init.sql) | Schema D1 eseguibile per tutte e tre le fasi |
+| [`src/`](src/) | App Astro: `pages/cantine`, `components/` (WineryCard, FilterBar), `lib/db.ts` (query D1), `lib/filters.ts` |
+| [`data/export-2026-10-09/`](data/export-2026-10-09/) | Export del portale attuale usato per l'import (cantine, anteprime, territori, denominazioni, licenze) |
+| [`scripts/build-seed.mjs`](scripts/build-seed.mjs) → [`db/seed/`](db/seed/) | Normalizzazione dell'export e generazione dei seed SQL, deterministica |
 | [`ui/`](ui/) | UI kit "Editorial Gastronomy": token Tailwind v4, snippet `WineryCard` e `FilterBar`, pagina di anteprima |
 
 ## Anteprima del UI kit

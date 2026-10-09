@@ -1,0 +1,44 @@
+[
+  {
+    "id": "castelli-di-jesi",
+    "name": "Castelli di Jesi",
+    "wine": "Verdicchio dei Castelli di Jesi",
+    "text": "Un viaggio tra borghi e colline della Vallesina. Il Verdicchio accompagna la scoperta dei Castelli di Jesi, da Cupramontana a Staffolo e Montecarotto."
+  },
+  {
+    "id": "conero",
+    "name": "Riviera del Conero",
+    "wine": "Rosso Conero",
+    "text": "Vigneti affacciati sull’Adriatico, il profilo del Monte Conero e i borghi di Camerano e Numana. Un territorio da attraversare con lentezza, tra mare e vino."
+  },
+  {
+    "id": "matelica",
+    "name": "Matelica e l’Alta Valle",
+    "wine": "Verdicchio di Matelica",
+    "text": "Nell’entroterra maceratese, la valle di Matelica racconta un’altra espressione del Verdicchio. Le visite in cantina si possono abbinare alla scoperta dei borghi ai piedi dell’Appennino."
+  },
+  {
+    "id": "piceno",
+    "name": "Offida e il Piceno",
+    "wine": "Offida",
+    "text": "Le colline del sud delle Marche uniscono il patrimonio di Offida e Ascoli Piceno alla cultura del vino. Pecorino, Passerina e vini rossi invitano a esplorare le aziende del territorio."
+  },
+  {
+    "id": "metauro",
+    "name": "Valle del Metauro",
+    "wine": "Bianchello del Metauro",
+    "text": "Dal mare di Fano verso l’interno, la valle del Metauro offre un itinerario tra paesaggi agricoli, borghi e cantine."
+  },
+  {
+    "id": "morro-d-alba",
+    "name": "Morro d’Alba",
+    "wine": "Lacrima di Morro",
+    "text": "Il borgo di Morro d’Alba e le colline circostanti custodiscono la tradizione della Lacrima. Una tappa da abbinare ai Castelli di Jesi e alla costa di Senigallia."
+  },
+  {
+    "id": "maceratese",
+    "name": "Colline maceratesi",
+    "wine": "Colli Maceratesi",
+    "text": "Dal paesaggio collinare a Serrapetrona, il Maceratese invita a conoscere il vino attraverso i luoghi e le persone che lo producono."
+  }
+]

@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+const { title, description = 'Cantine, vini e territori delle Marche: trova la tua prossima tappa.', canonical, noindex = false } = Astro.props;
+const fullTitle = title === 'Cantine delle Marche' ? title : `${title} · Cantine delle Marche`;
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={new URL(canonical, Astro.site)} />}
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <meta name="theme-color" content="#fbf9f5" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" />
+    <slot name="head" />
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a href="#contenuto" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-main focus:px-3 focus:py-2 focus:text-primary">Vai al contenuto</a>
+    <header class="border-b border-subtle">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6">
+        <a href="/" class="font-serif text-2xl font-semibold leading-none">Cantine delle Marche</a>
+        <nav aria-label="Principale">
+          <ul role="list" class="flex items-center gap-5 text-sm">
+            <li><a href="/cantine" class="text-main underline-offset-4 hover:underline" aria-current={Astro.url.pathname.startsWith('/cantine') ? 'page' : undefined}>Le cantine</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenuto" class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-subtle">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-muted sm:flex-row sm:justify-between sm:px-6">
+        <p>Dati da fonti pubbliche: ogni scheda riporta le sue fonti.</p>
+        <p>Coordinate © OpenStreetMap contributors (ODbL) dove indicato.</p>
+      </div>
+    </footer>
+  </body>
+</html>

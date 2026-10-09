@@ -109,6 +109,10 @@ CREATE TABLE wineries (
   territory_id    TEXT REFERENCES territories(id) ON DELETE SET NULL,
   lat             REAL,                      -- NULL ammesso: la scheda resta visibile, la mappa no
   lng             REAL,
+  coordinate_status TEXT NOT NULL DEFAULT 'missing'
+                    CHECK (coordinate_status IN ('verified','approximate','osm','missing')),
+  coordinate_source TEXT,                    -- 'official' | 'directory' | 'osm' | NULL
+  alternate_addresses_json TEXT,             -- altre sedi/indirizzi citati dalle fonti
   -- contatti pubblici
   phone           TEXT,
   email           TEXT,
@@ -119,6 +123,9 @@ CREATE TABLE wineries (
   status          TEXT NOT NULL DEFAULT 'published' CHECK (status IN ('draft','published','hidden','archived')),
   claim_status    TEXT NOT NULL DEFAULT 'unclaimed' CHECK (claim_status IN ('unclaimed','pending','claimed')),
   data_source     TEXT NOT NULL DEFAULT 'import' CHECK (data_source IN ('import','admin','owner')),
+  sources_json    TEXT,                      -- URL delle fonti pubbliche dei dati (provenienza)
+  data_note       TEXT,                      -- avviso redazionale ("contatti da confermare"...)
+  checked_at      TEXT,                      -- data dell'ultima verifica delle fonti
   shop_enabled    INTEGER NOT NULL DEFAULT 0,
   plan            TEXT NOT NULL DEFAULT 'free' CHECK (plan IN ('free','pro','premium')),
   -- denormalizzati per la lista (aggiornati da trigger/job)
@@ -251,6 +258,11 @@ CREATE TABLE wines (                         -- scheda vino: esiste anche senza 
   description_md   TEXT,
   abv              REAL,
   external_url     TEXT,                     -- anteprime importate: rimandano al sito cantina
+  external_id      TEXT,                     -- id dell'anteprima nel portale attuale (wine-xxxxxxxx)
+  external_category TEXT,                    -- categoria così come appare sul sito della cantina
+  external_image_url TEXT,                   -- immagine sul sito della cantina: NON ripubblicare senza consenso
+  evidence_type    TEXT,                     -- come è stata rilevata (wine-detail, schema-product, ...)
+  checked_at       TEXT,
   source           TEXT NOT NULL DEFAULT 'owner' CHECK (source IN ('import','owner')),
   status           TEXT NOT NULL DEFAULT 'published' CHECK (status IN ('draft','published','archived')),
   sort             INTEGER NOT NULL DEFAULT 0,

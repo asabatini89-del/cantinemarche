@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getWinery } from '../../lib/db';
+
+const data = await getWinery(Astro.params.slug ?? '');
+if (!data) return new Response(null, { status: 404, statusText: 'Not found' });
+
+const { winery: w, denominations, grapes, services, wines, sources } = data;
+Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
+
+const place = [w.municipality, w.province_code ? `(${w.province_code})` : null].filter(Boolean).join(' ');
+const telHref = w.phone ? `tel:${w.phone.split(/[\/,;]| - /)[0].replace(/[^\d+]/g, '')}` : null;
+const hasCoords = w.lat !== null && w.lng !== null;
+const mapsHref = hasCoords
+  ? `https://www.google.com/maps/search/?api=1&query=${w.lat},${w.lng}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([w.name, w.address_line, place].filter(Boolean).join(', '))}`;
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : null);
+const VISIBLE_WINES = 9;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Winery',
+  name: w.name,
+  url: new URL(`/cantine/${w.slug}`, Astro.site).href,
+  ...(w.website && { sameAs: [w.website] }),
+  ...(w.phone && { telephone: w.phone }),
+  ...(w.email && { email: w.email }),
+  address: {
+    '@type': 'PostalAddress',
+    ...(w.address_line && { streetAddress: w.address_line }),
+    ...(w.municipality && { addressLocality: w.municipality }),
+    ...(w.postal_code && { postalCode: w.postal_code }),
+    ...(w.province_code && { addressRegion: w.province_code }),
+    addressCountry: 'IT',
+  },
+  ...(hasCoords && { geo: { '@type': 'GeoCoordinates', latitude: w.lat, longitude: w.lng } }),
+};
+const action = 'inline-flex h-11 items-center gap-2 rounded-md border border-subtle px-4 text-sm text-main transition-colors hover:border-main';
+---
+<BaseLayout
+  title={w.name}
+  description={`${w.name}${place ? `, ${place}` : ''}: contatti, denominazioni e vini. Cantine delle Marche.`}
+  canonical={`/cantine/${w.slug}`}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="mx-auto max-w-6xl px-4 pb-24 pt-6 sm:px-6">
+    <nav aria-label="Percorso" class="text-sm text-muted">
+      <a href="/cantine" class="underline-offset-4 hover:underline">Le cantine</a> <span aria-hidden="true">/</span>
+    </nav>
+
+    <header class="mt-6 border-b border-subtle pb-8">
+      {(w.province_name || w.territory_name) && (
+        <p class="meta text-muted">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
+      )}
+      <h1 class="mt-2 font-serif text-4xl font-medium leading-[1.05] sm:text-6xl">{w.name}</h1>
+      {(w.address_line || place) && <p class="mt-4 max-w-2xl text-lg text-muted">{w.address_line ?? place}</p>}
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href={mapsHref} target="_blank" rel="noopener" class="inline-flex h-11 items-center rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Indicazioni</a>
+        {telHref && <a href={telHref} class={action}>Chiama</a>}
+        {w.email && <a href={`mailto:${w.email}`} class={action}>Email</a>}
+        {w.website && <a href={w.website} target="_blank" rel="noopener" class={action}>Sito web <span aria-hidden="true">↗</span></a>}
+      </div>
+    </header>
+
+    {w.data_note && (
+      <p class="mt-6 rounded-md border border-subtle bg-secondary px-4 py-3 text-sm text-main">
+        <span class="meta mr-2 text-[10px] text-wine">Da verificare</span>{w.data_note}
+      </p>
+    )}
+
+    <div class="mt-10 grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div class="space-y-12">
+        {(denominations.length > 0 || grapes.length > 0) && (
+          <section aria-labelledby="h-vini-territorio">
+            <h2 id="h-vini-territorio" class="font-serif text-3xl">{denominations.length > 0 ? 'Denominazioni e vitigni' : 'Vitigni'}</h2>
+            <ul role="list" class="mt-5 flex flex-wrap gap-2">
+              {denominations.map((d) => (
+                <li><a href={`/cantine?denominazione=${d.id}`} class="meta inline-flex rounded-md border border-subtle px-2.5 py-1.5 text-[10px] text-main hover:border-main">{d.name}</a></li>
+              ))}
+              {grapes.map((g) => (
+                <li><a href={`/cantine?vitigno=${g.id}`} class="meta inline-flex rounded-md border border-subtle bg-secondary px-2.5 py-1.5 text-[10px] text-muted hover:border-main hover:text-main">{g.name}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section aria-labelledby="h-vini">
+          <h2 id="h-vini" class="font-serif text-3xl">I vini</h2>
+          {wines.length > 0 ? (
+            <>
+              <p class="mt-2 text-sm text-muted">{wines.length} etichette rilevate sul sito della cantina. Le schede si aprono sul sito del produttore.</p>
+              <ul role="list" class="mt-5 grid gap-px overflow-hidden rounded-md border border-subtle bg-subtle sm:grid-cols-2 lg:grid-cols-3">
+                {wines.slice(0, VISIBLE_WINES).map((v) => (
+                  <li class="bg-primary">
+                    <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="flex h-full items-center justify-between gap-3 px-4 py-4 text-sm hover:bg-secondary">
+                      <span class="font-medium">{v.name}</span><span aria-hidden="true" class="text-muted">↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {wines.length > VISIBLE_WINES && (
+                <details class="group mt-3">
+                  <summary class="inline-flex h-11 cursor-pointer list-none items-center rounded-md border border-subtle px-4 text-sm hover:border-main group-open:hidden">Mostra tutti i {wines.length} vini</summary>
+                  <ul role="list" class="grid gap-px overflow-hidden rounded-md border border-subtle bg-subtle sm:grid-cols-2 lg:grid-cols-3">
+                    {wines.slice(VISIBLE_WINES).map((v) => (
+                      <li class="bg-primary">
+                        <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="flex h-full items-center justify-between gap-3 px-4 py-4 text-sm hover:bg-secondary">
+                          <span class="font-medium">{v.name}</span><span aria-hidden="true" class="text-muted">↗</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+            </>
+          ) : (
+            <p class="mt-4 rounded-md border border-subtle bg-secondary px-4 py-4 text-sm text-muted">Anteprime non ancora disponibili. Consulta i contatti per organizzare la tua visita.</p>
+          )}
+        </section>
+      </div>
+
+      <aside class="space-y-8 lg:border-l lg:border-subtle lg:pl-8">
+        <section aria-labelledby="h-visita">
+          <h2 id="h-visita" class="meta text-muted">Visita</h2>
+          {services.length > 0
+            ? <ul role="list" class="mt-3 space-y-2">{services.map((s) => <li class="text-main">{s.name}</li>)}</ul>
+            : <p class="mt-3 text-sm text-muted">Concorda orari ed esperienze direttamente con la cantina.</p>}
+          <p class="mt-4 text-sm text-muted">
+            {hasCoords
+              ? (w.coordinate_status === 'approximate' ? 'Posizione approssimativa: controlla l’indirizzo prima di partire.' : 'Posizione da OpenStreetMap.')
+              : 'Posizione non ancora disponibile.'}
+          </p>
+        </section>
+
+        <section aria-labelledby="h-contatti">
+          <h2 id="h-contatti" class="meta text-muted">Contatti</h2>
+          <dl class="mt-3 space-y-2 text-sm">
+            {w.phone && <div><dt class="sr-only">Telefono</dt><dd>{w.phone}</dd></div>}
+            {w.email && <div><dt class="sr-only">Email</dt><dd class="break-all">{w.email}</dd></div>}
+            {w.website && <div><dt class="sr-only">Sito</dt><dd class="break-all">{host(w.website)}</dd></div>}
+          </dl>
+        </section>
+
+        {sources.length > 0 && (
+          <section aria-labelledby="h-fonti">
+            <h2 id="h-fonti" class="meta text-muted">Fonti</h2>
+            <ul role="list" class="mt-3 space-y-1 text-sm">
+              {sources.map((s) => <li><a href={s} target="_blank" rel="noopener nofollow" class="text-muted underline decoration-subtle underline-offset-4 hover:text-main">{host(s)}</a></li>)}
+            </ul>
+            {w.checked_at && <p class="mt-3 text-xs text-muted">Verificate il {fmtDate(w.checked_at)}.</p>}
+          </section>
+        )}
+
+        <p class="border-t border-subtle pt-6 text-sm text-muted">
+          <span class="font-semibold text-main">Sei il titolare?</span> A breve potrai rivendicare questa scheda e aggiornarla tu stesso.
+        </p>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "castelli-di-jesi-verdicchio-riserva",
+    "name": "Castelli di Jesi Verdicchio Riserva DOCG",
+    "match": "Verdicchio dei Castelli di Jesi",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "conero",
+    "name": "Conero DOCG",
+    "match": "Conero DOCG",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "verdicchio-matelica-riserva",
+    "name": "Verdicchio di Matelica Riserva DOCG",
+    "match": "Verdicchio di Matelica",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "vernaccia-serrapetrona",
+    "name": "Vernaccia di Serrapetrona DOCG",
+    "match": "Vernaccia di Serrapetrona",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "offida",
+    "name": "Offida DOCG",
+    "match": "Offida",
+    "source": "https://consorziovinipiceni.com/"
+  },
+  {
+    "id": "verdicchio-jesi",
+    "name": "Verdicchio dei Castelli di Jesi DOC",
+    "match": "Verdicchio dei Castelli di Jesi",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "verdicchio-matelica",
+    "name": "Verdicchio di Matelica DOC",
+    "match": "Verdicchio di Matelica",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "rosso-conero",
+    "name": "Rosso Conero DOC",
+    "match": "Rosso Conero",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "lacrima",
+    "name": "Lacrima di Morro d’Alba DOC",
+    "match": "Lacrima di Morro",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "bianchello",
+    "name": "Bianchello del Metauro DOC",
+    "match": "Bianchello del Metauro",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "colli-maceratesi",
+    "name": "Colli Maceratesi DOC",
+    "match": "Colli Maceratesi",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "colli-pesaresi",
+    "name": "Colli Pesaresi DOC",
+    "match": "Colli Pesaresi",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "esino",
+    "name": "Esino DOC",
+    "match": "Esino",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "pergola",
+    "name": "Pergola DOC",
+    "match": "Pergola",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "san-ginesio",
+    "name": "San Ginesio DOC",
+    "match": "San Ginesio",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "serrapetrona",
+    "name": "Serrapetrona DOC",
+    "match": "Serrapetrona",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "rosso-piceno",
+    "name": "Rosso Piceno DOC",
+    "match": "Rosso Piceno",
+    "source": "https://consorziovinipiceni.com/"
+  },
+  {
+    "id": "falerio",
+    "name": "Falerio DOC",
+    "match": "Falerio",
+    "source": "https://consorziovinipiceni.com/"
+  },
+  {
+    "id": "terre-offida",
+    "name": "Terre di Offida DOC",
+    "match": "Terre di Offida",
+    "source": "https://consorziovinipiceni.com/"
+  },
+  {
+    "id": "terreni-san-severino",
+    "name": "I Terreni di San Severino DOC",
+    "match": "Terreni di San Severino",
+    "source": "https://imtdoc.it/"
+  },
+  {
+    "id": "marche",
+    "name": "Marche IGT",
+    "match": "Marche IGT",
+    "source": "https://imtdoc.it/"
+  }
+]

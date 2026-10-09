@@ -1,53 +1,5 @@
-/* =============================================================================
-   Cantine delle Marche — Design System "Editorial Gastronomy" (Tailwind v4)
-   Uso: classi bg-primary, bg-secondary, text-main, text-muted, text-wine,
-        bg-wine, border-subtle, font-serif, font-sans.
-   ============================================================================= */
-@import "tailwindcss";
+/* UI kit: stessi token dell'app (src/styles/global.css) + sorgenti degli snippet. */
+@import "../../src/styles/global.css";
 
 @source "../snippets";
 @source "../preview.src.html";
-
-@theme {
-  /* Palette */
-  --color-primary: #fbf9f5;   /* Warm Off-White · carta naturale (sfondo pagina) */
-  --color-secondary: #f3efe6; /* Warm Sand · superfici, placeholder immagini */
-  --color-main: #1a1815;      /* Deep Charcoal · testo principale */
-  --color-muted: #686257;     /* Muted Taupe · testo secondario (5,9:1 su primary) */
-  --color-wine: #5e1914;      /* Burgundy · Rosso Piceno, unico accento */
-  --color-wine-dark: #4a130f; /* hover/pressed dell'accento */
-  --color-subtle: #e6e0d3;    /* hairline 1px per card e contenitori */
-
-  /* Tipografia */
-  --font-serif: "Cormorant Garamond", "Newsreader", ui-serif, Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  /* Regola: angoli al massimo rounded-md */
-  --radius-md: 0.375rem;
-}
-
-@layer base {
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }
-  body {
-    @apply bg-primary font-sans text-main antialiased;
-  }
-  :focus-visible {
-    @apply outline-2 outline-offset-2 outline-wine;
-  }
-}
-
-/* Metadati / badge: uppercase, tracking-widest, text-xs */
-@utility meta {
-  @apply font-sans text-xs font-medium uppercase tracking-widest;
-}
-
-/* Riga orizzontale scorrevole senza scrollbar visibile (chip su mobile) */
-@utility scroll-row {
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}

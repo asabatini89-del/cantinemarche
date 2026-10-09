@@ -1,0 +1,117 @@
+---
+// Barra filtri orizzontale (vedi ui/snippets/filter-bar.html).
+// <form method="get">: funziona senza JS, lo stato vive nell'URL.
+import type { Facet } from '../lib/db';
+import type { CatalogFilters } from '../lib/filters';
+
+interface Props {
+  filters: CatalogFilters;
+  facets: { provincia: Facet[]; denominazione: Facet[]; vitigno: Facet[]; servizio: Facet[] };
+  total: number;
+}
+const { filters, facets, total } = Astro.props;
+
+const panels = [
+  { key: 'provincia', label: 'Provincia', options: facets.provincia },
+  { key: 'denominazione', label: 'Denominazione', options: facets.denominazione },
+  { key: 'vitigno', label: 'Vitigno', options: facets.vitigno },
+] as const;
+const selected = (key: keyof CatalogFilters, value: string) => (filters[key] as string[]).includes(value);
+const groups = (options: Facet[]) => {
+  const map = new Map<string, Facet[]>();
+  for (const o of options) map.set(o.group ?? '', [...(map.get(o.group ?? '') ?? []), o]);
+  return [...map];
+};
+const chip = 'chip snap-start inline-flex h-9 shrink-0 items-center gap-1.5 rounded-md border border-subtle bg-primary px-3 text-sm text-main transition-colors hover:border-main data-[active]:border-wine data-[active]:bg-wine data-[active]:text-primary';
+const option = 'inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-md border border-subtle px-3 py-2 text-sm peer-checked:border-wine peer-checked:bg-wine peer-checked:text-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-wine';
+const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full max-w-none overflow-y-auto rounded-t-md border border-subtle bg-primary p-0 text-main backdrop:bg-main/30 md:inset-0 md:m-auto md:h-fit md:w-[30rem] md:rounded-md';
+---
+<form id="filters" method="get" action="/cantine" role="search" aria-label="Filtra le cantine"
+  class="sticky top-0 z-30 border-b border-subtle bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/85">
+  <div class="mx-auto max-w-6xl px-4 py-3 sm:px-6">
+    <label for="q" class="sr-only">Cerca cantina, comune o vino</label>
+    <div class="relative">
+      <svg class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="9" cy="9" r="6" /><path d="m14 14 4 4" />
+      </svg>
+      <input id="q" name="q" type="search" value={filters.q} inputmode="search" autocomplete="off" enterkeyhint="search"
+        placeholder="Cantina, borgo o vino…"
+        class="h-11 w-full rounded-md border border-subtle bg-primary pl-9 pr-3 text-[15px] text-main placeholder:text-muted/80 focus:border-main focus:outline-none" />
+    </div>
+
+    <div class="scroll-row -mx-4 mt-3 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 sm:mx-0 sm:scroll-px-0 sm:px-0">
+      {panels.map((p) => {
+        const n = (filters[p.key] as string[]).length;
+        return (
+          <button type="button" popovertarget={`f-${p.key}`} class={chip} data-active={n > 0 ? '' : undefined}>
+            <span>{p.label}</span><span data-count class="tabular-nums">{n > 0 ? `· ${n}` : ''}</span>
+            <svg class="size-3.5 opacity-70" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 8 5 5 5-5" /></svg>
+          </button>
+        );
+      })}
+
+      <span class="my-1.5 w-px shrink-0 bg-subtle" aria-hidden="true"></span>
+
+      {facets.servizio.map((s) => (
+        <label class="relative snap-start shrink-0">
+          <input type="checkbox" name="servizio" value={s.value} checked={selected('servizio', s.value)} class="peer sr-only" data-autosubmit />
+          <span class="inline-flex h-9 cursor-pointer items-center rounded-md border border-subtle px-3 text-sm text-main transition-colors hover:border-main peer-checked:border-wine peer-checked:bg-wine peer-checked:text-primary peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-wine">{s.label}</span>
+        </label>
+      ))}
+
+      <a href="/cantine" class="snap-start inline-flex h-9 shrink-0 items-center px-2 text-sm text-muted underline decoration-subtle underline-offset-4 hover:text-main">Azzera</a>
+    </div>
+
+    <p class="meta mt-3 text-[10px] text-muted" aria-live="polite"><span class="text-main">{total}</span> {total === 1 ? 'cantina' : 'cantine'}</p>
+  </div>
+
+  {panels.map((p) => (
+    <div id={`f-${p.key}`} popover class={panelClass}>
+      <fieldset class="p-5">
+        <legend class="meta float-left mb-4 w-full text-muted">{p.label}</legend>
+        <div class="clear-both space-y-5">
+          {groups(p.options).map(([group, options]) => (
+            <div>
+              {group && <p class="meta mb-2 text-[10px] text-wine">{group}</p>}
+              <div class="flex flex-wrap gap-2">
+                {options.map((o) => (
+                  <label class="relative">
+                    <input type="checkbox" name={p.key} value={o.value} checked={selected(p.key, o.value)} class="peer sr-only" />
+                    <span class={option}>{o.label}<span class="tabular-nums opacity-60">{o.count}</span></span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </fieldset>
+      <div class="sticky bottom-0 flex items-center justify-between gap-3 border-t border-subtle bg-primary p-4">
+        <button type="button" popovertarget={`f-${p.key}`} popovertargetaction="hide" class="h-11 px-2 text-sm text-muted hover:text-main">Chiudi</button>
+        <button type="submit" class="h-11 rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Mostra risultati</button>
+      </div>
+    </div>
+  ))}
+</form>
+
+<script>
+  // Progressive enhancement: contatori sui chip e invio immediato dei toggle rapidi.
+  const form = document.getElementById('filters') as HTMLFormElement | null;
+  if (form) {
+    const sync = () => {
+      form.querySelectorAll<HTMLButtonElement>('.chip[popovertarget]').forEach((chip) => {
+        const panel = document.getElementById(chip.getAttribute('popovertarget')!);
+        const n = panel?.querySelectorAll('input:checked').length ?? 0;
+        chip.querySelector('[data-count]')!.textContent = n ? `· ${n}` : '';
+        chip.toggleAttribute('data-active', n > 0);
+      });
+    };
+    // URL puliti: niente "q=" vuoto.
+    form.addEventListener('formdata', (e) => {
+      if (!String(e.formData.get('q') ?? '').trim()) e.formData.delete('q');
+    });
+    form.addEventListener('change', (e) => {
+      sync();
+      if ((e.target as HTMLElement).matches('[data-autosubmit]')) form.requestSubmit();
+    });
+  }
+</script>

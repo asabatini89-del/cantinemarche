@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FilterBar from '../../components/FilterBar.astro';
+import WineryCard from '../../components/WineryCard.astro';
+import { getFacets, listWineries } from '../../lib/db';
+import { PAGE_SIZE, activeFilterCount, catalogUrl, parseFilters } from '../../lib/filters';
+
+const filters = parseFilters(Astro.url);
+const [{ items, total }, facets] = await Promise.all([listWineries(filters), getFacets()]);
+const pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+const filtered = activeFilterCount(filters) > 0;
+
+// Cache edge breve per combinazione di filtri; le pagine filtrate non vanno in indice.
+Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400');
+---
+<BaseLayout
+  title={filters.page > 1 ? `Le cantine · pagina ${filters.page}` : 'Le cantine'}
+  description="Esplora i produttori di vino delle Marche per provincia, denominazione, vitigno e servizi."
+  canonical={filtered ? undefined : catalogUrl(filters)}
+  noindex={filtered}
+>
+  <FilterBar filters={filters} facets={facets} total={total} />
+
+  <div class="mx-auto max-w-6xl px-4 pb-24 pt-8 sm:px-6">
+    <p class="meta text-muted">Le cantine</p>
+    <h1 class="mt-2 font-serif text-4xl font-medium leading-tight sm:text-5xl">Trova la tua cantina.</h1>
+    <p class="mt-3 max-w-xl text-muted">Esplora i produttori delle Marche e scegli dove fermarti.</p>
+
+    {items.length > 0 ? (
+      <ul role="list" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((w) => <li><WineryCard winery={w} /></li>)}
+      </ul>
+    ) : (
+      <div class="mt-8 rounded-md border border-subtle bg-secondary p-6">
+        <p class="font-serif text-2xl">Nessuna cantina con questi filtri.</p>
+        <p class="mt-2 text-muted">Prova un territorio diverso oppure rimuovi un filtro.</p>
+        <a href="/cantine" class="mt-5 inline-flex h-11 items-center rounded-md bg-wine px-5 text-sm font-semibold text-primary hover:bg-wine-dark">Mostra tutte le cantine</a>
+      </div>
+    )}
+
+    {pages > 1 && (
+      <nav aria-label="Pagine" class="mt-10 flex items-center justify-between gap-4 border-t border-subtle pt-6 text-sm">
+        {filters.page > 1
+          ? <a rel="prev" href={catalogUrl(filters, { page: filters.page - 1 })} class="rounded-md border border-subtle px-4 py-2 hover:border-main">← Precedenti</a>
+          : <span></span>}
+        <p class="meta text-[10px] text-muted">Pagina {filters.page} di {pages}</p>
+        {filters.page < pages
+          ? <a rel="next" href={catalogUrl(filters, { page: filters.page + 1 })} class="rounded-md border border-subtle px-4 py-2 hover:border-main">Successive →</a>
+          : <span></span>}
+      </nav>
+    )}
+  </div>
+</BaseLayout>

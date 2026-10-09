@@ -113,6 +113,11 @@ rimborso di un sotto-ordine → refund parziale + transfer reversal di quella ca
 
 Lo stock si decrementa con un `UPDATE … SET stock = stock - ?q WHERE id = ? AND stock >= ?q` dentro un `db.batch()` (transazione D1). Se una riga non viene aggiornata, la riserva fallisce prima del pagamento.
 
+## Dati iniziali
+
+I seed in `db/seed/` sono generati da `scripts/build-seed.mjs` a partire dall'export del portale attuale (`data/export-2026-10-09/`). Ogni cantina conserva la provenienza: `sources_json`, `data_note`, `checked_at`, `coordinate_status` (`approximate` / `osm` / `missing`) e `coordinate_source`. Le anteprime vini conservano `external_id`, `external_url`, `evidence_type` ed `external_image_url`. Quest'ultimo non viene mostrato: le foto restano della cantina.
+Regole e anomalie sono descritte in [`data/import-report.md`](../data/import-report.md).
+
 ## Migrazioni
 
 ```bash
