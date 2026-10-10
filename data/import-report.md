@@ -65,7 +65,11 @@ Nel dato originale la provincia è vuota.
 - nessuno
 
 ### 6. Avvisi
-- nessuno
+- `agriarcuata-soc-coop-agricola`: sito non valido “#”, scartato
+- `az-agr-vallerosa-di-mannocchi-s-c-s-s`: sito non valido “#”, scartato
+- `az-agricola-bastianelli-francesco`: sito non valido “#”, scartato
+- `societa-agricola-capriotti`: sito ripulito da “http://www.societaagricolacapriotti.com target=” a http://www.societaagricolacapriotti.com
+- `tenimenti-le-ginestre-srl`: sito non valido “#”, scartato
 
 ### 7. Cantine ancora senza vini
 72 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 173, none 47. Le schede invitano la cantina ad aggiungerli.

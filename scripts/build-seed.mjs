@@ -157,10 +157,20 @@ function municipalityOf(w) {
 
 const postalCodeOf = (w) => `${w.address} ${w.city}`.match(/\b(6[0-3]\d{3})\b/)?.[1] ?? null;
 const cleanPhone = (p) => (p ?? '').replace(/^\s*(tel\.?\s*(e\s*fax)?|telefono|tel:)\s*/i, '').trim() || null;
-const cleanWebsite = (u) => {
-  const s = (u ?? '').trim();
+// Sito web: si tiene solo il primo token (residui di HTML come ` target=`) e si scartano
+// i segnaposto ("#") che sulla scheda diventerebbero link rotti.
+const cleanWebsite = (u, id) => {
+  const s = (u ?? '').trim().split(/\s+/)[0];
   if (!s) return null;
-  return /^https?:\/\//i.test(s) ? s : `https://${s}`;
+  const url = /^https?:\/\//i.test(s) ? s : `https://${s}`;
+  try {
+    if (new URL(url).hostname.includes('.')) {
+      if (s !== (u ?? '').trim()) warn(`\`${id}\`: sito ripulito da “${u.trim()}” a ${url}`);
+      return url;
+    }
+  } catch {}
+  warn(`\`${id}\`: sito non valido “${u.trim()}”, scartato`);
+  return null;
 };
 
 // Righe senza alcun dato della cantina: nessun contatto, nessuna coordinata,
@@ -226,7 +236,7 @@ for (const w of wineries) {
     alternate_addresses_json: w.alternateAddresses?.length ? JSON.stringify(w.alternateAddresses) : null,
     phone: cleanPhone(w.phone),
     email: w.email?.trim().toLowerCase() || null,
-    website: cleanWebsite(w.website),
+    website: cleanWebsite(w.website, w.id),
     description_md: w.description?.trim() || null,
     status,
     claim_status: 'unclaimed',
