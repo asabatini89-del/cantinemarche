@@ -3605,6 +3605,210 @@
     }
    ],
    "note": "Sito ufficiale: solo vini gia' presenti (Lacrima Superiore, Costa Lisiano, Verdicchio 'Vito'); nessuno spumante/rosato/passito. Pagina 'Winery tour' sul sito (dettagli non nei risultati); DoctorWine: degustazioni e visite su prenotazione."
+  },
+  {
+   "id": "roberto-capecci",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Candida Rosa",
+     "url": "https://www.robertocapecci.com/vini/legni/candida-rosa.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lucifero",
+     "url": "https://www.robertocapecci.com/vini/giare/lucifero.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Fides",
+     "url": "http://robertocapecci.com/vini/legni/fides.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita guidata e degustazione con buffet di prodotti tipici",
+     "kind": "tasting",
+     "description": "Visita guidata della cantina e assaggio di vini e spumanti senza solfiti aggiunti con piccolo buffet di prodotti tipici, su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.robertocapecci.com/cantina/degustazioni.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.robertocapecci.com/cantina/degustazioni.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.robertocapecci.com/cantina/degustazioni.html"
+    }
+   ],
+   "note": "Vini dalle pagine prodotto del sito (linee legni/giare); esclusa pagina 'luce-luna' perche' il nome esatto non e' certo dallo slug. Degustazioni su prenotazione con buffet da robertocapecci.com/cantina/degustazioni.html."
+  },
+  {
+   "id": "sartarelli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata della tenuta e dei vigneti con degustazione",
+     "kind": "tour",
+     "description": "Tour guidato della proprietà e dei vigneti abbinato alla degustazione dei vini, su prenotazione via email o telefono.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.sartarelli.it/contatti/"
+    },
+    {
+     "title": "Museo Sartarelli \"In Verdicchio Veritas\"",
+     "kind": "tour",
+     "description": "Visita al museo aziendale dedicato alla storia del Verdicchio, su richiesta tramite il modulo del sito.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.sartarelli.it/en/sartarelli-museum/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.sartarelli.it/contatti/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.sartarelli.it/contatti/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://shop.sartarelli.it/prodotto/sartarelli-brut/"
+    }
+   ],
+   "note": "Gamma sul sito coincide con vini_presenti (solo kit regalo in piu', esclusi). Visite con degustazione su prenotazione da pagina contatti; museo In Verdicchio Veritas; shop online ufficiale. Eventi datati (concerti, serate) esclusi perche' vecchi."
+  },
+  {
+   "id": "soc-agr-vini-gagliardi-gino-di-gagliardi-lara-e-umberto-snc",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vinigagliardi.it/it/azienda.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vinigagliardi.it/it/azienda.html"
+    }
+   ],
+   "note": "Gamma sul sito (Verdicchio di Matelica, Maccagnano, Ardiale, Ceresi Ciliegiolo, Sangiovese, Merlot) gia' tutta presente. Sito indica visite in cantina e degustazioni su prenotazione (email/telefono), sala degustazione in Via Merloni 5, senza dettagli di format/prezzi."
+  },
+  {
+   "id": "societa-agricola-bucchini-davide-e-romani-stefania-s-s",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina",
+     "kind": "tasting",
+     "description": "Degustazione dei vini biologici aziendali in cantina, prenotabile con modulo online nei giorni del calendario o in altri orari contattando l'azienda.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.aziendaagricolabucchini.it/en/wine-tourism/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.aziendaagricolabucchini.it/en/wine-tourism/"
+    }
+   ],
+   "note": "Nessun vino nuovo (Gualtresco, Barone, metodo classico gia' presenti). Pagina Wine Tourism con prenotazione degustazioni (modulo + contatti, anche in inglese); nessun dettaglio su prezzi/durata."
+  },
+  {
+   "id": "societa-agricola-la-staffa-di-baldi-riccardo-e-c-s-s",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Vini trovati sul sito (La Staffa, Rincrocca, Selva di Sotto, Mai Sentito!, Euphoria) gia' presenti. Nessuna pagina su degustazioni/visite: solo contatti."
+  },
+  {
+   "id": "societa-agricola-villa-lazzarini-srl",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Rosso Giulara",
+     "url": "https://villalazzarini-vini.it/it/vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.villalazzarini-vini.it/contatti/"
+    }
+   ],
+   "note": "Aggiunto Rosso Giulara dalla pagina vini del sito (nessuna scheda di dettaglio). Pagina contatti indica punto vendita a Chiesanuova di Treia; nessuna pagina su degustazioni o visite."
+  },
+  {
+   "id": "tenimenti-spinsanti-spinsanti-catia",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Adino",
+     "url": "https://www.spinsanti.eu/adino",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.spinsanti.eu/contact-us"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.spinsanti.eu/contact-us"
+    }
+   ],
+   "note": "Aggiunti Mamma Elvia (Brut Passerina) e Adino dalle pagine del sito; esclusa pagina 'Rinaldo' (non chiaro se sia un vino). Pagina contatti indica email dedicata a tour e degustazioni, senza dettagli su format/prezzi."
+  },
+  {
+   "id": "tenuta-agricola-la-riserva-di-mattioli-dina",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Marche IGP Passerina",
+     "url": "https://www.tenutalariserva.it/marche-passerina.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutalariserva.it/contatti.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.tenutalariserva.it/contatti.html"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutalariserva.it/contatti.html"
+    }
+   ],
+   "note": "Aggiunta Marche IGP Passerina (ferma, scheda distinta). Non aggiunto 'Vives Passerina Spumante Brut' perche' sta alla stessa pagina passerina-frizzante.html e probabilmente sostituisce la Passerina Frizzante gia' presente. Contatti: degustazioni in cantina, punto vendita con orari, sabato pomeriggio/domenica su appuntamento; nessun format dettagliato."
+  },
+  {
+   "id": "tenuta-barbarossa",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Prodotti sul sito (Castello, Borgo, Rose', Rose' Brut, Brut Spumante, bianco IGP) gia' presenti; Grappa esclusa. Nessuna offerta di degustazione/visita documentata (solo frase descrittiva sui vini e contatti)."
   }
  ]
 }
