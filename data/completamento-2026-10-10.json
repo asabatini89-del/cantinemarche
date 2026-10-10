@@ -3809,6 +3809,2499 @@
    "experiences": [],
    "services": [],
    "note": "Prodotti sul sito (Castello, Borgo, Rose', Rose' Brut, Brut Spumante, bianco IGP) gia' presenti; Grappa esclusa. Nessuna offerta di degustazione/visita documentata (solo frase descrittiva sui vini e contatti)."
+  },
+  {
+   "id": "tenuta-conte-lucangeli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://tenutacontelucangeli.it/prodotti/"
+    }
+   ],
+   "note": "Sito ufficiale: pagina Prodotti con 'prezzo in cantina' e orari ritiro (vendita diretta). Trovato 'Cluentum' (rosso) ma escluso perche' potrebbe coincidere con il Rosso Piceno gia' presente; box 5 litri esclusi. Unico evento trovato (Cantine Aperte 2023) e' vecchio: escluso."
+  },
+  {
+   "id": "tenuta-marino",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://store.tenutamarino.com/"
+    }
+   ],
+   "note": "Store online ufficiale (store.tenutamarino.com) con gli stessi 6 vini gia' presenti (Rinascita, Speranza, Viaggio, Audacia, Metodo Classico e Rose'); olio escluso. Nessuna pagina su degustazioni/visite trovata."
+  },
+  {
+   "id": "tenuta-musone",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Via Rosa",
+     "url": "https://www.tenutamusone.it/it/portfolio/via-rosa/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Incauto",
+     "url": "https://www.tenutamusone.it/vini-colognola/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Buraco",
+     "url": "https://www.tenutamusone.it/vini-colognola/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Musa",
+     "url": "https://www.tenutamusone.it/vini-colognola/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutamusone.it/vini-colognola/"
+    }
+   ],
+   "note": "Sito ufficiale (Cantina Colognola): scheda Via Rosa e pagina vini con Incauto, Buraco, Musa; stessa pagina riporta orari dello spaccio in cantina a Cingoli. Nessuna offerta di degustazione/visita strutturata trovata; pagine del sito datate."
+  },
+  {
+   "id": "tenuta-piano-di-rustano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tour Classic",
+     "kind": "tour",
+     "description": "Passeggiata tra vigneti, borgo e cantina nel palazzo storico, poi degustazione di 3 vini con salumi e formaggi. Su prenotazione.",
+     "duration_min": 90,
+     "price_eur": 20,
+     "url": "https://www.pianodirustano.it/la-tenuta/tour-degustazioni/"
+    },
+    {
+     "title": "Tour Deluxe",
+     "kind": "tour",
+     "description": "Tour privato guidato da un sommelier con degustazione di tutti i 5 vini dell'azienda abbinati a prodotti locali.",
+     "duration_min": 120,
+     "price_eur": 30,
+     "url": "https://www.pianodirustano.it/la-tenuta/tour-degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.pianodirustano.it/la-tenuta/tour-degustazioni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.pianodirustano.it/la-tenuta/tour-degustazioni/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.pianodirustano.it/prodotto/cavalier-vincenzo/"
+    }
+   ],
+   "note": "Sito ufficiale: pagina Tour & Degustazioni con formati Classic (20 euro, 1h30) e Deluxe (30 euro, 2h); shop online con prezzi. Nessun vino nuovo (Essentia e' bevanda vino+miele, esclusa). Wine Resort in sviluppo, ospitalita' non confermata: esclusa."
+  },
+  {
+   "id": "tenuta-seghetti-panichi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessun risultato sul dominio filippopanichi.it; ricerche aperte: solo scheda directory (beverfood) con indirizzo, articolo sul borgo storico visitabile (non legato a degustazioni) e una vecchia bottiglia 1964 in vendita. Niente di verificabile da aggiungere."
+  },
+  {
+   "id": "tenuta-spinelli-di-spinelli-simone",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Caico",
+     "url": "https://www.tenutaspinelli.com/wines",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione di vini presso la Tenuta Spinelli",
+     "kind": "tasting",
+     "description": "Visita a cantina e vigneti, poi assaggio di 5 vini con tagliere di salumi e bruschette di prodotti locali; in italiano o inglese.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://www.winedering.com/it/wine-tasting-experience-at-cantina-spinelli_d4932_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winedering.com/it/wine-tasting-experience-at-cantina-spinelli_d4932_travel"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winedering.com/it/wine-tasting-experience-at-cantina-spinelli_d4932_travel"
+    }
+   ],
+   "note": "Sito ufficiale (pagina wines): aggiunto il rosso Caico. Esperienza su Winedering (25 euro, 1h30, lun-sab, prenotazione 2 giorni prima), con recensioni recenti (2025)."
+  },
+  {
+   "id": "terre-di-serrapetrona-societa-agricola-semplice",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Blink",
+     "url": "https://www.terrediserrapetrona.it/it/i-nostri-vini/blink.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Terre da Mare",
+     "url": "https://www.terrediserrapetrona.it/en/shop/wine-terre-da-mare/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Terre di Serrapetrona Discovery",
+     "kind": "tour",
+     "description": "Esperienza d'ingresso in tenuta prenotabile online o per telefono; disponibile in italiano, inglese, tedesco e spagnolo.",
+     "duration_min": 60,
+     "price_eur": 15,
+     "url": "https://www.terrediserrapetrona.it/it/enoturismo/esperienze.html"
+    },
+    {
+     "title": "Vernaccia Nera di Serrapetrona Experience",
+     "kind": "tour",
+     "description": "Passeggiata in vigna, visita alla cantina e degustazione di 5 Vernaccia Nera in sala vista vigneti, con snack secco e olio della tenuta.",
+     "duration_min": 75,
+     "price_eur": 20,
+     "url": "https://www.terrediserrapetrona.it/it/enoturismo/esperienze/item/284-vernaccia-nera-di-serrapetrona-experience.html"
+    },
+    {
+     "title": "Tenuta Stefano Graidi Full Immersion",
+     "kind": "tour",
+     "description": "Esperienza piu' completa in tenuta, prenotabile online o per telefono; disponibile in italiano, inglese, tedesco e spagnolo.",
+     "duration_min": 90,
+     "price_eur": 30,
+     "url": "https://www.terrediserrapetrona.it/it/enoturismo/esperienze.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.terrediserrapetrona.it/it/enoturismo/esperienze/item/284-vernaccia-nera-di-serrapetrona-experience.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.terrediserrapetrona.it/it/enoturismo/esperienze/item/284-vernaccia-nera-di-serrapetrona-experience.html"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.terrediserrapetrona.it/it/shop.html"
+    }
+   ],
+   "note": "Sito ufficiale: pagina Esperienze con 3 formati (15/20/30 euro), shop online (solo Italia), nuove etichette Blink e Terre da Mare. VernacciaNera Dolce non aggiunto (= Vernaccia Dolce gia' presente). Ristorante e camere dell'agriturismo da news del sito, forse datate; eventi 2017 esclusi."
+  },
+  {
+   "id": "veneranda-vite",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale (pagina Products) elenca solo i 6 vini gia' presenti; nessuno shop ne' info su visite. Ricerca aperta: solo 'La Veneranda' di Montefalco (Umbria), omonimia scartata."
+  },
+  {
+   "id": "venturi-roberto",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tour della cantina e degustazione di vini",
+     "kind": "tour",
+     "description": "Visita della cantina con assaggio a scelta tra vini rossi, bianchi, frizzanti, rosati e da dessert; in italiano o inglese.",
+     "duration_min": 30,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/visita-della-cantina-e-degustazione-di-vini-presso-la-cantina-roberto-venturi/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/visita-della-cantina-e-degustazione-di-vini-presso-la-cantina-roberto-venturi/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/visita-della-cantina-e-degustazione-di-vini-presso-la-cantina-roberto-venturi/"
+    }
+   ],
+   "note": "Sito ufficiale con poche pagine indicizzate (solo home: Qudi', Balsamino, gia' presenti). Esperienza da winetourism.com (circa 30 min, IT/EN, prezzo non indicato), recensioni fino al 2024. Nessun vino nuovo verificabile."
+  },
+  {
+   "id": "verser-cantina-e-vigneti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tasting on the terrace",
+     "kind": "tasting",
+     "description": "Visita agli impianti di produzione e degustazione guidata di 3 vini con prodotti da forno di grani locali.",
+     "duration_min": 60,
+     "price_eur": 20,
+     "url": "https://www.agricolaverser.it/en"
+    },
+    {
+     "title": "Full winery tour and tasting",
+     "kind": "tour",
+     "description": "Visita alla cantina, passeggiata tra i filari e degustazione guidata di 5 vini abbinati a sapori locali; da 2 persone, su prenotazione.",
+     "duration_min": 120,
+     "price_eur": 40,
+     "url": "https://www.agricolaverser.it/en"
+    },
+    {
+     "title": "Journey into Vernaccia nera",
+     "kind": "tour",
+     "description": "Cantina, vigna e degustazione guidata, itinerario nel borgo di Serrapetrona e pranzo in un ristorante locale con i vini; da 4 persone.",
+     "duration_min": 210,
+     "price_eur": 80,
+     "url": "https://www.agricolaverser.it/en"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.agricolaverser.it/en"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.agricolaverser.it/en"
+    }
+   ],
+   "note": "Sito ufficiale (pagina EN): 3 esperienze con prezzi e durate, in italiano e inglese. Nessun vino nuovo oltre quelli gia presenti."
+  },
+  {
+   "id": "villa-forano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata con degustazione",
+     "kind": "tour",
+     "description": "Visita guidata della tenuta che si conclude con la degustazione dei vini abbinati a prodotti regionali, su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fattoriaforano.it/en/the-cellar/"
+    },
+    {
+     "title": "Agriturismo Fattoria Forano",
+     "kind": "stay",
+     "description": "Casali ottocenteschi restaurati in tenuta (Casa Le Piagge 8+2 posti, Casa Montelipa 8 posti) a pochi passi dalla cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fattoriaforano.it/en/lagriturismo/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fattoriaforano.it/en/the-cellar/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.fattoriaforano.it/en/the-cellar/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.fattoriaforano.it/en/lagriturismo/"
+    }
+   ],
+   "note": "Sito ufficiale: visita guidata con degustazione su prenotazione e agriturismo (Casa Le Piagge, Casa Montelipa). Nessun vino nuovo (solo acquavite, esclusa). Cantine Aperte solo fino al 2024: escluso."
+  },
+  {
+   "id": "vini-montesanto",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Perlage Verde",
+     "url": "https://www.vinimontesanto.com/prodotto.php?id=4",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Perlage Rosa",
+     "url": "https://www.vinimontesanto.com/prodotti.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Brut",
+     "url": "https://www.vinimontesanto.com/prodotti.php",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: pagina prodotto Perlage Verde e catalogo bottiglie con Perlage Rosa e Spumante Brut (bag-in-box esclusi). Nessuna pagina su degustazioni o visite."
+  },
+  {
+   "id": "antica-cantina-sant-amico",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tour guidati e degustazioni vino e olio",
+     "kind": "tour",
+     "description": "Visita guidata della cantina storica con degustazione di vino e olio; disponibile anche come buono regalo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.anticacantinasantamico.it/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.anticacantinasantamico.it/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.anticacantinasantamico.it/"
+    }
+   ],
+   "note": "Sito ufficiale: tour guidati e degustazioni vino e olio (anche buono regalo). Nessun vino nuovo (grappa e olio esclusi). Pagine matrimoni/eventi privati non considerate."
+  },
+  {
+   "id": "azienda-agricola-ballarini-leonardo",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "CONERO DOCG Riserva \"Melodie del Conero\"",
+     "url": "http://www.ballarinivini.it/conero-docg-riserva-melodie-del-conero.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione con visita in cantina",
+     "kind": "tasting",
+     "description": "Assaggio dei vini aziendali, liquori e confetture con visita della cantina, tutti i giorni negli orari di apertura; gruppi oltre 10 persone su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://www.ballarinivini.it/wine-shop.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "http://www.ballarinivini.it/wine-shop.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "http://www.ballarinivini.it/wine-shop.html"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "http://www.ballarinivini.it/wine-shop.html"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Conero Riserva Melodie del Conero (pagina del vecchio sito); wine shop con degustazioni e visita cantina negli orari di apertura. Rosato citato solo in menu senza pagina: escluso; confetture, liquori e olio esclusi."
+  },
+  {
+   "id": "bisci",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Entry tasting",
+     "kind": "tasting",
+     "description": "Degustazione guidata d'ingresso dei vini in cantina, su prenotazione via form, email o telefono.",
+     "duration_min": 30,
+     "price_eur": 15,
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    },
+    {
+     "title": "Classic",
+     "kind": "tour",
+     "description": "Visita della vigna e della cantina seguita da degustazione guidata dei vini.",
+     "duration_min": 50,
+     "price_eur": 25,
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    },
+    {
+     "title": "Classic con prodotti tipici",
+     "kind": "tasting",
+     "description": "Degustazione Classic con abbinamento di specialità locali come formaggi e salumi.",
+     "duration_min": 60,
+     "price_eur": 35,
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    },
+    {
+     "title": "Elite",
+     "kind": "tasting",
+     "description": "Degustazione guidata di alta gamma con i vini Senex e Vigneto Fogliano.",
+     "duration_min": 50,
+     "price_eur": 50,
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://bisci.it/en/enoturismo-degustazioni-bisci/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Vigneto Fogliano; pagina enoturismo con 4 degustazioni (15-50 euro) prenotabili via form, orari lun-sab. Cantine Aperte 2023 escluso perche vecchio."
+  },
+  {
+   "id": "cameli-irene",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione con prodotti tipici del Piceno",
+     "kind": "tasting",
+     "description": "Degustazione dei vini aziendali accompagnata da prodotti tipici del Piceno, in cantina a Castorano.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vinorossomarche.it/?lang=en"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vinorossomarche.it/?lang=en"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vinorossomarche.it/?lang=en"
+    }
+   ],
+   "note": "Sito ufficiale: degustazioni con prodotti tipici e vendita in cantina. Nessun vino nuovo certo: 'Rosso Piceno DOC Conte' solo su pagina del vecchio sito (annata 2010), pagina 'Red' ambigua, 'Mamma Milia' senza URL: esclusi. Cene di giugno 2024 escluse (passate)."
+  },
+  {
+   "id": "cantine-mecella",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Colle Malvano Rosso Piceno DOC",
+     "url": "https://www.cantinemecella.com/en/portfolio-item/rosso-piceno-doc-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sainale Verdicchio di Matelica DOC",
+     "url": "https://www.cantinemecella.com/en/wines/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Preludio Verdicchio di Matelica DOC",
+     "url": "https://www.cantinemecella.com/en/wines/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.cantinemecella.com/en/home-english/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinemecella.com/en/contacts/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunti Colle Malvano (pagina prodotto), Sainale e Preludio (pagina vini). Solo invito generico a visitare la cantina e acquisto in sede; nessuna esperienza strutturata con dettagli."
+  },
+  {
+   "id": "capinera",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "GOTTIFREDO Colli Maceratesi Ribona DOC Passito",
+     "url": "https://www.capinera.com/10-passito",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "LA CAPINERA SELEZIONE Marche Chardonnay IGT",
+     "url": "https://www.capinera.com/7-vino-bianco",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale (shop, homepage 'Coming Soon'): aggiunti passito Gottifredo e La Capinera Selezione Chardonnay. Nessuna informazione su degustazioni o visite."
+  },
+  {
+   "id": "collestefano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.collestefano.com/en/contacts/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.collestefano.com/en/contacts/"
+    }
+   ],
+   "note": "Sito ufficiale: gamma gia completa in catalogo (nessun vino nuovo); pagina contatti indica visite e acquisti diretti su appuntamento via email, senza esperienze strutturate."
+  },
+  {
+   "id": "collina-delle-fate",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Adagio Esperienza",
+     "url": "https://www.collinadellefate.com/prodotto/adagio-esperienza/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Adagio I Atto",
+     "url": "https://www.collinadellefate.com/prodotto/adagio-i-atto/?lang=en",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "San Venanzio · L'anima del luogo",
+     "kind": "tour",
+     "description": "Visita della cantina con due calici a scelta tra le etichette, degustazione di oli extravergini e pane artigianale.",
+     "duration_min": null,
+     "price_eur": 25,
+     "url": "https://www.collinadellefate.com/tour-e-degustazione-con-tagliere/"
+    },
+    {
+     "title": "Filare · Dove nasce il vino",
+     "kind": "tour",
+     "description": "Visita in cantina, due calici e oli extravergini accompagnati da un tagliere di specialità del territorio.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.collinadellefate.com/tour-e-degustazione-essenziale/"
+    },
+    {
+     "title": "Decanto · Il tempo del silenzio",
+     "kind": "tour",
+     "description": "Visita guidata della cantina con quattro vini selezionati, oli extravergini aziendali e tagliere di prodotti locali.",
+     "duration_min": null,
+     "price_eur": 45,
+     "url": "https://www.collinadellefate.com/prodotto/coupon-esperienza-decanto/"
+    },
+    {
+     "title": "La Nostra Identità · La storia nel vino",
+     "kind": "tasting",
+     "description": "Quattro calici dei vini più rappresentativi con una selezione di oli extravergini e pane locale.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.collinadellefate.com/tour-e-degustazione-vino-olio/"
+    },
+    {
+     "title": "Tour e Cena Degustazione",
+     "kind": "meal",
+     "description": "Visita alla cantina seguita da cena degustazione, acquistabile anche come coupon regalo.",
+     "duration_min": null,
+     "price_eur": 60,
+     "url": "https://www.collinadellefate.com/categoria-prodotto/esperienze/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.collinadellefate.com/categoria-prodotto/esperienze/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.collinadellefate.com/tour-e-degustazione-vini-olio/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.collinadellefate.com/categoria-prodotto/esperienze/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunti Adagio Esperienza e Adagio I Atto; 5 esperienze (degustazioni 11-13 e 17-19), prezzi solo dove coerenti. Prezzi Filare/La Nostra Identita discordanti IT/EN: omessi. Pagina 'Dimora' senza dettagli: ospitalita non segnata."
+  },
+  {
+   "id": "de-leyva-di-leva-davide-az-agr",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Anforia Marche Trebbiano",
+     "url": "https://aziendagricoladeleyva.it/copia-di-identita",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita in cantina con degustazione",
+     "kind": "tour",
+     "description": "Visita della cantina con degustazione di quattro vini; acquistabile anche come buono regalo.",
+     "duration_min": null,
+     "price_eur": 25,
+     "url": "https://www.aziendagricoladeleyva.it/voucherdegustazione"
+    },
+    {
+     "title": "Tour dell'azienda con degustazione",
+     "kind": "tour",
+     "description": "Tour completo dell'azienda agricola che termina con visita in cantina e degustazione finale, nei weekend con prenotazione da calendario.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.aziendagricoladeleyva.it/de/prenota-ora"
+    },
+    {
+     "title": "Mangiare in cantina",
+     "kind": "meal",
+     "description": "Menu in cantina con degustazione dei vini, dal giovedì alla domenica, con prenotazione del tavolo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://aziendagricoladeleyva.it/mangiare-in-cantina"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.aziendagricoladeleyva.it/voucherdegustazione"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.aziendagricoladeleyva.it/de/prenota-ora"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://aziendagricoladeleyva.it/mangiare-in-cantina"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Anforia (Marche Trebbiano, pagina vini); visita con degustazione 4 vini (25 euro), tour su prenotazione nei weekend, menu in cantina gio-dom. Eventi singoli datati (apericene, cene con delitto, festival) esclusi."
+  },
+  {
+   "id": "fattoria-colmone-della-marca",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Passeggiata in vigna e visita in cantina",
+     "kind": "tour",
+     "description": "Passeggiata guidata nei vigneti aziendali e visita della cantina con spiegazione della vinificazione, su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    },
+    {
+     "title": "Degustazione in cantina",
+     "kind": "tasting",
+     "description": "Degustazione dei vini in cantina, aperta dal lunedì al sabato tutto l'anno, da prenotare via email.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    },
+    {
+     "title": "Vendemmia didattica",
+     "kind": "event",
+     "description": "Attività didattiche come la vendemmia didattica, proposte in alcuni periodi dell'anno.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.fattoriacolmone.it/it/content/14-enoturismo"
+    }
+   ],
+   "note": "Sito ufficiale, pagina Enoturismo: visite in vigna e cantina su prenotazione, degustazioni e vendita lun-sab, vendemmia didattica stagionale. Nessun vino nuovo oltre il catalogo presente."
+  },
+  {
+   "id": "fattoria-dezi",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Servigliano P. Falerio Pecorino DOC",
+     "url": "https://www.fattoriadezi.com/en/portfolio-item/servigliano-p-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Raro Marche Bianco IGT",
+     "url": "https://www.fattoriadezi.com/en/buy-our-products/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fattoriadezi.com/contatti/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunti Servigliano P. (Pecorino) e Raro (Malvasia, 48 mesi in legno). Pagina contatti invita a degustazioni senza dettagli; nessuna esperienza strutturata. Ricerca aperta senza risultati pertinenti."
+  },
+  {
+   "id": "la-calcinara",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Mun",
+     "url": "https://www.lacalcinara.it/mun/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "http://www.lacalcinara.it/ENG/contacts.html"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "http://www.lacalcinara.it/ENG/contacts.html"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto il rosato Mun. Visite guidate e acquisti su contatto telefonico/email (pagina contatti EN), senza prezzi ne orari: nessuna esperienza strutturata."
+  },
+  {
+   "id": "la-villa-mergo",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Frizzante N.2",
+     "url": "https://www.lavillamergo.eu/post/was-bedeuten-n-1-und-n-2",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Vino in Giardino",
+     "kind": "tasting",
+     "description": "Bottiglia o calice con olive, formaggio o salame da gustare nel giardino della cantina quando i titolari sono presenti; avvisare prima.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.lavillamergo.eu/shop.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.lavillamergo.eu/shop.html"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.lavillamergo.eu/shop.html"
+    }
+   ],
+   "note": "Sito ufficiale (in tedesco): aggiunto Frizzante N.2 (rosato, citato nel post che spiega N.1/N.2). Vendita e degustazione in loco e 'Vino in Giardino' previo contatto. Post sul Pet Nat non chiaro come etichetta: escluso."
+  },
+  {
+   "id": "le-vigne-di-clementina-fabi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione vino e cibo in cantina",
+     "kind": "tasting",
+     "description": "Degustazione dei vini nella cantina di proprietà in abbinamento a prodotti tipici marchigiani, per gli ospiti dell'agriturismo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.levignediclementinafabi.it/agriturismo/"
+    },
+    {
+     "title": "Agriturismo \"Le Vigne\" a Montedinove",
+     "kind": "stay",
+     "description": "Due appartamenti con più camere accanto alla cantina, con drink di benvenuto a base dei vini aziendali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.levignediclementinafabi.it/montedinove/"
+    },
+    {
+     "title": "Agriturismo \"Le Vigne\" a Castignano",
+     "kind": "stay",
+     "description": "Seconda struttura ricettiva in Contrada Rufiano a Castignano, con degustazioni su richiesta.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://www.levignediclementinafabi.it/agriturismo-le-vigne/castignano/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.levignediclementinafabi.it/agriturismo/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.levignediclementinafabi.it/montedinove/"
+    }
+   ],
+   "note": "Sito ufficiale: agriturismo a Montedinove e Castignano con degustazioni vino/cibo. Nessun vino nuovo certo: 'Cerì' e 'Merlot Marche' citati solo come voci di menu/archivio, Passerina Brut = spumante gia presente. Eventi 2023 esclusi."
+  },
+  {
+   "id": "luigi-giusti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tasting experience",
+     "kind": "tasting",
+     "description": "Degustazione di 5 vini con salumi e formaggi locali, biscotti con vino da dessert e visita di cantina e vigna; gruppi fino a 6 persone.",
+     "duration_min": null,
+     "price_eur": 25,
+     "url": "https://cantinaluigigiusti.it/en/experience-en/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://cantinaluigigiusti.it/en/experience-en/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://cantinaluigigiusti.it/en/experience-en/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://cantinaluigigiusti.it/en/contact-us/"
+    }
+   ],
+   "note": "Sito ufficiale: pagina Experience con degustazione 5 vini e visita cantina/vigna a 25 euro (prenotazione tel/email); shop a Castelferretti. Nessun vino nuovo oltre il catalogo presente."
+  },
+  {
+   "id": "mancini",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ghibellino",
+     "url": "https://manciniwines.it/prodotti/ghibellino/index.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vigneti Mancini",
+     "url": "https://manciniwines.it/prodotti/vigneti-mancini-1/index.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visits and tasting",
+     "kind": "tour",
+     "description": "Percorso di visita tra la storia della famiglia e la viticoltura marchigiana, con assaggio finale dei vini.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.manciniwines.it/en/index.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://manciniwines.it/en/punto-vendita/index.html"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunti Ghibellino e Vigneti Mancini (pagine prodotto); visita con degustazione citata sul sito (prezzi/durata non indicati); punto vendita in via Pianello."
+  },
+  {
+   "id": "montebove-soc-agricola",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione da Tenuta Santori",
+     "kind": "tasting",
+     "description": "Passeggiata in vigna, visita della cantina e degustazione dei vini principali con abbinamenti di prodotti locali; prenotazione obbligatoria.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://tenutasantori.it/degustazioni-da-tenuta-santori/?lang=en"
+    },
+    {
+     "title": "Relais Tenuta Santori",
+     "kind": "stay",
+     "description": "Relais in azienda con sei camere con bagno privato e aria condizionata, alcune con terrazza, e piscina a sfioro panoramica.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://relais.tenutasantori.it/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://tenutasantori.it/degustazioni-da-tenuta-santori/?lang=en"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://tenutasantori.it/degustazioni-da-tenuta-santori/?lang=en"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://relais.tenutasantori.it/"
+    }
+   ],
+   "note": "Sito tenutasantori.it: nessun vino nuovo (il Passerina Brut 'Luna' coincide con Passerina Spumante Brut); pagina degustazioni su prenotazione e relais con 6 camere e piscina."
+  },
+  {
+   "id": "pievalta",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita completa con degustazione",
+     "kind": "tour",
+     "description": "Passeggiata in vigna, visita della cantina e degustazione guidata di cinque vini, in italiano o inglese.",
+     "duration_min": 120,
+     "price_eur": 25,
+     "url": "https://pievalta.it/en/visits-and-wine-tastings/"
+    },
+    {
+     "title": "Smart Tasting",
+     "kind": "tasting",
+     "description": "Degustazione guidata breve dei cinque vini aziendali; gratuita ogni 100 euro di acquisti.",
+     "duration_min": 30,
+     "price_eur": 10,
+     "url": "https://pievalta.it/en/visits-and-wine-tastings/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://pievalta.it/en/visits-and-wine-tastings/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://pievalta.it/en/visits-and-wine-tastings/"
+    }
+   ],
+   "note": "Sito pievalta.it: aggiunto il passito Curina (citato nella pagina premi, annata 2016); pagina visite con visita completa 25 euro/2h e Smart Tasting 10 euro/30 min."
+  },
+  {
+   "id": "ronconi-ex-badiali-candelaresi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito cantinaronconi.it: solo vini già presenti (più grappa, esclusa); unico evento trovato è Cantine Aperte 2023 (vecchio, escluso). Ricerca aperta senza risultati pertinenti."
+  },
+  {
+   "id": "sabbionare",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione curiosa",
+     "kind": "tasting",
+     "description": "Degustazione guidata di due vini (Il Filetto e Ribotta) con prodotti del territorio.",
+     "duration_min": 45,
+     "price_eur": 10,
+     "url": "https://www.sabbionare.it/prenotazione/"
+    },
+    {
+     "title": "Degustazione appassionata",
+     "kind": "tasting",
+     "description": "Degustazione di quattro vini (Il Filetto, Sabbionare, Ribotta, Cromia) abbinati a prodotti locali.",
+     "duration_min": 90,
+     "price_eur": 18,
+     "url": "https://www.sabbionare.it/prenotazione/"
+    },
+    {
+     "title": "Degustazione suggestiva",
+     "kind": "tasting",
+     "description": "Degustazione di tutta la gamma con abbinamenti creativi a piatti locali, minimo 6 persone.",
+     "duration_min": 120,
+     "price_eur": 28,
+     "url": "https://www.sabbionare.it/prenotazione/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.sabbionare.it/prenotazione/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.sabbionare.it/shop/categoria-prodotto/vini/"
+    }
+   ],
+   "note": "Sito sabbionare.it: nessun vino nuovo (Visciola esclusa, vino aromatizzato); pagina prenotazione con tre degustazioni (10/18/28 euro), prenotazione con 2 giorni di anticipo; shop online."
+  },
+  {
+   "id": "santa-liberata-di-savini-giorgio-az-agricola",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Sor Domè",
+     "url": "https://www.vinisantaliberata.it/en/prodotto/sor-dome/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vinisantaliberata.it/en/shop-en/"
+    }
+   ],
+   "note": "Sito vinisantaliberata.it: aggiunto Sor Domè (Passerina); esclusi bag-in-box e collezioni regalo; pagina Tour con solo testo segnaposto, nessuna esperienza documentata; shop online e wine shop a Lido di Fermo."
+  },
+  {
+   "id": "tenute-priori-galdelli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://prioriegaldelli.it/shop/"
+    }
+   ],
+   "note": "Sito prioriegaldelli.it: shop online con soli vini già presenti (bag-in-box escluso); ricerca aperta su degustazioni/visite senza risultati pertinenti."
+  },
+  {
+   "id": "tenute-urani",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione di tre vini",
+     "kind": "tasting",
+     "description": "Assaggio di tre vini con pane di grani antichi e olio extravergine di produzione propria.",
+     "duration_min": 120,
+     "price_eur": 20,
+     "url": "https://www.tenuteurani.it/calendario-eventi"
+    },
+    {
+     "title": "Degustazione completa",
+     "kind": "tour",
+     "description": "Visita guidata in azienda con degustazione di cinque vini abbinati al Gran Tagliere di prodotti locali.",
+     "duration_min": 180,
+     "price_eur": 30,
+     "url": "https://www.tenuteurani.it/calendario-eventi"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenuteurani.it/calendario-eventi"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.tenuteurani.it/calendario-eventi"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenuteurani.it/category/all-products"
+    }
+   ],
+   "note": "Sito tenuteurani.it: shop con soli vini già presenti; pagina Degustazioni ed Eventi con due formule (20 euro/2h e 30 euro/3h con visita), più eventi privati su richiesta."
+  },
+  {
+   "id": "vara-pesaresi-vignaioli",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Vanesia",
+     "url": "https://varavignaioli.it/i-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "La Vela",
+     "url": "https://varavignaioli.it/i-vini/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://varavignaioli.it/en/"
+    }
+   ],
+   "note": "Sito varavignaioli.it: aggiunti Vanesia (rosato spumante) e La Vela (rosato) dalla pagina I vini; degustazioni serali stagionali estate 2026 (stagione conclusa, da riconfermare)."
+  },
+  {
+   "id": "vigneti-vallorani",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Octavum",
+     "url": "https://www.vignetivallorani.com/en/vini/octavum/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Terroir Piceno",
+     "kind": "tour",
+     "description": "Visita a vigneti e cantina con degustazione di 4 vini e dell'olio extravergine aziendale; in italiano, inglese o francese.",
+     "duration_min": 90,
+     "price_eur": 20,
+     "url": "https://www.vignetivallorani.com/en/degustazioni/"
+    },
+    {
+     "title": "Elisir",
+     "kind": "tour",
+     "description": "Visita a vigneti e cantina con degustazione di 6 vini e dell'olio extravergine aziendale nella sala panoramica.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://www.vignetivallorani.com/en/degustazioni/"
+    },
+    {
+     "title": "Riserve",
+     "kind": "tour",
+     "description": "Visita a vigneti e cantina con degustazione di 6 vini più 2 riserve e dell'olio extravergine aziendale.",
+     "duration_min": 90,
+     "price_eur": 35,
+     "url": "https://www.vignetivallorani.com/en/degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vignetivallorani.com/en/degustazioni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vignetivallorani.com/en/degustazioni/"
+    }
+   ],
+   "note": "Sito vignetivallorani.com: aggiunto il rosato Octavum; pagina degustazioni con tre percorsi (20/25/35 euro, circa 1h30, lun-sab). Eventi singoli (picnic 2016, serata 18 settembre) esclusi perché passati."
+  },
+  {
+   "id": "vini-accattoli",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Amphorae \"Il Plenilunio\" IGT Marche Rosso",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Amphorae \"Il Novilunio\" IGT Marche Bianco",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lavita IGT Marche Bianco",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Miracolo Metodo Ancestrale Rosé",
+     "url": "https://shop.viniaccattoli.it/collections/spumanti",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini"
+    }
+   ],
+   "note": "Shop ufficiale shop.viniaccattoli.it: aggiunti Plenilunio, Novilunio, Lavita e Miracolo; esclusi i vini sfusi da 1 litro generici. Nessuna esperienza documentata (solo recensioni generiche su Wanderlog)."
+  },
+  {
+   "id": "ama-aquilone-coop-sociale",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Contadino per un giorno",
+     "kind": "tour",
+     "description": "Visita guidata della fattoria tra colline, animali, orto, mulino e forno, con merenda finale a base di prodotti AMA terra.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "title": "Bio Osteria AMA terra",
+     "kind": "meal",
+     "description": "Osteria della fattoria, solo su prenotazione, con pranzi e cene a base dei prodotti aziendali; fino a 30 posti interni e 100 all'aperto.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://amaterra.coop/esperienze/"
+    }
+   ],
+   "services": [
+    {
+     "id": "ristorazione",
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.amaterra.coop/punto-bio"
+    }
+   ],
+   "note": "Sito amaterra.coop: nessun vino nuovo; esperienze 'Contadino per un giorno' e Bio Osteria su prenotazione (degustazioni ed eventi enogastronomici); Punto Bio per la vendita."
+  },
+  {
+   "id": "azienda-agricola-simone-capecci",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito simonecapecci.it: solo vini già presenti (Ciprea, Mvria, Picus, Tufilla); nessuna pagina di degustazioni/visite, ricerca aperta senza offerte documentate."
+  },
+  {
+   "id": "bio-fattoria-sociale-ama-terra",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Contadino per un giorno",
+     "kind": "tour",
+     "description": "Visita guidata per famiglie, gruppi e scuole tra colline, animali, laboratori, mulino e forno, con merenda di prodotti AMA terra.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "title": "Bio Osteria AMA terra",
+     "kind": "meal",
+     "description": "Osteria della fattoria aperta solo su prenotazione per degustazioni, eventi enogastronomici, pranzi e cene; fino a 100 posti con il dehor.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://amaterra.coop/esperienze/"
+    }
+   ],
+   "services": [
+    {
+     "id": "ristorazione",
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://amaterra.coop/esperienze/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.amaterra.coop/punto-bio"
+    }
+   ],
+   "note": "Stessa realtà e dominio di ama-aquilone-coop-sociale (amaterra.coop): nessun vino nuovo; esperienze 'Contadino per un giorno' e Bio Osteria su prenotazione; Punto Bio per la vendita."
+  },
+  {
+   "id": "bonci",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Spumante Brut Metodo Martinotti \"Lungo\"",
+     "url": "https://www.vallerosa-bonci.com/prodotto/bonci/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita in cantina e vigneti con degustazione guidata",
+     "kind": "tour",
+     "description": "Visita delle tre sale della cantina e dei vigneti vicini, con degustazione guidata finale; tutto l'anno su appuntamento.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vallerosa-bonci.com/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vallerosa-bonci.com/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vallerosa-bonci.com/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vallerosa-bonci.com/negozio/"
+    }
+   ],
+   "note": "Sito vallerosa-bonci.com: aggiunto lo spumante Martinotti 'Lungo'; visite e degustazioni su appuntamento dalla home; prezzi solo in brochure PDF 2017 (vecchia, non usati)."
+  },
+  {
+   "id": "cantina-dei-monti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Casa Sacciofa",
+     "kind": "stay",
+     "description": "Villa per vacanze proposta dal sito della cantina nella sezione dedicata al soggiorno.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.cantina-dei-monti.com/"
+    }
+   ],
+   "services": [
+    {
+     "id": "ospitalita",
+     "url": "https://www.cantina-dei-monti.com/"
+    }
+   ],
+   "note": "Sito cantina-dei-monti.com (in tedesco): solo vini già presenti; il sito rimanda alla villa vacanze Casa Sacciofa; voce 'Degustation' senza contenuti visibili, quindi degustazioni non segnate."
+  },
+  {
+   "id": "cantina-macri",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Vino IGT Marche Rosato Biologico",
+     "url": "https://www.cantinamacri.it/negozio/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinamacri.it/chi-siamo/"
+    }
+   ],
+   "note": "Sito cantinamacri.it: aggiunto il Rosato IGT Marche Biologico dallo shop (esclusi conserve, confetture, olio); negozio aziendale a Castel Colonna; nessuna esperienza trovata."
+  },
+  {
+   "id": "cantina-san-michele-a-ripa",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Palmento Marche Rosso Bio",
+     "url": "https://www.sanmichelearipa.com/en/pagine/90681A60-C4B9-11EE-8699-57EABF908C71,16C4C52C-C4BA-11EE-9C54-4FE9BF908C71,30E27EC2-C4D8-11EE-B84B-4804D16AB79A/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione Classic",
+     "kind": "tasting",
+     "description": "Degustazione di 3 vini su prenotazione, minimo 4 persone; sconto del 10% sull'acquisto di bottiglie.",
+     "duration_min": 60,
+     "price_eur": 25,
+     "url": "https://www.sanmichelearipa.com/it/degustazioni/"
+    },
+    {
+     "title": "Degustazione Superior",
+     "kind": "tasting",
+     "description": "Degustazione di 4 vini accompagnata da un tagliere di prodotti locali, su prenotazione.",
+     "duration_min": 90,
+     "price_eur": 40,
+     "url": "https://www.sanmichelearipa.com/it/degustazioni/"
+    },
+    {
+     "title": "Degustazione Excellence",
+     "kind": "tour",
+     "description": "Visita della cantina e degustazione di 6 vini con tagliere di prodotti locali, su prenotazione.",
+     "duration_min": 120,
+     "price_eur": 50,
+     "url": "https://www.sanmichelearipa.com/it/degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.sanmichelearipa.com/it/degustazioni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.sanmichelearipa.com/it/degustazioni/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.sanmichelearipa.com/en/product/palmento-marche-igt-rosso/"
+    }
+   ],
+   "note": "Sito sanmichelearipa.com: aggiunto Palmento Marche Rosso Bio; pagina degustazioni con tre formule (25/40/50 euro, 60-120 min), su prenotazione, acconto 50%; shop online."
+  },
+  {
+   "id": "coppacchioli-tattini",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Spumante Metodo Classico millesimato Pinot Noir Rosé",
+     "url": "https://www.coppacchiolitattini.com/vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Pagina VINI del sito: aggiunto il Pinot Noir Rosé metodo classico. Nessuna esperienza/visita documentata nei risultati."
+  },
+  {
+   "id": "la-fontursia",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.lafontursiashop.com/en/"
+    }
+   ],
+   "note": "Shop online della cantina: solo vini gia presenti (Crivellino, Donna Bianca, Fontursio, Passito, Cavalieri Crociati). Esperienze: solo un evento ciclistico del 2023 e recensioni Wanderlog, scartati."
+  },
+  {
+   "id": "lumavite",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: solo gli 8 vini gia presenti. Scheda italysfinestwines.it indica degustazioni in sede e vendita diretta; nessuna esperienza strutturata trovata."
+  },
+  {
+   "id": "pantaleone",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito pantaleonewine.com e Callmewine: solo vini gia presenti (Chicca, Atto I, La Ribalta, Onirocep, Boccascena, Sipario, Pivuan). Nessuna degustazione/visita documentata, solo partecipazione a fiere (Terroir Marche)."
+  },
+  {
+   "id": "pieri",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito tenutepieri.it (vecchio, pagina I Vini): solo vini gia presenti. Pagina Contatti riporta solo orari azienda (lun-ven 8-17, sabato su appuntamento), senza menzione di degustazioni o visite: non aggiunto nulla."
+  },
+  {
+   "id": "podere-santa-lucia",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita alla cantina con degustazione",
+     "kind": "tour",
+     "description": "Visita su prenotazione a vigneto e cantina con degustazione dei vini principali dell'azienda.",
+     "duration_min": 120,
+     "price_eur": 25,
+     "url": "https://www.poderesantalucia.com/visite.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.poderesantalucia.com/store/c1/Prodotti_in_vetrina.html"
+    }
+   ],
+   "note": "Sito ufficiale: vini gia presenti; escluso 'Vino e Visciole' (vino aromatizzato con succo di visciole). Pagina VISITE: visita con degustazione 2 h, 25 euro. Concerto estivo in pagina Eventi non incluso (data non verificabile). Store online per vendita diretta."
+  },
+  {
+   "id": "santa-cassella",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tasting 1",
+     "kind": "tasting",
+     "description": "Degustazione di due vini della cantina, minimo due persone, su prenotazione.",
+     "duration_min": 30,
+     "price_eur": 8,
+     "url": "https://santacassella.it/en/visits/"
+    },
+    {
+     "title": "Tasting 2",
+     "kind": "tasting",
+     "description": "Degustazione di due calici di vini della gamma, minimo due persone, su prenotazione.",
+     "duration_min": 30,
+     "price_eur": 12,
+     "url": "https://santacassella.it/en/visits/"
+    },
+    {
+     "title": "Tasting 3",
+     "kind": "tasting",
+     "description": "Degustazione piu lunga con quattro calici di vino, minimo due persone; tagliere di salumi e formaggi locali su richiesta.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://santacassella.it/en/visits/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://santacassella.it/en/visits/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://santacassella.it/en/visits/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://santacassella.it/en/visits/"
+    }
+   ],
+   "note": "Sito ufficiale: vini tutti gia presenti. Pagina Visits: visite guidate alla bottaia su appuntamento, tre degustazioni (8 e 12 euro, 30 min; la terza senza prezzo nei risultati), acquisto vini in loco. Aperitivi in cantina (post 2023) esclusi perche datati."
+  },
+  {
+   "id": "saputi",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Marche Passerina \"1° Senso\"",
+     "url": "https://www.saputi.it/en/wines/1-senso/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cibele Colli Maceratesi Spumante Brut",
+     "url": "https://www.saputi.it/en/wines/cibele-sparkling-wine/?v=f814d5250a7d",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bro",
+     "url": "https://www.saputi.it/en/wines/bro/?v=f814d5250a7d",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita guidata con degustazione",
+     "kind": "tour",
+     "description": "Visita guidata della cantina tra le barrique e degustazione guidata dei vini principali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.saputi.it/en/winexperiences/"
+    },
+    {
+     "title": "Degustazione in tasting room",
+     "kind": "tasting",
+     "description": "Assaggio dell'intera collezione di vini nel punto vendita di Colmurano, con visita, su prenotazione via email o telefono.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.saputi.it/en/tasting-room/"
+    },
+    {
+     "title": "Villa Le Vigne",
+     "kind": "stay",
+     "description": "Villa con piscina per vacanze in famiglia o in gruppo, con possibilita di degustazione privata in villa.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.saputi.it/en/villa-le-vigne/"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.saputi.it/en/winexperiences/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.saputi.it/en/villa-le-vigne/"
+    }
+   ],
+   "note": "Sito saputi.it: aggiunti 1° Senso, Cibele (spumante distinto dal Ribona Spumante Brut gia presente) e Bro. Esperienze da pagine Wine Experiences, Tasting room e Villa Le Vigne. Esclusi Cantine Aperte 2022-2024, cena 60 anni e tour e-bike (fonte non chiara)."
+  },
+  {
+   "id": "soc-agricola-san-filippo-s-s",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Vi' Munn Bianco senza solfiti",
+     "url": "https://vinisanfilippo.it/en/products/vi-munn-bianco",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Tr'sc'là senza solfiti",
+     "url": "https://vinisanfilippo.it/en/products/tr-sc-la",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Chardonnay",
+     "url": "https://vinisanfilippo.it/en/products/chardonnay",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ziaco Trebbiano Moscato (Bag in Box)",
+     "url": "https://vinisanfilippo.it/en/products/bag-in-box-ziaco-trebbiano-moscato",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione",
+     "kind": "tasting",
+     "description": "Un calice a scelta dei vini della cantina con pane e olio extravergine bio, salumi e formaggi locali, nel negozio Made in Offida.",
+     "duration_min": null,
+     "price_eur": 6,
+     "url": "https://vinisanfilippo.it/en/products/degustazione"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://vinisanfilippo.it/en/products/degustazione"
+    }
+   ],
+   "note": "Shop vinisanfilippo.it: aggiunti Vi' Munn Bianco, Tr'sc'la, Chardonnay e Ziaco (BIB). Esclusi grappa, bundle multi-box, BIB Chardonnay generico e Syrah (solo in bundle). Degustazione prenotabile online a 6 euro nel negozio MIO di Offida."
+  },
+  {
+   "id": "tenuta-carlini-di-andrea-carlini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione con sommelier e visita guidata",
+     "kind": "tour",
+     "description": "Visita guidata tra vigneti e cantina nel Parco San Bartolo con degustazione dei vini guidata da un sommelier, da aprile a ottobre.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.tenutacarlini.it/en/enotourism/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutacarlini.it/en/enotourism/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.tenutacarlini.it/en/enotourism/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutacarlini.it/negozio/"
+    }
+   ],
+   "note": "Sito tenutacarlini.it: vini gia tutti presenti (linea Pianeta, Lunar Eclipse, Focara). Pagina Enotourism: degustazione con sommelier e visita aprile-ottobre su prenotazione. Esclusi eventi passati (Notte delle Streghe, PMSF)."
+  },
+  {
+   "id": "tenuta-di-fra",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Anton",
+     "url": "https://tenutadifra.com/en/pages/weine",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione esclusiva su prenotazione",
+     "kind": "tasting",
+     "description": "Degustazione esclusiva dei vini della tenuta su appuntamento, da maggio a ottobre.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.tenutadifra.com/en/?lang=it"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutadifra.com/en/?lang=it"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutadifra.com/en/?lang=it"
+    }
+   ],
+   "note": "Sito tenutadifra.com: aggiunto Anton (spumante Charmat da Verdicchio, citato nelle pagine vini; nessuna scheda prodotto dedicata nei risultati). Degustazioni esclusive maggio-ottobre su prenotazione e vendita diretta in azienda negli orari di apertura."
+  },
+  {
+   "id": "tenuta-mattei",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Pecorino Falerio DOC Biologico",
+     "url": "https://www.tenutamattei.com/en/homepage/prodotti-vini-bianchi-rossi-bollicine-e-olio/endless-tradition/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina IGT Bio",
+     "url": "https://www.tenutamattei.com/en/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutamattei.com/en/vacanze-degustazioni/"
+    }
+   ],
+   "note": "Sito tenutamattei.com: aggiunti Pecorino Falerio (linea Endless Tradition) e Passerina IGT Bio (citata in homepage). Pagina vacanze-degustazioni (datata) cita tre tipi di degustazione con prezzi su richiesta: segnato solo il servizio. Eventi Cantine Aperte passati esclusi."
+  },
+  {
+   "id": "tenuta-santi-giacomo-e-filippo",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Wine Tour",
+     "kind": "tour",
+     "description": "Tour della cantina con degustazione di vini biologici e prodotti dell'azienda; tutti i giorni alle 11 in inglese e alle 16 in italiano.",
+     "duration_min": 90,
+     "price_eur": 35,
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/experiences/wine-tour"
+    },
+    {
+     "title": "Degustazione breve con crostini",
+     "kind": "tasting",
+     "description": "Degustazione di tre vini con crostini, tutti i giorni con orario flessibile, in italiano o inglese.",
+     "duration_min": 30,
+     "price_eur": 15,
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/experiences/wine-tour"
+    },
+    {
+     "title": "Alla scoperta dei sapori del vino",
+     "kind": "tour",
+     "description": "Wine tour con visita alla tenuta e alla cantina e degustazione di sei vini, disponibile anche come esperienza regalo.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/gift/esperienze-2/alla-scoperta-dei-sapori-del-vino"
+    },
+    {
+     "title": "Esperienza in Agribus",
+     "kind": "tour",
+     "description": "Giro di un'ora sul carro agricolo tra i campi biologici, per gruppi fino a 14 persone (210 euro a gruppo), abbinabile al wine tour.",
+     "duration_min": 60,
+     "price_eur": null,
+     "url": "https://www.tenutasantigiacomoefilippo.it/esperienze/agribus"
+    },
+    {
+     "title": "Cerca del Tartufo",
+     "kind": "tour",
+     "description": "Ricerca del tartufo con tartufaio e cane nella tenuta, in stagione e su prenotazione, in italiano o inglese.",
+     "duration_min": 120,
+     "price_eur": 45,
+     "url": "https://www.tenutasantigiacomoefilippo.it/experience/noleggio-e-bike-3"
+    },
+    {
+     "title": "Ristorante Urbino dei Laghi",
+     "kind": "meal",
+     "description": "Ristorante della tenuta aperto a pranzo e cena con cucina regionale biologica e stagionale, aperto anche ai non ospiti su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/faq"
+    },
+    {
+     "title": "Camere e suite del wine resort",
+     "kind": "stay",
+     "description": "Wine resort con camere e suite country e design ricavate negli edifici rurali della tenuta, colazione biologica inclusa.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/resort-marche/rooms-and-suites"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/experiences/wine-tour"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/gift/esperienze-2/alla-scoperta-dei-sapori-del-vino"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://shop.tenutasantigiacomoefilippo.it/prodotti/bellantonio-24/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/faq"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.tenutasantigiacomoefilippo.it/en/resort-marche/rooms-and-suites"
+    }
+   ],
+   "note": "Shop e sito ufficiale: vini gia tutti presenti. Esperienze dal sito (wine tour 35 euro, degustazione breve 15 euro, gift 25 euro, agribus, tartufo), ristorante e resort. Esclusi Cantine Aperte 2025, Natale e offerta bike scaduta."
+  },
+  {
+   "id": "tenute-pieralisi",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "ELARA",
+     "url": "https://www.tenutepieralisi.it/it/elara",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutepieralisi.it/shop/en"
+    }
+   ],
+   "note": "Sito e shop tenutepieralisi.it: aggiunto ELARA (pagina prodotto); Tassanare, 1622, Re di Ras gia presenti. Nessuna degustazione o visita documentata (solo contatti). Shop online della cantina."
+  },
+  {
+   "id": "terra-premiata-di-graziano-mazza-figli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita in Cantina",
+     "kind": "tour",
+     "description": "Percorso tra vigneto e cantina con degustazione dei vini guidata da enologi, prenotabile online scegliendo la data.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.terrapremiata.com/en/pages/visita-in-cantina"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.terrapremiata.com/en/pages/visita-in-cantina"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.terrapremiata.com/en/pages/visita-in-cantina"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.terrapremiata.com/en/collections/i-nostri-vini"
+    }
+   ],
+   "note": "Shop terrapremiata.com: solo linee gia presenti (Uve, Lamorosa, Gia'Mimanchi, Monteve). Pagina 'Visita in Cantina' con visita e degustazione guidata su prenotazione, prezzi non indicati nei risultati."
+  },
+  {
+   "id": "terrafageto",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Elìa Rosato Spumante Brut",
+     "url": "https://www.terrafageto.it/it/rosato-spumante-brut-elia_details",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Elisena Marche Bianco IGT",
+     "url": "https://www.terrafageto.it/it/marche-bianco-igt-elisena_details",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Storie di vite",
+     "kind": "tour",
+     "description": "Visita introduttiva alla cantina di Pedaso con degustazione dei vini abbinati a prodotti tipici locali, su prenotazione.",
+     "duration_min": null,
+     "price_eur": 25,
+     "url": "https://www.terrafageto.it/it/visite-in-cantina"
+    },
+    {
+     "title": "I Cru",
+     "kind": "tour",
+     "description": "Tour approfondito per appassionati, anche negli scorci piu insoliti della cantina, con degustazione nella tenuta con vista sui vigneti.",
+     "duration_min": null,
+     "price_eur": 35,
+     "url": "https://www.terrafageto.it/it/visite-in-cantina"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.terrafageto.it/it/visita-e-degustazione-in-cantina"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.terrafageto.it/it/visite-in-cantina"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.terrafageto.it/it/landing-shop"
+    }
+   ],
+   "note": "Sito terrafageto.it: aggiunti Elia (rosato spumante) ed Elisena (bianco IGT). Visite con degustazione 25-35 euro (4 vini con prodotti tipici, circa 2 h, maggio-agosto, prenotazione online); terza formula non dettagliata nei risultati. Shop online."
+  },
+  {
+   "id": "terre-d-arengo",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Smart Tasting",
+     "kind": "tour",
+     "description": "Visita guidata in cantina e degustazione di 4 vini rappresentativi del territorio, su prenotazione.",
+     "duration_min": 60,
+     "price_eur": 25,
+     "url": "https://terredarengo.it/degustazioni/"
+    },
+    {
+     "title": "Agorà",
+     "kind": "tour",
+     "description": "Visita guidata in cantina con degustazione di 4 vini rappresentativi piu 1 vino premium.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://terredarengo.it/degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://terredarengo.it/degustazioni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://terredarengo.it/degustazioni/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://terredarengo.it/vini/"
+    }
+   ],
+   "note": "Sito terredarengo.it: i 7-8 vini in elenco sono gia presenti. Pagina Degustazioni: Smart Tasting (60 min, 25 euro, 4 vini) e Agora (4 vini + 1 premium, prezzo non nei risultati). Vini acquistabili su sito e in cantina."
+  },
+  {
+   "id": "terre-di-san-ginesio",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Passerina",
+     "url": "https://www.terredisanginesio.it/negozio/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina",
+     "kind": "tasting",
+     "description": "Degustazione di 4 vini con bruschette, salame, formaggio e dolcetti, con possibile visita della cantina; prenotazione almeno un giorno prima.",
+     "duration_min": null,
+     "price_eur": 20,
+     "url": "https://www.terredisanginesio.it/degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.terredisanginesio.it/degustazioni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.terredisanginesio.it/degustazioni/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.terredisanginesio.it/contatti/"
+    }
+   ],
+   "note": "Sito terredisanginesio.it: aggiunta Passerina (shop); esclusa la Sapa (mosto cotto, non vino). Degustazione in cantina 20 euro. Aperitivi estivi in vigna e Weekend in Cantina autunnale non inclusi (date/pagina non verificabili). Spaccio aperto lun-sab."
+  },
+  {
+   "id": "az-agricola-sesi-di-maurizi-luigina-maria",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Wine tour e degustazione di vini biologici presso la Cantina SeSì",
+     "kind": "tour",
+     "description": "Visita guidata ai vigneti e alla cantina con l'enologo e degustazione dei vini biologici, per piccoli gruppi.",
+     "duration_min": 60,
+     "price_eur": null,
+     "url": "https://www.winedering.com/it/winery-tour-and-organic-wine-tasting-at-cantina-sesi_d6109_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winedering.com/it/winery-tour-and-organic-wine-tasting-at-cantina-sesi_d6109_travel"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winedering.com/it/winery-tour-and-organic-wine-tasting-at-cantina-sesi_d6109_travel"
+    }
+   ],
+   "note": "Sito cantinasesi.it senza risultati indicizzati; esperienza da Winedering (Cantina SeSì, Appignano del Tronto). Prezzo omesso perché le fonti discordano (15 vs 20 €). Vini: solo tipologie generiche, nessuna etichetta nuova certa."
+  },
+  {
+   "id": "fattoria-duri-di-dante-duri",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.fattoriaduri.com/prodotti/"
+    }
+   ],
+   "note": "Il negozio del sito elenca 9 vini, tutti già presenti. Nessuna esperienza documentata trovata (ricerca aperta senza risultati pertinenti)."
+  },
+  {
+   "id": "le-caniette",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata con degustazione",
+     "kind": "tour",
+     "description": "Visita guidata della cantina con degustazione dei vini aziendali, su prenotazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://lecaniette.it/en/the-cellar/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://lecaniette.it/en/the-cellar/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://lecaniette.it/en/the-cellar/"
+    }
+   ],
+   "note": "Pagine vino del sito: solo vini già presenti. Visite guidate e degustazioni indicate dal sito ufficiale (pagina The Cellar / Book the Visit). Eventi Decanto 2023-2024 esclusi perché vecchi."
+  },
+  {
+   "id": "marcelli-clara",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.claramarcelli.it/"
+    }
+   ],
+   "note": "Il sito indicizza solo homepage e una pagina 'rosato' senza nome di etichetta: nessun vino nuovo certo. La homepage offre visite in cantina (generiche, senza un'offerta definita). Ricerca aperta: nessun risultato pertinente (solo omonimi Castorani)."
+  },
+  {
+   "id": "mezzanotte",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Winery tours",
+     "kind": "tour",
+     "description": "Visita in cantina con degustazione di 3 vini oppure degustazione completa fino a 8 vini abbinati a prodotti locali, su prenotazione.",
+     "duration_min": 60,
+     "price_eur": 15,
+     "url": "https://cantinamezzanotte.com/en/products/eventi-in-cantina"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://cantinamezzanotte.com/en/products/eventi-in-cantina"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://cantinamezzanotte.com/en/products/eventi-in-cantina"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://cantinamezzanotte.com/en/pages/faq"
+    }
+   ],
+   "note": "Il sito elenca 9 vini, tutti già presenti. Visite con degustazione prenotabili dal sito (da 15 €, almeno 1 ora); vendita su ordine via email/telefono (FAQ, niente e-commerce)."
+  },
+  {
+   "id": "moncaro",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Spumante Verdicchio Biologico",
+     "url": "http://shop.moncaro.com/spumante-bio.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Gaudente",
+     "url": "https://www.moncaro.com/it/vini/linea-innovazione/gaudente.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cimerio",
+     "url": "http://www.moncaro.com/it/vini/dettaglio/17-cimerio",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Terre Cortesi Falerio",
+     "url": "http://www.moncaro.com/vino_dett.php?id_v=34",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Tordiruta",
+     "url": "https://shop.moncaro.com/vini/verdicchio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Brut",
+     "url": "https://shop.moncaro.com/vini/bollicine/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione, passeggiata in vigna e visita alla cantina",
+     "kind": "tour",
+     "description": "Degustazione dei vini insieme allo staff, passeggiata nei vigneti e visita della cantina, prenotabile dal sito.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.moncaro.com/it/"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.moncaro.com/it/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "http://www.moncaro.com/it/ospitalita/15-la-casetta"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "http://www.moncaro.com/it/ospitalita/15-la-casetta"
+    }
+   ],
+   "note": "Vini nuovi da sito e shop Moncaro (Tordiruta passito e Passerina Brut citati nelle pagine-elenco dello shop). Degustazioni e punto vendita a La Casetta (Montecarotto). Ristorante Erard escluso: pagina con regole Green Pass 2021, attualità non verificabile."
+  },
+  {
+   "id": "officina-del-sole",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Assaporando le Marche: Degustazione Vini e Cena a Quattro Portate",
+     "kind": "meal",
+     "description": "Degustazione dei vini della cantina abbinata a una cena di quattro portate nel ristorante della tenuta.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.officinadelsole.it/it-IT/offerta/assaporandolemarche"
+    },
+    {
+     "title": "Visita in cantina con degustazione",
+     "kind": "tour",
+     "description": "Visita della cantina con degustazione dei vini, solo su prenotazione anticipata.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.officinadelsole.it/en-GB/winery"
+    },
+    {
+     "title": "Soggiorno al Wine Resort",
+     "kind": "stay",
+     "description": "Pernottamento nelle camere del wine resort della tenuta a Montegiorgio.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://officinadelsole.it/ristorante"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.officinadelsole.it/en-GB/winery"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.officinadelsole.it/it-IT/ristorazione"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://officinadelsole.it/ristorante"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://officinadelsole.it/shop/catalogo/vino/trecentosessanta"
+    }
+   ],
+   "note": "Shop del sito: solo vini già presenti (più confetture e acquavite, esclusi). Offerta degustazione+cena, visite su prenotazione, ristorante e wine resort dal sito ufficiale; prezzi non indicati nei risultati."
+  },
+  {
+   "id": "serenelli-alberto",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Portfolio vini del sito: solo vini già presenti. Vendita online con consegna a domicilio da post del sito (2020, piattaforma PeeKee). Nessuna visita o degustazione documentata."
+  },
+  {
+   "id": "stefano-mancinelli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazioni in cantina",
+     "kind": "tasting",
+     "description": "Visita con degustazione di Lacrima di Morro d'Alba e Verdicchio, oltre a distillati, olio e condimenti aziendali; prenotazione con 2 giorni di anticipo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://mancinellivini.it/en/degustazioni-mancinelli/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://mancinellivini.it/en/degustazioni-mancinelli/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://mancinellivini.it/negozio/vini/spumante-metodo-classico/"
+    }
+   ],
+   "note": "Shop del sito: solo vini già presenti (più grappe, olio, condimenti, esclusi). Degustazione in cantina prenotabile dal sito (slot 9-11 e 15-17), prezzo non indicato."
+  },
+  {
+   "id": "vicari",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visite e Degustazioni in Cantina",
+     "kind": "tasting",
+     "description": "Visita della cantina con degustazione guidata dei vini aziendali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vicarivini.it/degustazioni.htm"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vicarivini.it/degustazioni.htm"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vicarivini.it/degustazioni.htm"
+    }
+   ],
+   "note": "Pagina vini del sito: aggiunto 'Essenza del Pozzo Buono' (Lacrima DOC); 'Capofila' non aggiunto perché probabilmente coincide con il Verdicchio Classico già presente. Visite e degustazioni dalla pagina dedicata del sito, senza prezzi."
+  },
+  {
+   "id": "vigna-degli-estensi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visite in cantina",
+     "kind": "tour",
+     "description": "Visita guidata della cantina con degustazione di 4 vini rappresentativi e stuzzichini salati, venerdì e sabato alle 18 su prenotazione.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://www.vignadegliestensi.it/visite-in-cantina/"
+    },
+    {
+     "title": "Team Building",
+     "kind": "event",
+     "description": "Pacchetti per aziende con visita in cantina e degustazione, anche abbinati a regali aziendali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vignadegliestensi.it/team-building/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vignadegliestensi.it/visite-in-cantina/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vignadegliestensi.it/visite-in-cantina/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vignadegliestensi.it/contatti/"
+    }
+   ],
+   "note": "Pagine vini del sito: solo vini già presenti. Visita con degustazione di 4 vini (90 min, 25 €, 20 € per gruppi da 4) e team building dal sito; vendita diretta in cantina (pagina contatti). Esiste anche un'offerta Winedering sulla terrazza panoramica, non duplicata."
+  },
+  {
+   "id": "villa-imperium",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Rosso Piceno Sangiovese",
+     "url": "https://www.villaimperium.it/en/products/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Sangiovese",
+     "url": "https://www.villaimperium.it/en/products/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Cin cin sui calanchi: Tour della cantina e degustazione di vini",
+     "kind": "tour",
+     "description": "Visita della cantina con degustazione di 3 vini biologici accompagnati da olio extravergine, salumi e snack locali; gruppi da 4 a 10 persone.",
+     "duration_min": 60,
+     "price_eur": 20,
+     "url": "https://www.winedering.com/fr/cheers-on-the-badlands-cellar-tour-and-wine-tasting-experience-at-villa-imperium_d3520_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winedering.com/fr/cheers-on-the-badlands-cellar-tour-and-wine-tasting-experience-at-villa-imperium_d3520_travel"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winedering.com/fr/cheers-on-the-badlands-cellar-tour-and-wine-tasting-experience-at-villa-imperium_d3520_travel"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.villaimperium.it/produzione-vendita-vini-biologici-piceni-ascoli-piceno/"
+    }
+   ],
+   "note": "Elenco prodotti del sito: aggiunti Rosso Piceno Sangiovese e Marche Sangiovese ('Fior di Cograri' = Fior di Cogrigi già presente). Esperienza da Winedering (da 20 €, 1 ora; Winetourism indica 75 min per la stessa degustazione di 3 vini)."
+  },
+  {
+   "id": "vini-rocchi",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Il Sigillo del Curato",
+     "url": "https://www.vinirocchi.it/vini-rossi/il-sigillo-del-curato/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "I Brecceti Bianco IGT Marche",
+     "url": "https://www.vinirocchi.it/vini-bianchi/brecceti-bianco-igt-marche/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina",
+     "kind": "tasting",
+     "description": "Degustazione dei vini su prenotazione presso la cantina di Belforte del Chienti, con possibile abbinamento a prodotti locali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vinirocchi.it/contatti/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vinirocchi.it/contatti/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vinirocchi.it/contatti/"
+    }
+   ],
+   "note": "Pagine prodotto del sito: aggiunti Il Sigillo del Curato e I Brecceti Bianco (grappe escluse). Degustazione su prenotazione e punto vendita in cantina a Belforte del Chienti (pagina contatti); shop online su /negozio/."
+  },
+  {
+   "id": "vitivinicola-costadoro-soc-agr-srl",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Linee Biologica e Lo Puro del sito: solo vini già presenti. Nessuna visita, degustazione o vendita diretta documentata (ricerca aperta senza risultati sulla cantina)."
+  },
+  {
+   "id": "azienda-agraria-i-tre-filari-di-sabbatini-silvia",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Weekend Di Primavera",
+     "kind": "stay",
+     "description": "Due notti in agriturismo con colazione, visita guidata dell'azienda e degustazione dei prodotti.",
+     "duration_min": null,
+     "price_eur": 100,
+     "url": "https://www.agriturismi.it/it/marche/recanati/agriturismo_i_tre_filari/weekend_di_primavera.html"
+    },
+    {
+     "title": "Fine Settimana Leopardiano",
+     "kind": "stay",
+     "description": "Weekend in agriturismo con visita a Casa Leopardi a Recanati e degustazione in azienda di oli e vino.",
+     "duration_min": null,
+     "price_eur": 100,
+     "url": "https://www.agriturismi.it/it/marche/recanati/agriturismo_i_tre_filari/fine_settimana_leopardiano.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "ospitalita",
+     "url": "https://www.agriturismi.it/it/marche/recanati/agriturismo_i_tre_filari.html"
+    },
+    {
+     "id": "degustazioni",
+     "url": "http://www.itrefilari.it/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "http://www.itrefilari.it/"
+    }
+   ],
+   "note": "Sito: solo Strolleco tra i vini (già presente) e molti oli monovarietali (esclusi). Pacchetti agriturismo da agriturismi.it (100 € a persona per 2 notti, date 2027); vendita e degustazioni nello spaccio aziendale (homepage)."
+  },
+  {
+   "id": "brunori",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Wine Tasting and Tour at Azienda Vitivinicola Brunori",
+     "kind": "tour",
+     "description": "Visita dell'azienda e della cantina in Via San Nicolò, solo su prenotazione, con degustazione di vini bianchi, rossi e frizzanti.",
+     "duration_min": 90,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/wine-tasting-and-tour-at-azienda-vitivinicola-brunori/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://brunori.it/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/wine-tasting-and-tour-at-azienda-vitivinicola-brunori/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://brunori.it/"
+    }
+   ],
+   "note": "Prodotti del sito: nessun vino nuovo (San Nicolò Riserva già coperto; grappa esclusa). Enoteca e degustazioni a Jesi e S. Paolo di Jesi (homepage). Tour da WineTourism; offerta Winedering 'Terrazza panoramica' esclusa perché localizzata a Cupramontana con Lacrima: attribuzione incerta."
+  },
+  {
+   "id": "cantina-villa-pigna",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Percorso degustativo di Rosso Piceno DOC Superiore",
+     "kind": "tasting",
+     "description": "Visita della cantina con percorso di degustazione dedicato al Rosso Piceno Superiore, specialità storica della casa.",
+     "duration_min": null,
+     "price_eur": 30,
+     "url": "https://www.winedering.com/it/tasting-experience-of-rosso-piceno-superiore-at-villa-pigna-winery_d3205_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winedering.com/it/winery-cantina-villa-pigna_d5126"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://villapigna.com/en/collections/all"
+    }
+   ],
+   "note": "Shop del sito: nessun vino nuovo (Rugiasco ora Marche Bianco IGT e Velvety = Vellutato, già presenti). Percorso Rosso Piceno Superiore da Winedering (da 30 €); WineTourism indica circa 90 min, guide in italiano e inglese."
+  },
+  {
+   "id": "cantine-pisaurum",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazioni e visite guidate in cantina",
+     "kind": "tour",
+     "description": "Visite guidate e degustazioni in cantina per conoscere territorio e vini, prenotabili via email o WhatsApp.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.pisaurum.it/la-cantina"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.pisaurum.it/la-cantina"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.pisaurum.it/la-cantina"
+    }
+   ],
+   "note": "Linee I Classici/Spumanti del sito: nessun vino nuovo con nome certo (bag-in-box esclusi). Degustazioni e visite guidate su prenotazione dalla pagina La Cantina; evento Popsophia 2019 escluso perché vecchio."
   }
  ]
 }
