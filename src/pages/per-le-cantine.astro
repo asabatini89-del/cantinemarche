@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FormNotice from '../components/FormNotice.astro';
+import Mascotte from '../components/Mascotte.astro';
+import PosterHeader from '../components/PosterHeader.astro';
 import { getStats, wineryOptions } from '../lib/db';
 import { displayName } from '../lib/palette';
 
@@ -10,7 +12,7 @@ const motivo = Astro.url.searchParams.get('motivo') ?? 'claim';
 const sent = Astro.url.searchParams.has('inviata');
 const error = Astro.url.searchParams.get('errore');
 Astro.response.headers.set('Cache-Control', 'private, no-store');
-const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[15px] focus:border-rosso focus:outline-none';
+const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg-carta px-3 text-[15px] focus:border-rosso focus:outline-none';
 const steps = [
   { t: 'Ci scrivi', d: 'Con il modulo qui sotto: chi sei e quale cantina rappresenti.' },
   { t: 'Verifichiamo', d: 'Una telefonata o un’email all’indirizzo pubblico della cantina. Di solito entro due giorni lavorativi.' },
@@ -18,17 +20,20 @@ const steps = [
 ];
 ---
 <BaseLayout title="Per le cantine" description="Rivendica gratuitamente la scheda della tua cantina sul catalogo delle cantine delle Marche." canonical="/per-le-cantine">
-  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
-    <p class="meta text-grafite">Per i produttori</p>
-    <h1 class="display mt-3 max-w-4xl text-5xl sm:text-7xl">La scheda della tua cantina <em class="text-rosso">c'è già.</em> Adesso scrivila tu.</h1>
-    <p class="mt-6 max-w-xl text-lg leading-snug">
+  <PosterHeader kicker="Per i produttori" word="Per le cantine" size="lg" bg="bg-giallo"
+    subtitle="La scheda della tua cantina c’è già. Adesso scrivila tu.">
+    <p class="mt-5 max-w-xl text-lg leading-snug">
       Abbiamo raccolto {stats.wineries.toLocaleString('it-IT')} cantine da fonti pubbliche: consorzi, associazioni, siti ufficiali. Qualcosa sarà impreciso. Chi meglio di te per sistemarlo?
     </p>
+    <a href="#modulo" class="btn-primary mt-6">Rivendica la scheda</a>
+    <Mascotte slot="aside" nota="Chi meglio di te?" class="w-36 sm:w-44" />
+  </PosterHeader>
 
-    <ol class="mt-14 grid gap-px border border-inchiostro bg-inchiostro sm:grid-cols-3">
+  <div class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+    <ol class="grid gap-4 sm:grid-cols-3">
       {steps.map((s, i) => (
-        <li class="bg-carta p-6">
-          <p class="display text-6xl text-rosso">{i + 1}</p>
+        <li class="rounded-2xl border-2 border-inchiostro bg-carta p-6 shadow-[5px_5px_0_var(--color-inchiostro)]">
+          <p class="manifesto text-7xl">{['I', 'II', 'III'][i]}</p>
           <h2 class="display mt-4 text-3xl">{s.t}</h2>
           <p class="mt-2 text-grafite">{s.d}</p>
         </li>
@@ -38,15 +43,15 @@ const steps = [
     <div class="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       <section aria-labelledby="h-cosa">
         <h2 id="h-cosa" class="display text-4xl">Cosa puoi fare, <em>gratis</em></h2>
-        <ul role="list" class="mt-5 border-t border-inchiostro">
+        <ul role="list" class="mt-5 border-t-2 border-inchiostro">
           {['Correggere indirizzo, contatti e posizione sulla mappa', 'Raccontare la cantina con parole tue', 'Pubblicare orari di apertura e giorni di visita', 'Proporre degustazioni e visite in vigna', 'Ricevere le richieste di visita direttamente'].map((t) => (
-            <li class="flex gap-3 border-b border-inchiostro py-3"><span class="text-rosso" aria-hidden="true">—</span>{t}</li>
+            <li class="flex gap-3 border-b-2 border-inchiostro py-3"><span class="text-rosso" aria-hidden="true">—</span>{t}</li>
           ))}
         </ul>
         <p class="mt-6 text-sm text-grafite">In arrivo: la vendita diretta delle bottiglie e la prenotazione delle esperienze, con pagamenti gestiti dalla piattaforma e la spedizione a cura della cantina.</p>
       </section>
 
-      <section id="modulo" aria-labelledby="h-modulo" class="scroll-mt-6 border border-inchiostro p-6 sm:p-8">
+      <section id="modulo" aria-labelledby="h-modulo" class="scroll-mt-6 rounded-3xl border-2 border-inchiostro bg-carta p-6 shadow-[8px_8px_0_var(--color-inchiostro)] sm:p-8">
         <h2 id="h-modulo" class="display text-4xl">Rivendica <em>la scheda</em></h2>
         <FormNotice sent={sent} error={error} sentText="Grazie. Ti contatteremo per la verifica entro due giorni lavorativi." />
         {!sent && (

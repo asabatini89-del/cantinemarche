@@ -18,13 +18,13 @@ const facts = [
   ...services,
 ].filter(Boolean);
 ---
-<article class="group relative flex h-full flex-col border-t border-inchiostro pb-6 pt-3">
+<article class="group relative flex h-full flex-col border-t-2 border-inchiostro px-1 pb-6 pt-3 transition-colors duration-300 hover:bg-carta-2">
   {w.cover_thumb && (
     <img src={`/media/${w.cover_thumb}`} alt="" width="640" height="427" loading="lazy" decoding="async"
       class="mb-3 aspect-[3/2] w-full bg-carta-2 object-cover" />
   )}
   <div class="flex items-baseline justify-between gap-3">
-    <p class="meta text-grafite">{catalogNo(w.num)}{w.province_name && ` · ${w.province_name}`}</p>
+    <p class="meta"><span class="text-rosso">{catalogNo(w.num)}</span>{w.province_name && <span class="text-grafite"> · {w.province_name}</span>}</p>
     {w.claim_status === 'claimed' && <p class="meta text-rosso">Verificata</p>}
   </div>
   <H class="display mt-3 text-[1.85rem] sm:text-[2.1rem]">

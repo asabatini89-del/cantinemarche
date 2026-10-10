@@ -1,0 +1,35 @@
+---
+// Testata a manifesto: fondo albicocca con grana, parola in Bodoni maiuscolo vermiglio,
+// sottotitolo corsivo e una nota a mano. Lo slot di destra accoglie un'illustrazione.
+interface Props {
+  kicker?: string;
+  word: string;
+  subtitle?: string;
+  note?: string;
+  size?: 'xl' | 'lg' | 'md';
+  bg?: string;
+}
+const { kicker, word, subtitle, note, size = 'lg', bg = 'bg-pesca' } = Astro.props;
+const sizes = {
+  xl: 'clamp(3.6rem,15vw,11rem)',
+  lg: 'clamp(3rem,11.5vw,8.5rem)',
+  md: 'clamp(2.4rem,8vw,6rem)',
+};
+// La parola più lunga deve stare in una riga anche su mobile: in Bodoni maiuscolo
+// una lettera occupa circa 0,66 em, quindi il corpo non supera lo spazio diviso le lettere.
+const longest = Math.max(...word.split(/\s+/).map((w) => w.length), 1);
+const fontSize = `min(${sizes[size]}, calc((100vw - 2.5rem) / ${(longest * 0.7).toFixed(2)}))`;
+const hasAside = Astro.slots.has('aside');
+---
+<header class={`grana border-b-2 border-inchiostro ${bg}`}>
+  <div class={`mx-auto grid max-w-6xl gap-6 px-4 pb-8 pt-8 sm:px-6 sm:pt-10 ${hasAside ? 'md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] md:items-end' : ''}`}>
+    <div class="min-w-0">
+      {kicker && <p class="meta">{kicker}</p>}
+      <h1 class="manifesto mt-3 break-words" style={`font-size:${fontSize}`}>{word}</h1>
+      {subtitle && <p class="display mt-4 max-w-3xl text-2xl italic sm:text-3xl">{subtitle}</p>}
+      {note && <p class="mano mt-3 -rotate-2 text-2xl sm:text-3xl">{note}</p>}
+      <slot />
+    </div>
+    {hasAside && <div class="justify-self-center md:justify-self-end"><slot name="aside" /></div>}
+  </div>
+</header>

@@ -1,31 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PosterHeader from '../../components/PosterHeader.astro';
+import TerritoryCover from '../../components/TerritoryCover.astro';
 import { listTerritories } from '../../lib/db';
-import { coverFor } from '../../lib/palette';
 
 const territories = await listTerritories();
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
 ---
 <BaseLayout title="I territori" description="Sette territori del vino marchigiano: Castelli di Jesi, Conero, Matelica, Piceno, Metauro, Morro d’Alba, colline maceratesi." canonical="/territori">
-  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
-    <p class="meta text-grafite">Collana · {territories.length} volumi</p>
-    <h1 class="display mt-3 text-5xl sm:text-7xl">I territori, <em>come una collana.</em></h1>
-    <p class="mt-5 max-w-xl text-lg leading-snug">Ogni territorio è una piccola monografia: un paesaggio, un vino che lo racconta, le persone che lo fanno.</p>
+  <PosterHeader kicker={`Collana · ${territories.length} volumi`} word="I territori" size="lg"
+    subtitle="Ogni territorio è una piccola monografia: un paesaggio, un vino che lo racconta, le persone che lo fanno."
+    note="da leggere in ordine sparso" />
 
-    <ol class="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+    <ol class="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {territories.map((t, i) => (
         <li>
-          <a href={`/territori/${t.slug}`} class="group block">
-            <div class={`flex aspect-[4/5] flex-col p-4 ${coverFor(t.id)}`}>
-              <span class="meta">N. {String(i + 1).padStart(2, '0')}</span>
-              <span class="mt-4 flex flex-1 flex-col items-center justify-center border border-inchiostro/70 p-4 text-center">
-                <span class="display text-4xl group-hover:italic">{t.name}</span>
-                {t.denominations && <span class="meta mt-4">{t.denominations.split('|').map((d) => d.split(':')[1]).join(' · ')}</span>}
-              </span>
-            </div>
-            <p class="mt-3 text-grafite">{t.intro}</p>
-            <p class="meta mt-2">{t.winery_count} cantine →</p>
-          </a>
+          <TerritoryCover territory={t} index={i} size="lg" />
+          <p class="mt-4">{t.intro}</p>
         </li>
       ))}
     </ol>

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MarcheMap from '../components/MarcheMap.astro';
+import Mascotte from '../components/Mascotte.astro';
+import TerritoryCover from '../components/TerritoryCover.astro';
 import { getFacets, getStats, listDenominations, listTerritories, mapPoints } from '../lib/db';
-import { PROVINCE_COVER, coverFor } from '../lib/palette';
+import { PROVINCE_COVER } from '../lib/palette';
 
 const [stats, points, facets, territories, denominations] = await Promise.all([
   getStats(),
@@ -16,99 +18,104 @@ const fmt = (n: number) => n.toLocaleString('it-IT');
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
 ---
 <BaseLayout title="Cantine delle Marche" canonical="/">
-  <section class="mx-auto grid max-w-6xl gap-10 px-4 pt-10 sm:px-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:pt-14">
-    <div class="flex flex-col">
-      <p class="meta text-grafite">{fmt(stats.wineries)} cantine · {fmt(stats.municipalities)} comuni · {stats.denominations} denominazioni</p>
-      <h1 class="display mt-5 text-[3.4rem] sm:text-[4.6rem]">Il vino delle Marche, <em class="text-rosso">in ordine sparso.</em></h1>
-      <p class="mt-6 max-w-md text-lg leading-snug">
-        Dal Verdicchio dei Castelli al Rosso Piceno: i produttori della regione, catalogati con pazienza e senza classifiche. Scegli un punto sulla mappa, o comincia da un nome.
-      </p>
-
-      <form method="get" action="/cantine" role="search" class="mt-8 flex max-w-md border border-inchiostro">
-        <label for="home-q" class="sr-only">Cerca cantina, comune o vino</label>
-        <input id="home-q" name="q" type="search" required placeholder="Cantina, borgo o vino…" enterkeyhint="search"
-          class="h-12 min-w-0 flex-1 bg-carta px-4 text-base placeholder:text-grafite focus:outline-none" />
-        <button type="submit" class="h-12 border-l border-inchiostro bg-inchiostro px-5 text-sm font-medium text-carta hover:bg-rosso">Cerca</button>
-      </form>
-
-      <nav aria-labelledby="h-province" class="mt-10">
-        <h2 id="h-province" class="meta text-grafite">Sfoglia per provincia</h2>
-        <ul role="list" class="mt-3 divide-y divide-inchiostro/20 border-y border-inchiostro">
-          {facets.provincia.map((p) => (
-            <li>
-              <a href={`/cantine?provincia=${p.value}`} class="group flex items-center gap-3 py-2.5 hover:bg-carta-2">
-                <span class={`size-3 ${PROVINCE_COVER[p.value]?.bg}`} aria-hidden="true"></span>
-                <span class="font-serif text-xl group-hover:underline">{p.label}</span>
-                <span class="meta ml-auto text-grafite">{p.count}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+  <!-- Il manifesto: parola, figura (la mappa), parola -->
+  <section class="grana border-b-2 border-inchiostro bg-pesca">
+    <h1 class="sr-only">Cantine delle Marche: mappa e catalogo delle cantine marchigiane</h1>
+    <div class="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
+      <p class="manifesto text-center text-[clamp(4.2rem,17.5vw,13.5rem)]" aria-hidden="true">Cantine</p>
     </div>
 
-    <div>
-      <MarcheMap points={points} label={`Mappa delle Marche con ${points.length} cantine`} />
-      <p class="meta mt-2 text-grafite">
-        <span class="text-rosso" aria-hidden="true">●</span> {points.length} cantine con posizione · le altre {stats.wineries - points.length} sono nel <a href="/cantine" class="underline">catalogo</a>
-      </p>
+    <div class="mx-auto grid max-w-6xl items-start gap-8 px-4 pt-4 sm:px-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)]">
+      <div class="relative">
+        <p class="mano pointer-events-none absolute right-[11%] top-[16%] z-10 hidden sm:block max-w-[8.5rem] rotate-[-8deg] text-right text-[clamp(1.15rem,2.4vw,1.7rem)]" aria-hidden="true">Domani degustazione?<svg viewBox="0 0 60 40" class="ml-auto mr-8 mt-1 block h-6 w-10 text-cobalto"><path d="M54 4 C 40 20, 22 30, 4 36 M4 36 l 10 -1 M4 36 l 6 -8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></svg></p>
+        <MarcheMap points={points} explore label={`Mappa delle Marche con ${points.length} cantine`} />
+      </div>
+
+      <div class="flex flex-col gap-6 lg:pt-14">
+        <p class="text-lg leading-snug">
+          {fmt(stats.wineries)} cantine, {fmt(stats.municipalities)} comuni, {stats.denominations} denominazioni. Il vino delle Marche <em class="font-serif text-[1.15em]">in ordine sparso</em>: tocca una provincia per volarci sopra, poi avvicinati finché i puntini diventano cantine.
+        </p>
+
+        <form method="get" action="/cantine" role="search" class="flex rounded-full border-2 border-inchiostro bg-carta p-1">
+          <label for="home-q" class="sr-only">Cerca cantina, comune o vino</label>
+          <input id="home-q" name="q" type="search" required placeholder="Cantina, borgo o vino…" enterkeyhint="search"
+            class="h-10 min-w-0 flex-1 rounded-full bg-transparent px-4 text-base placeholder:text-grafite focus:outline-none" />
+          <button type="submit" class="h-10 rounded-full bg-inchiostro px-5 text-sm font-medium text-carta hover:bg-rosso">Cerca</button>
+        </form>
+
+        <nav aria-labelledby="h-province">
+          <h2 id="h-province" class="meta">Vola su una provincia</h2>
+          <ul role="list" class="mt-3 flex flex-wrap gap-2">
+            <li><a href="/cantine" data-map-goto="all" aria-current="true" class="pillola h-9 bg-carta py-0 hover:bg-giallo aria-[current=true]:bg-inchiostro aria-[current=true]:text-carta">Tutte</a></li>
+            {facets.provincia.map((p) => (
+              <li>
+                <a href={`/cantine?provincia=${p.value}`} data-map-goto={p.value}
+                  class="pillola h-9 gap-2 bg-carta py-0 hover:bg-giallo aria-[current=true]:bg-inchiostro aria-[current=true]:text-carta">
+                  <span class={`size-2.5 rounded-full border border-inchiostro ${PROVINCE_COVER[p.value]?.bg}`} aria-hidden="true"></span>
+                  {p.label} <span class="opacity-60">{p.count}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-sm"><a href="/cantine" data-list-link class="font-medium underline decoration-rosso decoration-2">Tutte le cantine in elenco →</a></p>
+          <p class="meta mt-3 text-grafite">Le {stats.wineries - points.length} cantine senza posizione sono nel catalogo.</p>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 pb-8 pt-6 sm:px-6">
+      <p class="manifesto spaziato text-center text-[clamp(3.2rem,12vw,9.5rem)]" aria-hidden="true">Marche</p>
     </div>
   </section>
 
+  <!-- I territori come copertine di una collana -->
   <section aria-labelledby="h-territori" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-    <div class="flex items-baseline justify-between gap-4 border-b border-inchiostro pb-3">
-      <h2 id="h-territori" class="display text-4xl sm:text-5xl">Sette territori, <em>sette letture.</em></h2>
-      <a href="/territori" class="meta hidden shrink-0 hover:underline sm:inline">Tutti i territori →</a>
+    <div class="copertina-titolo flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-3">
+      <h2 id="h-territori" class="display text-4xl sm:text-6xl">Sette territori &amp; <em>sette letture</em></h2>
+      <a href="/territori" class="pillola hover:bg-giallo">Tutta la collana →</a>
     </div>
-    <ul role="list" class="mt-8 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-      {territories.map((t, i) => (
-        <li>
-          <a href={`/territori/${t.slug}`} class={`group flex aspect-[3/4] flex-col p-3 sm:p-4 ${coverFor(t.id)}`}>
-            <span class="meta">Territorio {String(i + 1).padStart(2, '0')}</span>
-            <span class="mt-auto flex flex-1 flex-col justify-center border border-inchiostro/70 p-3 text-center">
-              <span class="display text-2xl sm:text-[2rem] group-hover:italic">{t.name}</span>
-            </span>
-            <span class="meta mt-3 flex justify-between"><span>{t.winery_count} cantine</span><span aria-hidden="true">→</span></span>
-          </a>
-        </li>
-      ))}
+    <ul role="list" class="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+      {territories.map((t, i) => <li><TerritoryCover territory={t} index={i} /></li>)}
       <li class="hidden lg:block">
-        <a href="/cantine" class="flex aspect-[3/4] flex-col justify-between border border-inchiostro p-4 hover:bg-carta-2">
+        <a href="/cantine" class="group flex aspect-[2/3] flex-col justify-between rounded-sm border-2 border-inchiostro bg-carta p-4 transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0_var(--color-inchiostro)]">
           <span class="meta">Fuori collana</span>
-          <span class="display text-[2rem]">Tutte le {fmt(stats.wineries)} cantine, <em>in ordine alfabetico.</em></span>
-          <span class="meta">Il catalogo →</span>
+          <span class="display text-[2.1rem]">Tutte le {fmt(stats.wineries)} cantine, <em class="text-rosso">dalla A alla Z.</em></span>
+          <span class="pillola self-start group-hover:bg-giallo">Il catalogo →</span>
         </a>
       </li>
     </ul>
   </section>
 
+  <!-- Le DOCG -->
   <section aria-labelledby="h-docg" class="mx-auto mt-20 grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_2fr]">
     <div>
-      <h2 id="h-docg" class="display text-4xl sm:text-5xl">Le DOCG, <em>per cominciare.</em></h2>
-      <p class="mt-4 max-w-sm text-grafite">{docg.length === 5 ? 'Cinque' : docg.length} denominazioni di origine controllata e garantita. Poi ci sono le DOC, e la libertà dell'IGT.</p>
+      <h2 id="h-docg" class="display text-4xl sm:text-6xl">Le DOCG, <em class="text-rosso">per cominciare.</em></h2>
+      <p class="mt-4 max-w-sm">{docg.length === 5 ? 'Cinque' : docg.length} denominazioni di origine controllata e garantita. Poi ci sono le DOC, e la libertà dell'IGT.</p>
       <a href="/denominazioni" class="btn mt-6">Tutte le {denominations.length} denominazioni</a>
     </div>
-    <ol class="border-t border-inchiostro">
+    <ol class="border-t-2 border-inchiostro">
       {docg.map((d, i) => (
-        <li class="border-b border-inchiostro">
-          <a href={`/denominazioni/${d.slug}`} class="group flex items-baseline gap-4 py-4 hover:bg-carta-2">
-            <span class="meta w-8 shrink-0 text-grafite">{['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'][i]}</span>
-            <span class="display text-2xl group-hover:text-rosso sm:text-3xl">{d.name.replace(/ DOCG$/, '')}</span>
-            <span class="meta ml-auto shrink-0 text-grafite">{d.winery_count > 0 ? `${d.winery_count} cantine` : 'da censire'}</span>
+        <li class="border-b-2 border-inchiostro">
+          <a href={`/denominazioni/${d.slug}`} class="group flex items-baseline gap-4 px-2 py-4 transition-colors hover:bg-giallo">
+            <span class="display w-10 shrink-0 text-2xl text-rosso">{['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'][i]}</span>
+            <span class="display text-2xl sm:text-[2.1rem]">{d.name.replace(/ DOCG$/, '')}</span>
+            <span class="meta ml-auto shrink-0">{d.winery_count > 0 ? `${d.winery_count} cantine` : 'da censire'}</span>
           </a>
         </li>
       ))}
     </ol>
   </section>
 
+  <!-- Per i produttori -->
   <section aria-labelledby="h-cantine" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-    <div class="grid gap-6 bg-inchiostro p-8 text-carta sm:p-12 md:grid-cols-[2fr_1fr] md:items-end">
+    <div class="grid items-center gap-6 rounded-sm border-2 border-inchiostro bg-giallo p-6 shadow-[8px_8px_0_var(--color-inchiostro)] sm:p-10 md:grid-cols-[2fr_1fr]">
       <div>
-        <p class="meta text-carta/70">Per i produttori</p>
-        <h2 id="h-cantine" class="display mt-3 text-4xl sm:text-6xl">Sei una cantina? <em class="text-ocra">La scheda è tua.</em></h2>
-        <p class="mt-4 max-w-lg text-carta/80">Correggi i dati, aggiungi orari, foto ed esperienze. Gratis, in pochi minuti, senza agenzie di mezzo.</p>
+        <p class="meta">Per i produttori</p>
+        <h2 id="h-cantine" class="display mt-3 text-4xl sm:text-6xl">Sei una cantina? <em class="text-rosso">La scheda è tua.</em></h2>
+        <p class="mt-4 max-w-lg">Correggi i dati, aggiungi orari, foto ed esperienze. Gratis, in pochi minuti, senza agenzie di mezzo.</p>
+        <a href="/per-le-cantine" class="btn-primary mt-6">Rivendica la scheda</a>
       </div>
-      <a href="/per-le-cantine" class="btn-primary justify-self-start md:justify-self-end">Rivendica la scheda</a>
+      <Mascotte nota="La scheda è mia?" class="mx-auto w-40 sm:w-48" />
     </div>
   </section>
 </BaseLayout>

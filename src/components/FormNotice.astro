@@ -10,12 +10,12 @@ const { sent, error, sentText } = Astro.props;
 const message = error ? (FORM_ERRORS[error as FormErrorCode] ?? 'Qualcosa non ha funzionato. Riprova.') : null;
 ---
 {sent && (
-  <p role="status" class="mt-6 border border-inchiostro bg-pistacchio p-4">
+  <p role="status" class="mt-6 rounded-2xl border-2 border-inchiostro bg-menta p-4">
     <span class="meta mr-2">Ricevuta</span>{sentText}
   </p>
 )}
 {message && (
-  <p role="alert" class="mt-6 border border-rosso p-4 text-rosso">
+  <p role="alert" class="mt-6 rounded-2xl border-2 border-rosso p-4 text-rosso">
     <span class="meta mr-2">Attenzione</span>{message}
   </p>
 )}

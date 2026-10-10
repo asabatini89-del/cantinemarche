@@ -9,7 +9,7 @@ const { page, pages, href } = Astro.props;
 const shown = [...new Set([1, page - 1, page, page + 1, pages])].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b);
 ---
 {pages > 1 && (
-  <nav aria-label="Pagine del catalogo" class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-inchiostro pt-5">
+  <nav aria-label="Pagine del catalogo" class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t-2 border-inchiostro pt-5">
     {page > 1 ? <a rel="prev" href={href(page - 1)} class="btn h-10">← Precedenti</a> : <span class="hidden sm:block"></span>}
     <ol class="meta order-last flex w-full items-center justify-center gap-1 sm:order-none sm:w-auto">
       {shown.map((n, i) => (
@@ -17,8 +17,8 @@ const shown = [...new Set([1, page - 1, page, page + 1, pages])].filter((n) => n
           {i > 0 && n - shown[i - 1] > 1 && <li aria-hidden="true" class="px-1 text-grafite">…</li>}
           <li>
             {n === page
-              ? <span aria-current="page" class="inline-flex size-9 items-center justify-center bg-inchiostro text-carta">{n}</span>
-              : <a href={href(n)} class="inline-flex size-9 items-center justify-center hover:bg-carta-2">{n}</a>}
+              ? <span aria-current="page" class="inline-flex size-9 items-center justify-center rounded-full bg-rosso text-carta">{n}</span>
+              : <a href={href(n)} class="inline-flex size-9 items-center justify-center rounded-full border-[1.5px] border-transparent hover:border-inchiostro hover:bg-giallo">{n}</a>}
           </li>
         </>
       ))}

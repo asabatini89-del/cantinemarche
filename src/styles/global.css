@@ -1,50 +1,60 @@
 /* =============================================================================
-   Cantine delle Marche — identità "Catalogo ragionato"
-   Un catalogo da editore colto: carta non patinata, inchiostro, un solo rosso
-   da frontespizio, copertine pastello per i territori, macchina da scrivere
-   per i metadati. Niente ombre, niente angoli arrotondati.
-   Guida completa: docs/05-identita.md
+   Cantine delle Marche — identità "Radical Chic"
+   Il manifesto e la copertina: fondo albicocca o crema, Bodoni maiuscolo in
+   rosso vermiglio, cobalto e mandarino da disegno a matita, il giallo pieno
+   delle copertine anni Settanta, filetti neri spessi, una nota scritta a mano.
+   Guida: docs/05-identita.md
    ============================================================================= */
 @import "tailwindcss";
 
 @theme {
-  /* Carta e inchiostro */
-  --color-carta: #f3eee3;      /* fondo: carta usomano */
-  --color-carta-2: #e9e2d3;    /* superfici, campi, righe alterne */
-  --color-inchiostro: #16130f; /* testo e filetti (16:1 sulla carta) */
-  --color-grafite: #5a554c;    /* testo secondario (6,4:1) — mai sulle copertine */
-  --color-rosso: #b8321c;      /* il rosso del frontespizio: azioni e accenti (5,2:1) */
-  --color-rosso-scuro: #962812;
+  /* Fondi */
+  --color-carta: #fbf4e8;      /* crema: fondo di lettura */
+  --color-carta-2: #f4e6cf;    /* crema scura: hover, superfici */
+  --color-pesca: #fccb8f;      /* albicocca del manifesto: hero e sezioni-poster */
 
-  /* Copertine pastello: province e territori (solo testo inchiostro sopra) */
-  --color-salvia: #b7c3a3;
-  --color-cipria: #e6c2b4;
-  --color-ocra: #e2c07a;
-  --color-glicine: #c3b7d6;
-  --color-celeste: #b6cdd6;
-  --color-pistacchio: #d2d8a4;
-  --color-albicocca: #e8b48f;
+  /* Inchiostri */
+  --color-inchiostro: #141210; /* testo, filetti, contorni */
+  --color-grafite: #5a5048;    /* testo secondario (7,2:1 su crema, 5,3:1 su albicocca) */
+  --color-rosso: #d42a1a;      /* vermiglio: titoli-manifesto e azioni (4,6:1 su crema) */
+  --color-rosso-scuro: #ad1f10;
+  --color-cobalto: #3557a8;    /* matita blu: note a mano, accenti (4,6:1 su albicocca) */
+
+  /* Colori pieni da copertina (solo con testo inchiostro sopra) */
+  --color-giallo: #ffd100;
+  --color-mandarino: #f08a3a;
+  --color-azzurro: #9bb8e8;
+  --color-rosa: #f6b2a4;
+  --color-menta: #9ed39f;
+  --color-lavanda: #c9b6e4;
+  --color-albicocca: #f7a35c;
 
   /* Caratteri */
-  --font-serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-serif: "Bodoni Moda Variable", "Bodoni 72", "Didot", Georgia, serif;
   --font-sans: "Instrument Sans Variable", "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-mano: "Caveat Variable", "Caveat", "Comic Sans MS", cursive;
+
+  --animate-salta: salta 2.4s ease-in-out infinite;
+  @keyframes salta {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-6px) rotate(-2deg); }
+  }
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern", "liga", "onum";
   }
   body {
     @apply bg-carta font-sans text-[15px] leading-relaxed text-inchiostro antialiased;
   }
   ::selection {
-    @apply bg-rosso text-carta;
+    @apply bg-giallo text-inchiostro;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-rosso;
+    @apply outline-2 outline-offset-2 outline-cobalto;
   }
   a {
     text-underline-offset: 0.2em;
@@ -52,22 +62,52 @@
   }
 }
 
-/* Metadati da macchina da scrivere: N° 042 · ANCONA · CASTELLI DI JESI */
+/* Metadati da macchina da scrivere: N° 042 · ANCONA */
 @utility meta {
   @apply font-mono text-[11px] font-normal uppercase tracking-[0.08em];
 }
 
-/* Titoli da frontespizio */
+/* Titoli in Bodoni: contrasto alto, ottica automatica sui corpi grandi */
 @utility display {
-  @apply font-serif font-normal leading-[0.95] tracking-[-0.01em];
+  @apply font-serif font-medium leading-[0.95] tracking-[-0.01em];
+  font-optical-sizing: auto;
 }
 
-/* Pulsanti: rettangoli tipografici */
+/* Parola-manifesto: RADICAL / C H I C */
+@utility manifesto {
+  @apply font-serif font-medium uppercase leading-[0.85] text-rosso;
+  font-optical-sizing: auto;
+  letter-spacing: 0.02em;
+}
+@utility spaziato {
+  letter-spacing: 0.42em;
+  padding-left: 0.42em; /* compensa lo spazio dopo l'ultima lettera: resta centrato */
+}
+
+/* Nota scritta a mano, in matita blu */
+@utility mano {
+  @apply font-mano font-semibold leading-none text-cobalto;
+}
+
+/* Blocco titolo da copertina: righe separate da filetti neri */
+@utility copertina-titolo {
+  @apply border-y-2 border-inchiostro;
+}
+
+/* Pulsanti a pillola (il marchio dell'editore) */
 @utility btn {
-  @apply inline-flex h-11 items-center justify-center gap-2 border border-inchiostro px-5 font-sans text-sm font-medium text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta;
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-full border-[1.5px] border-inchiostro px-5 font-sans text-sm font-medium text-inchiostro transition-colors hover:bg-inchiostro hover:text-carta;
 }
 @utility btn-primary {
-  @apply inline-flex h-11 items-center justify-center gap-2 border border-rosso bg-rosso px-5 font-sans text-sm font-medium text-carta transition-colors hover:border-rosso-scuro hover:bg-rosso-scuro;
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-full border-[1.5px] border-rosso bg-rosso px-5 font-sans text-sm font-semibold text-carta transition-colors hover:border-rosso-scuro hover:bg-rosso-scuro;
+}
+@utility pillola {
+  @apply inline-flex items-center rounded-full border-[1.5px] border-inchiostro px-3 py-0.5 font-mono text-[11px] uppercase tracking-[0.08em];
+}
+
+/* Grana da stampa risograph sui fondi pieni */
+@utility grana {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .08  0 0 0 0 .07  0 0 0 0 .06  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 /* Riga orizzontale scorrevole senza scrollbar (chip su mobile) */
@@ -75,5 +115,12 @@
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

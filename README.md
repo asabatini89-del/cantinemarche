@@ -34,7 +34,7 @@ Prima volta: **Settings → Pages → Build and deployment → Source: GitHub Ac
 
 ## Il sito
 
-Identità “Catalogo ragionato”: vedi [`docs/05-identita.md`](docs/05-identita.md).
+Identità “Radical Chic” (manifesto e copertina anni Settanta, mappa animata): vedi [`docs/05-identita.md`](docs/05-identita.md).
 
 ![Home](docs/img/home-desktop.jpg)
 
@@ -98,9 +98,9 @@ Fase 2 (account, verifica del claim, dashboard cantina) e Fase 3 (shop multi-ven
 | [`src/`](src/) | App Astro: `pages/` (home, cantine, territori, denominazioni, per-le-cantine, api), `components/` (MarcheMap, WineryCard, FilterBar), `lib/` (D1, filtri, mappa, moduli) |
 | [`data/export-2026-10-09/`](data/export-2026-10-09/) | Export del portale attuale usato per l'import (cantine, anteprime, territori, denominazioni, licenze) |
 | [`scripts/build-seed.mjs`](scripts/build-seed.mjs) → [`db/seed/`](db/seed/) | Normalizzazione dell'export e generazione dei seed SQL, deterministica |
-| [`docs/05-identita.md`](docs/05-identita.md) | Identità visiva “Catalogo ragionato”: principi, colori, caratteri, componenti, voce |
+| [`docs/05-identita.md`](docs/05-identita.md) | Identità visiva “Radical Chic”: principi, colori, caratteri, componenti, mappa animata, voce |
 
 ## Note rispetto ai documenti di progetto
 
-- La mappa è un **SVG** delle province ISTAT con le cantine proiettate (proiezione stimata adattando le 307 coordinate ai poligoni: 306 cadono nella provincia giusta). Niente MapLibre né tile esterni: zero dipendenze, zero costi, coerente con l'identità. Le tile vettoriali restano un'opzione se servirà lo zoom stradale.
-- Nessun framework di isole (Preact): bastano HTML server-side e due script vanilla (filtri, cartiglio della mappa).
+- La mappa è un **SVG** delle province ISTAT con le cantine proiettate (proiezione stimata adattando le 307 coordinate ai poligoni: 306 cadono nella provincia giusta). Niente MapLibre né tile esterni: zero dipendenze, zero costi, coerente con l'identità. La mappa della home è navigabile (volo animato sulle province, zoom fino a ~28× con punti a dimensione costante, trascinamento e pinch) con uno script vanilla, [`src/scripts/map-explorer.ts`](src/scripts/map-explorer.ts). Le tile vettoriali restano un'opzione se servirà lo zoom stradale.
+- Nessun framework di isole (Preact): bastano HTML server-side e script vanilla (filtri, esploratore della mappa).

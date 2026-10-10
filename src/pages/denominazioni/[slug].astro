@@ -15,14 +15,15 @@ const short = d.name.replace(/ (DOCG|DOC|IGT)$/, '');
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
 ---
 <BaseLayout title={d.name} description={`${d.name}: le ${total} cantine delle Marche che la producono.`} canonical={`/denominazioni/${d.slug}`}>
-  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
-    <nav aria-label="Percorso" class="meta text-grafite"><a href="/denominazioni" class="hover:underline">Le denominazioni</a> /</nav>
+  <div class="grana border-b-2 border-inchiostro bg-pesca">
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <nav aria-label="Percorso" class="meta"><a href="/denominazioni" class="hover:underline">Le denominazioni</a> /</nav>
     <div class="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       <div>
-        <p class="meta text-rosso">{d.level}</p>
-        <h1 class="display mt-3 text-6xl sm:text-7xl">{short}</h1>
+        <p class="pillola bg-carta">{d.level}</p>
+        <h1 class="manifesto mt-4 text-[clamp(2.8rem,8vw,6rem)]">{short}</h1>
         {d.territory_slug && (
-          <a href={`/territori/${d.territory_slug}`} class={`mt-6 inline-flex items-baseline gap-3 px-3 py-2 ${coverFor(d.territory_id)}`}>
+          <a href={`/territori/${d.territory_slug}`} class={`mt-6 inline-flex items-baseline gap-3 rounded-full border-[1.5px] border-inchiostro px-4 py-2 transition-transform hover:-translate-y-0.5 ${coverFor(d.territory_id)}`}>
             <span class="meta">Territorio</span><span class="font-serif text-xl italic">{d.territory_name}</span><span aria-hidden="true">→</span>
           </a>
         )}
@@ -32,10 +33,11 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600,
       {points.length > 0 && <MarcheMap points={points} frame="points" label={`Mappa delle cantine ${d.name}`} />}
     </div>
   </div>
+  </div>
 
   {items.length > 0 && (
     <section aria-labelledby="h-cantine" class="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
-      <h2 id="h-cantine" class="display border-b border-inchiostro pb-3 text-4xl">Chi la produce</h2>
+      <h2 id="h-cantine" class="display copertina-titolo py-3 text-4xl sm:text-5xl">Chi <em>la produce</em></h2>
       <ul role="list" class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((w) => <li><WineryCard winery={w} /></li>)}
       </ul>

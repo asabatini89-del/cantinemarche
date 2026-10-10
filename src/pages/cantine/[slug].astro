@@ -4,7 +4,7 @@ import MarcheMap from '../../components/MarcheMap.astro';
 import WineryCard from '../../components/WineryCard.astro';
 import FormNotice from '../../components/FormNotice.astro';
 import { getWinery, nearbyWineries } from '../../lib/db';
-import { catalogNo, coverFor, displayName } from '../../lib/palette';
+import { catalogNo, displayName } from '../../lib/palette';
 
 const data = await getWinery(Astro.params.slug ?? '');
 if (!data) return new Response(null, { status: 404, statusText: 'Not found' });
@@ -47,7 +47,7 @@ const jsonLd = {
   },
   ...(hasCoords && { geo: { '@type': 'GeoCoordinates', latitude: w.lat, longitude: w.lng } }),
 };
-const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[15px] focus:border-rosso focus:outline-none';
+const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg-carta px-3 text-[15px] focus:border-rosso focus:outline-none';
 ---
 <BaseLayout
   title={title}
@@ -57,28 +57,31 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <article>
-    <header class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
-      <nav aria-label="Percorso" class="meta text-grafite"><a href="/cantine" class="hover:underline">Le cantine</a> / {catalogNo(w.num)}</nav>
-      <div class="mt-8 grid gap-10 border-b border-inchiostro pb-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end">
+    <header class="grana border-b-2 border-inchiostro bg-pesca">
+      <div class="mx-auto max-w-6xl px-4 pb-10 pt-8 sm:px-6">
+      <nav aria-label="Percorso" class="meta"><a href="/cantine" class="hover:underline">Le cantine</a> / <span class="text-rosso">{catalogNo(w.num)}</span></nav>
+      <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end">
         <div>
-          <p class="meta text-grafite">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
-          <h1 class="display mt-3 text-[3.2rem] sm:text-[5.2rem]">{title}</h1>
+          <p class="meta">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
+          <h1 class="display copertina-titolo mt-3 py-3 text-[3rem] sm:text-[5.2rem]">{title}</h1>
           {(w.address_line || place) && <p class="mt-5 max-w-xl text-lg">{w.address_line ?? place}</p>}
+          {wines.length > 0 && <p class="mano mt-3 -rotate-1 text-2xl sm:text-3xl">{wines.length === 1 ? 'un’etichetta' : `${wines.length} etichette`}, da assaggiare</p>}
           <div class="mt-7 flex flex-wrap gap-2">
             <a href={mapsHref} target="_blank" rel="noopener" class="btn-primary">Indicazioni</a>
-            {telHref && <a href={telHref} class="btn">Chiama</a>}
-            {w.email && <a href={`mailto:${w.email}`} class="btn">Scrivi</a>}
-            {w.website && <a href={w.website} target="_blank" rel="noopener" class="btn">Sito <span aria-hidden="true">↗</span></a>}
-            <a href="#visita" class="btn">Richiedi una visita</a>
+            {telHref && <a href={telHref} class="btn bg-carta">Chiama</a>}
+            {w.email && <a href={`mailto:${w.email}`} class="btn bg-carta">Scrivi</a>}
+            {w.website && <a href={w.website} target="_blank" rel="noopener" class="btn bg-carta">Sito <span aria-hidden="true">↗</span></a>}
+            <a href="#visita" class="btn bg-carta">Richiedi una visita</a>
           </div>
         </div>
         {hasCoords && (
-          <div class="max-w-sm lg:justify-self-end">
+          <div class="w-full max-w-sm lg:justify-self-end">
             <MarcheMap points={[{ slug: w.slug, name: w.name, municipality: w.municipality, province_code: w.province_code, lat: w.lat!, lng: w.lng! }]}
               highlight={w.province_code} interactive={false} locator label={`Posizione di ${w.name} nelle Marche`} />
             <p class="meta mt-1 text-grafite">{w.coordinate_status === 'approximate' ? 'Posizione approssimativa' : 'Posizione © OpenStreetMap'}</p>
           </div>
         )}
+      </div>
       </div>
     </header>
 
@@ -88,12 +91,12 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
           <img src={`/media/${photos[0].r2_key}`} srcset={`/media/${photos[0].thumb_key ?? photos[0].r2_key} 640w, /media/${photos[0].r2_key} 1600w`}
             sizes="(min-width: 1152px) 760px, 100vw" alt={`${title}: foto dal sito della cantina`}
             width={photos[0].width ?? 1600} height={photos[0].height ?? 1067} fetchpriority="high"
-            class="aspect-[3/2] h-full w-full bg-carta-2 object-cover" />
+            class="aspect-[3/2] h-full w-full rounded-sm border-2 border-inchiostro bg-carta-2 object-cover" />
           {photos.length > 1 && (
             <div class="grid grid-cols-3 gap-2 sm:grid-cols-1">
               {photos.slice(1, 4).map((p) => (
                 <img src={`/media/${p.thumb_key ?? p.r2_key}`} alt="" width="640" height="427" loading="lazy" decoding="async"
-                  class="aspect-[3/2] h-full w-full bg-carta-2 object-cover" />
+                  class="aspect-[3/2] h-full w-full rounded-sm border-2 border-inchiostro bg-carta-2 object-cover" />
               ))}
             </div>
           )}
@@ -107,7 +110,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
 
     {w.data_note && (
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <p class="mt-6 border-l-2 border-rosso pl-4 text-sm"><span class="meta mr-2 text-rosso">Nota</span>{w.data_note}</p>
+        <p class="mt-6 border-l-4 border-rosso pl-4 text-sm"><span class="meta mr-2 text-rosso">Nota</span>{w.data_note}</p>
       </div>
     )}
 
@@ -115,12 +118,12 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
       <div class="space-y-14">
         {(denominations.length > 0 || grapes.length > 0) && (
           <section aria-labelledby="h-denominazioni">
-            <h2 id="h-denominazioni" class="display text-4xl">{denominations.length > 0 ? <>Denominazioni <em>e vitigni</em></> : 'Vitigni'}</h2>
-            {denominations.length > 0 && <ul role="list" class="mt-5 border-t border-inchiostro">
+            <h2 id="h-denominazioni" class="display text-4xl sm:text-5xl">{denominations.length > 0 ? <>Denominazioni <em>e vitigni</em></> : 'Vitigni'}</h2>
+            {denominations.length > 0 && <ul role="list" class="mt-5 border-t-2 border-inchiostro">
               {denominations.map((d) => (
-                <li class="border-b border-inchiostro">
-                  <a href={`/denominazioni/${d.id}`} class="group flex items-baseline justify-between gap-4 py-3 hover:bg-carta-2">
-                    <span class="font-serif text-2xl group-hover:text-rosso">{d.name.replace(/ (DOCG|DOC|IGT)$/, '')}</span>
+                <li class="border-b-2 border-inchiostro">
+                  <a href={`/denominazioni/${d.id}`} class="group flex items-baseline justify-between gap-4 px-1 py-3 transition-colors hover:bg-giallo">
+                    <span class="font-serif text-2xl">{d.name.replace(/ (DOCG|DOC|IGT)$/, '')}</span>
                     <span class="meta text-grafite">{d.level}</span>
                   </a>
                 </li>
@@ -133,11 +136,11 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
         )}
 
         <section aria-labelledby="h-vini">
-          <h2 id="h-vini" class="display text-4xl">I vini</h2>
+          <h2 id="h-vini" class="display copertina-titolo flex items-baseline justify-between gap-4 py-3 text-4xl sm:text-5xl">I vini {wines.length > 0 && <span class="manifesto text-5xl sm:text-6xl">{wines.length}</span>}</h2>
           {wines.length > 0 ? (
             <>
               <p class="mt-2 text-grafite">{wines.length} {wines.length === 1 ? 'etichetta rilevata' : 'etichette rilevate'} sul sito della cantina, che resta la fonte per prezzi e disponibilità.</p>
-              <ol class="mt-5 border-t border-inchiostro sm:columns-2 sm:gap-8">
+              <ol class="mt-5 sm:columns-2 sm:gap-8">
                 {wines.slice(0, VISIBLE_WINES).map((v, i) => (
                   <li class="break-inside-avoid border-b border-inchiostro/25">
                     <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
@@ -152,7 +155,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
               {wines.length > VISIBLE_WINES && (
                 <details class="group mt-2">
                   <summary class="btn mt-3 cursor-pointer list-none group-open:hidden [&::-webkit-details-marker]:hidden">Mostra tutte le {wines.length} etichette</summary>
-                  <ol start={VISIBLE_WINES + 1} class="border-t border-inchiostro sm:columns-2 sm:gap-8">
+                  <ol start={VISIBLE_WINES + 1} class="sm:columns-2 sm:gap-8">
                     {wines.slice(VISIBLE_WINES).map((v, i) => (
                       <li class="break-inside-avoid border-b border-inchiostro/25">
                         <a href={v.external_url ?? undefined} target="_blank" rel="noopener" class="group flex items-baseline gap-3 py-2.5">
@@ -173,7 +176,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
         </section>
 
         <section id="visita" aria-labelledby="h-visita" class="scroll-mt-6">
-          <h2 id="h-visita" class="display text-4xl">Richiedi <em>una visita</em></h2>
+          <h2 id="h-visita" class="display copertina-titolo py-3 text-4xl sm:text-5xl">Richiedi <em>una visita</em></h2>
           <p class="mt-2 max-w-lg text-grafite">La richiesta arriva alla redazione, che la inoltra alla cantina. Non è una prenotazione: ti risponderanno per confermare giorno e orario.</p>
           <FormNotice sent={sent} error={error} sentText="Richiesta ricevuta. Ti scriveremo all’indirizzo che hai indicato." />
           {!sent && (
@@ -196,7 +199,7 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
         </section>
       </div>
 
-      <aside class="space-y-10 lg:border-l lg:border-inchiostro lg:pl-8">
+      <aside class="space-y-10 lg:border-l-2 lg:border-inchiostro lg:pl-8">
         <section aria-labelledby="h-contatti">
           <h2 id="h-contatti" class="meta text-grafite">Contatti</h2>
           <dl class="mt-3 space-y-3">
@@ -224,17 +227,18 @@ const field = 'mt-1.5 h-11 w-full border border-inchiostro bg-carta px-3 text-[1
           </section>
         )}
 
-        <section aria-labelledby="h-titolare" class={`p-5 ${coverFor(w.territory_id)}`}>
-          <h2 id="h-titolare" class="display text-3xl">Sei il titolare?</h2>
+        <section aria-labelledby="h-titolare" class="rounded-2xl border-2 border-inchiostro bg-giallo p-5 shadow-[6px_6px_0_var(--color-inchiostro)]">
+          <p class="mano -rotate-2 text-2xl">psst…</p>
+          <h2 id="h-titolare" class="display mt-1 text-3xl">Sei il titolare?</h2>
           <p class="mt-2 text-sm">Rivendica la scheda per correggere i dati e aggiungere orari, foto ed esperienze.</p>
-          <a href={`/per-le-cantine?cantina=${w.slug}#modulo`} class="btn mt-4 h-10">Rivendica la scheda</a>
+          <a href={`/per-le-cantine?cantina=${w.slug}#modulo`} class="btn-primary mt-4 h-10">Rivendica la scheda</a>
         </section>
       </aside>
     </div>
 
     {nearby.length > 0 && (
       <section aria-labelledby="h-vicine" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-        <h2 id="h-vicine" class="display border-b border-inchiostro pb-3 text-4xl">Nei paraggi</h2>
+        <h2 id="h-vicine" class="display copertina-titolo py-3 text-4xl sm:text-5xl">Nei <em>paraggi</em></h2>
         <ul role="list" class="mt-6 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
           {nearby.map((n) => <li><WineryCard winery={n} /></li>)}
         </ul>

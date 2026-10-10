@@ -1,9 +1,10 @@
 ---
 // Caratteri self-hosted (niente Google Fonts: più veloce e nessun dato a terzi).
-import '@fontsource/instrument-serif/latin-400.css';
-import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource-variable/bodoni-moda/opsz.css';
+import '@fontsource-variable/bodoni-moda/opsz-italic.css';
 import '@fontsource-variable/instrument-sans/index.css';
 import '@fontsource/ibm-plex-mono/latin-400.css';
+import '@fontsource-variable/caveat/index.css';
 import '../styles/global.css';
 
 interface Props {
@@ -40,40 +41,40 @@ const nav = [
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta name="theme-color" content="#f3eee3" />
+    <meta name="theme-color" content="#fccb8f" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <slot name="head" />
   </head>
   <body class="flex min-h-dvh flex-col">
-    <a href="#contenuto" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-inchiostro focus:px-3 focus:py-2 focus:text-carta">Vai al contenuto</a>
+    <a href="#contenuto" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-inchiostro focus:px-4 focus:py-2 focus:text-carta">Vai al contenuto</a>
 
-    <header class="border-b border-inchiostro">
-      <div class="mx-auto flex max-w-6xl items-end justify-between gap-6 px-4 pb-3 pt-5 sm:px-6">
-        <a href="/" class="group block leading-none" aria-label="Cantine delle Marche, alla home">
-          <span class="display block text-[1.9rem] sm:text-[2.3rem]">Cantine <em class="text-rosso">delle</em> Marche</span>
-          <span class="meta mt-1.5 block text-[10px] text-grafite">Catalogo ragionato · Ed. 2026</span>
+    <header class="border-b-2 border-inchiostro bg-carta">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+        <a href="/" class="group flex items-center gap-3 leading-none" aria-label="Cantine delle Marche, alla home">
+          <span class="manifesto whitespace-nowrap text-[1.12rem] tracking-[0.05em] sm:text-[1.75rem]">Cantine <span class="italic normal-case tracking-normal">delle</span> Marche</span>
+          <span class="pillola hidden text-[10px] lg:inline-flex">Catalogo · 2026</span>
         </a>
 
         <nav aria-label="Principale" class="hidden md:block">
-          <ul role="list" class="flex items-center gap-6 text-sm">
+          <ul role="list" class="flex items-center gap-5 text-sm">
             {nav.map((n) => (
-              <li><a href={n.href} aria-current={n.active ? 'page' : undefined} class="decoration-rosso hover:underline aria-[current=page]:underline">{n.label}</a></li>
+              <li><a href={n.href} aria-current={n.active ? 'page' : undefined} class="decoration-rosso decoration-2 hover:underline aria-[current=page]:underline">{n.label}</a></li>
             ))}
-            <li><a href="/per-le-cantine" class="btn h-9 px-3" aria-current={path === '/per-le-cantine' ? 'page' : undefined}>Per le cantine</a></li>
+            <li><a href="/per-le-cantine" class="btn-primary h-9 px-4" aria-current={path === '/per-le-cantine' ? 'page' : undefined}>Per le cantine</a></li>
           </ul>
         </nav>
 
         <details class="group relative md:hidden">
-          <summary class="meta flex h-10 cursor-pointer list-none items-center gap-2 border border-inchiostro px-3 [&::-webkit-details-marker]:hidden">
+          <summary class="pillola h-9 cursor-pointer list-none bg-carta [&::-webkit-details-marker]:hidden">
             <span class="group-open:hidden">Indice</span><span class="hidden group-open:inline">Chiudi</span>
           </summary>
-          <nav aria-label="Principale" class="absolute right-0 top-12 z-40 w-64 border border-inchiostro bg-carta">
+          <nav aria-label="Principale" class="absolute right-0 top-12 z-40 w-72 overflow-hidden rounded-2xl border-2 border-inchiostro bg-carta shadow-[5px_5px_0_var(--color-inchiostro)]">
             <ol class="divide-y divide-inchiostro/20">
               {[...nav, { href: '/per-le-cantine', label: 'Per le cantine', active: path === '/per-le-cantine' }].map((n, i) => (
                 <li>
-                  <a href={n.href} aria-current={n.active ? 'page' : undefined} class="flex items-baseline gap-3 px-4 py-3 hover:bg-carta-2 aria-[current=page]:text-rosso">
+                  <a href={n.href} aria-current={n.active ? 'page' : undefined} class="flex items-baseline gap-3 px-4 py-3 hover:bg-giallo aria-[current=page]:text-rosso">
                     <span class="meta text-grafite">{String(i + 1).padStart(2, '0')}</span>
-                    <span class="font-serif text-xl">{n.label}</span>
+                    <span class="display text-2xl">{n.label}</span>
                   </a>
                 </li>
               ))}
@@ -87,23 +88,27 @@ const nav = [
       <slot />
     </main>
 
-    <footer class="mt-16 border-t border-inchiostro">
-      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[2fr_1fr_1fr]">
+    <footer class="grana mt-20 border-t-2 border-inchiostro bg-pesca">
+      <div class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+        <p class="manifesto spaziato text-center text-[clamp(3rem,13vw,10rem)]" aria-hidden="true">Salute</p>
+      </div>
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 pb-10 pt-10 sm:px-6 md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <p class="display text-3xl">Il vino, <em>prima di tutto</em>, è un paesaggio.</p>
-          <p class="mt-3 max-w-md text-sm text-grafite">Un catalogo indipendente delle cantine delle Marche, compilato da fonti pubbliche e aggiornato con i produttori.</p>
+          <p class="mt-3 max-w-md text-sm">Un catalogo indipendente delle cantine delle Marche, compilato da fonti pubbliche e aggiornato con i produttori.</p>
+          <p class="mano mt-4 -rotate-2 text-2xl">…e domani brunch in vigna?</p>
         </div>
         <nav aria-label="Secondaria">
-          <p class="meta text-grafite">Indice</p>
+          <p class="meta">Indice</p>
           <ul role="list" class="mt-3 space-y-1.5 text-sm">
             {nav.map((n) => <li><a href={n.href} class="hover:underline">{n.label}</a></li>)}
             <li><a href="/per-le-cantine" class="hover:underline">Per le cantine</a></li>
           </ul>
         </nav>
         <div>
-          <p class="meta text-grafite">Colophon</p>
-          <p class="mt-3 text-sm text-grafite">
-            Composto in Instrument Serif, Instrument Sans e IBM Plex Mono. Confini ISTAT (CC BY 4.0), coordinate in parte © OpenStreetMap (ODbL).
+          <p class="meta">Colophon</p>
+          <p class="mt-3 text-sm">
+            Composto in Bodoni Moda, Instrument Sans, IBM Plex Mono e Caveat. Confini ISTAT (CC BY 4.0), coordinate in parte © OpenStreetMap (ODbL).
           </p>
           <p class="mt-2 text-sm"><a href="/privacy" class="underline">Privacy, fonti e licenze</a></p>
         </div>

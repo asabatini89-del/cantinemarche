@@ -1,19 +1,19 @@
-// Copertine pastello: una per provincia e una per territorio (classi Tailwind statiche).
+// Colori pieni da copertina: uno per provincia e uno per territorio (classi Tailwind statiche).
 export const PROVINCE_COVER: Record<string, { bg: string; fill: string }> = {
-  PU: { bg: 'bg-salvia', fill: 'fill-salvia' },
-  AN: { bg: 'bg-ocra', fill: 'fill-ocra' },
-  MC: { bg: 'bg-celeste', fill: 'fill-celeste' },
-  FM: { bg: 'bg-cipria', fill: 'fill-cipria' },
-  AP: { bg: 'bg-glicine', fill: 'fill-glicine' },
+  PU: { bg: 'bg-azzurro', fill: 'fill-azzurro' },
+  AN: { bg: 'bg-giallo', fill: 'fill-giallo' },
+  MC: { bg: 'bg-albicocca', fill: 'fill-albicocca' },
+  FM: { bg: 'bg-rosa', fill: 'fill-rosa' },
+  AP: { bg: 'bg-menta', fill: 'fill-menta' },
 };
 
 export const TERRITORY_COVER: Record<string, string> = {
-  'castelli-di-jesi': 'bg-pistacchio',
-  conero: 'bg-celeste',
-  matelica: 'bg-salvia',
-  piceno: 'bg-glicine',
-  metauro: 'bg-ocra',
-  'morro-d-alba': 'bg-cipria',
+  'castelli-di-jesi': 'bg-giallo',
+  conero: 'bg-azzurro',
+  matelica: 'bg-menta',
+  piceno: 'bg-lavanda',
+  metauro: 'bg-mandarino',
+  'morro-d-alba': 'bg-rosa',
   maceratese: 'bg-albicocca',
 };
 

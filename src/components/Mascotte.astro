@@ -1,0 +1,69 @@
+---
+// La mascotte: una bottiglia in dolcevita a coste e cuffie, disegnata "a matita"
+// (cobalto e mandarino, come il manifesto Radical Chic), con una nota a mano.
+interface Props {
+  nota?: string | null;
+  class?: string;
+  label?: string;
+}
+const { nota = 'Domani degustazione?', class: className = '', label = 'Illustrazione: una bottiglia di vino con il dolcevita e le cuffie' } = Astro.props;
+const id = `m${Math.random().toString(36).slice(2, 7)}`;
+// Sagoma della bottiglia (anfora slanciata), riusata per riempimento, ritaglio e contorno.
+const bottiglia = 'M130 46 h40 v96 c0 30 66 54 66 106 v248 q0 18 -18 18 h-136 q-18 0 -18 -18 v-248 c0 -52 66 -76 66 -106 z';
+---
+<figure class={`relative ${className}`}>
+  {nota && (
+    <figcaption class="mano animate-salta mb-1 ml-auto mr-[8%] w-max max-w-[12rem] text-right text-[clamp(1.25rem,2.6vw,1.75rem)]">
+      {nota}
+      <svg viewBox="0 0 40 30" class="ml-auto mr-10 mt-0.5 block h-5 w-8 text-cobalto" aria-hidden="true"><path d="M34 2 C 28 14, 18 20, 6 26 M6 26 l 8 1 M6 26 l 3 -7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+    </figcaption>
+  )}
+  <svg viewBox="0 0 300 540" role="img" aria-label={label} class="block h-auto w-full">
+    <defs>
+      <filter id={`${id}-matita`} x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" />
+        <feDisplacementMap in="SourceGraphic" scale="3" />
+      </filter>
+      <pattern id={`${id}-tratteggio`} width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#24418a" stroke-width="1.3" opacity="0.55" />
+      </pattern>
+      <pattern id={`${id}-coste`} width="10" height="24" patternUnits="userSpaceOnUse">
+        <path d="M3 0 Q 4.6 12 3 24" fill="none" stroke="#fde1c2" stroke-width="1.3" opacity="0.85" />
+        <path d="M7.5 0 Q 8.8 12 7.5 24" fill="none" stroke="#b9541a" stroke-width="1.1" opacity="0.55" />
+      </pattern>
+      <pattern id={`${id}-orlo`} width="14" height="6" patternUnits="userSpaceOnUse">
+        <path d="M0 3 H14" stroke="#b9541a" stroke-width="1.2" opacity="0.6" />
+      </pattern>
+      <clipPath id={`${id}-corpo`}><path d={bottiglia} /></clipPath>
+    </defs>
+
+    <g filter={`url(#${id}-matita)`}>
+      <!-- Bottiglia in matita blu (si vede sotto il maglione, come le zampe del levriero) -->
+      <path d={bottiglia} fill="#3557a8" />
+      <g clip-path={`url(#${id}-corpo)`}>
+        <rect width="300" height="540" fill={`url(#${id}-tratteggio)`} />
+        <!-- Dolcevita a coste: dalle spalle a tre quarti -->
+        <path d="M20 168 H280 V408 C 230 418, 70 418, 20 408 Z" fill="#f08a3a" />
+        <path d="M20 168 H280 V408 C 230 418, 70 418, 20 408 Z" fill={`url(#${id}-coste)`} />
+        <!-- Orlo -->
+        <path d="M20 390 C 70 400, 230 400, 280 390 V408 C 230 420, 70 420, 20 408 Z" fill="#e0782c" />
+        <path d="M20 390 C 70 400, 230 400, 280 390 V408 C 230 420, 70 420, 20 408 Z" fill={`url(#${id}-orlo)`} />
+      </g>
+      <!-- Collo alto arrotolato -->
+      <rect x="116" y="128" width="68" height="52" rx="16" fill="#f08a3a" />
+      <rect x="116" y="128" width="68" height="52" rx="16" fill={`url(#${id}-coste)`} />
+      <path d="M118 150 C 136 158, 164 158, 182 150" fill="none" stroke="#b9541a" stroke-width="1.6" opacity="0.7" />
+      <!-- Capsula vermiglio -->
+      <path d="M129 22 h42 q5 0 5 5 v41 h-52 v-41 q0 -5 5 -5 z" fill="#d42a1a" />
+      <path d="M122 68 h56" stroke="#141210" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Cuffie -->
+      <path d="M110 96 C 108 26, 192 26, 190 96" fill="none" stroke="#141210" stroke-width="5" stroke-linecap="round" />
+      <rect x="98" y="80" width="24" height="42" rx="10" fill="#fbf4e8" stroke="#141210" stroke-width="3.5" />
+      <rect x="178" y="80" width="24" height="42" rx="10" fill="#fbf4e8" stroke="#141210" stroke-width="3.5" />
+      <!-- Contorno a matita -->
+      <path d={bottiglia} fill="none" stroke="#24418a" stroke-width="2.2" stroke-linejoin="round" />
+      <!-- Ombra a terra -->
+      <ellipse cx="150" cy="526" rx="92" ry="7" fill="#141210" opacity="0.15" />
+    </g>
+  </svg>
+</figure>

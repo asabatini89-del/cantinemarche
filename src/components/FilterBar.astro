@@ -22,21 +22,21 @@ const groups = (options: Facet[]) => {
   for (const o of options) map.set(o.group ?? '', [...(map.get(o.group ?? '') ?? []), o]);
   return [...map];
 };
-const chip = 'chip snap-start inline-flex h-9 shrink-0 items-center gap-1.5 border border-inchiostro bg-carta px-3 text-sm text-inchiostro transition-colors hover:bg-carta-2 data-[active]:border-inchiostro data-[active]:bg-inchiostro data-[active]:text-carta';
-const option = 'inline-flex min-h-10 cursor-pointer items-center gap-2 border border-inchiostro px-3 py-2 text-sm peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso';
-const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full max-w-none overflow-y-auto border border-inchiostro bg-carta p-0 text-inchiostro backdrop:bg-inchiostro/40 md:inset-0 md:m-auto md:h-fit md:w-[30rem]';
+const chip = 'chip snap-start inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border-[1.5px] border-inchiostro bg-carta px-3 text-sm text-inchiostro transition-colors hover:bg-giallo data-[active]:border-inchiostro data-[active]:bg-inchiostro data-[active]:text-carta';
+const option = 'inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-full border-[1.5px] border-inchiostro px-3 py-2 text-sm peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso';
+const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full max-w-none overflow-y-auto rounded-t-3xl border-2 border-inchiostro md:rounded-3xl bg-carta p-0 text-inchiostro backdrop:bg-inchiostro/40 md:inset-0 md:m-auto md:h-fit md:w-[30rem]';
 ---
 <form id="filters" method="get" action="/cantine" role="search" aria-label="Filtra le cantine"
-  class="sticky top-0 z-30 border-b border-inchiostro bg-carta/95 backdrop-blur supports-[backdrop-filter]:bg-carta/85">
+  class="sticky top-0 z-30 border-b-2 border-inchiostro bg-carta/95 backdrop-blur supports-[backdrop-filter]:bg-carta/85">
   <div class="mx-auto max-w-6xl px-4 py-3 sm:px-6">
     <label for="q" class="sr-only">Cerca cantina, comune o vino</label>
     <div class="relative">
-      <svg class="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-grafite" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <svg class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-grafite" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
         <circle cx="9" cy="9" r="6" /><path d="m14 14 4 4" />
       </svg>
       <input id="q" name="q" type="search" value={filters.q} inputmode="search" autocomplete="off" enterkeyhint="search"
         placeholder="Cantina, borgo o vino…"
-        class="h-11 w-full border border-inchiostro bg-carta pl-9 pr-3 text-[15px] text-inchiostro placeholder:text-grafite focus:border-rosso focus:outline-none" />
+        class="h-11 w-full rounded-full border-2 border-inchiostro bg-carta pl-10 pr-4 text-[15px] text-inchiostro placeholder:text-grafite focus:border-rosso focus:outline-none" />
     </div>
 
     <div class="scroll-row -mx-4 mt-3 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 sm:mx-0 sm:scroll-px-0 sm:px-0">
@@ -55,7 +55,7 @@ const panelClass = 'fixed inset-x-0 bottom-0 top-auto m-0 max-h-[80dvh] w-full m
       {facets.servizio.map((s) => (
         <label class="relative snap-start shrink-0">
           <input type="checkbox" name="servizio" value={s.value} checked={selected('servizio', s.value)} class="peer sr-only" data-autosubmit />
-          <span class="inline-flex h-9 cursor-pointer items-center border border-inchiostro px-3 text-sm text-inchiostro transition-colors hover:bg-carta-2 peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso">{s.label}</span>
+          <span class="inline-flex h-9 cursor-pointer items-center rounded-full border-[1.5px] border-inchiostro px-3 text-sm text-inchiostro transition-colors hover:bg-giallo peer-checked:border-inchiostro peer-checked:bg-inchiostro peer-checked:text-carta peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-rosso">{s.label}</span>
         </label>
       ))}
 

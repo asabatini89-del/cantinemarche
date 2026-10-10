@@ -1,94 +1,195 @@
 ---
-// Mappa SVG delle Marche: province pastello, cantine come punti rossi.
-// Senza JS ogni punto è un link alla scheda; con JS un tocco apre un cartiglio.
+// Mappa SVG delle Marche: province a colori pieni con contorno nero, cantine come punti.
+// - explore: mappa principale, con volo animato sulle province, zoom e trascinamento
+// - interactive: tocco su un punto → cartiglio (zoom e trascinamento inclusi)
+// - locator: punto singolo con anello, statico (scheda cantina)
+// Senza JS ogni punto resta un link alla scheda.
 import type { MapPoint } from '../lib/db';
 import { PROVINCE_SHAPES, VIEWBOX, fitViewBox, project } from '../lib/map';
 import { PROVINCE_COVER, displayName } from '../lib/palette';
 
 interface Props {
   points: MapPoint[];
-  /** 'all' = tutta la regione; 'points' = inquadra i punti */
   frame?: 'all' | 'points';
-  highlight?: string | null; // codice provincia da evidenziare
+  highlight?: string | null;
   label?: string;
   interactive?: boolean;
-  /** Punto singolo (scheda cantina): più grande, con anello */
+  explore?: boolean;
   locator?: boolean;
   class?: string;
 }
-const { points, frame = 'all', highlight = null, label = 'Mappa delle cantine delle Marche', interactive = true, locator = false, class: className = '' } = Astro.props;
+const {
+  points,
+  frame = 'all',
+  highlight = null,
+  label = 'Mappa delle cantine delle Marche',
+  interactive = true,
+  explore = false,
+  locator = false,
+  class: className = '',
+} = Astro.props;
 
 const projected = points.map((p) => ({ ...p, ...project(p.lng, p.lat) }));
 const vb = frame === 'points' && projected.length > 0 ? fitViewBox(projected) : VIEWBOX;
-const r = locator ? vb.w / 55 : Math.max(vb.w / 140, 2.4);
-const id = `map-${Math.random().toString(36).slice(2, 8)}`;
+const r = locator ? vb.w / 50 : Math.max(vb.w / 150, 2.2);
+const counts = Object.fromEntries(PROVINCE_SHAPES.map((p) => [p.id, projected.filter((x) => x.province_code === p.id).length]));
+
+// Etichette dei comuni (compaiono allo zoom): baricentro delle cantine di ogni comune.
+const towns = Object.values(
+  projected.reduce<Record<string, { name: string; prov: string | null; x: number; y: number; n: number }>>((acc, p) => {
+    if (!p.municipality) return acc;
+    const key = `${p.municipality}|${p.province_code}`;
+    const t = (acc[key] ??= { name: p.municipality, prov: p.province_code, x: 0, y: 0, n: 0 });
+    t.x += p.x; t.y += p.y; t.n += 1;
+    return acc;
+  }, {}),
+).map((t) => ({ ...t, x: +(t.x / t.n).toFixed(1), y: +(t.y / t.n).toFixed(1) }));
+const live = interactive && !locator;
 ---
-<figure class={`relative ${className}`} data-map={interactive ? id : undefined}>
-  <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} role="img" aria-label={label} class="block h-auto w-full">
+<figure class={`marche-map relative overflow-hidden ${className}`} data-map={live ? '' : undefined} data-explore={explore ? '' : undefined} data-focus={explore ? '' : undefined} tabindex={live ? 0 : undefined} aria-label={live ? `${label}. Trascina per spostarti, usa i pulsanti per lo zoom.` : undefined}>
+  <svg viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`} data-camera={JSON.stringify(vb)} role="img" aria-label={label} overflow="hidden"
+    class={`block h-auto w-full select-none ${live ? 'cursor-grab touch-none [[data-dragging]_&]:cursor-grabbing' : ''}`} style={`aspect-ratio:${vb.w}/${vb.h}`}>
     <title>{label}</title>
-    <text x={vb.x + vb.w - 12} y={vb.y + 40} text-anchor="end" class="fill-grafite font-serif italic" font-size={vb.w / 26}>Adriatico</text>
-    <g>
+    <text x={vb.x + vb.w - 14} y={vb.y + vb.h * (explore ? 0.42 : 0.27)} text-anchor="end" class="mappa-mare fill-cobalto font-serif italic" font-size={vb.w / 22}>Adriatico</text>
+
+    <!-- Ombra da carta ritagliata -->
+    <g class="mappa-ombre fill-inchiostro" aria-hidden="true">
+      {PROVINCE_SHAPES.map((p) => <path d={p.path} data-shadow={p.id} class={highlight && highlight !== p.id ? 'is-dim' : undefined} />)}
+    </g>
+    <g class="mappa-province">
       {PROVINCE_SHAPES.map((p) => (
-        <path d={p.path}
-          class={`${PROVINCE_COVER[p.id]?.fill ?? 'fill-carta-2'} stroke-carta transition-opacity`}
-          stroke-width={vb.w / 400}
-          opacity={highlight && highlight !== p.id ? 0.35 : 1} />
+        <path d={p.path} data-prov={p.id} data-name={p.name}
+          class={`${PROVINCE_COVER[p.id]?.fill ?? 'fill-carta-2'} stroke-inchiostro ${highlight && highlight !== p.id ? 'is-dim' : ''}`}
+          stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linejoin="round">
+          {live && <title>{`${p.name}: ${counts[p.id]} cantine`}</title>}
+        </path>
       ))}
     </g>
-    <g>
-      {projected.map((p) => (
-        <a href={`/cantine/${p.slug}`} tabindex="-1" aria-hidden="true" data-name={displayName(p.name)} data-place={[p.municipality, p.province_code].filter(Boolean).join(' · ')} data-x={p.x} data-y={p.y}>
-          <circle cx={p.x} cy={p.y} r={r * 2.2} fill="transparent" />
-          {locator && <circle cx={p.x} cy={p.y} r={r * 2.2} class="fill-none stroke-rosso" stroke-width={r / 3} />}
-          <circle cx={p.x} cy={p.y} r={r} class="fill-rosso stroke-carta" stroke-width={r / 2.5} />
+
+    <g class="mappa-punti">
+      {projected.map((p, i) => (
+        <a href={`/cantine/${p.slug}`} tabindex="-1" aria-hidden="true" data-name={displayName(p.name)}
+          data-place={[p.municipality, p.province_code].filter(Boolean).join(' · ')} data-x={p.x} data-y={p.y}
+          style={`--i:${i % 60}`}>
+          <circle data-hit cx={p.x} cy={p.y} r={r * 2.4} fill="transparent" />
+          {locator && <circle cx={p.x} cy={p.y} r={r * 2.3} class="fill-none stroke-rosso" stroke-width="2" vector-effect="non-scaling-stroke" />}
+          <circle data-dot data-prov={p.province_code} cx={p.x} cy={p.y} r={r}
+            class={`mappa-punto ${locator ? 'fill-rosso' : 'fill-inchiostro'} stroke-carta`} stroke-width="1.4" vector-effect="non-scaling-stroke" />
         </a>
       ))}
     </g>
-    {frame === 'all' && (
-      <g aria-hidden="true">
+
+    {explore && (
+      <g class="mappa-comuni" aria-hidden="true">
+        {towns.map((t) => (
+          <text data-town data-n={t.n} data-prov={t.prov} x={t.x} y={t.y} text-anchor="middle"
+            class="fill-inchiostro stroke-carta font-mono uppercase" paint-order="stroke" stroke-linejoin="round" letter-spacing="0.06em" style="opacity:0">{t.name}</text>
+        ))}
+      </g>
+    )}
+
+    {frame === 'all' && !locator && (
+      <g data-province-labels class="mappa-etichette transition-opacity duration-500" aria-hidden="true">
         {PROVINCE_SHAPES.map((p) => (
-          <text x={p.labelX} y={p.labelY} text-anchor="middle" class="fill-inchiostro stroke-carta font-mono uppercase" stroke-width="4" paint-order="stroke" font-size="13" letter-spacing="1.5" opacity={highlight && highlight !== p.id ? 0.4 : 0.8}>{p.name}</text>
+          <text x={p.labelX} y={p.labelY} text-anchor="middle" class="fill-inchiostro stroke-carta font-mono uppercase" stroke-width="4" paint-order="stroke" font-size="13" letter-spacing="1.5" opacity={highlight && highlight !== p.id ? 0.4 : 0.9}>{p.name}</text>
         ))}
       </g>
     )}
   </svg>
 
-  {interactive && (
-    <div data-callout hidden class="absolute z-10 w-64 max-w-[calc(100%-1rem)] border border-inchiostro bg-carta p-4">
+  {explore && (
+    <>
+      <div class="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-2 sm:p-3">
+        <div class="pointer-events-auto flex flex-wrap items-center gap-2">
+          <button type="button" data-goto="all" class="pillola bg-carta hover:bg-giallo [[data-focus='']_&]:hidden">← Tutte le Marche</button>
+          <p class="pillola bg-carta"><span data-crumb>Marche</span></p>
+        </div>
+        <div class="pointer-events-auto flex flex-col gap-1.5">
+          <button type="button" data-zoom-in aria-label="Avvicina" class="grid size-9 place-items-center rounded-full border-[1.5px] border-inchiostro bg-carta text-lg leading-none hover:bg-giallo">+</button>
+          <button type="button" data-zoom-out aria-label="Allontana" class="grid size-9 place-items-center rounded-full border-[1.5px] border-inchiostro bg-carta text-lg leading-none hover:bg-giallo">−</button>
+        </div>
+      </div>
+      <p class="meta pointer-events-none absolute bottom-2 left-2 sm:bottom-3 sm:left-3"><span data-count class="rounded-full bg-carta px-2 py-1">{projected.length} cantine sulla mappa</span></p>
+      <p data-hint hidden class="meta pointer-events-none absolute inset-x-0 bottom-12 mx-auto w-fit rounded-full bg-inchiostro px-3 py-1.5 text-carta">Clicca la mappa o usa Ctrl + rotella per lo zoom</p>
+    </>
+  )}
+
+  {live && (
+    <div data-callout hidden class="absolute z-10 w-64 max-w-[calc(100%-1rem)] rounded-2xl border-2 border-inchiostro bg-carta p-4 shadow-[5px_5px_0_var(--color-inchiostro)]">
       <p data-callout-place class="meta text-grafite"></p>
       <p data-callout-name class="display mt-1 text-2xl"></p>
-      <a data-callout-link href="#" class="btn-primary mt-3 h-9 px-3">Apri la scheda</a>
-      <button type="button" data-callout-close class="meta absolute right-2 top-2 px-2 py-1 text-grafite hover:text-inchiostro" aria-label="Chiudi">✕</button>
+      <a data-callout-link href="#" class="btn-primary mt-3 h-9 px-4">Apri la scheda</a>
+      <button type="button" data-callout-close class="meta absolute right-2 top-2 grid size-7 place-items-center rounded-full hover:bg-carta-2" aria-label="Chiudi">✕</button>
     </div>
   )}
 </figure>
 
+<style>
+  .marche-map :global(.mappa-ombre path) {
+    transform: translate(calc(var(--k, 1) * 5px), calc(var(--k, 1) * 7px));
+    transition: opacity 0.6s;
+  }
+  .marche-map :global(.mappa-province path) {
+    transition: opacity 0.6s, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .marche-map :global(.mappa-province path.is-dim),
+  .marche-map :global(a.is-dim) {
+    opacity: 0.32;
+  }
+  .marche-map :global(.mappa-ombre path.is-dim) {
+    opacity: 0.06;
+  }
+  .marche-map :global(.mappa-mare) {
+    transition: opacity 0.4s;
+  }
+  /* Sulla mappa principale stretta (mobile) la costa arriva al bordo: il mare non ha spazio per l'etichetta. */
+  .marche-map[data-explore] {
+    container-type: inline-size;
+  }
+  @container (max-width: 30rem) {
+    .marche-map :global(.mappa-mare) {
+      display: none;
+    }
+  }
+  .marche-map :global(.mappa-province path.is-focus) {
+    transform: translate(calc(var(--k, 1) * -4px), calc(var(--k, 1) * -6px));
+  }
+  .marche-map[data-map] :global(.mappa-province path) {
+    cursor: zoom-in;
+  }
+  .marche-map[data-map] :global(.mappa-province path:hover:not(.is-focus):not(.is-dim)) {
+    transform: translate(calc(var(--k, 1) * -2px), calc(var(--k, 1) * -3px));
+  }
+  .marche-map :global(.mappa-punti a) {
+    transition: opacity 0.6s;
+  }
+  .marche-map :global(.mappa-punto) {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: fill 0.2s;
+  }
+  .marche-map[data-map] :global(.mappa-punti a) {
+    cursor: pointer;
+  }
+  .marche-map[data-map] :global(.mappa-punti a:hover .mappa-punto),
+  .marche-map :global(.mappa-punti a.is-selected .mappa-punto) {
+    fill: var(--color-rosso);
+  }
+  .marche-map[data-explore] :global(.mappa-punto) {
+    animation: cade 0.7s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+    animation-delay: calc(var(--i) * 12ms + 250ms);
+  }
+  .marche-map :global(.mappa-comuni text) {
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  @keyframes cade {
+    from { transform: translateY(-14px) scale(0); }
+    to { transform: none; }
+  }
+</style>
+
 <script>
-  // Cartiglio: un tocco su un punto mostra nome e link invece di navigare subito.
-  document.querySelectorAll<HTMLElement>('[data-map]').forEach((fig) => {
-    const svg = fig.querySelector('svg')!;
-    const box = fig.querySelector<HTMLElement>('[data-callout]')!;
-    const close = () => { box.hidden = true; };
-    fig.querySelectorAll<SVGAElement>('a[data-name]').forEach((a) => {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        box.querySelector('[data-callout-name]')!.textContent = a.dataset.name ?? '';
-        box.querySelector('[data-callout-place]')!.textContent = a.dataset.place ?? '';
-        box.querySelector<HTMLAnchorElement>('[data-callout-link]')!.href = a.getAttribute('href')!;
-        const pt = svg.createSVGPoint();
-        pt.x = Number(a.dataset.x); pt.y = Number(a.dataset.y);
-        const screen = pt.matrixTransform(svg.getScreenCTM()!);
-        const rect = fig.getBoundingClientRect();
-        box.hidden = false;
-        const left = Math.min(Math.max(screen.x - rect.left - box.offsetWidth / 2, 8), rect.width - box.offsetWidth - 8);
-        const below = screen.y - rect.top + 14;
-        const top = below + box.offsetHeight > rect.height ? screen.y - rect.top - box.offsetHeight - 14 : below;
-        box.style.left = `${left}px`;
-        box.style.top = `${Math.max(top, 8)}px`;
-      });
-    });
-    box.querySelector('[data-callout-close]')!.addEventListener('click', close);
-    document.addEventListener('keydown', (e) => e.key === 'Escape' && close());
-    svg.addEventListener('click', (e) => { if (!(e.target as Element).closest('a')) close(); });
-  });
+  import { initMapExplorer } from '../scripts/map-explorer';
+  document.querySelectorAll<HTMLElement>('figure[data-map]').forEach((fig) => initMapExplorer(fig));
 </script>

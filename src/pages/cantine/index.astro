@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FilterBar from '../../components/FilterBar.astro';
 import WineryCard from '../../components/WineryCard.astro';
 import Pagination from '../../components/Pagination.astro';
+import PosterHeader from '../../components/PosterHeader.astro';
 import { getFacets, listWineries } from '../../lib/db';
 import { PAGE_SIZE, activeFilterCount, catalogUrl, parseFilters } from '../../lib/filters';
 
@@ -27,14 +28,14 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=300, s
   canonical={filtered ? undefined : catalogUrl(filters)}
   noindex={filtered}
 >
-  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
-    <p class="meta text-grafite">Il catalogo</p>
-    <h1 class="display mt-3 text-5xl sm:text-7xl">
-      {filters.q ? <>Cercando <em class="text-rosso">«{filters.q}»</em></> : active.length ? <>Cantine <em class="text-rosso">{active.slice(0, 2).join(', ')}{active.length > 2 ? '…' : ''}</em></> : <>Le cantine, <em>dalla A alla Z.</em></>}
-    </h1>
-  </div>
+  <PosterHeader
+    kicker="Il catalogo"
+    word={filters.q ? `«${filters.q}»` : active.length ? active.slice(0, 2).join(', ') + (active.length > 2 ? '…' : '') : 'Le cantine'}
+    size={filters.q || active.length ? 'md' : 'xl'}
+    note={filters.q ? 'Cercando…' : active.length ? `${total} indirizzi, scelti per te` : 'dalla A alla Z, senza classifiche'}
+  />
 
-  <div class="mt-8"><FilterBar filters={filters} facets={facets} total={total} /></div>
+  <FilterBar filters={filters} facets={facets} total={total} />
 
   <div class="mx-auto max-w-6xl px-4 pb-10 pt-8 sm:px-6">
     {items.length > 0 ? (
@@ -42,7 +43,7 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=60, s-maxage=300, s
         {items.map((w) => <li><WineryCard winery={w} headingLevel="h2" /></li>)}
       </ul>
     ) : (
-      <div class="border border-inchiostro p-8">
+      <div class="rounded-3xl border-2 border-inchiostro bg-carta p-8 shadow-[6px_6px_0_var(--color-inchiostro)]">
         <p class="display text-4xl">Nessuna cantina, <em>per ora.</em></p>
         <p class="mt-3 max-w-md text-grafite">Con questi filtri il catalogo resta in silenzio. Prova un territorio vicino, o togli un filtro.</p>
         <a href="/cantine" class="btn-primary mt-6">Mostra tutte le cantine</a>
