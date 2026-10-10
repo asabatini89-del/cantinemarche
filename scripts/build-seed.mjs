@@ -4,6 +4,7 @@
 //
 // Input  : data/export-2026-10-09/{cantine,prodotti,territori,denominazioni}.json
 //          data/vini-ricerca-2026-10-10.json (vini trovati con ricerca web, ognuno con URL di prova)
+//          data/completamento-2026-10-10.json (vini mancanti, esperienze e servizi, ognuno con URL di prova)
 // Output : db/seed/0001_taxonomies.sql, db/seed/0002_catalog.sql, data/import-report.md
 //
 // Lo script è deterministico: stesso input → stesso output (diff leggibili in git).
@@ -85,6 +86,8 @@ const SERVICES = [
   { id: 'degustazioni', name: 'Degustazioni', from: ['Degustazione'] },
   { id: 'visita-guidata', name: 'Visita guidata', from: ['Visita guidata'] },
   { id: 'vendita-diretta', name: 'Vendita diretta', from: ['Vendita diretta'] },
+  { id: 'ristorazione', name: 'Ristorazione', from: [] },
+  { id: 'ospitalita', name: 'Ospitalità', from: [] },
 ];
 const serviceByLabel = new Map(SERVICES.flatMap((s) => s.from.map((f) => [f.toLowerCase(), s.id])));
 
@@ -329,6 +332,75 @@ if (research) {
   }
 }
 
+// Completamento delle schede: vini che mancavano, esperienze (degustazioni, visite,
+// pranzi, ospitalità) e servizi, ognuno con la pagina che lo documenta.
+const COMPLETION = 'data/completamento-2026-10-10.json';
+const completion = existsSync(COMPLETION) ? JSON.parse(readFileSync(COMPLETION, 'utf8')) : null;
+const completionStats = { wineries: 0, wines: 0, duplicates: 0, experiences: 0, expWineries: new Set(), services: 0 };
+out.experiences = [];
+if (completion) {
+  const known = new Set(wineries.filter((w) => !isJunk(w)).map((w) => w.id));
+  const key = (s) => s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\b(19|20)\d\d\b/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  const wsKeys = new Set(out.ws.map((r) => `${r.winery_id}|${r.service_id}`));
+  const addService = (wineryId, serviceId) => {
+    if (!SERVICES.some((s) => s.id === serviceId) || wsKeys.has(`${wineryId}|${serviceId}`)) return;
+    wsKeys.add(`${wineryId}|${serviceId}`);
+    out.ws.push({ winery_id: wineryId, service_id: serviceId });
+    completionStats.services++;
+  };
+  const SERVICE_BY_KIND = { tasting: 'degustazioni', tour: 'visita-guidata', meal: 'ristorazione', stay: 'ospitalita' };
+  for (const r of completion.wineries) {
+    if (!known.has(r.id)) continue;
+    const mine = out.wines.filter((v) => v.winery_id === r.id);
+    const names = mine.map((v) => key(v.name));
+    const slugs = new Set(mine.map((v) => v.slug));
+    let sort = mine.length;
+    let added = 0;
+    for (const v of r.wines_added ?? []) {
+      if (!/^https?:\/\//.test(v.url ?? '') || !v.name?.trim() || NON_WINE.test(v.name)) continue;
+      const k = key(v.name);
+      // Stesso vino già in catalogo, anche scritto in modo un po' diverso (con o senza denominazione).
+      if (names.some((n) => n === k || (Math.min(n.length, k.length) > 5 && (n.includes(k) || k.includes(n))))) {
+        completionStats.duplicates++;
+        continue;
+      }
+      names.push(k);
+      let slug = slugify(v.name);
+      for (let i = 2; slugs.has(slug); i++) slug = `${slugify(v.name)}-${i}`;
+      slugs.add(slug);
+      out.wines.push({
+        id: `cmp-${r.id}-${slug}`, winery_id: r.id, slug, name: v.name.trim(), external_url: v.url,
+        evidence_type: `websearch-${v.evidence ?? 'altro'}`, checked_at: completion.checkedAt,
+        source: 'import', status: 'published', sort: sort++,
+      });
+      added++;
+    }
+    completionStats.wines += added;
+    if (added) completionStats.wineries++;
+    const expSlugs = new Set();
+    (r.experiences ?? []).forEach((e, i) => {
+      if (!/^https?:\/\//.test(e.url ?? '') || !e.title?.trim()) return;
+      const kind = ['tasting', 'tour', 'meal', 'event', 'stay'].includes(e.kind) ? e.kind : 'tasting';
+      let slug = slugify(e.title);
+      for (let j = 2; expSlugs.has(slug); j++) slug = `${slugify(e.title)}-${j}`;
+      expSlugs.add(slug);
+      const price = Number(e.price_eur);
+      const minutes = Number(e.duration_min);
+      out.experiences.push({
+        id: `exp-${r.id}-${slug}`, winery_id: r.id, slug, title: e.title.trim(), kind,
+        description_md: e.description?.trim() || null,
+        duration_min: Number.isFinite(minutes) && minutes > 0 ? Math.round(minutes) : null,
+        price_cents: Number.isFinite(price) && price > 0 ? Math.round(price * 100) : null,
+        external_url: e.url, source: 'import', checked_at: completion.checkedAt, status: 'published', sort: i,
+      });
+      completionStats.experiences++;
+      completionStats.expWineries.add(r.id);
+      if (SERVICE_BY_KIND[kind]) addService(r.id, SERVICE_BY_KIND[kind]);
+    });
+    for (const sv of r.services ?? []) if (/^https?:\/\//.test(sv.url ?? '')) addService(r.id, sv.id);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Scrittura SQL
 // ---------------------------------------------------------------------------
@@ -362,6 +434,8 @@ const catalog = [
   ...out.ws.map((r) => insert('winery_services', r)),
   '',
   ...out.wines.map((r) => insert('wines', r)),
+  '',
+  ...out.experiences.map((r) => insert('experiences', r)),
   '',
   '-- Indice full-text: nome, comune, territorio e parole chiave (denominazioni + vini).',
   `INSERT INTO wineries_fts (rowid, name, municipality, tagline, keywords)
@@ -409,7 +483,10 @@ Generato da \`scripts/build-seed.mjs\`.
 | Vini importati | ${out.wines.length} (${winesPublished} pubblicati, ${out.wines.length - winesPublished} in bozza perché non sono vini) |
 | — di cui anteprime dal portale | ${out.wines.filter((w) => !w.id.startsWith('web-')).length} |
 | — di cui da ricerca web, con URL di prova | ${researchStats.wines} su ${researchStats.wineries} cantine (${[...researchStats.byEvidence].map(([k, n]) => `${k}: ${n}`).join(', ') || '—'}) |
+| — di cui dal completamento delle schede | ${completionStats.wines} su ${completionStats.wineries} cantine (${completionStats.duplicates} doppioni scartati) |
 | Cantine pubblicate con almeno un vino | ${winesByWinery.size} su ${pub.length} |
+| Esperienze (degustazioni, visite, pranzi, ospitalità) | ${completionStats.experiences} su ${completionStats.expWineries.size} cantine |
+| Servizi aggiunti dal completamento | ${completionStats.services} |
 | Anteprime con immagine sul sito della cantina | ${out.wines.filter((w) => w.external_image_url).length} (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia

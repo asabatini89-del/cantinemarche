@@ -50,3 +50,5 @@ INSERT INTO grape_varieties (id, slug, name, color) VALUES ('vernaccia-nera', 'v
 INSERT INTO services (id, slug, name) VALUES ('degustazioni', 'degustazioni', 'Degustazioni');
 INSERT INTO services (id, slug, name) VALUES ('visita-guidata', 'visita-guidata', 'Visita guidata');
 INSERT INTO services (id, slug, name) VALUES ('vendita-diretta', 'vendita-diretta', 'Vendita diretta');
+INSERT INTO services (id, slug, name) VALUES ('ristorazione', 'ristorazione', 'Ristorazione');
+INSERT INTO services (id, slug, name) VALUES ('ospitalita', 'ospitalita', 'Ospitalità');

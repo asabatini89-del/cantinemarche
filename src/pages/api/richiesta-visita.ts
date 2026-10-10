@@ -24,6 +24,8 @@ export const POST: APIRoute = async ({ request }) => {
   await insertVisitRequest({
     id: newId(),
     winery_id: winery.id,
+    // L'esperienza scelta viene verificata nella query: deve essere pubblicata e della stessa cantina.
+    experience_id: text(form, 'esperienza', 200),
     name: text(form, 'nome')!,
     email: text(form, 'email')!.toLowerCase(),
     phone: text(form, 'telefono', 40),

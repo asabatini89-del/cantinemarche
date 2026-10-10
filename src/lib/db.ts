@@ -271,7 +271,7 @@ export async function getWinery(slug: string) {
     .first<WineryDetail>();
   if (!winery) return null;
 
-  const [den, grapes, services, wines, photos] = await db().batch([
+  const [den, grapes, services, wines, photos, experiences] = await db().batch([
     db().prepare(
       `SELECT d.id, d.name, d.level FROM winery_denominations wd JOIN denominations d ON d.id = wd.denomination_id
        WHERE wd.winery_id = ? ORDER BY CASE d.level WHEN 'DOCG' THEN 0 WHEN 'DOC' THEN 1 ELSE 2 END, d.name`,
@@ -291,6 +291,11 @@ export async function getWinery(slug: string) {
       `SELECT id, r2_key, thumb_key, width, height, credit, source_page FROM media
        WHERE owner_type = 'winery' AND owner_id = ? ORDER BY sort LIMIT 4`,
     ).bind(winery.id),
+    db().prepare(
+      `SELECT id, slug, title, kind, description_md, duration_min, price_cents, external_url FROM experiences
+       WHERE winery_id = ? AND status = 'published'
+       ORDER BY CASE kind WHEN 'tasting' THEN 0 WHEN 'tour' THEN 1 WHEN 'meal' THEN 2 WHEN 'event' THEN 3 ELSE 4 END, sort`,
+    ).bind(winery.id),
   ]);
   type Named = { id: string; name: string };
   return {
@@ -300,8 +305,20 @@ export async function getWinery(slug: string) {
     services: rows<Named>(services),
     wines: rows<Named & { external_url: string | null; bottle_key: string | null }>(wines),
     photos: rows<Photo>(photos),
+    experiences: rows<Experience>(experiences),
     sources: winery.sources_json ? (JSON.parse(winery.sources_json) as string[]) : [],
   };
+}
+
+export interface Experience {
+  id: string;
+  slug: string;
+  title: string;
+  kind: 'tasting' | 'tour' | 'meal' | 'event' | 'stay';
+  description_md: string | null;
+  duration_min: number | null;
+  price_cents: number | null;
+  external_url: string | null;
 }
 
 export interface Photo {
@@ -370,15 +387,15 @@ export async function recentRequestsFrom(ipHash: string) {
 }
 
 export async function insertVisitRequest(v: {
-  id: string; winery_id: string; name: string; email: string; phone: string | null;
+  id: string; winery_id: string; experience_id: string | null; name: string; email: string; phone: string | null;
   preferred_date: string | null; guests: number; message: string | null; ip_hash: string;
 }) {
   await db()
     .prepare(
-      `INSERT INTO visit_requests (id, winery_id, name, email, phone, preferred_date, guests, message, consent_at, ip_hash)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)`,
+      `INSERT INTO visit_requests (id, winery_id, experience_id, name, email, phone, preferred_date, guests, message, consent_at, ip_hash)
+       VALUES (?, ?, (SELECT id FROM experiences WHERE id = ? AND winery_id = ? AND status = 'published'), ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?)`,
     )
-    .bind(v.id, v.winery_id, v.name, v.email, v.phone, v.preferred_date, v.guests, v.message, v.ip_hash)
+    .bind(v.id, v.winery_id, v.experience_id, v.winery_id, v.name, v.email, v.phone, v.preferred_date, v.guests, v.message, v.ip_hash)
     .run();
 }
 

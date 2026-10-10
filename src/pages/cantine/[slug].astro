@@ -9,7 +9,7 @@ import { catalogNo, displayName } from '../../lib/palette';
 const data = await getWinery(Astro.params.slug ?? '');
 if (!data) return new Response(null, { status: 404, statusText: 'Not found' });
 
-const { winery: w, denominations, grapes, services, wines, sources, photos } = data;
+const { winery: w, denominations, grapes, services, wines, sources, photos, experiences } = data;
 const title = displayName(w.name);
 const nearby = await nearbyWineries(w);
 const sent = Astro.url.searchParams.has('inviata');
@@ -30,6 +30,11 @@ const via = (u: string | null) => (u && host(u) !== ownHost ? host(u) : null);
 const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : null);
 const today = new Date().toISOString().slice(0, 10);
 const VISIBLE_WINES = 12;
+const KIND_LABEL = { tasting: 'Degustazione', tour: 'Visita', meal: 'A tavola', event: 'Evento', stay: 'Ospitalità' } as const;
+const KIND_BG = { tasting: 'bg-giallo', tour: 'bg-azzurro', meal: 'bg-albicocca', event: 'bg-rosa', stay: 'bg-menta' } as const;
+const fmtDuration = (m: number) => (m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60} min` : ''}` : `${m} min`);
+const fmtPrice = (c: number) => `${(c / 100).toLocaleString('it-IT', { maximumFractionDigits: 2 })} €`;
+const chosenExperience = Astro.url.searchParams.get('esperienza');
 const hasBottles = wines.some((v) => v.bottle_key);
 
 const jsonLd = {
@@ -74,6 +79,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
             {telHref && <a href={telHref} class="btn bg-carta">Chiama</a>}
             {w.email && <a href={`mailto:${w.email}`} class="btn bg-carta">Scrivi</a>}
             {w.website && <a href={w.website} target="_blank" rel="noopener" class="btn bg-carta">Sito <span aria-hidden="true">↗</span></a>}
+            {experiences.length > 0 && <a href="#esperienze" class="btn bg-carta">Esperienze</a>}
             <a href="#visita" class="btn bg-carta">Richiedi una visita</a>
           </div>
         </div>
@@ -178,6 +184,35 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           )}
         </section>
 
+        {experiences.length > 0 && (
+          <section id="esperienze" aria-labelledby="h-esperienze" class="scroll-mt-6">
+            <h2 id="h-esperienze" class="display copertina-titolo flex items-baseline justify-between gap-4 py-3 text-4xl sm:text-5xl"><span>Le <em>esperienze</em></span> <span class="manifesto text-5xl sm:text-6xl">{experiences.length}</span></h2>
+            <p class="mt-2 max-w-lg text-grafite">Quello che la cantina propone a chi passa di qui, come lo descrive la fonte. Orari e disponibilità vanno sempre confermati.</p>
+            <ul role="list" class="mt-6 grid gap-4 sm:grid-cols-2">
+              {experiences.map((e) => (
+                <li class="flex flex-col rounded-2xl border-2 border-inchiostro bg-carta shadow-[5px_5px_0_var(--color-inchiostro)]">
+                  <div class={`flex items-center justify-between gap-3 rounded-t-[14px] border-b-2 border-inchiostro px-4 py-2 ${KIND_BG[e.kind]}`}>
+                    <span class="meta">{KIND_LABEL[e.kind]}</span>
+                    {e.price_cents !== null && <span class="meta">{fmtPrice(e.price_cents)} a persona</span>}
+                  </div>
+                  <div class="flex flex-1 flex-col p-4">
+                    <h3 class="display text-2xl">{e.title}</h3>
+                    {e.description_md && <p class="mt-2 text-sm">{e.description_md}</p>}
+                    <p class="meta mt-3 flex flex-wrap gap-x-3 gap-y-1 text-grafite">
+                      {e.duration_min !== null && <span>{fmtDuration(e.duration_min)}</span>}
+                      {e.price_cents === null && <span>Prezzo su richiesta</span>}
+                    </p>
+                    <div class="mt-auto flex flex-wrap items-center gap-2 pt-4">
+                      <a href={`/cantine/${w.slug}?esperienza=${encodeURIComponent(e.id)}#visita`} class="btn-primary h-9 px-4">Richiedi</a>
+                      {e.external_url && <a href={e.external_url} target="_blank" rel="noopener nofollow" class="meta text-grafite underline decoration-inchiostro/30 hover:text-inchiostro">Fonte: {host(e.external_url)} ↗</a>}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <section id="visita" aria-labelledby="h-visita" class="scroll-mt-6">
           <h2 id="h-visita" class="display copertina-titolo py-3 text-4xl sm:text-5xl">Richiedi <em>una visita</em></h2>
           <p class="mt-2 max-w-lg text-grafite">La richiesta arriva alla redazione, che la inoltra alla cantina. Non è una prenotazione: ti risponderanno per confermare giorno e orario.</p>
@@ -185,6 +220,14 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           {!sent && (
             <form method="post" action="/api/richiesta-visita" class="mt-6 grid gap-4 sm:grid-cols-2">
               <input type="hidden" name="cantina" value={w.slug} />
+              {experiences.length > 0 && (
+                <label class="block text-sm font-medium sm:col-span-2">Esperienza <span class="font-normal text-grafite">(facoltativa)</span>
+                  <select name="esperienza" class={field}>
+                    <option value="">Una visita, senza un programma preciso</option>
+                    {experiences.map((e) => <option value={e.id} selected={e.id === chosenExperience}>{e.title}{e.price_cents !== null ? ` · ${fmtPrice(e.price_cents)}` : ''}</option>)}
+                  </select>
+                </label>
+              )}
               <label class="block text-sm font-medium">Nome e cognome<input name="nome" required autocomplete="name" maxlength="200" class={field} /></label>
               <label class="block text-sm font-medium">Email<input name="email" type="email" required autocomplete="email" maxlength="200" class={field} /></label>
               <label class="block text-sm font-medium">Data desiderata <span class="font-normal text-grafite">(facoltativa)</span><input name="data" type="date" min={today} class={field} /></label>

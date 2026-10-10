@@ -14,11 +14,14 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine senza coordinate (scheda visibile, niente mappa) | 58 |
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
-| Cantine con servizi (degustazioni, visite, vendita) | 74 |
-| Vini importati | 2670 (2596 pubblicati, 74 in bozza perché non sono vini) |
-| — di cui anteprime dal portale | 1494 |
+| Cantine con servizi (degustazioni, visite, vendita) | 81 |
+| Vini importati | 2693 (2619 pubblicati, 74 in bozza perché non sono vini) |
+| — di cui anteprime dal portale | 1517 |
 | — di cui da ricerca web, con URL di prova | 1175 su 214 cantine (sito-cantina: 1020, altro: 55, rivenditore: 87, guida: 14) |
-| Cantine pubblicate con almeno un vino | 334 su 365 |
+| — di cui dal completamento delle schede | 23 su 7 cantine (1 doppioni scartati) |
+| Cantine pubblicate con almeno un vino | 335 su 365 |
+| Esperienze (degustazioni, visite, pranzi, ospitalità) | 8 su 7 cantine |
+| Servizi aggiunti dal completamento | 17 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -72,7 +75,7 @@ Nel dato originale la provincia è vuota.
 - `tenimenti-le-ginestre-srl`: sito non valido “#”, scartato
 
 ### 7. Cantine ancora senza vini
-31 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 214, none 31. Le schede invitano la cantina ad aggiungerli.
+30 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 214, none 31. Le schede invitano la cantina ad aggiungerli.
 - `amadio-vini-s-r-l` AMADIO VINI S.R.L. — none: Secondo giro: provati 'Amadio Verdicchio Maiolati Spontini', allowed_domains facebook/instagram/vivino e 'Amadio vini Moie'; solo Tenuta Amadio (Veneto), Amadio (Australia) e altre attività omonime: scartati.
 - `aniballi` Aniballi — none: Secondo giro: ricerca aperta 'Aniballi Novilara vino Colli Pesaresi' (solo evento Vignaioli al Castello, localita Cerreto Pesaro), allowed_domains instagram/facebook/vivino (trovata pagina Facebook 'Azienda agricola Aniballi' Pesaro: produce vini, olio e frutta, ma nessun nome di vino), ricerca aperta con vitigni (nessun risultato pertinente).
 - `az-agr-la-collina-di-tomassini-luciana` AZ. AGR. LA COLLINA DI TOMASSINI LUCIANA — none: Secondo giro: ricerca aperta '"La Collina" Cartoceto Bianchello Tomassini' (solo omonimi La Collina in Lombardia/Toscana), ricerca 'Bianchini Cartoceto' per il marchio di sangiovese.it (solo Ciacci Piccolomini/Montalcino), ricerca su facebook/instagram/vivino (solo omonimi in Lombardia, Emilia-Romagna). Nessuna prova.
@@ -81,7 +84,6 @@ Nel dato originale la provincia è vuota.
 - `borioni-gianni-e-beltrani-anna-maria-s-s` BORIONI GIANNI E BELTRANI ANNA MARIA S.S — none: Secondo giro: ricerca aperta 'Borioni Apiro Verdicchio' (solo Andrea Felici e altre cantine), ricerca facebook/instagram/vivino/winedering: esiste la pagina Facebook 'Azienda Vitivinicola Borioni Gianni & Beltrani Anna Maria' (https://www.facebook.com/p/Azienda-Vitivinicola-Borioni-Gianni-Beltrani-Anna-Maria-100054607412611/) ma senza nomi di vini nei risultati; ricerca '"Borioni Gianni" Verdicchio Montepulciano etichetta' senza risultati pertinenti.
 - `cantina-buongarzoni` Cantina Buongarzoni — none: Secondo giro: trovata la pagina Facebook ufficiale https://www.facebook.com/CantinaBuongarzoni/ (Macerata, 'Vini naturalmente Bio') ma senza nomi di vini nei risultati; provati anche '"Cantina Buongarzoni" vino naturale' e instagram/facebook 'bottiglia etichetta': nessuna etichetta.
 - `cantina-fortezza-marche` Cantina Fortezza Marche — none: Secondo giro: ricerca su facebook/instagram/vivino/winedering (solo la Fortezza medievale/Palio, Cherri d'Acquaviva e omonimo 'La Fortezza' di Torrecuso BN, scartati), frase esatta '"Fortezza Marche" vino' (nessun risultato pertinente), '"Cantina Fortezza" Offida Pecorino Rosso Piceno Acquaviva' (solo Cantina Offida). Nessuna prova.
-- `cantina-le-colline` Cantina Le Colline — none: 5 vini trovati ma scartati alla revisione: attribuzione alla cantina non abbastanza certa.
 - `cantina-marzialetti` Cantina Marzialetti — none: Secondo giro: allowed_domains facebook/instagram/vivino 'Marzialetti Torre San Patrizio vino cantina' (solo pagine del Comune e omonimi 'Torre'/'Patrizi'); ricerca aperta '"Marzialetti" azienda agricola vini Fermo' e '"Marzialetti" Falerio Rosso Piceno Passerina': nessun risultato che nomini Marzialetti.
 - `cantina-vitula` Cantina Vitula — none: Secondo giro: provati allowed_domains facebook/instagram/vivino/winedering con 'Vitula cantina San Severino Marche', ricerca aperta '"Vitula" vino Marche Macerata' e 'cantinavitula': nessuna pagina della cantina (solo VerSer, altra cantina di San Severino, e omonimie non vinicole).
 - `cantina-zamponi` Cantina Zamponi — none: Secondo giro: allowed_domains facebook/instagram/vivino (trovata pagina Facebook 'Azienda Agricola Zamponi Mirco', Serra San Quirico: 'coltivazione e produzione di vino Verdicchio e produzione zootecnica', ma nessun nome di vino); ricerca aperta '"Zamponi Mirco" Verdicchio dei Castelli di Jesi' (nessun risultato pertinente); dominio aziendaagricolazamponi.it con query diversa: ancora solo /contatti/.

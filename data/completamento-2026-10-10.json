@@ -1,0 +1,484 @@
+{
+ "checkedAt": "2026-10-10",
+ "method": "Ricerca web per ogni cantina pubblicata: vini non ancora in catalogo, esperienze offerte al pubblico (degustazioni, visite, pranzi, ospitalità) e servizi. Ogni voce ha l'URL della pagina che la documenta, restituita dalla ricerca; durata e prezzo solo se scritti nella fonte.",
+ "wineries": [
+  {
+   "id": "amadio-vini-s-r-l",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessun risultato su amadiovini.it; ricerca aperta restituisce solo Tenuta Amadio (Veneto, omonimia) scartata."
+  },
+  {
+   "id": "aniballi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Su aniballivini.com indicizzata solo la home (contatti, Novilara), senza nomi di vini ne' esperienze. Solo citazione come produttore all'evento Vignaioli al Castello 2025 (non esperienza propria)."
+  },
+  {
+   "id": "az-agr-la-collina-di-tomassini-luciana",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Il dominio sangiovese.it risulta di 'Cantina Bianchini' (Cartoceto), non collegato esplicitamente a La Collina/Tomassini: scartato. Ricerca aperta: solo omonimie (La Collina Valcalepio, Chianti)."
+  },
+  {
+   "id": "azienda-agricola-bartolacci-di-pierini-monica-e-matteo",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Agricampeggio tra le vigne",
+     "kind": "stay",
+     "description": "Piazzole di campeggio tra i vigneti con vista sulle colline, alcune con vasca idromassaggio privata; aperto quasi tutto l'anno.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.bartolacci.it/il-nostro-agricampeggio/"
+    }
+   ],
+   "services": [
+    {
+     "id": "ospitalita",
+     "url": "https://www.bartolacci.it/il-nostro-agricampeggio/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.bartolacci.it/il-nostro-agricampeggio/"
+    }
+   ],
+   "note": "Su bartolacci.it la pagina /vino/ e' indicizzata solo col titolo, nessun nome di vino. Trovati agricampeggio tra le vigne e spaccio di prodotti bio (vino, olio, miele...). Nessuna degustazione documentata."
+  },
+  {
+   "id": "cantina-le-colline",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ulisse Rosato Marche",
+     "url": "http://www.cantinalecolline.com/blog/25-le-colline-al-tolentino-expo.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ulisse Rosso Marche",
+     "url": "http://www.cantinalecolline.com/blog/25-le-colline-al-tolentino-expo.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ulisse Sangiovese",
+     "url": "http://www.cantinalecolline.com/blog/25-le-colline-al-tolentino-expo.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Adele Bianco Marche",
+     "url": "http://www.cantinalecolline.com/blog/25-le-colline-al-tolentino-expo.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Adele Chardonnay",
+     "url": "http://www.cantinalecolline.com/blog/25-le-colline-al-tolentino-expo.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Vini dalla pagina 'Le Colline al Tolentino EXPO' del sito ufficiale. Possibili altre etichette (Vittorio, Acquasalata, Wally, Alfredo) citate solo come nomi di famiglia/menu, non verificate come vini: escluse. Nessuna degustazione o visita documentata."
+  },
+  {
+   "id": "cantina-vitula",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessun risultato su cantinavitula.com; ricerca aperta senza riferimenti a Cantina Vitula (solo cantine di San Severo, Puglia, e altre marchigiane)."
+  },
+  {
+   "id": "cantina-zamponi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione su prenotazione",
+     "kind": "tasting",
+     "description": "Degustazione in azienda da prenotare contattando direttamente l'Azienda Agricola Zamponi Mirco via email o telefono.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://aziendaagricolazamponi.it/contatti/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://aziendaagricolazamponi.it/contatti/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://aziendaagricolazamponi.it/contatti/"
+    }
+   ],
+   "note": "Indicizzata solo la pagina Contatti di aziendaagricolazamponi.it (ordini e prenotazione degustazioni). Nessun nome di vino trovato; ricerca aperta senza risultati pertinenti."
+  },
+  {
+   "id": "cimarelli-luca",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "lucacimarelli.it/vini mostra solo un Verdicchio dei Castelli di Jesi Classico Superiore (probabilmente il Fra' Moriale gia presente); vendita solo Ho.Re.Ca., nessuna esperienza documentata."
+  },
+  {
+   "id": "colleonorato",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "La Giostra Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://www.colleonorato.com/verdicchio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Cortese Rosso Piceno DOC",
+     "url": "https://www.colleonorato.com/rosso-piceno/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosato di Rotoscio",
+     "url": "https://www.colleonorato.com/rosato/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.colleonorato.com/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.colleonorato.com/shop/"
+    }
+   ],
+   "note": "Vini dal sito ufficiale (pagine verdicchio, rosso-piceno, rosato). Home con sezione 'La tua visita in cantina / Prenota' ma senza dettagli su programma/prezzi; shop online sul sito."
+  },
+  {
+   "id": "eredi-cesaroni-srl-soc-agr",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Le Giocche Verdicchio",
+     "url": "https://www.cesaroni.eu/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cesaroni Superiore",
+     "url": "https://www.cesaroni.eu/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cesaroni Pecorino",
+     "url": "https://www.cesaroni.eu/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Home di cesaroni.eu (pagina datata) elenca Cesaroni Verdicchio (non aggiunto: forse coincide con l'Anfora), Le Giocche Verdicchio, Cesaroni Superiore, Cesaroni Pecorino. Ricerca aperta su degustazioni: solo omonimi (Umberto Cesari, Emilia), nessuna esperienza."
+  },
+  {
+   "id": "gajole-srl",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "gajole.it presenta un solo vino, 'M' (Verdicchio di Matelica DOC bio), che coincide con il Verdicchio di Matelica gia presente; nessuna visita/degustazione descritta."
+  },
+  {
+   "id": "gatti-marco",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Il sito gattiagri.it non restituisce risultati; fonti esterne (lapassionduvin, Gambero Rosso) citano solo il Millo Riserva gia presente. Nessuna esperienza documentata."
+  },
+  {
+   "id": "soc-agr-montebianco120-s-s",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "120montebianco.it: azienda bio nata 2017, primo vino imbottigliato 2024, solo Lacrima di Morro d'Alba (gia presente) piu olio. Nessuna esperienza trovata (ricerca aperta restituisce altre cantine di Senigallia)."
+  },
+  {
+   "id": "fattoria-nanni",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Arsicci Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://www.fattoriananni.it/en/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito cantina: home cita Arsicci (Verdicchio Classico Superiore bio). Nessuna offerta di degustazione/visita documentata (solo evento dimostrativo 2022)."
+  },
+  {
+   "id": "laila-libenzi-azienda-agricola-di-chiara-refe",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Zizzero Rosso Conero DOC",
+     "url": "https://bottleofitaly.com/it-us/products/rosso-conero-doc-zizzero-libenzi",
+     "evidence": "rivenditore"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "fattorialaila.it non indicizzato. Su bottleofitaly (rivenditore) trovato Zizzero Rosso Conero Libenzi; nessuna esperienza/servizio documentato."
+  },
+  {
+   "id": "le-senate-az-agr-di-visi-giulio",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina (aprile-settembre)",
+     "kind": "tasting",
+     "description": "Degustazioni dei vini aziendali presso la cantina di Altidona, organizzate nella stagione da aprile a settembre.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://www.lesenate.it/contatti/?lang=en"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "http://www.lesenate.it/contatti/?lang=en"
+    }
+   ],
+   "note": "Sito cantina: i vini sono solo Barbula e Cacinello (gia presenti). Pagina contatti: degustazioni da aprile a settembre (info del sito circa 2016)."
+  },
+  {
+   "id": "montecoriolano-casalis-douhet",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Coriolano",
+     "url": "https://wwww.casalisdouhet.it/Coriolano/Coriolano.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Colosimo",
+     "url": "https://wwww.casalisdouhet.it/Coriolano/Coriolano.php",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito cantina: 'Coriolano, Giulio Douhet e Colosimo sono alcuni dei nomi delle bottiglie'. Tipologie non specificate. Nessuna esperienza documentata."
+  },
+  {
+   "id": "oasi-degli-angeli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "kurni.it non indicizzato. Fonti esterne (Falstaff, BBR) citano solo Kurni e Kupra (gia presenti). Una fonte non identificabile parla di degustazioni su prenotazione: non inserito per mancanza di URL certo."
+  },
+  {
+   "id": "pietro17-winery",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Estate Tour and Wine Tasting",
+     "kind": "tour",
+     "description": "Visita che racconta il lavoro dalla potatura alla fermentazione e termina con una degustazione; su prenotazione con 24 ore di anticipo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://pietro17.com/visit-us/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://pietro17.com/visit-us/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://pietro17.com/visit-us/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://pietro17.com/product/verdicchio-riserva-classico-docg-2022/"
+    }
+   ],
+   "note": "Sito cantina: shop con soli 2 vini (gia presenti). Pagina Visit us: tour + degustazione tutti i giorni su prenotazione 24h; Club 17 con degustazione gratuita per soci."
+  },
+  {
+   "id": "cossignani-l-e-tempo",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata con degustazione di 3 spumanti",
+     "kind": "tour",
+     "description": "Visita che segue il processo produttivo dalla raccolta all'imbottigliamento, poi assaggio di tre spumanti con stuzzichini; in italiano e inglese.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://letempo.it/en/the-experience/"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://letempo.it/en/the-experience/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://letempo.it/en/the-experience/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://letempo.it/negozio/"
+    }
+   ],
+   "note": "Sito ufficiale: gamma di 3 spumanti metodo classico gia' tutti presenti; pagina 'The experience' con visita + degustazione 3 spumanti su prenotazione (IT/EN); shop online."
+  },
+  {
+   "id": "d-erasmo-vini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita a vigneti e cantina con degustazione di 3 vini",
+     "kind": "tour",
+     "description": "Visita a vigneti e cantina seguita dall'assaggio di tre vini aziendali; gruppi da 2 a 21 persone, su prenotazione con 24 ore di anticipo.",
+     "duration_min": 120,
+     "price_eur": 20,
+     "url": "https://www.derasmovini.it/en/home-en-26/"
+    },
+    {
+     "title": "Degustazione di 3 vini con salumi e formaggi locali",
+     "kind": "tasting",
+     "description": "I tre vini abbinati a salumi e formaggi locali, con alternative vegetariane e vegane su richiesta.",
+     "duration_min": null,
+     "price_eur": 35,
+     "url": "https://www.derasmovini.it/en/home-en-26/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.derasmovini.it/en/home-en-26/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.derasmovini.it/en/home-en-26/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.derasmovini.it/en/contatti-en/"
+    }
+   ],
+   "note": "Sito ufficiale: solo i 3 vini gia' presenti (Pecorino, Sangiovese, Rosato). Home EN 2026: visita+degustazione 3 vini 2h 20 EUR, versione con salumi/formaggi 35 EUR; punto vendita in contatti."
+  },
+  {
+   "id": "failoni-rocco",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione e visita a Failoni",
+     "kind": "tour",
+     "description": "Visita in cantina con degustazione di 4-6 vini tra rossi, bianchi e spumanti.",
+     "duration_min": 120,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-tour-a-failoni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-tour-a-failoni/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-tour-a-failoni/"
+    }
+   ],
+   "note": "Sito ufficiale (altervista) cita solo il Verdicchio Classico, nessun vino nuovo. Esperienza su winetourism.com (Castellaretta 22, Staffolo): 4-6 vini, circa 2 ore, prezzo non indicato."
+  },
+  {
+   "id": "fioretti-brera",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessun risultato: dominio fiorettibrera.it non indicizzato e ricerche aperte senza riscontri sulla cantina (solo omonimie Brera/Milano)."
+  },
+  {
+   "id": "fulvia-tombolini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale indicizzato solo con pagina territorio; Callmewine elenca solo Doroverde e Castelfiora, gia' presenti. Nessuna esperienza o servizio documentato."
+  },
+  {
+   "id": "gambelli-vini-di-paolo-gambelli-fenili-e-c-s-a-s",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Verdicchio di Matelica",
+     "url": "https://www.gambellivini.it/verdicchio-di-matelica/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cabernet Sauvignon",
+     "url": "https://www.gambellivini.it/cabernet-sauvignon/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Conero",
+     "url": "https://www.gambellivini.it/rosso-conero/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sangiovese Colli Pesaresi",
+     "url": "https://www.gambellivini.it/sangiovese-colli-pesaresi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrima di Morro d'Alba",
+     "url": "https://www.gambellivini.it/lacrima-di-morro-dalba-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosso",
+     "url": "https://www.gambellivini.it/marche-rosso/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falerio Pecorino",
+     "url": "https://www.gambellivini.it/falerio-pecorino-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falerio",
+     "url": "http://www.gambellivini.it/falerio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bianchello del Metauro",
+     "url": "https://www.gambellivini.it/bianchello-del-metauro/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Pagine prodotto del sito ufficiale (9 vini nuovi). Nessuna informazione su visite, degustazioni o vendita diretta."
+  }
+ ]
+}
