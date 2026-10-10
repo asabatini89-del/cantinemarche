@@ -24,6 +24,9 @@ const mapsHref = hasCoords
   ? `https://www.google.com/maps/search/?api=1&query=${w.lat},${w.lng}`
   : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([w.name, w.address_line, place].filter(Boolean).join(', '))}`;
 const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+// Accanto a un vino si indica la fonte solo quando non è il sito della cantina (enoteca, guida, consorzio).
+const ownHost = w.website ? host(w.website) : null;
+const via = (u: string | null) => (u && host(u) !== ownHost ? host(u) : null);
 const fmtDate = (d: string | null) => (d ? new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : null);
 const today = new Date().toISOString().slice(0, 10);
 const VISIBLE_WINES = 12;
@@ -139,7 +142,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           <h2 id="h-vini" class="display copertina-titolo flex items-baseline justify-between gap-4 py-3 text-4xl sm:text-5xl">I vini {wines.length > 0 && <span class="manifesto text-5xl sm:text-6xl">{wines.length}</span>}</h2>
           {wines.length > 0 ? (
             <>
-              <p class="mt-2 text-grafite">{wines.length} {wines.length === 1 ? 'etichetta rilevata' : 'etichette rilevate'} sul sito della cantina, che resta la fonte per prezzi e disponibilità.</p>
+              <p class="mt-2 text-grafite">{wines.length} {wines.length === 1 ? 'etichetta rilevata' : 'etichette rilevate'} da fonti pubbliche: ogni voce rimanda alla sua fonte. Per prezzi e disponibilità fa fede la cantina.</p>
               <ol class="mt-5 sm:columns-2 sm:gap-8">
                 {wines.slice(0, VISIBLE_WINES).map((v, i) => (
                   <li class="break-inside-avoid border-b border-inchiostro/25">
@@ -147,7 +150,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
                       <span class="meta w-6 shrink-0 text-grafite">{String(i + 1).padStart(2, '0')}</span>
                       {hasBottles && (v.bottle_key ? <img src={`/media/${v.bottle_key}`} alt="" width="16" height="48" loading="lazy" class="h-12 w-4 shrink-0 self-center object-contain" /> : <span class="w-4 shrink-0" aria-hidden="true"></span>)}
                       <span class="group-hover:underline">{v.name}</span>
-                      <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
+                      <span class="ml-auto flex shrink-0 items-baseline gap-2 text-grafite">{via(v.external_url) && <span class="meta hidden lg:inline">{via(v.external_url)}</span>}<span aria-hidden="true">↗</span></span>
                     </a>
                   </li>
                 ))}
@@ -162,7 +165,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
                           <span class="meta w-6 shrink-0 text-grafite">{String(i + VISIBLE_WINES + 1).padStart(2, '0')}</span>
                           {hasBottles && (v.bottle_key ? <img src={`/media/${v.bottle_key}`} alt="" width="16" height="48" loading="lazy" class="h-12 w-4 shrink-0 self-center object-contain" /> : <span class="w-4 shrink-0" aria-hidden="true"></span>)}
                           <span class="group-hover:underline">{v.name}</span>
-                          <span aria-hidden="true" class="ml-auto text-grafite">↗</span>
+                          <span class="ml-auto flex shrink-0 items-baseline gap-2 text-grafite">{via(v.external_url) && <span class="meta hidden lg:inline">{via(v.external_url)}</span>}<span aria-hidden="true">↗</span></span>
                         </a>
                       </li>
                     ))}

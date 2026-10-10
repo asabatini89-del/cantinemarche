@@ -3,12 +3,13 @@
 //   node scripts/build-seed.mjs [cartella-export]
 //
 // Input  : data/export-2026-10-09/{cantine,prodotti,territori,denominazioni}.json
+//          data/vini-ricerca-2026-10-10.json (vini trovati con ricerca web, ognuno con URL di prova)
 // Output : db/seed/0001_taxonomies.sql, db/seed/0002_catalog.sql, data/import-report.md
 //
 // Lo script è deterministico: stesso input → stesso output (diff leggibili in git).
 // Non inventa dati: normalizza formati, collega le tassonomie e segnala le anomalie.
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const SRC = process.argv[2] ?? 'data/export-2026-10-09';
@@ -280,6 +281,44 @@ for (const p of previews) {
   });
 }
 
+// Vini trovati con la ricerca web per le cantine che l'export lasciava senza anteprime.
+// Ogni voce ha un URL di prova (sito della cantina, enoteca, guida o consorzio) e
+// viene importata solo se la cantina non ha già anteprime dal portale.
+const RESEARCH = 'data/vini-ricerca-2026-10-10.json';
+const research = existsSync(RESEARCH) ? JSON.parse(readFileSync(RESEARCH, 'utf8')) : null;
+const researchStats = { wineries: 0, wines: 0, skipped: 0, byEvidence: new Map(), byStatus: new Map() };
+if (research) {
+  const known = new Set(wineries.map((w) => w.id));
+  const covered = new Set(previews.map((p) => p.wineryId));
+  for (const r of research.wineries) {
+    researchStats.byStatus.set(r.status, (researchStats.byStatus.get(r.status) ?? 0) + 1);
+    if (!known.has(r.id) || covered.has(r.id) || !r.wines?.length) continue;
+    researchStats.wineries++;
+    const used = new Set();
+    r.wines.forEach((v, sort) => {
+      if (!/^https?:\/\//.test(v.url ?? '') || !v.name?.trim()) { researchStats.skipped++; return; }
+      let slug = slugify(v.name);
+      for (let i = 2; used.has(slug); i++) slug = `${slugify(v.name)}-${i}`;
+      used.add(slug);
+      const isWine = !NON_WINE.test(v.name);
+      researchStats.wines += isWine ? 1 : 0;
+      researchStats.byEvidence.set(v.evidence, (researchStats.byEvidence.get(v.evidence) ?? 0) + 1);
+      out.wines.push({
+        id: `web-${r.id}-${slug}`,
+        winery_id: r.id,
+        slug,
+        name: v.name.trim(),
+        external_url: v.url,
+        evidence_type: `websearch-${v.evidence ?? 'altro'}`,
+        checked_at: research.checkedAt,
+        source: 'import',
+        status: isWine ? 'published' : 'draft',
+        sort,
+      });
+    });
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Scrittura SQL
 // ---------------------------------------------------------------------------
@@ -337,6 +376,8 @@ const count = (f) => pub.filter(f).length;
 const byProvince = PROVINCES.map((p) => `| ${p.name} | ${count((w) => w.province_code === p.code)} |`);
 const coordStats = ['approximate', 'osm', 'verified', 'missing'].map((s) => `| ${s} | ${count((w) => w.coordinate_status === s)} |`);
 const winesPublished = out.wines.filter((w) => w.status === 'published').length;
+const winesByWinery = new Set(out.wines.filter((w) => w.status === 'published').map((w) => w.winery_id));
+const researchNote = new Map((research?.wineries ?? []).map((r) => [r.id, `${r.status}${r.note ? `: ${r.note}` : ''}`]));
 
 const md = `# Report di importazione
 
@@ -355,8 +396,10 @@ Generato da \`scripts/build-seed.mjs\`.
 | Cantine con almeno una denominazione | ${new Set(out.wd.map((r) => r.winery_id)).size} |
 | Cantine con territorio univoco | ${count((w) => w.territory_id)} |
 | Cantine con servizi (degustazioni, visite, vendita) | ${new Set(out.ws.map((r) => r.winery_id)).size} |
-| Anteprime vini importate | ${out.wines.length} (${winesPublished} pubblicate, ${out.wines.length - winesPublished} in bozza perché non sono vini) |
-| Cantine con anteprime | ${new Set(out.wines.map((w) => w.winery_id)).size} |
+| Vini importati | ${out.wines.length} (${winesPublished} pubblicati, ${out.wines.length - winesPublished} in bozza perché non sono vini) |
+| — di cui anteprime dal portale | ${out.wines.filter((w) => !w.id.startsWith('web-')).length} |
+| — di cui da ricerca web, con URL di prova | ${researchStats.wines} su ${researchStats.wineries} cantine (${[...researchStats.byEvidence].map(([k, n]) => `${k}: ${n}`).join(', ') || '—'}) |
+| Cantine pubblicate con almeno un vino | ${winesByWinery.size} su ${pub.length} |
 | Anteprime con immagine sul sito della cantina | ${out.wines.filter((w) => w.external_image_url).length} (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -393,6 +436,10 @@ ${[...report.unmapped].map(([k, n]) => `- “${k}” (${n})`).join('\n') || '- n
 
 ### 6. Avvisi
 ${report.warnings.map((w) => `- ${w}`).join('\n') || '- nessuno'}
+
+### 7. Cantine ancora senza vini
+${pub.length - winesByWinery.size} cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (${research?.checkedAt ?? 'non eseguita'}): ${[...researchStats.byStatus].map(([k, n]) => `${k} ${n}`).join(', ') || '—'}. Le schede invitano la cantina ad aggiungerli.
+${pub.filter((w) => !winesByWinery.has(w.id)).map((w) => `- \`${w.id}\` ${w.name}${researchNote.get(w.id) ? ` — ${researchNote.get(w.id)}` : ''}`).join('\n') || '- nessuna'}
 
 ## Regole applicate
 
