@@ -439,7 +439,7 @@ ${report.warnings.map((w) => `- ${w}`).join('\n') || '- nessuno'}
 
 ### 7. Cantine ancora senza vini
 ${pub.length - winesByWinery.size} cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (${research?.checkedAt ?? 'non eseguita'}): ${[...researchStats.byStatus].map(([k, n]) => `${k} ${n}`).join(', ') || '—'}. Le schede invitano la cantina ad aggiungerli.
-${pub.filter((w) => !winesByWinery.has(w.id)).map((w) => `- \`${w.id}\` ${w.name}${researchNote.get(w.id) ? ` — ${researchNote.get(w.id)}` : ''}`).join('\n') || '- nessuna'}
+${pub.filter((w) => !winesByWinery.has(w.id)).map((w) => `- \`${w.id}\` ${w.name} — ${researchNote.get(w.id) ?? 'ricerca web non ancora eseguita'}`).join('\n') || '- nessuna'}
 
 ## Regole applicate
 

@@ -1,0 +1,1360 @@
+{
+ "checkedAt": "2026-10-10",
+ "method": "Ricerca web per ogni cantina senza vini nell'export: prima sul dominio della cantina, poi su enoteche, guide e consorzi. Un vino è incluso solo se un risultato lo collega esplicitamente alla cantina; url = pagina di prova restituita dalla ricerca.",
+ "wineries": [
+  {
+   "id": "agostino-romani",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Pinot Nero",
+     "url": "https://www.agostinoromani.it/i-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Montepulciano",
+     "url": "https://www.agostinoromani.it/i-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sangiovese Grosso",
+     "url": "https://www.agostinoromani.it/i-vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "pagina 'i-vini' del sito: tre vini monovarietali (pinot nero, montepulciano, sangiovese grosso); nessuna fonte esterna"
+  },
+  {
+   "id": "agriarcuata-soc-coop-agricola",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette"
+  },
+  {
+   "id": "agricola-lanciani",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://agricola.lanciani.group/wp-content/uploads/2021/12/agricola_lanciani_scheda_rosso_piceno.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Pecorino DOCG",
+     "url": "https://agricola.lanciani.group/wp-content/uploads/2019/09/agricola-lanciani_scheda_offida-pecorino.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Le Vecchie Marche Trebbiano IGT",
+     "url": "https://agricola.lanciani.group/wp-content/uploads/2025/01/2020_Le-Vecchie_ita.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Versante Ovest Offida Passerina DOCG",
+     "url": "https://agricola.lanciani.group/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Fedele Marche Rosso IGT",
+     "url": "https://www.vino.com/dettaglio/marche-igt-rosso-il-fedele-lanciani-2018.html",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Marche Rosato IGT Bio",
+     "url": "https://www.vino.com/fr/dettaglio/marche-igt-rose-bio-lanciani-2023.html?vpro=1",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Schede tecniche PDF e pagina 'I nostri vini' sul sito; Il Fedele e Rosato su vino.com"
+  },
+  {
+   "id": "albamocco",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico DOC Monello",
+     "url": "https://albamocco.com/p/vino-monello-verdicchio-jesi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Superiore DOC Sciocchina",
+     "url": "https://albamocco.com/p/vino-sciocchina-verdicchio-jesi/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Monello e Sciocchina dalle pagine prodotto del sito; Fijo da scheda FirstLeaf il cui estratto nomina 'Albamocco Fijo'"
+  },
+  {
+   "id": "allevi-maria-letizia-di-corradetti-michele",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Mida Marche IGT Rosato",
+     "url": "http://lnx.vinimida.it/index.php/8-vini/4-mida-marche-igt-rosato",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Pecorino Mida",
+     "url": "http://www.vinimida.it/index.php/premi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Mida Rosso",
+     "url": "http://www.vinimida.it/index.php/premi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "ISRA",
+     "url": "http://www.vinimida.it/index.php/premi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rubesh",
+     "url": "http://www.vinimida.it/index.php/premi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Zampa",
+     "url": "http://www.vinimida.it/index.php/premi",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "vinimida.it: scheda Mida Rosato e pagina Premi (Mida Pecorino, Mida Rosso, ISRA grenache, Rubesh, Zampa)"
+  },
+  {
+   "id": "amadio-vini-s-r-l",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia)."
+  },
+  {
+   "id": "angeli-di-varano-s-s-agricola-dei-f-lli-chiucconi",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Rosso Conero",
+     "url": "https://www.angelidivarano.com/it/rosso-conero/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Bianco",
+     "url": "http://www.angelidivarano.com/en/marche-bianco/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brut Rosè",
+     "url": "https://www.angelidivarano.com/it/brut-rose/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Conero Riserva Stile Libero",
+     "url": "https://www.angelidivarano.com/it/category/premi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Conero Primo di Tre",
+     "url": "https://www.angelidivarano.com/it/category/premi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche IGT Rosato Pinko Nero",
+     "url": "https://www.angelidivarano.com/it/category/premi/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto sul sito ufficiale (Rosso Conero, Marche Bianco, Brut Rosè) e pagina Premi per Stile Libero, Primo di Tre e Pinko Nero."
+  },
+  {
+   "id": "aniballi",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini."
+  },
+  {
+   "id": "antica-cantina-sant-amico",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Lacrima di Morro d'Alba DOC",
+     "url": "https://www.anticacantinasantamico.it/vendita-online/vini-pregiati/acquisto-lacrima-di-morro-d-alba-doc",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Venere Oro Lacrima di Morro d'Alba DOC",
+     "url": "https://www.anticacantinasantamico.it/en/venere-oro-lacrima-di-morro-d-alba-doc",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi DOC",
+     "url": "https://www.anticacantinasantamico.it/en/fine-italian-wines/buy-verdicchio-dei-castelli-di-jesi-doc",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Pinot Nero IGT",
+     "url": "https://www.anticacantinasantamico.it/en/pinot-nero-IGT",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Visciola",
+     "url": "https://www.anticacantinasantamico.it/en/visciola",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosé Frizzante",
+     "url": "https://www.anticacantinasantamico.it/vini-frizzanti/rose-frizzante-detail",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.anticacantinasantamico.it/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "pagine prodotto dello shop sul sito; Visciola descritta come dessert wine; Rosso Piceno DOC citato in home page"
+  },
+  {
+   "id": "aurora",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Fiobbo Offida Pecorino DOCG",
+     "url": "http://viniaurora.it/fiobbo/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Barricadiero Offida Rosso DOCG",
+     "url": "https://viniaurora.it/barricadiero/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno Superiore",
+     "url": "http://viniaurora.it/rosso-piceno-superiore/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno",
+     "url": "https://viniaurora.it/rosso-piceno/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falerio",
+     "url": "http://viniaurora.it/en/falerio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosato",
+     "url": "http://viniaurora.it/en/wines/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine dei singoli vini su viniaurora.it"
+  },
+  {
+   "id": "az-agr-colleluce-di-malavolta-franca-c-soc-agricola",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Vernaccia di Serrapetrona DOCG Dolce",
+     "url": "https://www.colleluce.it/vernaccia-dolce/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vernaccia di Serrapetrona DOCG Secca",
+     "url": "https://colleluce.it/prodotti/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "XXIV Canto Vernaccia di Serrapetrona DOCG",
+     "url": "https://colleluce.it/en/xxiv-canto/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brecce Rosse Serrapetrona DOC",
+     "url": "https://colleluce.it/en/brecce-rosse/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto sul sito colleluce.it (esclusa grappa)"
+  },
+  {
+   "id": "az-agr-giusti-piergiovanni",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Lacrima di Morro d'Alba DOC Selezione Rubbjano",
+     "url": "http://www.lacrimagiusti.it/scheda.php?idpagina=12",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Bianco IGT",
+     "url": "https://www.lacrimagiusti.it/scheda.php?idpagina=17",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrima di Morro d'Alba DOC",
+     "url": "https://mobile.winealign.com/wines/14189-Giusti-Piergiovanni-Lacrima-Di-Morro-D'alba-2008",
+     "evidence": "altro"
+    },
+    {
+     "name": "Bolla Rosa Spumante Lacrima di Morro d'Alba",
+     "url": "https://winedispensary.com/products/luigi-giusti-bolla-rosa-spumante-lacrima-di-morro-dalba-marche-italy",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "schede tecniche sul sito lacrimagiusti.it; Lacrima base da WineAlign (Giusti Piergiovanni); Bolla Rosa da rivenditore USA (marchio Luigi Giusti, Piergiovanni Giusti indicato come titolare)"
+  },
+  {
+   "id": "az-agr-la-collina-di-tomassini-luciana",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "sangiovese.it è 'Sangiovese wine by Cantina Bianchini' (Cartoceto) con footer La Collina, ma nessun nome di vino specifico; nessuna fonte esterna su Tomassini"
+  },
+  {
+   "id": "az-agr-pandolfi-orsini-di-andrea-orsini",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Montalfojo Pergola Rosso DOC",
+     "url": "http://pandolfiorsini.it/en/3/products",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Fanelli IGT Marche Bianco",
+     "url": "http://pandolfiorsini.it/en/3/products",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Camburino Pergola Passito DOC",
+     "url": "http://pandolfiorsini.it/en/3/products",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosilde Vino & Visciole",
+     "url": "http://pandolfiorsini.it/en/3/products",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina prodotti del sito ufficiale (Montalfoglio, San Lorenzo in Campo). Esclusa la grappa di Aleatico."
+  },
+  {
+   "id": "az-agr-ripa-marchetti-di-ripa-maria-franca",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Superiore Apicus",
+     "url": "http://www.ripamarchetti.it/vino_verdicchio_dei_castelli_di_jesi_apicus.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Capolino",
+     "url": "http://www.ripamarchetti.it/vino_verdicchio_dei_castelli_di_jesi_capolino.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Coccio Marche IGT Rosso",
+     "url": "http://www.ripamarchetti.it/vino_rosso_montepulciano.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vigna Roncone Castelli di Jesi Verdicchio Riserva Classico DOCG",
+     "url": "http://www.ripamarchetti.it/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Schede vino sul sito ufficiale; Vigna Roncone citato nell'elenco vini della home."
+  },
+  {
+   "id": "az-agr-vallerosa-di-mannocchi-s-c-s-s",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessuna fonte su Vallerosa di Mannocchi; 'Campo Vallerosa' e' un Pecorino di Emanuele Dianetti (contrada Vallerosa di Carassai), altra cantina: scartato."
+  },
+  {
+   "id": "az-agricola-bastianelli-francesco",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Cantina Bastianelli (Monte San Pietrangeli, fondata 2011 da Francesco e Pamela) esiste su winetourism.com con vitigni e tipologie, ma nessun nome di vino specifico trovato"
+  },
+  {
+   "id": "azienda-agraria-i-tre-filari-di-sabbatini-silvia",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Lostè Spumante Brut",
+     "url": "http://www.itrefilari.it/prodotto/vino-spumante-loste-brut/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "http://www.itrefilari.it/prodotto/rosso-piceno-2016/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Strolleco IGT Incrocio Bruni 54",
+     "url": "http://www.itrefilari.it/prodotto/strolleco-2017/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ribona Colli Maceratesi DOC",
+     "url": "http://www.itrefilari.it/prodotto/ribona-2017/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ovinus IGT",
+     "url": "http://www.itrefilari.it/sono-pronti-i-vini-dellultima-vendemmia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Barugio IGT",
+     "url": "http://www.itrefilari.it/sono-pronti-i-vini-dellultima-vendemmia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Luvì IGT",
+     "url": "http://www.itrefilari.it/sono-pronti-i-vini-dellultima-vendemmia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrime di Gioia IGT",
+     "url": "http://www.itrefilari.it/sono-pronti-i-vini-dellultima-vendemmia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosa dei Quattro IGT Marche Rosato",
+     "url": "http://www.itrefilari.it/2013/05/cantine-aperte-2013/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Colli Maceratesi Bianco Passito DOC",
+     "url": "http://www.itrefilari.it/2013/05/cantine-aperte-2013/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Schede prodotto e news su itrefilari.it (produce anche olio, escluso)"
+  },
+  {
+   "id": "azienda-agricola-andrea-felici-di-leopardo-felici",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://www.andreafelici.it/pdf/schede/AndreaFelici_ClassicoSup_16_it.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Cantico della Figura Verdicchio dei Castelli di Jesi Classico Riserva DOCG",
+     "url": "https://www.andreafelici.it/cantico-della-figura.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "La cantina produce solo due vini; pagine/schede sul sito, confermati da Lea & Sandeman"
+  },
+  {
+   "id": "azienda-agricola-bartolacci-di-pierini-monica-e-matteo",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "il sito bartolacci.it ha una pagina 'Vino' (agricampeggio biologico che vende vino, olio, miele) ma nessun nome di vino indicizzato; nessuna fonte esterna"
+  },
+  {
+   "id": "azienda-agricola-federico-castellucci",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessun risultato su Federico Castellucci a Montecarotto (solo omonimi/altre cantine)"
+  },
+  {
+   "id": "azienda-agricola-pagliari-gabriele",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Dominio pagliariaziendaagricola.it senza risultati (anche extended); nessuna fonte esterna che nomini vini Pagliari."
+  },
+  {
+   "id": "azienda-agricola-rovegliano",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Il Rispetto",
+     "url": "https://marascarossi.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Principio",
+     "url": "https://marascarossi.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Mino",
+     "url": "https://marascarossi.it/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Marchio Marasca Rossi (Az. Agr. Rovegliano): i tre vini sono elencati nella home del sito; nessuna pagina prodotto singola. Abbinamento tipologia/etichetta per Il Principio e Mino dedotto dall'ordine dell'elenco."
+  },
+  {
+   "id": "azienda-agricola-sgaly-di-sgalippa-tommaso",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Falerio Pecorino DOC",
+     "url": "https://www.sgaly.it/falerio-pecorino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Centuria Cumana Passerina Marche IGP",
+     "url": "https://www.sgaly.it/centuria-cumana-marche-passerina-shop-online-vino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosa di Cuma Marche Rosato IGP",
+     "url": "https://www.sgaly.it/rosa-di-cuma-marche-rosato-shop-online-vino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.sgaly.it/rosso-piceno",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cuma Marche Rosso IGT",
+     "url": "https://www.sgaly.it/rosso-marche-invecchiato-in-barrique",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Hausum Chardonnay",
+     "url": "https://www.sgaly.it/shop",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Tutti dal sito sgaly.it (pagine prodotto e shop); Hausum citato nello shop."
+  },
+  {
+   "id": "azienda-agricola-simone-capecci",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Ciprea Offida Pecorino DOCG",
+     "url": "https://www.simonecapecci.it/ciprea",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Mvria",
+     "url": "https://www.simonecapecci.it/mvria",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Qvinta Regio Offida Rosso DOCG",
+     "url": "https://www.simonecapecci.it/qvintaregio",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Picus Rosso Piceno Superiore",
+     "url": "https://www.simonecapecci.it/picus",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Tufilla Passerina Marche IGP",
+     "url": "https://www.simonecapecci.it/tufilla",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Fedus Marche Sangiovese",
+     "url": "https://www.simonecapecci.it/fedus",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Chiodo Marche Bianco",
+     "url": "https://www.simonecapecci.it/chiodo",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Pallido Marche Rosato",
+     "url": "https://www.simonecapecci.it/pallido",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "pagine dei singoli vini su simonecapecci.it; Ciprea e Qvinta Regio confermati anche su flaschenpost.ch"
+  },
+  {
+   "id": "azienda-felice",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Nettare Passito di Bianchello",
+     "url": "https://www.aziendafelice.it/en/cantina-en/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Or'nello",
+     "url": "https://www.aziendafelice.it/en/cantina-en/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Nello",
+     "url": "https://www.aziendafelice.it/en/cantina-en/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Dino",
+     "url": "https://www.aziendafelice.it/en/cantina-en/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina cantina su aziendafelice.it; escluso un bianco da barrique dal nome incerto (Willi/Wulli)"
+  },
+  {
+   "id": "bonaventura-massimiliano",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Bàkchai Offida Pecorino DOCG",
+     "url": "https://www.vignetibonaventura.it/i-nostri-vini/bakchai/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ancrima Offida Passerina DOCG",
+     "url": "https://www.vignetibonaventura.it/i-nostri-vini/ancrima/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Maancrie Offida Rosso DOCG",
+     "url": "https://www.thestoryofmywine.com/blog/vigneti-bonaventura--maancrie-offida-docg-2012/",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Vigneti Bonaventura: pagine vino sul sito; Maancrie da recensione blog"
+  },
+  {
+   "id": "borioni-gianni-e-beltrani-anna-maria-s-s",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessun risultato sull'azienda ad Apiro; solo altre cantine (Andrea Felici)"
+  },
+  {
+   "id": "brocani-giuseppe",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Lunatico Verdicchio dei Castelli di Jesi DOC Classico Superiore",
+     "url": "https://www.cantinabrocani.it/prodotti.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ligami Verdicchio dei Castelli di Jesi DOC Classico Superiore",
+     "url": "https://www.cantinabrocani.it/prodotti.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Casa Brocani Verdicchio dei Castelli di Jesi DOC Classico",
+     "url": "https://www.cantinabrocani.it/prodotti.php",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "pagina prodotti di cantinabrocani.it"
+  },
+  {
+   "id": "broccanera",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Broccanera Extra Brut Verdicchio dei Castelli di Jesi",
+     "url": "http://www.broccanera.it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Suprino Verdicchio dei Castelli di Jesi DOC",
+     "url": "http://www.broccanera.it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cantaro Verdicchio dei Castelli di Jesi DOC",
+     "url": "http://www.broccanera.it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Zirro Castelli di Jesi Verdicchio DOCG",
+     "url": "http://www.broccanera.it/vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina /vini del sito ufficiale (Santini Giorgio, Arcevia)."
+  },
+  {
+   "id": "ca-le-suore",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Mochetto",
+     "url": "https://calesuore.it/cantina/mochetto",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Massimo",
+     "url": "https://www.calesuore.it/it/pagina/la-cantina",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Burano",
+     "url": "https://www.calesuore.it/it/pagina/la-cantina",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ca' Le Suore Bianco",
+     "url": "http://www.calesuore.it/cantina/calesuore/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Cantina Mochi dell'agriturismo Ca' Le Suore: vini dalla pagina La Cantina e dalle schede /cantina/. Il sito cita anche Venco e Donna Agnese, ma senza un URL chiaro: esclusi."
+  },
+  {
+   "id": "caliptra",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Kypra Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://hedonism.co.uk/product/kypra-verdicchio-superiore-ca-liptra-2023",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Pet Nat",
+     "url": "https://us.callmewine.com/pet-nat-ca-liptra-2024-P64455.htm",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Arancio",
+     "url": "https://us.callmewine.com/arancio-ca-liptra-2024-P64457.htm",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Amista Marche Rosso IGT",
+     "url": "https://www.bowlerwine.com/wine-or-spirit/igt-marche-rosso-amista/2023",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "San Michele Verdicchio dei Castelli di Jesi Classico Riserva",
+     "url": "https://www.caliptra.it/vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Kypra Perpetuo",
+     "url": "https://www.caliptra.it/vini/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina vini di caliptra.it + callmewine, hedonism, bowlerwine. Escluso il metodo classico perche' senza nome."
+  },
+  {
+   "id": "cantina-badialetti",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Rosso Conero DOC Montegallo",
+     "url": "http://www.badialetti.it/viniwines",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio",
+     "url": "http://www.badialetti.it/viniwines",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "pagina Vini/Wines del sito: Rosso Conero Montegallo e un Verdicchio bianco; menzionato un rosato senza nome chiaro (escluso)"
+  },
+  {
+   "id": "cantina-buongarzoni",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessun risultato per il nome Buongarzoni, ne' sito ne' fonti esterne"
+  },
+  {
+   "id": "cantina-dei-monti",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Dante Marche Rosso IGT",
+     "url": "https://www.cantina-dei-monti.com/weine/dante/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Casacce",
+     "url": "https://www.cantina-dei-monti.com/weine/casacce/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marte",
+     "url": "https://www.cantina-dei-monti.com/weine/marte/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Nettuno",
+     "url": "https://www.cantina-dei-monti.com/weine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Luna",
+     "url": "https://www.cantina-dei-monti.com/weine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sole",
+     "url": "https://www.cantina-dei-monti.com/weine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Terra",
+     "url": "https://www.cantina-dei-monti.com/weine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Venere",
+     "url": "https://www.cantina-dei-monti.com/weine/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Sito in tedesco: Dante, Casacce, Marte con pagina propria; gli altri dalla pagina elenco /weine/"
+  },
+  {
+   "id": "cantina-di-esanatoglia",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessuna fonte su una cantina a Esanatoglia; risultati solo su altre cantine di Matelica"
+  },
+  {
+   "id": "cantina-fortezza-marche",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessuna fonte su 'Cantina Fortezza' ad Acquaviva Picena (solo altre cantine della zona)"
+  },
+  {
+   "id": "cantina-gozzana",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Il Nucci Rosso Piceno Superiore DOC",
+     "url": "http://www.cantinagozzana.it/vini.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Trivio Falerio Pecorino DOC",
+     "url": "http://www.cantinagozzana.it/vini.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rmandi Rosso Piceno DOC",
+     "url": "http://www.cantinagozzana.it/vini.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bella di Notte Marche Passerina IGP",
+     "url": "http://www.cantinagozzana.it/vini.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosato",
+     "url": "http://www.cantinagozzana.it/vini.php",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina vini.php del sito ufficiale (trovata con ricerca extended); pagina forse datata."
+  },
+  {
+   "id": "cantina-le-colline",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessuna fonte trovata su una cantina 'Le Colline' a Tolentino; risultati solo su omonimi di altre regioni."
+  },
+  {
+   "id": "cantina-maroni",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Crociaiolo Offida Pecorino DOCG",
+     "url": "https://www.vinimaroni.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Domenico Rosso Piceno DOC",
+     "url": "https://www.vinimaroni.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Moretto Alicante IGT",
+     "url": "https://www.vinimaroni.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina IGT",
+     "url": "https://www.vinimaroni.it/lazienda/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine 'I nostri vini' e 'L'azienda' di vinimaroni.it."
+  },
+  {
+   "id": "cantina-marzialetti",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessun sito; nessuna fonte online collega il nome Marzialetti a una cantina o a vini (risultati solo su omonimi 'Torre' e info generiche Marche)"
+  },
+  {
+   "id": "cantina-ortenzi",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "AMOS Falerio Pecorino DOP",
+     "url": "https://www.cantinaortenzi.it/amos_en.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "BARUC Rosso Piceno DOP",
+     "url": "https://www.winedering.com/it/winery-cantina-ortenzi_d4561",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Scheda AMOS su cantinaortenzi.it; Baruc citato con la cantina su winedering e sul sito (home)"
+  },
+  {
+   "id": "cantina-qunti",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Al Montenero Falerio Pecorino DOC",
+     "url": "https://www.qunti.it/il-nostro-vino/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "In primis Falerio Pecorino DOC",
+     "url": "https://www.qunti.it/in-primis-un-progetto-di-vita-in-bottiglia/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine sul sito qunti.it (Al Montenero, Tre Bicchieri 2025; In primis, primo vino bio)"
+  },
+  {
+   "id": "cantina-raponi",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Il Bianco",
+     "url": "https://www.cantinaraponi.it/degustazione/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Rosato",
+     "url": "https://www.cantinaraponi.it/degustazione/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Rosso",
+     "url": "https://www.cantinaraponi.it/degustazione/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "il sito elenca tre vini (Il Bianco, Il Rosato, Il Rosso) nella sezione 'I nostri Vini' e nella pagina degustazione; nessuna pagina per singolo vino"
+  },
+  {
+   "id": "cantina-rovelli",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "nessuna fonte su Cantina Rovelli a Pergola (risultati solo Villa Ligi e omonimi)"
+  },
+  {
+   "id": "cantina-santori",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Chirone Marche Bianco IGT",
+     "url": "https://www.cantinasantori.it/it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Erebo Marche Rosso IGT",
+     "url": "https://www.cantinasantori.it/it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Eris Marche Rosso IGT",
+     "url": "https://www.cantinasantori.it/it/vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Nonosenso Marche Rosso IGT",
+     "url": "https://www.cantinasantori.it/it/vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina 'I nostri Vini' del sito ufficiale (vigne a Corridonia e Monte San Giusto)."
+  },
+  {
+   "id": "cantina-stefano-maccaroni",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessuna fonte su Stefano Maccaroni o cantina Maccaroni a Recanati."
+  },
+  {
+   "id": "cantina-suasa",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi",
+     "url": "http://www.cantinasuasa.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno",
+     "url": "http://www.cantinasuasa.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosato",
+     "url": "http://www.cantinasuasa.it/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Home page cantinasuasa.it (Az. Agr. Secondini Giorgio) elenca solo le tipologie prodotte, senza etichette con nome proprio; nessuna fonte esterna."
+  },
+  {
+   "id": "cantina-tiberi",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Solo scheda generica enprimeurclub (Tiberi Loro Piceno) senza nomi di vini; podcast 'Cantina Tiberi' senza localita'; altri risultati su Tiberini/Tiberio (Toscana/Abruzzo), scartati"
+  },
+  {
+   "id": "cantina-valdimiro",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Solo schede winetourism.com (Verdicchio di Matelica, Montepulciano, Cabernet; una 'riserva' citata in recensioni) senza nomi di vini; nessun sito"
+  },
+  {
+   "id": "cantina-vitula",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "il dominio cantinavitula.com non restituisce risultati (anche extended); nessuna fonte esterna"
+  },
+  {
+   "id": "cantine-d-ercoli",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Passerina Offida DOCG",
+     "url": "https://www.cantinedercoli.it/passerina_offida.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Pecorino Offida DOCG",
+     "url": "https://www.cantinedercoli.it/pecorino_offida.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.cantinedercoli.it/rosso_piceno.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Boffo Marche Rosso IGT",
+     "url": "https://www.cantinedercoli.it/boffo.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Frizzante IGT",
+     "url": "https://www.cantinedercoli.it/passerina_frizzante.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosato IGT",
+     "url": "https://www.cantinedercoli.it/eng/vini.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto del sito ufficiale (Contrada Moglie, Cossignano)."
+  },
+  {
+   "id": "cantine-paci",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Il sito cantine-paci.com (Montegaudio di Pesaro, biologico dal 1977) non mostra nei risultati un elenco vini; nessuna fonte esterna. Ricerca interrotta: limite di ricerche web esaurito, da riprovare."
+  },
+  {
+   "id": "cantine-pisaurum",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Il Cigno Bianchello del Metauro DOC",
+     "url": "https://www.pisaurum.it/en/rossinis-selection/il-cigno",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Don Basilio Colli Pesaresi DOC Sangiovese",
+     "url": "https://www.pisaurum.it/sites/default/files/2019-08/don-basilio-en.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Don Bartolo",
+     "url": "https://www.pisaurum.it/en/rossinis-selection",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falliero Colli Pesaresi Bianco",
+     "url": "https://www.pisaurum.it/en/rossinis-selection",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Guidobaldo Colli Pesaresi DOC Sangiovese Biologico",
+     "url": "https://www.pisaurum.it/en/i-classici/guidobaldo",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cleofe Bianchello del Metauro DOC Biologico",
+     "url": "https://www.pisaurum.it/en/i-classici/cleofe",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Leonida",
+     "url": "https://www.pisaurum.it/en/i-classici",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Figurin Spumante Brut Metodo Martinotti Sangiovese",
+     "url": "https://www.pisaurum.it/i-classici/figurin",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Nolfo Metodo Classico",
+     "url": "https://www.pisaurum.it/news-ed-eventi/diamo-il-benvenuto-nolfo-il-nostro-nuovo-metodo-classico",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Figaro",
+     "url": "https://www.pisaurum.it/en",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Tutti da pisaurum.it (Selezione Rossini, I Classici, schede PDF, news). Esclusi i bag-in-box generici (Vino Bianco/Rosso). Leonida, Don Bartolo, Falliero e Figaro solo da pagine di elenco."
+  },
+  {
+   "id": "capinera",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "La Capinera Marche Bianco IGT",
+     "url": "https://www.capinera.com/vino-bianco/4-la-capinera-marche-igt.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ribona Colli Maceratesi Ribona DOC",
+     "url": "https://www.capinera.com/vino-bianco/6-ribona-colli-maceratesi-ribona-doc.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Duca Guarnerio Rosso Piceno DOC",
+     "url": "https://www.capinera.com/vino-rosso/10-duca-guarnerio-rosso-piceno-doc.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cardinal Minio Marche Merlot IGT",
+     "url": "https://www.capinera.com/vino-rosso/11-cardinal-minio-marche-merlot-igt.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Beato Masseo Colli Maceratesi DOC Riserva",
+     "url": "https://www.capinera.com/vino-rosso/12-beato-masseo-colli-maceratesi-doc-riserva.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Giacopetto IGT Marche Rosso",
+     "url": "https://www.capinera.com/shop/giacopetto",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Rosato Brut",
+     "url": "https://www.capinera.com/2-shop",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Shop e schede prodotto su capinera.com (olio escluso)"
+  },
+  {
+   "id": "cardocchia",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Offida Rosso DOCG 27",
+     "url": "https://www.cardocchia.it/product/offida-rosso-docg-27/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Amplico Rosso Piceno DOC",
+     "url": "https://cardocchia.it/prodotti/rosso-piceno-amplico-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Almerigo Rosso Piceno Superiore DOC",
+     "url": "https://cardocchia.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Pecus Offida Pecorino DOCG",
+     "url": "https://cardocchia.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "La Fantella Offida Passerina DOCG",
+     "url": "https://cardocchia.it/i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Brut",
+     "url": "http://www.cardocchia.it/shop-vini/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Sito cardocchia.it: pagine prodotto per 27 e Amplico, gli altri dalla pagina 'I Nostri Vini'/shop; terza ricerca non eseguita (budget esaurito)"
+  },
+  {
+   "id": "casa-lucciola",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio di Matelica DOC Biologico",
+     "url": "https://casalucciola.it/it/vini/casa-lucciola-2022-verdicchio-di-matelica-doc-biologico",
+     "evidence": "altro"
+    },
+    {
+     "name": "Ancestrale IGT Marche Bianco Frizzante",
+     "url": "https://casalucciola.it/it/vini/casa-lucciola-ancestrale-igt-marche-bianco-frizzante",
+     "evidence": "altro"
+    },
+    {
+     "name": "Verdicchio di Matelica Riserva DOCG Notte",
+     "url": "https://casalucciola.it/it/vini",
+     "evidence": "altro"
+    }
+   ],
+   "note": "trovato il sito casalucciola.it (pagine vini); confermato anche da scheda espositore Wine Paris e Decanter"
+  },
+  {
+   "id": "cimarelli-luca",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Fra' Moriale",
+     "url": "https://www.firstleaf.com/a/wine-directory/product/fra-moriale-luca-cimarelli",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Sito lucacimarelli.it (pagina azienda) senza elenco vini; Fra' Moriale da scheda firstleaf 'Luca Cimarelli'. Ricerca interrotta: limite WebSearch esaurito, possibili altri vini"
+  },
+  {
+   "id": "conti-maria",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Sito contimaria.it indicizzato solo con home/chi siamo/contatti, sezione 'I nostri vini' senza nomi; nessuna fonte esterna."
+  },
+  {
+   "id": "saputi",
+   "status": "found",
+   "complete": false,
+   "wines": [
+    {
+     "name": "Colli Maceratesi Ribona",
+     "url": "https://www.gamberorosso.it/notizie/vino/degustazioni/ribona-marche-vitigno-tre-bicchieri/",
+     "evidence": "guida"
+    }
+   ],
+   "note": "PARZIALE: non cercata direttamente (limite WebSearch esaurito); prova emersa in altra ricerca: articolo Gambero Rosso sui Tre Bicchieri alla Ribona dei Saputi. Da completare"
+  },
+  {
+   "id": "societa-agricola-la-staffa-di-baldi-riccardo-e-c-s-s",
+   "status": "found",
+   "complete": false,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Riserva Classico DOCG Rincrocca",
+     "url": "https://leonandsonwine.com/products/2020-la-staffa-rincrocca-verdicchio-dei-castelli-di-jesi-riserva-classico-docg-italy",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://vinovoss.com/wine/la-staffa-verdicchio-dei-castelli-di-jesi-classico-superiore",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "PARZIALE: non cercata direttamente (limite WebSearch esaurito); prove emerse nella ricerca su Staffolo/Verdicchio (rivenditori La Staffa). Da completare"
+  },
+  {
+   "id": "vigneti-vallorani",
+   "status": "found",
+   "complete": false,
+   "wines": [
+    {
+     "name": "Offida Passerina DOCG",
+     "url": "https://www.winedering.com/it/winery-vigneti-vallorani_d112",
+     "evidence": "altro"
+    },
+    {
+     "name": "Falerio DOP",
+     "url": "https://www.winedering.com/it/winery-vigneti-vallorani_d112",
+     "evidence": "altro"
+    }
+   ],
+   "note": "PARZIALE: due vini emersi per caso (scheda winedering di Vigneti Vallorani) durante la ricerca per Vallerosa; ricerca dedicata non eseguita per budget WebSearch esaurito, da completare."
+  }
+ ]
+}

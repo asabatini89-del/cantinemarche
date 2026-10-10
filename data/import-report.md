@@ -15,10 +15,10 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
 | Cantine con servizi (degustazioni, visite, vendita) | 74 |
-| Vini importati | 1494 (1421 pubblicati, 73 in bozza perché non sono vini) |
+| Vini importati | 1670 (1597 pubblicati, 73 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
-| — di cui da ricerca web, con URL di prova | 0 su 0 cantine (—) |
-| Cantine pubblicate con almeno un vino | 120 su 365 |
+| — di cui da ricerca web, con URL di prova | 176 su 40 cantine (sito-cantina: 157, rivenditore: 10, altro: 8, guida: 1) |
+| Cantine pubblicate con almeno un vino | 160 su 365 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -68,252 +68,212 @@ Nel dato originale la provincia è vuota.
 - nessuno
 
 ### 7. Cantine ancora senza vini
-245 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (non eseguita): —. Le schede invitano la cantina ad aggiungerli.
-- `agostino-romani` Agostino Romani
-- `agriarcuata-soc-coop-agricola` Agriarcuata Soc. Coop. Agricola
-- `agricola-lanciani` Agricola Lanciani
-- `albamocco` Albamocco
-- `allevi-maria-letizia-di-corradetti-michele` Allevi Maria Letizia di Corradetti Michele
-- `amadio-vini-s-r-l` AMADIO VINI S.R.L.
-- `angeli-di-varano-s-s-agricola-dei-f-lli-chiucconi` ANGELI DI VARANO S.S. AGRICOLA DEI F.LLI CHIUCCONI
-- `aniballi` Aniballi
-- `antica-cantina-sant-amico` Antica Cantina Sant'Amico
-- `aurora` Aurora
-- `az-agr-colleluce-di-malavolta-franca-c-soc-agricola` AZ. AGR. COLLELUCE DI MALAVOLTA FRANCA & C. SOC. AGRICOLA
-- `az-agr-giusti-piergiovanni` AZ. AGR. GIUSTI PIERGIOVANNI
-- `az-agr-la-collina-di-tomassini-luciana` AZ. AGR. LA COLLINA DI TOMASSINI LUCIANA
-- `az-agr-pandolfi-orsini-di-andrea-orsini` AZ. AGR. PANDOLFI ORSINI DI ANDREA ORSINI
-- `az-agr-ripa-marchetti-di-ripa-maria-franca` AZ. AGR. RIPA MARCHETTI DI RIPA MARIA FRANCA
-- `az-agr-vallerosa-di-mannocchi-s-c-s-s` Az. Agr. Vallerosa di Mannocchi S. & C. S.S.
-- `az-agricola-bastianelli-francesco` Az. Agricola Bastianelli Francesco
-- `azienda-agraria-i-tre-filari-di-sabbatini-silvia` AZIENDA AGRARIA I TRE FILARI DI SABBATINI SILVIA
-- `azienda-agricola-andrea-felici-di-leopardo-felici` AZIENDA AGRICOLA ANDREA FELICI DI LEOPARDO FELICI
-- `azienda-agricola-bartolacci-di-pierini-monica-e-matteo` AZIENDA AGRICOLA BARTOLACCI DI PIERINI MONICA E MATTEO
-- `azienda-agricola-federico-castellucci` AZIENDA AGRICOLA FEDERICO CASTELLUCCI
-- `azienda-agricola-pagliari-gabriele` AZIENDA AGRICOLA PAGLIARI GABRIELE
-- `azienda-agricola-rovegliano` AZIENDA AGRICOLA ROVEGLIANO
-- `azienda-agricola-sgaly-di-sgalippa-tommaso` AZIENDA AGRICOLA SGALY DI SGALIPPA TOMMASO
-- `azienda-agricola-simone-capecci` Azienda Agricola Simone Capecci
-- `azienda-felice` Azienda Felice
-- `bonaventura-massimiliano` Bonaventura Massimiliano
-- `borioni-gianni-e-beltrani-anna-maria-s-s` BORIONI GIANNI E BELTRANI ANNA MARIA S.S
-- `brocani-giuseppe` BROCANI GIUSEPPE
-- `broccanera` Broccanera
-- `ca-le-suore` Ca' Le Suore
-- `caliptra` Ca’Liptra
-- `cantina-badialetti` Cantina Badialetti
-- `cantina-buongarzoni` Cantina Buongarzoni
-- `cantina-dei-monti` Cantina dei Monti
-- `cantina-di-esanatoglia` Cantina di Esanatoglia
-- `cantina-fortezza-marche` Cantina Fortezza Marche
-- `cantina-gozzana` Cantina Gozzana
-- `cantina-le-colline` Cantina Le Colline
-- `cantina-maroni` Cantina Maroni
-- `cantina-marzialetti` Cantina Marzialetti
-- `cantina-ortenzi` Cantina Ortenzi
-- `cantina-qunti` Cantina Quntì
-- `cantina-raponi` Cantina Raponi
-- `cantina-rovelli` Cantina Rovelli
-- `cantina-santori` Cantina Santori
-- `cantina-stefano-maccaroni` Cantina Stefano Maccaroni
-- `cantina-suasa` CANTINA SUASA
-- `cantina-tavio` Cantina Tavio
-- `cantina-tiberi` CANTINA TIBERI
-- `cantina-valdimiro` cantina valdimiro
-- `cantina-vitula` Cantina Vitula
-- `cantina-zamponi` Cantina Zamponi
-- `cantine-d-ercoli` Cantine D'Ercoli
-- `cantine-paci` Cantine Paci
-- `cantine-pisaurum` Cantine Pisaurum
-- `cantine-politi` Cantine Politi
-- `capinera` Capinera
-- `cardocchia` Cardocchia
-- `casa-lucciola` Casa Lucciola
-- `casa-pierini` Casa Pierini
-- `casa-vinicola-bruni` Casa Vinicola Bruni
-- `centanni-giacomo-az-agr` Centanni Giacomo Az. Agr.
-- `cherubini` Cherubini
-- `cignano` Cignano
-- `cimarelli-luca` CIMARELLI LUCA
-- `collemara` COLLEMARA
-- `collestefano` ColleStefano
-- `conti-di-buscareto` Conti di Buscareto
-- `conti-maria` Conti Maria
-- `contrada-contro` Contrada Contro
-- `corinaldesi-vignaioli-artigiani` CORINALDESI - Vignaioli Artigiani
-- `cossignani-l-e-tempo` Cossignani L.E. Tempo
-- `crocevia` Crocevia
-- `de-angelis-c-srl` De Angelis & C. SRL
-- `de-leyva-di-leva-davide-az-agr` DE LEYVA DI LEVA DAVIDE AZ. AGR.
-- `dianetti` Dianetti
-- `domodimonti` Domodimonti
-- `eredi-cesaroni-srl-soc-agr` EREDI CESARONI SRL SOC. AGR.
-- `failoni-rocco` FAILONI ROCCO
-- `fattoria-colmone-della-marca` Fattoria Colmone della Marca
-- `fattoria-fontegeloni` Fattoria Fontegeloni
-- `fattoria-gens-camuria-soc-coop-agricola` FATTORIA GENS CAMURIA SOC.COOP AGRICOLA
-- `fattoria-nanni` Fattoria Nannì
-- `fattoria-san-lorenzo-di-crognaletti-natalino` FATTORIA SAN LORENZO DI CROGNALETTI NATALINO
-- `fattoria-villa-ligi` FATTORIA VILLA LIGI
-- `filodivino` Filodivino
-- `finocchi-sandro-azienda-agraria` FINOCCHI SANDRO AZIENDA AGRARIA
-- `finocchi-viticoltori` Finocchi Viticoltori
-- `fiorano-az-agr` FIORANO AZ. AGR.
-- `fioretti-brera` Fioretti Brera
-- `fratelli-badiali` Fratelli Badiali
-- `fulvia-tombolini` Fulvia Tombolini
-- `gatti-marco` GATTI MARCO
-- `geminiani-wine` Geminiani Wine
-- `giorgetti-andrea` GIORGETTI ANDREA
-- `guerri-giorgio` GUERRI GIORGIO
-- `i-sassi-di-san-giuseppe` I SASSI DI SAN GIUSEPPE
-- `il-conte-villa-prandone` IL CONTE VILLA PRANDONE
-- `il-conventino-di-monteciccardo-sas-societa-agricola` IL CONVENTINO DI MONTECICCARDO SAS SOCIETA’ AGRICOLA
-- `la-fontursia` La Fontursia
-- `la-lepre-e-la-luna` La Lepre e la Luna
-- `la-marca-di-san-michele` La Marca di San Michele
-- `la-meravigna` La Meravigna
-- `la-montata` La Montata
-- `la-valle-del-sole` La Valle Del Sole
-- `la-villa-mergo` La Villa Mergo
-- `laila-libenzi-azienda-agricola-di-chiara-refe` LAILA LIBENZI AZIENDA AGRICOLA DI CHIARA REFE
-- `le-senate-az-agr-di-visi-giulio` LE SENATE AZ. AGR. DI VISI GIULIO
-- `lucchetti` Lucchetti
-- `lucidimezzo` LucidiMezzo
-- `luigi-giusti` Luigi Giusti
-- `lumavite` Lumavite
-- `macondo` Macondo
-- `madonnabruna` Madonnabruna
-- `marchetti` Marchetti
-- `marconi-vini` Marconi Vini
-- `mazzola` MAZZOLA
-- `moncaro` Moncaro
-- `montecappone` Montecappone
-- `montecoriolano-casalis-douhet` Montecoriolano Casalis Douhet
-- `moroder` Moroder
-- `murola` Muròla
-- `oasi-degli-angeli` Oasi degli Angeli
-- `officina-del-sole` Officina del Sole
-- `oppeddentro` Oppeddentro
-- `peruzzi-liana` Peruzzi Liana
-- `piantate-lunghe` Piantate Lunghe
-- `pieri` Pieri
-- `piersanti` Piersanti
-- `pietro17-winery` PIETRO17 WINERY
-- `pilandro` Pilandro
-- `podere-linfinito-soc-semplice-agricola` PODERE L’INFINITO SOC. SEMPLICE AGRICOLA
-- `podere-santa-lucia` Podere Santa Lucia
-- `poderi-san-lazzaro` PODERI SAN LAZZARO
-- `ripawine-soc-coop-agricola` Ripawine Soc. Coop. Agricola
-- `rocca-dei-forti` Rocca dei Forti
-- `ronconi-ex-badiali-candelaresi` Ronconi (ex Badiali&Candelaresi)
-- `root-s-r-l-societa-agricola` ROOT S.R.L. SOCIETA’ AGRICOLA
-- `sabbionare` Sabbionare
-- `saladini-pilastri-srl-soc-agricola` Saladini Pilastri Srl Soc. Agricola
-- `san-giovanni-soc-agricola-srl` San Giovanni Soc. Agricola Srl
-- `santa-barbara` Santa Barbara
-- `santa-cassella` Santa Cassella
-- `santa-liberata-di-savini-giorgio-az-agricola` Santa Liberata di Savini Giorgio Az. Agricola
-- `saputi` Saputi
-- `sassodivino` SASSODIVINO
-- `sauie-srl-az-agr-montecoriolano` SAUIE SRL – AZ. AGR. MONTECORIOLANO
-- `sauro-carletti` Sauro Carletti
-- `sciauerta` Sciauerta
-- `selvagrossa` Selvagrossa
-- `serboni-massimo-azienda-agricola` SERBONI MASSIMO AZIENDA AGRICOLA
-- `sergio-marani` Sergio Marani
-- `soc-agr-la-pila-di-matteo-toniolo-s-s` Soc. Agr. La Pila di Matteo Toniolo S.S.
-- `soc-agr-montebianco120-s-s` SOC. AGR. MONTEBIANCO120 S.S.
-- `soc-agricola-san-filippo-s-s` Soc. Agricola San Filippo S.S.
-- `soc-agr-vini-gagliardi-gino-di-gagliardi-lara-e-umberto-snc` SOC.AGR.VINI GAGLIARDI GINO DI GAGLIARDI LARA E UMBERTO SNC
-- `socci` SOCCI
-- `societa-agricola-bucchini-davide-e-romani-stefania-s-s` SOCIETÀ AGRICOLA BUCCHINI DAVIDE E ROMANI STEFANIA S.S.
-- `societa-agricola-capriotti` SOCIETÀ AGRICOLA CAPRIOTTI
-- `societa-agricola-fausti-srl` Società Agricola Fausti Srl
-- `societa-agricola-la-staffa-di-baldi-riccardo-e-c-s-s` SOCIETA AGRICOLA LA STAFFA DI BALDI RICCARDO E C. S.S
-- `societa-agricola-ronconi-di-ronconi-samuele-c-s-s` SOCIETA’ AGRICOLA RONCONI DI RONCONI SAMUELE & C. S.S.
-- `societa-agricola-villa-lazzarini-srl` SOCIETA’ AGRICOLA VILLA LAZZARINI SRL
-- `spallacci-giordano` SPALLACCI GIORDANO
-- `sparapani-snc-di-sparapani-giuseppe-c` SPARAPANI SNC DI SPARAPANI GIUSEPPE & C.
-- `stefano-mancinelli` Stefano Mancinelli
-- `strologo` Strologo
-- `tenimenti-le-ginestre-srl` Tenimenti Le Ginestre Srl
-- `tenimenti-spinsanti-spinsanti-catia` TENIMENTI SPINSANTI - SPINSANTI CATIA
-- `tenuta-agricola-la-riserva-di-mattioli-dina` Tenuta Agricola La Riserva di Mattioli Dina
-- `tenuta-barbarossa` Tenuta Barbarossa
-- `tenuta-ca-sciampagne` Tenuta Ca' Sciampagne
-- `tenuta-carlini-di-andrea-carlini` TENUTA CARLINI DI ANDREA CARLINI
-- `tenuta-cocci-grifoni` Tenuta Cocci Grifoni
-- `tenuta-colpaola` Tenuta Colpaola
-- `tenuta-conte-lucangeli` Tenuta Conte Lucangeli
-- `tenuta-dell-ugolino` Tenuta dell'Ugolino
-- `tenuta-di-fra` Tenuta di Frà
-- `tenuta-di-pirano` Tenuta di Pirano
-- `tenuta-grimaldi` Tenuta Grimaldi
-- `tenuta-manoylo-by-moresco-soc-agr-semplice` Tenuta Manoylo by Moresco Soc. Agr. Semplice
-- `tenuta-marino` Tenuta Marino
-- `tenuta-mattei` Tenuta Mattei
-- `tenuta-musone` Tenuta Musone
-- `tenuta-piano-di-rustano` Tenuta Piano di Rustano
-- `tenuta-san-marcello` Tenuta San Marcello
-- `tenuta-san-martino-di-cerioni-mauro` TENUTA SAN MARTINO DI CERIONI MAURO
-- `tenuta-santi-giacomo-e-filippo` Tenuta Santi Giacomo e Filippo
-- `tenuta-seghetti-panichi` Tenuta Seghetti Panichi
-- `tenuta-siliquini` Tenuta Siliquini
-- `tenuta-spinelli-di-spinelli-simone` Tenuta Spinelli di Spinelli Simone
-- `tenute-del-borgo` Tenute del Borgo
-- `tenute-il-crinale-di-quitadamo-michele` Tenute Il Crinale di Quitadamo Michele
-- `tenute-malavolta` Tenute Malavolta
-- `tenute-polini-societa-agricola-semplice` Tenute Polini Società Agricola Semplice
-- `tenute-priori-galdelli` Tenute Priori & Galdelli
-- `tenute-recchi-franceschini-eredi-az-agr-la-via-sistina` Tenute Recchi Franceschini Eredi Az. Agr. La Via Sistina
-- `tenute-urani` Tenute Urani
-- `terra-argillosa` Terra Argillosa
-- `terra-divina` Terra Divina
-- `terra-libera` Terra Libera
-- `terra-premiata-di-graziano-mazza-figli` Terra Premiata di Graziano Mazza & Figli
-- `terracruda` Terracruda
-- `terrafageto` TERRAFAGETO
-- `terre-cerquaferrata` Terre Cerquaferrata
-- `terre-cortesi-moncaro-soc-coop` Terre Cortesi Moncaro Soc. Coop.
-- `terre-d-arengo` Terre d'Arengo
-- `terre-di-san-ginesio` Terre di San Ginesio
-- `terre-di-serrapetrona-societa-agricola-semplice` TERRE DI SERRAPETRONA SOCIETA’ AGRICOLA SEMPLICE
-- `tomassetti` tomassetti.
-- `torretti-walter` TORRETTI WALTER
-- `valter-mattoni` Valter Mattoni
-- `vara-pesaresi-vignaioli` VARÀ PESARESI VIGNAIOLI
-- `veneranda-vite` Veneranda Vite
-- `venturi-roberto` Venturi Roberto
-- `verser-cantina-e-vigneti` VerSer | Cantina e Vigneti
-- `vicari` Vicari
-- `viconari` Viconari
-- `vigna-degli-estensi` Vigna degli Estensi
-- `vigna-della-cava` Vigna della Cava
-- `vignamato` Vignamato
-- `vigne-di-leo-tre-castelli` Vigne di Leo – Tre Castelli
-- `vigneti-vallorani` Vigneti Vallorani
-- `vigneto-fernando-alberto` Vigneto Fernando Alberto
-- `villa-forano` Villa Forano
-- `villa-imperium` Villa Imperium
-- `villa-manu` Villa Manù
-- `villa-romita-di-brugiaferri-maurilio-e-giorgi-simonetta-s` VILLA ROMITA DI BRUGIAFERRI MAURILIO E GIORGI SIMONETTA S.
-- `vini-accattoli` Vini Accattoli
-- `vini-firmanum` Vini Firmanum
-- `vini-maraviglia` Vini Maraviglia
-- `vini-montesanto` Vini Montesanto
-- `vini-muraro` Vini Muraro
-- `vini-rocchi` Vini Rocchi
-- `vini-simonetti` Vini Simonetti
-- `vini-valmusone` Vini Valmusone
-- `vinicola-carassanese` Vinicola Carassanese
-- `vinicola-del-tesino-srl` Vinicola del Tesino Srl
-- `vinidicagnore` ViniDiCagnore
-- `vitali-augusto` VITALI AUGUSTO
-- `vitivinicola-costadoro-soc-agr-srl` Vitivinicola Costadoro Soc. Agr. Srl
-- `vitivinicola-dangelo-s-s-a` Vitivinicola D’Angelo S.S.A.
-- `vittorini-di-nico-speranza` Vittorini di Nico Speranza
-- `zaccagnini` Zaccagnini
+205 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 40, none 22. Le schede invitano la cantina ad aggiungerli.
+- `agriarcuata-soc-coop-agricola` Agriarcuata Soc. Coop. Agricola — none: Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette
+- `amadio-vini-s-r-l` AMADIO VINI S.R.L. — none: Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia).
+- `aniballi` Aniballi — none: Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini.
+- `az-agr-la-collina-di-tomassini-luciana` AZ. AGR. LA COLLINA DI TOMASSINI LUCIANA — none: sangiovese.it è 'Sangiovese wine by Cantina Bianchini' (Cartoceto) con footer La Collina, ma nessun nome di vino specifico; nessuna fonte esterna su Tomassini
+- `az-agr-vallerosa-di-mannocchi-s-c-s-s` Az. Agr. Vallerosa di Mannocchi S. & C. S.S. — none: Nessuna fonte su Vallerosa di Mannocchi; 'Campo Vallerosa' e' un Pecorino di Emanuele Dianetti (contrada Vallerosa di Carassai), altra cantina: scartato.
+- `az-agricola-bastianelli-francesco` Az. Agricola Bastianelli Francesco — none: Cantina Bastianelli (Monte San Pietrangeli, fondata 2011 da Francesco e Pamela) esiste su winetourism.com con vitigni e tipologie, ma nessun nome di vino specifico trovato
+- `azienda-agricola-bartolacci-di-pierini-monica-e-matteo` AZIENDA AGRICOLA BARTOLACCI DI PIERINI MONICA E MATTEO — none: il sito bartolacci.it ha una pagina 'Vino' (agricampeggio biologico che vende vino, olio, miele) ma nessun nome di vino indicizzato; nessuna fonte esterna
+- `azienda-agricola-federico-castellucci` AZIENDA AGRICOLA FEDERICO CASTELLUCCI — none: nessun risultato su Federico Castellucci a Montecarotto (solo omonimi/altre cantine)
+- `azienda-agricola-pagliari-gabriele` AZIENDA AGRICOLA PAGLIARI GABRIELE — none: Dominio pagliariaziendaagricola.it senza risultati (anche extended); nessuna fonte esterna che nomini vini Pagliari.
+- `borioni-gianni-e-beltrani-anna-maria-s-s` BORIONI GIANNI E BELTRANI ANNA MARIA S.S — none: nessun risultato sull'azienda ad Apiro; solo altre cantine (Andrea Felici)
+- `cantina-buongarzoni` Cantina Buongarzoni — none: Nessun risultato per il nome Buongarzoni, ne' sito ne' fonti esterne
+- `cantina-di-esanatoglia` Cantina di Esanatoglia — none: nessuna fonte su una cantina a Esanatoglia; risultati solo su altre cantine di Matelica
+- `cantina-fortezza-marche` Cantina Fortezza Marche — none: nessuna fonte su 'Cantina Fortezza' ad Acquaviva Picena (solo altre cantine della zona)
+- `cantina-le-colline` Cantina Le Colline — none: Nessuna fonte trovata su una cantina 'Le Colline' a Tolentino; risultati solo su omonimi di altre regioni.
+- `cantina-marzialetti` Cantina Marzialetti — none: nessun sito; nessuna fonte online collega il nome Marzialetti a una cantina o a vini (risultati solo su omonimi 'Torre' e info generiche Marche)
+- `cantina-rovelli` Cantina Rovelli — none: nessuna fonte su Cantina Rovelli a Pergola (risultati solo Villa Ligi e omonimi)
+- `cantina-stefano-maccaroni` Cantina Stefano Maccaroni — none: Nessuna fonte su Stefano Maccaroni o cantina Maccaroni a Recanati.
+- `cantina-tavio` Cantina Tavio — ricerca web non ancora eseguita
+- `cantina-tiberi` CANTINA TIBERI — none: Solo scheda generica enprimeurclub (Tiberi Loro Piceno) senza nomi di vini; podcast 'Cantina Tiberi' senza localita'; altri risultati su Tiberini/Tiberio (Toscana/Abruzzo), scartati
+- `cantina-valdimiro` cantina valdimiro — none: Solo schede winetourism.com (Verdicchio di Matelica, Montepulciano, Cabernet; una 'riserva' citata in recensioni) senza nomi di vini; nessun sito
+- `cantina-vitula` Cantina Vitula — none: il dominio cantinavitula.com non restituisce risultati (anche extended); nessuna fonte esterna
+- `cantina-zamponi` Cantina Zamponi — ricerca web non ancora eseguita
+- `cantine-paci` Cantine Paci — none: Il sito cantine-paci.com (Montegaudio di Pesaro, biologico dal 1977) non mostra nei risultati un elenco vini; nessuna fonte esterna. Ricerca interrotta: limite di ricerche web esaurito, da riprovare.
+- `cantine-politi` Cantine Politi — ricerca web non ancora eseguita
+- `casa-pierini` Casa Pierini — ricerca web non ancora eseguita
+- `casa-vinicola-bruni` Casa Vinicola Bruni — ricerca web non ancora eseguita
+- `centanni-giacomo-az-agr` Centanni Giacomo Az. Agr. — ricerca web non ancora eseguita
+- `cherubini` Cherubini — ricerca web non ancora eseguita
+- `cignano` Cignano — ricerca web non ancora eseguita
+- `collemara` COLLEMARA — ricerca web non ancora eseguita
+- `collestefano` ColleStefano — ricerca web non ancora eseguita
+- `conti-di-buscareto` Conti di Buscareto — ricerca web non ancora eseguita
+- `conti-maria` Conti Maria — none: Sito contimaria.it indicizzato solo con home/chi siamo/contatti, sezione 'I nostri vini' senza nomi; nessuna fonte esterna.
+- `contrada-contro` Contrada Contro — ricerca web non ancora eseguita
+- `corinaldesi-vignaioli-artigiani` CORINALDESI - Vignaioli Artigiani — ricerca web non ancora eseguita
+- `cossignani-l-e-tempo` Cossignani L.E. Tempo — ricerca web non ancora eseguita
+- `crocevia` Crocevia — ricerca web non ancora eseguita
+- `de-angelis-c-srl` De Angelis & C. SRL — ricerca web non ancora eseguita
+- `de-leyva-di-leva-davide-az-agr` DE LEYVA DI LEVA DAVIDE AZ. AGR. — ricerca web non ancora eseguita
+- `dianetti` Dianetti — ricerca web non ancora eseguita
+- `domodimonti` Domodimonti — ricerca web non ancora eseguita
+- `eredi-cesaroni-srl-soc-agr` EREDI CESARONI SRL SOC. AGR. — ricerca web non ancora eseguita
+- `failoni-rocco` FAILONI ROCCO — ricerca web non ancora eseguita
+- `fattoria-colmone-della-marca` Fattoria Colmone della Marca — ricerca web non ancora eseguita
+- `fattoria-fontegeloni` Fattoria Fontegeloni — ricerca web non ancora eseguita
+- `fattoria-gens-camuria-soc-coop-agricola` FATTORIA GENS CAMURIA SOC.COOP AGRICOLA — ricerca web non ancora eseguita
+- `fattoria-nanni` Fattoria Nannì — ricerca web non ancora eseguita
+- `fattoria-san-lorenzo-di-crognaletti-natalino` FATTORIA SAN LORENZO DI CROGNALETTI NATALINO — ricerca web non ancora eseguita
+- `fattoria-villa-ligi` FATTORIA VILLA LIGI — ricerca web non ancora eseguita
+- `filodivino` Filodivino — ricerca web non ancora eseguita
+- `finocchi-sandro-azienda-agraria` FINOCCHI SANDRO AZIENDA AGRARIA — ricerca web non ancora eseguita
+- `finocchi-viticoltori` Finocchi Viticoltori — ricerca web non ancora eseguita
+- `fiorano-az-agr` FIORANO AZ. AGR. — ricerca web non ancora eseguita
+- `fioretti-brera` Fioretti Brera — ricerca web non ancora eseguita
+- `fratelli-badiali` Fratelli Badiali — ricerca web non ancora eseguita
+- `fulvia-tombolini` Fulvia Tombolini — ricerca web non ancora eseguita
+- `gatti-marco` GATTI MARCO — ricerca web non ancora eseguita
+- `geminiani-wine` Geminiani Wine — ricerca web non ancora eseguita
+- `giorgetti-andrea` GIORGETTI ANDREA — ricerca web non ancora eseguita
+- `guerri-giorgio` GUERRI GIORGIO — ricerca web non ancora eseguita
+- `i-sassi-di-san-giuseppe` I SASSI DI SAN GIUSEPPE — ricerca web non ancora eseguita
+- `il-conte-villa-prandone` IL CONTE VILLA PRANDONE — ricerca web non ancora eseguita
+- `il-conventino-di-monteciccardo-sas-societa-agricola` IL CONVENTINO DI MONTECICCARDO SAS SOCIETA’ AGRICOLA — ricerca web non ancora eseguita
+- `la-fontursia` La Fontursia — ricerca web non ancora eseguita
+- `la-lepre-e-la-luna` La Lepre e la Luna — ricerca web non ancora eseguita
+- `la-marca-di-san-michele` La Marca di San Michele — ricerca web non ancora eseguita
+- `la-meravigna` La Meravigna — ricerca web non ancora eseguita
+- `la-montata` La Montata — ricerca web non ancora eseguita
+- `la-valle-del-sole` La Valle Del Sole — ricerca web non ancora eseguita
+- `la-villa-mergo` La Villa Mergo — ricerca web non ancora eseguita
+- `laila-libenzi-azienda-agricola-di-chiara-refe` LAILA LIBENZI AZIENDA AGRICOLA DI CHIARA REFE — ricerca web non ancora eseguita
+- `le-senate-az-agr-di-visi-giulio` LE SENATE AZ. AGR. DI VISI GIULIO — ricerca web non ancora eseguita
+- `lucchetti` Lucchetti — ricerca web non ancora eseguita
+- `lucidimezzo` LucidiMezzo — ricerca web non ancora eseguita
+- `luigi-giusti` Luigi Giusti — ricerca web non ancora eseguita
+- `lumavite` Lumavite — ricerca web non ancora eseguita
+- `macondo` Macondo — ricerca web non ancora eseguita
+- `madonnabruna` Madonnabruna — ricerca web non ancora eseguita
+- `marchetti` Marchetti — ricerca web non ancora eseguita
+- `marconi-vini` Marconi Vini — ricerca web non ancora eseguita
+- `mazzola` MAZZOLA — ricerca web non ancora eseguita
+- `moncaro` Moncaro — ricerca web non ancora eseguita
+- `montecappone` Montecappone — ricerca web non ancora eseguita
+- `montecoriolano-casalis-douhet` Montecoriolano Casalis Douhet — ricerca web non ancora eseguita
+- `moroder` Moroder — ricerca web non ancora eseguita
+- `murola` Muròla — ricerca web non ancora eseguita
+- `oasi-degli-angeli` Oasi degli Angeli — ricerca web non ancora eseguita
+- `officina-del-sole` Officina del Sole — ricerca web non ancora eseguita
+- `oppeddentro` Oppeddentro — ricerca web non ancora eseguita
+- `peruzzi-liana` Peruzzi Liana — ricerca web non ancora eseguita
+- `piantate-lunghe` Piantate Lunghe — ricerca web non ancora eseguita
+- `pieri` Pieri — ricerca web non ancora eseguita
+- `piersanti` Piersanti — ricerca web non ancora eseguita
+- `pietro17-winery` PIETRO17 WINERY — ricerca web non ancora eseguita
+- `pilandro` Pilandro — ricerca web non ancora eseguita
+- `podere-linfinito-soc-semplice-agricola` PODERE L’INFINITO SOC. SEMPLICE AGRICOLA — ricerca web non ancora eseguita
+- `podere-santa-lucia` Podere Santa Lucia — ricerca web non ancora eseguita
+- `poderi-san-lazzaro` PODERI SAN LAZZARO — ricerca web non ancora eseguita
+- `ripawine-soc-coop-agricola` Ripawine Soc. Coop. Agricola — ricerca web non ancora eseguita
+- `rocca-dei-forti` Rocca dei Forti — ricerca web non ancora eseguita
+- `ronconi-ex-badiali-candelaresi` Ronconi (ex Badiali&Candelaresi) — ricerca web non ancora eseguita
+- `root-s-r-l-societa-agricola` ROOT S.R.L. SOCIETA’ AGRICOLA — ricerca web non ancora eseguita
+- `sabbionare` Sabbionare — ricerca web non ancora eseguita
+- `saladini-pilastri-srl-soc-agricola` Saladini Pilastri Srl Soc. Agricola — ricerca web non ancora eseguita
+- `san-giovanni-soc-agricola-srl` San Giovanni Soc. Agricola Srl — ricerca web non ancora eseguita
+- `santa-barbara` Santa Barbara — ricerca web non ancora eseguita
+- `santa-cassella` Santa Cassella — ricerca web non ancora eseguita
+- `santa-liberata-di-savini-giorgio-az-agricola` Santa Liberata di Savini Giorgio Az. Agricola — ricerca web non ancora eseguita
+- `sassodivino` SASSODIVINO — ricerca web non ancora eseguita
+- `sauie-srl-az-agr-montecoriolano` SAUIE SRL – AZ. AGR. MONTECORIOLANO — ricerca web non ancora eseguita
+- `sauro-carletti` Sauro Carletti — ricerca web non ancora eseguita
+- `sciauerta` Sciauerta — ricerca web non ancora eseguita
+- `selvagrossa` Selvagrossa — ricerca web non ancora eseguita
+- `serboni-massimo-azienda-agricola` SERBONI MASSIMO AZIENDA AGRICOLA — ricerca web non ancora eseguita
+- `sergio-marani` Sergio Marani — ricerca web non ancora eseguita
+- `soc-agr-la-pila-di-matteo-toniolo-s-s` Soc. Agr. La Pila di Matteo Toniolo S.S. — ricerca web non ancora eseguita
+- `soc-agr-montebianco120-s-s` SOC. AGR. MONTEBIANCO120 S.S. — ricerca web non ancora eseguita
+- `soc-agricola-san-filippo-s-s` Soc. Agricola San Filippo S.S. — ricerca web non ancora eseguita
+- `soc-agr-vini-gagliardi-gino-di-gagliardi-lara-e-umberto-snc` SOC.AGR.VINI GAGLIARDI GINO DI GAGLIARDI LARA E UMBERTO SNC — ricerca web non ancora eseguita
+- `socci` SOCCI — ricerca web non ancora eseguita
+- `societa-agricola-bucchini-davide-e-romani-stefania-s-s` SOCIETÀ AGRICOLA BUCCHINI DAVIDE E ROMANI STEFANIA S.S. — ricerca web non ancora eseguita
+- `societa-agricola-capriotti` SOCIETÀ AGRICOLA CAPRIOTTI — ricerca web non ancora eseguita
+- `societa-agricola-fausti-srl` Società Agricola Fausti Srl — ricerca web non ancora eseguita
+- `societa-agricola-ronconi-di-ronconi-samuele-c-s-s` SOCIETA’ AGRICOLA RONCONI DI RONCONI SAMUELE & C. S.S. — ricerca web non ancora eseguita
+- `societa-agricola-villa-lazzarini-srl` SOCIETA’ AGRICOLA VILLA LAZZARINI SRL — ricerca web non ancora eseguita
+- `spallacci-giordano` SPALLACCI GIORDANO — ricerca web non ancora eseguita
+- `sparapani-snc-di-sparapani-giuseppe-c` SPARAPANI SNC DI SPARAPANI GIUSEPPE & C. — ricerca web non ancora eseguita
+- `stefano-mancinelli` Stefano Mancinelli — ricerca web non ancora eseguita
+- `strologo` Strologo — ricerca web non ancora eseguita
+- `tenimenti-le-ginestre-srl` Tenimenti Le Ginestre Srl — ricerca web non ancora eseguita
+- `tenimenti-spinsanti-spinsanti-catia` TENIMENTI SPINSANTI - SPINSANTI CATIA — ricerca web non ancora eseguita
+- `tenuta-agricola-la-riserva-di-mattioli-dina` Tenuta Agricola La Riserva di Mattioli Dina — ricerca web non ancora eseguita
+- `tenuta-barbarossa` Tenuta Barbarossa — ricerca web non ancora eseguita
+- `tenuta-ca-sciampagne` Tenuta Ca' Sciampagne — ricerca web non ancora eseguita
+- `tenuta-carlini-di-andrea-carlini` TENUTA CARLINI DI ANDREA CARLINI — ricerca web non ancora eseguita
+- `tenuta-cocci-grifoni` Tenuta Cocci Grifoni — ricerca web non ancora eseguita
+- `tenuta-colpaola` Tenuta Colpaola — ricerca web non ancora eseguita
+- `tenuta-conte-lucangeli` Tenuta Conte Lucangeli — ricerca web non ancora eseguita
+- `tenuta-dell-ugolino` Tenuta dell'Ugolino — ricerca web non ancora eseguita
+- `tenuta-di-fra` Tenuta di Frà — ricerca web non ancora eseguita
+- `tenuta-di-pirano` Tenuta di Pirano — ricerca web non ancora eseguita
+- `tenuta-grimaldi` Tenuta Grimaldi — ricerca web non ancora eseguita
+- `tenuta-manoylo-by-moresco-soc-agr-semplice` Tenuta Manoylo by Moresco Soc. Agr. Semplice — ricerca web non ancora eseguita
+- `tenuta-marino` Tenuta Marino — ricerca web non ancora eseguita
+- `tenuta-mattei` Tenuta Mattei — ricerca web non ancora eseguita
+- `tenuta-musone` Tenuta Musone — ricerca web non ancora eseguita
+- `tenuta-piano-di-rustano` Tenuta Piano di Rustano — ricerca web non ancora eseguita
+- `tenuta-san-marcello` Tenuta San Marcello — ricerca web non ancora eseguita
+- `tenuta-san-martino-di-cerioni-mauro` TENUTA SAN MARTINO DI CERIONI MAURO — ricerca web non ancora eseguita
+- `tenuta-santi-giacomo-e-filippo` Tenuta Santi Giacomo e Filippo — ricerca web non ancora eseguita
+- `tenuta-seghetti-panichi` Tenuta Seghetti Panichi — ricerca web non ancora eseguita
+- `tenuta-siliquini` Tenuta Siliquini — ricerca web non ancora eseguita
+- `tenuta-spinelli-di-spinelli-simone` Tenuta Spinelli di Spinelli Simone — ricerca web non ancora eseguita
+- `tenute-del-borgo` Tenute del Borgo — ricerca web non ancora eseguita
+- `tenute-il-crinale-di-quitadamo-michele` Tenute Il Crinale di Quitadamo Michele — ricerca web non ancora eseguita
+- `tenute-malavolta` Tenute Malavolta — ricerca web non ancora eseguita
+- `tenute-polini-societa-agricola-semplice` Tenute Polini Società Agricola Semplice — ricerca web non ancora eseguita
+- `tenute-priori-galdelli` Tenute Priori & Galdelli — ricerca web non ancora eseguita
+- `tenute-recchi-franceschini-eredi-az-agr-la-via-sistina` Tenute Recchi Franceschini Eredi Az. Agr. La Via Sistina — ricerca web non ancora eseguita
+- `tenute-urani` Tenute Urani — ricerca web non ancora eseguita
+- `terra-argillosa` Terra Argillosa — ricerca web non ancora eseguita
+- `terra-divina` Terra Divina — ricerca web non ancora eseguita
+- `terra-libera` Terra Libera — ricerca web non ancora eseguita
+- `terra-premiata-di-graziano-mazza-figli` Terra Premiata di Graziano Mazza & Figli — ricerca web non ancora eseguita
+- `terracruda` Terracruda — ricerca web non ancora eseguita
+- `terrafageto` TERRAFAGETO — ricerca web non ancora eseguita
+- `terre-cerquaferrata` Terre Cerquaferrata — ricerca web non ancora eseguita
+- `terre-cortesi-moncaro-soc-coop` Terre Cortesi Moncaro Soc. Coop. — ricerca web non ancora eseguita
+- `terre-d-arengo` Terre d'Arengo — ricerca web non ancora eseguita
+- `terre-di-san-ginesio` Terre di San Ginesio — ricerca web non ancora eseguita
+- `terre-di-serrapetrona-societa-agricola-semplice` TERRE DI SERRAPETRONA SOCIETA’ AGRICOLA SEMPLICE — ricerca web non ancora eseguita
+- `tomassetti` tomassetti. — ricerca web non ancora eseguita
+- `torretti-walter` TORRETTI WALTER — ricerca web non ancora eseguita
+- `valter-mattoni` Valter Mattoni — ricerca web non ancora eseguita
+- `vara-pesaresi-vignaioli` VARÀ PESARESI VIGNAIOLI — ricerca web non ancora eseguita
+- `veneranda-vite` Veneranda Vite — ricerca web non ancora eseguita
+- `venturi-roberto` Venturi Roberto — ricerca web non ancora eseguita
+- `verser-cantina-e-vigneti` VerSer | Cantina e Vigneti — ricerca web non ancora eseguita
+- `vicari` Vicari — ricerca web non ancora eseguita
+- `viconari` Viconari — ricerca web non ancora eseguita
+- `vigna-degli-estensi` Vigna degli Estensi — ricerca web non ancora eseguita
+- `vigna-della-cava` Vigna della Cava — ricerca web non ancora eseguita
+- `vignamato` Vignamato — ricerca web non ancora eseguita
+- `vigne-di-leo-tre-castelli` Vigne di Leo – Tre Castelli — ricerca web non ancora eseguita
+- `vigneto-fernando-alberto` Vigneto Fernando Alberto — ricerca web non ancora eseguita
+- `villa-forano` Villa Forano — ricerca web non ancora eseguita
+- `villa-imperium` Villa Imperium — ricerca web non ancora eseguita
+- `villa-manu` Villa Manù — ricerca web non ancora eseguita
+- `villa-romita-di-brugiaferri-maurilio-e-giorgi-simonetta-s` VILLA ROMITA DI BRUGIAFERRI MAURILIO E GIORGI SIMONETTA S. — ricerca web non ancora eseguita
+- `vini-accattoli` Vini Accattoli — ricerca web non ancora eseguita
+- `vini-firmanum` Vini Firmanum — ricerca web non ancora eseguita
+- `vini-maraviglia` Vini Maraviglia — ricerca web non ancora eseguita
+- `vini-montesanto` Vini Montesanto — ricerca web non ancora eseguita
+- `vini-muraro` Vini Muraro — ricerca web non ancora eseguita
+- `vini-rocchi` Vini Rocchi — ricerca web non ancora eseguita
+- `vini-simonetti` Vini Simonetti — ricerca web non ancora eseguita
+- `vini-valmusone` Vini Valmusone — ricerca web non ancora eseguita
+- `vinicola-carassanese` Vinicola Carassanese — ricerca web non ancora eseguita
+- `vinicola-del-tesino-srl` Vinicola del Tesino Srl — ricerca web non ancora eseguita
+- `vinidicagnore` ViniDiCagnore — ricerca web non ancora eseguita
+- `vitali-augusto` VITALI AUGUSTO — ricerca web non ancora eseguita
+- `vitivinicola-costadoro-soc-agr-srl` Vitivinicola Costadoro Soc. Agr. Srl — ricerca web non ancora eseguita
+- `vitivinicola-dangelo-s-s-a` Vitivinicola D’Angelo S.S.A. — ricerca web non ancora eseguita
+- `vittorini-di-nico-speranza` Vittorini di Nico Speranza — ricerca web non ancora eseguita
+- `zaccagnini` Zaccagnini — ricerca web non ancora eseguita
 
 ## Regole applicate
 
