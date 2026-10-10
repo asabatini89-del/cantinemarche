@@ -27,10 +27,36 @@
   },
   {
    "id": "agriarcuata-soc-coop-agricola",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette"
+   "wines": [
+    {
+     "name": "Surpicanum",
+     "url": "https://www.agriarquata.com/vino-bianco/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Piccà",
+     "url": "https://www.agriarquata.com/picca/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Tillia",
+     "url": "https://www.agriarquata.com/tillia/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Piè di Cava",
+     "url": "https://www.agriarquata.com/pie-di-cava/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Il Torrione",
+     "url": "https://www.agriarquata.com/vino-rosso/",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Trovato il sito ufficiale agriarquata.com (Terra Divina, Zona Ind. Pescara del Tronto, Arquata del Tronto) via vinopecorino.eu che riporta la ragione sociale 'Agri Arquata Soc. Coop. Agricola'. Pagine prodotto per 5 vini; esclusa 'Rurale dei Sibillini' (non chiaro se vino) e la pagina generica 'Vino Pecorino Bianco'."
   },
   {
    "id": "agricola-lanciani",
@@ -131,7 +157,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia)."
+   "note": "Secondo giro: provati 'Amadio Verdicchio Maiolati Spontini', allowed_domains facebook/instagram/vivino e 'Amadio vini Moie'; solo Tenuta Amadio (Veneto), Amadio (Australia) e altre attività omonime: scartati."
   },
   {
    "id": "angeli-di-varano-s-s-agricola-dei-f-lli-chiucconi",
@@ -176,7 +202,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini."
+   "note": "Secondo giro: ricerca aperta 'Aniballi Novilara vino Colli Pesaresi' (solo evento Vignaioli al Castello, localita Cerreto Pesaro), allowed_domains instagram/facebook/vivino (trovata pagina Facebook 'Azienda agricola Aniballi' Pesaro: produce vini, olio e frutta, ma nessun nome di vino), ricerca aperta con vitigni (nessun risultato pertinente)."
   },
   {
    "id": "antica-cantina-sant-amico",
@@ -320,7 +346,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "sangiovese.it è 'Sangiovese wine by Cantina Bianchini' (Cartoceto) con footer La Collina, ma nessun nome di vino specifico; nessuna fonte esterna su Tomassini"
+   "note": "Secondo giro: ricerca aperta '\"La Collina\" Cartoceto Bianchello Tomassini' (solo omonimi La Collina in Lombardia/Toscana), ricerca 'Bianchini Cartoceto' per il marchio di sangiovese.it (solo Ciacci Piccolomini/Montalcino), ricerca su facebook/instagram/vivino (solo omonimi in Lombardia, Emilia-Romagna). Nessuna prova."
   },
   {
    "id": "az-agr-pandolfi-orsini-di-andrea-orsini",
@@ -383,14 +409,65 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessuna fonte su Vallerosa di Mannocchi; 'Campo Vallerosa' e' un Pecorino di Emanuele Dianetti (contrada Vallerosa di Carassai), altra cantina: scartato."
+   "note": "Secondo giro: provati 'Mannocchi Carassai vino azienda agricola', allowed_domains facebook/instagram/vivino/vinipiceni con 'Vallerosa Carassai Mannocchi' e 'Mannocchi' + denominazioni picene; usciti solo Dianetti (Carassai), Vallerosa Bonci (Cupramontana) e un'azienda olearia Vallerosa nel Lazio: scartati."
   },
   {
    "id": "az-agricola-bastianelli-francesco",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Cantina Bastianelli (Monte San Pietrangeli, fondata 2011 da Francesco e Pamela) esiste su winetourism.com con vitigni e tipologie, ma nessun nome di vino specifico trovato"
+   "wines": [
+    {
+     "name": "Quiete Rosso Piceno",
+     "url": "https://www.vivino.com/en/cantina-bastianelli-quiete-rosso-piceno/w/4151514",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Ribelle Falerio Pecorino",
+     "url": "https://www.vivino.com/en/cantina-bastianelli-ribelle-falerio-pecorino/w/4560922",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Posato Falerio Pecorino",
+     "url": "https://www.vivino.com/US/en/cantina-bastianelli-posato-falerio-pecorino/w/9313716",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Marche Passerina",
+     "url": "https://www.vivino.com/US/en/cantina-bastianelli-marche-passerina/w/9906429",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Marche Rosso",
+     "url": "https://www.vivino.com/en/cantina-bastianelli-marche-rosso/w/10016984",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Ali Marche Alicante",
+     "url": "https://www.vivino.com/en/cantina-bastianelli-ali-marche-alicante/w/10246612",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Marche Rosato",
+     "url": "https://www.vivino.com/DK/en/cantina-bastianelli-marche-rosato/w/10157717",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Chiave di Volta Merlot",
+     "url": "https://www.vivino.com/IT/it/cantina-bastianelli-chiave-di-volta-merlot/w/5753975",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Tre Marche Rosso",
+     "url": "https://www.vivino.com/IT/it/cantina-bastianelli-tre-marche-rosso/w/11510454",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Denan",
+     "url": "https://www.vivino.com/SE/sv/cantina-bastianelli-denan/w/10157719",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: schede Vivino del produttore 'Cantina Bastianelli' (Marche; Falerio, Rosso Piceno); collegamento con Monte San Pietrangeli confermato da winetourism.com (Cantina Bastianelli, C.da San Rustico, Monte San Pietrangeli FM, fondata 2011 da Francesco e Pamela). Pagina Facebook ufficiale facebook.com/cantinabastianelli senza nomi di vini."
   },
   {
    "id": "azienda-agraria-i-tre-filari-di-sabbatini-silvia",
@@ -473,21 +550,43 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "il sito bartolacci.it ha una pagina 'Vino' (agricampeggio biologico che vende vino, olio, miele) ma nessun nome di vino indicizzato; nessuna fonte esterna"
+   "note": "Secondo giro: ricerca aperta su agricampeggio/Bianchello (solo schede campeggio vansite/campcation: vigneto di Bianchello e degustazioni, nessun nome di vino), facebook/instagram/vivino (Instagram ufficiale @azienda_agraria_bartolacci di Matteo Pierini senza vini citati), dominio bartolacci.it con parole 'Bianchello rosso spumante' (solo pagine generiche: lo spaccio vende vino bio). Nessuna etichetta trovata."
   },
   {
    "id": "azienda-agricola-federico-castellucci",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessun risultato su Federico Castellucci a Montecarotto (solo omonimi/altre cantine)"
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico",
+     "url": "https://www.vivino.com/US/en/federico-castellucci-verdicchio-dei-castelli-di-jesi-classico/w/2936531",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://www.vivino.com/US-CA/en/federico-castellucci-verdicchio-dei-castelli-di-jesi-classico-superiore/w/10246700",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Vivino (allowed_domains) ha la cantina 'Federico Castellucci' nella zona Verdicchio dei Castelli di Jesi (Montecarotto è in zona) con 2 vini elencati; i profili Facebook/Instagram omonimi non sono della cantina."
   },
   {
    "id": "azienda-agricola-pagliari-gabriele",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Dominio pagliariaziendaagricola.it senza risultati (anche extended); nessuna fonte esterna che nomini vini Pagliari."
+   "wines": [
+    {
+     "name": "Bianchello del Metauro",
+     "url": "https://www.cantinapagliari.com/enoturismo",
+     "evidence": "altro"
+    },
+    {
+     "name": "Colli Pesaresi Sangiovese",
+     "url": "https://www.cantinapagliari.com/enoturismo",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: Facebook/Instagram ufficiali (facebook.com/p/Azienda-Agricola-Pagliari-Gabriele-100063644814575, @cantina_gabriele_pagliari) indicano il sito reale cantinapagliari.com (Strada Santa Maria 16, Montefelcino). Ricerca su quel dominio: descrizioni di Bianchello del Metauro e Colli Pesaresi Sangiovese (risultati: /enoturismo, /contatti.html; non distinguibile su quale delle due pagine, uso /enoturismo). Il sito cita anche rosati e olio, senza nomi."
   },
   {
    "id": "azienda-agricola-rovegliano",
@@ -654,7 +753,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessun risultato sull'azienda ad Apiro; solo altre cantine (Andrea Felici)"
+   "note": "Secondo giro: ricerca aperta 'Borioni Apiro Verdicchio' (solo Andrea Felici e altre cantine), ricerca facebook/instagram/vivino/winedering: esiste la pagina Facebook 'Azienda Vitivinicola Borioni Gianni & Beltrani Anna Maria' (https://www.facebook.com/p/Azienda-Vitivinicola-Borioni-Gianni-Beltrani-Anna-Maria-100054607412611/) ma senza nomi di vini nei risultati; ricerca '\"Borioni Gianni\" Verdicchio Montepulciano etichetta' senza risultati pertinenti."
   },
   {
    "id": "brocani-giuseppe",
@@ -796,7 +895,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun risultato per il nome Buongarzoni, ne' sito ne' fonti esterne"
+   "note": "Secondo giro: trovata la pagina Facebook ufficiale https://www.facebook.com/CantinaBuongarzoni/ (Macerata, 'Vini naturalmente Bio') ma senza nomi di vini nei risultati; provati anche '\"Cantina Buongarzoni\" vino naturale' e instagram/facebook 'bottiglia etichetta': nessuna etichetta."
   },
   {
    "id": "cantina-dei-monti",
@@ -848,17 +947,33 @@
   },
   {
    "id": "cantina-di-esanatoglia",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessuna fonte su una cantina a Esanatoglia; risultati solo su altre cantine di Matelica"
+   "wines": [
+    {
+     "name": "Santanatolia",
+     "url": "https://www.vivino.com/it/cantina-di-esanatoglia-santanatolia/w/8543921",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Case Quagna Marche Rosso",
+     "url": "https://www.vivino.com/it/cantina-di-esanatoglia-case-quagna-marche-rosso/w/7501918",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Passo Pajano Verdicchio di Matelica",
+     "url": "https://www.vivino.com/en/cantina-di-esanatoglia-passo-pajano-verdicchio-di-matelica/w/5580934",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino con nome esatto. Schede Vivino del produttore 'Cantina di Esanatoglia' (Marche, Verdicchio di Matelica); pagina Facebook ufficiale facebook.com/cantinadiesanatoglia ('la piu piccola cantina dell'Alta valle dell'Esino'). Esclusa la scheda 'Prmia di Esanatoglia Passo Pajano' (nome produttore diverso, doppione)."
   },
   {
    "id": "cantina-fortezza-marche",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessuna fonte su 'Cantina Fortezza' ad Acquaviva Picena (solo altre cantine della zona)"
+   "note": "Secondo giro: ricerca su facebook/instagram/vivino/winedering (solo la Fortezza medievale/Palio, Cherri d'Acquaviva e omonimo 'La Fortezza' di Torrecuso BN, scartati), frase esatta '\"Fortezza Marche\" vino' (nessun risultato pertinente), '\"Cantina Fortezza\" Offida Pecorino Rosso Piceno Acquaviva' (solo Cantina Offida). Nessuna prova."
   },
   {
    "id": "cantina-gozzana",
@@ -898,7 +1013,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessuna fonte trovata su una cantina 'Le Colline' a Tolentino; risultati solo su omonimi di altre regioni."
+   "note": "5 vini trovati ma scartati alla revisione: attribuzione alla cantina non abbastanza certa."
   },
   {
    "id": "cantina-maroni",
@@ -933,7 +1048,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessun sito; nessuna fonte online collega il nome Marzialetti a una cantina o a vini (risultati solo su omonimi 'Torre' e info generiche Marche)"
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino 'Marzialetti Torre San Patrizio vino cantina' (solo pagine del Comune e omonimi 'Torre'/'Patrizi'); ricerca aperta '\"Marzialetti\" azienda agricola vini Fermo' e '\"Marzialetti\" Falerio Rosso Piceno Passerina': nessun risultato che nomini Marzialetti."
   },
   {
    "id": "cantina-ortenzi",
@@ -996,10 +1111,16 @@
   },
   {
    "id": "cantina-rovelli",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessuna fonte su Cantina Rovelli a Pergola (risultati solo Villa Ligi e omonimi)"
+   "wines": [
+    {
+     "name": "Pergola Rosato",
+     "url": "https://www.vivino.com/BR/pt-BR/cantina-rovelli-pergola-rosato/w/8630374",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: pagina Facebook ufficiale 'Cantina Rovelli' (https://www.facebook.com/cantinarovelli/, Pergola, famiglia nel vino dagli anni '40) senza nomi di vini; Vivino elenca 'Cantina Rovelli Pergola Rosato'. Il 'Rosso Rubino' su Vivino e' intestato a 'Rovelli Claudio' (Pergola): stesso cognome e stessa citta', probabilmente il titolare, ma attribuzione meno certa - da verificare."
   },
   {
    "id": "cantina-santori",
@@ -1031,10 +1152,16 @@
   },
   {
    "id": "cantina-stefano-maccaroni",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Nessuna fonte su Stefano Maccaroni o cantina Maccaroni a Recanati."
+   "wines": [
+    {
+     "name": "Violet",
+     "url": "https://www.vivino.com/IT/it/maccaroni-stefano-violet/w/3450806",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Vivino (allowed_domains) elenca il produttore 'Maccaroni Stefano' (Marche) con un solo vino, Violet; esiste anche il profilo Instagram ufficiale @cantinamaccaroni (Recanati) senza nomi di vini nei risultati. Ricerca aperta '\"Cantina Maccaroni\" Recanati' senza esiti utili."
   },
   {
    "id": "cantina-suasa",
@@ -1094,31 +1221,63 @@
   },
   {
    "id": "cantina-tiberi",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Solo scheda generica enprimeurclub (Tiberi Loro Piceno) senza nomi di vini; podcast 'Cantina Tiberi' senza localita'; altri risultati su Tiberini/Tiberio (Toscana/Abruzzo), scartati"
+   "wines": [
+    {
+     "name": "Vino Cotto Stravecchio di Loro Piceno",
+     "url": "https://www.vivino.com/US/en/azienda-agricola-tiberi-david-vino-cotto-stravecchio-di-loro-piceno/w/2659491",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino. Pagina Facebook 'Cantina Tiberi David' (facebook.com/cantinatiberidavid) e scheda Vivino 'Azienda Agricola Tiberi David Vino Cotto Stravecchio di Loro Piceno'; enprimeurclub conferma David Tiberi come titolare della cantina Tiberi di Loro Piceno. Attenzione: esiste anche 'Tiberi Societa Agricola' a Loro Piceno (vino cotto Occhio di Gallo) e 'Tiberi Vini Artigianali' (Umbria): non inclusi perche non collegabili con certezza a questa voce."
   },
   {
    "id": "cantina-valdimiro",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Solo schede winetourism.com (Verdicchio di Matelica, Montepulciano, Cabernet; una 'riserva' citata in recensioni) senza nomi di vini; nessun sito"
+   "wines": [
+    {
+     "name": "Faberius Riserva",
+     "url": "https://www.vivino.com/en/cantina-valdimiro-faberius-riserva/w/9719667",
+     "evidence": "altro"
+    },
+    {
+     "name": "Vernale Verdicchio di Matelica",
+     "url": "https://www.vivino.com/en/cantina-valdimiro-vernale-verdicchio-di-matelica/w/6143306",
+     "evidence": "altro"
+    },
+    {
+     "name": "Marche Rosso",
+     "url": "https://www.vivino.com/en/cantina-valdimiro-marche-rosso/w/7123609",
+     "evidence": "altro"
+    },
+    {
+     "name": "Roose Marche Rosato",
+     "url": "https://www.vivino.com/en/cantina-valdimiro-roose-marche-rosato/w/7339759",
+     "evidence": "altro"
+    },
+    {
+     "name": "Visciola Selvaggia",
+     "url": "https://www.vivino.com/en/cantina-valdimiro-visciola-selvaggia/w/7894192",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: trovati su Vivino (pagina cantina https://www.vivino.com/CH/en/wineries/cantina-valdimiro, nome univoco 'Cantina Valdimiro', vini Verdicchio di Matelica coerenti con Fabriano). Facebook/Instagram senza pagina ufficiale nei risultati."
   },
   {
    "id": "cantina-vitula",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "il dominio cantinavitula.com non restituisce risultati (anche extended); nessuna fonte esterna"
+   "note": "Secondo giro: provati allowed_domains facebook/instagram/vivino/winedering con 'Vitula cantina San Severino Marche', ricerca aperta '\"Vitula\" vino Marche Macerata' e 'cantinavitula': nessuna pagina della cantina (solo VerSer, altra cantina di San Severino, e omonimie non vinicole)."
   },
   {
    "id": "cantina-zamponi",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Sul dominio solo la pagina contatti (Az. Agr. Zamponi Mirco, C.da Forchiusa, Serra San Quirico); nessun nome di vino né fonti esterne."
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino (trovata pagina Facebook 'Azienda Agricola Zamponi Mirco', Serra San Quirico: 'coltivazione e produzione di vino Verdicchio e produzione zootecnica', ma nessun nome di vino); ricerca aperta '\"Zamponi Mirco\" Verdicchio dei Castelli di Jesi' (nessun risultato pertinente); dominio aziendaagricolazamponi.it con query diversa: ancora solo /contatti/."
   },
   {
    "id": "cantine-d-ercoli",
@@ -1163,7 +1322,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Il sito cantine-paci.com (Montegaudio di Pesaro, biologico dal 1977) non mostra nei risultati un elenco vini; nessuna fonte esterna. Ricerca interrotta: limite di ricerche web esaurito, da riprovare."
+   "note": "Secondo giro: dominio cantine-paci.com con 'Colli Pesaresi Sangiovese Bianchello Focara' (solo home: Montegaudio, bio dal 1977, certificato Suolo e Salute, nessun vino nominato), vivino/facebook/instagram/winedering con 'Paci Montegaudio' (solo altre cantine pesaresi), frase esatta '\"Cantine Paci\" Pesaro Sangiovese' (solo omonimi toscani). Nessuna etichetta."
   },
   {
    "id": "cantine-pisaurum",
@@ -1365,14 +1524,14 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun risultato per 'Casa Pierini' a Pesaro/Marche; solo omonimi (Pierini e Brugi in Toscana, Casa Pierina altrove) scartati."
+   "note": "Secondo giro: provati allowed_domains facebook/instagram/vivino/winedering ('\"Casa Pierini\" vino Pesaro'), 'Pierini azienda agricola Pesaro' + Sangiovese/Bianchello e '\"Casa Pierini\" cantina agriturismo': solo omonimi (Casa Perini Brasile, Pierini Wine California, Pierini e Brugi Toscana, Casa Pierina Verona) e altre cantine pesaresi: scartati."
   },
   {
    "id": "casa-vinicola-bruni",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessuna fonte su 'Casa Vinicola Bruni' a Monteprandone; i risultati riguardano altre cantine (Il Conte Villa Prandone, Saladini Pilastri) e sono stati scartati."
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino 'Bruni vini Monteprandone' (solo Azienda Bruni di Fonteblanda/Toscana, Bruni Prosecco, Cascina Bruni Piemonte: omonimi scartati); ricerca aperta con Centobuchi e denominazioni picene; allowed_domains vinipiceni/winedering/winetourism/tannico/callmewine/gamberorosso: solo Il Conte Villa Prandone e il vitigno Incrocio Bruni. Nessuna fonte su una Casa Vinicola Bruni a Monteprandone."
   },
   {
    "id": "centanni-giacomo-az-agr",
@@ -1472,10 +1631,26 @@
   },
   {
    "id": "cignano",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Dominio cantinacignano.it senza risultati. Articolo Gazzetta del Gusto sui produttori 'Bianchello d'Autore' cita Cantina Cignano con Bianco Assoluto e San Leone Bianchello del Metauro (URL = primo risultato per la ricerca esatta, da verificare). Anche delectable.com/wine/cignano/bianchello-del-metauro/2020 elenca un Bianchello del Metauro Cignano (probabilmente lo stesso San Leone, non aggiunto per evitare doppioni)."
+   "wines": [
+    {
+     "name": "Bianco Assoluto Bianchello del Metauro DOC",
+     "url": "https://www.facebook.com/CantinaCignano/videos/bianchello-del-metauro-doc-il-nostro-bianco-assoluto-%C3%A8-un-vino-che-esprime-le-ca/239146167285209/",
+     "evidence": "altro"
+    },
+    {
+     "name": "San Leone Bianchello del Metauro",
+     "url": "https://www.vivino.com/en/cignano-san-leone/w/5402713",
+     "evidence": "altro"
+    },
+    {
+     "name": "Sottovento Colli Pesaresi Sangiovese",
+     "url": "https://www.facebook.com/CantinaCignano/videos/oggi-cignano-imbottiglia-sottoventocolli-pesaresi-sangiovese-stile-e-gustosenza-/1003065649775331/",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: pagina Facebook ufficiale Cignano Winery (https://www.facebook.com/CantinaCignano/, loc. Isola di Fano, Fossombrone) con post su Bianco Assoluto e Sottovento; San Leone su Vivino (anche come 'Isola di Fano Cignano Sanleone', stesso vino, non duplicato). Sottovento anche su Vivino: https://www.vivino.com/US/en/cignano-sottovento-colli-pesaresi-sangiovese/w/2250174"
   },
   {
    "id": "cimarelli-luca",
@@ -1619,7 +1794,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Sito contimaria.it indicizzato solo con home/chi siamo/contatti, sezione 'I nostri vini' senza nomi; nessuna fonte esterna."
+   "note": "Secondo giro: trovata la pagina Facebook ufficiale https://www.facebook.com/aziendaagricolacontimaria/ (Winery/Vineyard, Fermo) ma senza nomi di vini nei risultati; contimaria.it con query sulle denominazioni (Falerio, Rosso Piceno, Passerina, Pecorino) non restituisce pagine; ricerca aperta '\"Azienda Agricola Conti Maria\" Fermo' solo omonimi."
   },
   {
    "id": "contrada-contro",
@@ -1649,7 +1824,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun risultato per Corinaldesi a Osimo né come produttore di vino; risultati solo su altre cantine (Umani Ronchi, Coroncino) scartati."
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino: trovata la pagina Facebook ufficiale 'Corinaldesi - Vignaioli Artigiani' (facebook.com/corinaldesiwines, Via di Jesi 334, Casenuove di Osimo) ma senza nomi di vini; ricerche aperte 'Corinaldesi wines Casenuove Osimo Rosso Conero' e '\"Corinaldesi\" vino Marche ...' senza risultati sulla cantina (solo altre cantine/Corinaldo)."
   },
   {
    "id": "cossignani-l-e-tempo",
@@ -1679,7 +1854,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Dominio agricolacrocevia.it senza risultati; nessuna fonte esterna su Crocevia a Montegiorgio (solo omonimi come Crocizia, Crocedimezzo, scartati)."
+   "note": "Secondo giro: facebook/instagram/vivino/winedering 'Crocevia Montegiorgio' (solo omonimi: Cascina Galarin Crocevia Monferrato, Centro Internazionale Crocevia), ricerca aperta '\"Crocevia\" azienda agricola Montegiorgio Fermo vino naturale' (solo Crocizia/Emilia-Romagna, scartata), ricerca del nome di dominio 'agricolacrocevia' (nessun risultato pertinente). Nessuna prova."
   },
   {
    "id": "de-angelis-c-srl",
@@ -1932,7 +2107,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Il sito parla di circa 27 ha di vigneti Verdicchio DOC, olio e ospitalità, ma nessuna etichetta di vino; nessuna fonte esterna."
+   "note": "Secondo giro: allowed_domains vivino/facebook/instagram/winedering/tannico/callmewine ('Fontegeloni Verdicchio') trova solo le pagine FB/IG dell'agriturismo (case vacanza, vigneti e oliveti bio, sapa e olio), nessuna etichetta; ricerca aperta '\"Fontegeloni\" vino biologico bottiglia' nulla; sul sito la pagina prodotti elenca solo olio, confetture, succhi, frutta sciroppata, lavanda, timo. Vigneti presenti ma nessun vino in vendita documentato."
   },
   {
    "id": "fattoria-gens-camuria-soc-coop-agricola",
@@ -2146,10 +2321,16 @@
   },
   {
    "id": "finocchi-sandro-azienda-agraria",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Nessuna fonte nomina Finocchi Sandro. Esiste Finocchi Viticoltori (Staffolo, famiglia Finocchi, vino Vivolo) ma il collegamento con questa ragione sociale non è dimostrato."
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico",
+     "url": "https://www.vivino.com/IT/it/finocchi-sandro-verdicchio-dei-castelli-di-jesi-classico/w/4719621",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino. Scheda Vivino con produttore esattamente 'Finocchi Sandro' (unico vino, Verdicchio dei Castelli di Jesi Classico: zona che comprende Staffolo). La scheda non indica il comune; nessun omonimo 'Finocchi Sandro' in altre regioni. Non inclusi i vini di 'Finocchi Viticoltori' (Il Pojo, Brut, Classico) perche il legame con questa ragione sociale non e dimostrato."
   },
   {
    "id": "finocchi-viticoltori",
@@ -2355,14 +2536,14 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Sito cantinaguerri.it non indicizzato; ricerche aperte senza risultati pertinenti (solo altre cantine di San Marcello)."
+   "note": "Secondo giro: facebook/instagram/vivino/winedering 'Cantina Guerri San Marcello' (solo Tenuta San Marcello, Marconi Vini, Gurrieri/Sicilia), ricerca aperta 'Guerri Lacrima di Morro d'Alba Verdicchio San Marcello' (solo Filodivino, Landi, Marconi, Cesaroni), '\"Guerri Giorgio\" OR \"Giorgio Guerri\" vino' (solo omonimo Guerrieri di Piagge/Terre Roveresche, scartato). Nessuna prova."
   },
   {
    "id": "i-sassi-di-san-giuseppe",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Solo schede di agriturismo (trip.com, kayak) che citano una cantina annessa, nessun nome di vino."
+   "note": "2 vini trovati ma scartati alla revisione: attribuzione alla cantina non abbastanza certa."
   },
   {
    "id": "il-conte-villa-prandone",
@@ -2579,7 +2760,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun risultato su 'La Meravigna'; solo altre cantine dell'area di Ancona."
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino: trovata la pagina Facebook ufficiale 'Azienda agricola La Meravigna' (facebook.com/LaMeravigna; ~2,5 ettari sulle colline di Varano, Ancona; categoria cantina/vigneto) ma senza nomi di vini; ricerche aperte 'Meravigna Varano Ancona ... Rosso Conero' e '\"Meravigna\" Conero': nessun risultato sulla cantina (solo Lanari, Marchetti e pagine turistiche)."
   },
   {
    "id": "la-montata",
@@ -3284,17 +3465,44 @@
   },
   {
    "id": "peruzzi-liana",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessuna fonte che colleghi Peruzzi Liana/Monte Roberto a vini; esistono citazioni di un 'Peruzzi' Verdicchio Metodo Classico Dosage Zero (jancisrobinson, ilfattoquotidiano) ma senza localita': non attribuito"
+   "wines": [
+    {
+     "name": "Peruzzi Metodo Classico Vino Spumante",
+     "url": "https://www.vivino.com/en/azienda-vitivinicola-peruzzi-spumante-brut/w/1822041",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: Vivino intesta il vino a 'Peruzzi Liana' (Azienda Vitivinicola Peruzzi, spumante da Verdicchio, Marche): nome produttore identico; il comune non compare nell'estratto. Seconda ricerca Vivino per altri Verdicchio senza risultati. Il 'Peruzzi Verdicchio Metodo Classico Dosage Zero' del primo giro e' probabilmente lo stesso vino, non aggiunto."
   },
   {
    "id": "piantate-lunghe",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "piantatelunghe.it senza risultati; solo il Rosso Conero DOC (vigna 'degli angeli') da listino trovaprezzi"
+   "wines": [
+    {
+     "name": "Rosso Conero DOC",
+     "url": "https://www.tannico.it/rosso-conero-doc-2013-piantate-lunghe.html",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Conero DOCG Riserva Rossini",
+     "url": "https://www.vivino.com/en/piantate-lunghe-rossini-conero-riserva/w/1267649",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Il Palazzo Conero Riserva",
+     "url": "https://www.vivino.com/en/piantate-lunghe-il-palazzo-conero-riserva/w/2911849",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Lucubratio Podere G.M Giustini Rosato",
+     "url": "https://www.vivino.com/wineries/piantate-lunghe",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro con allowed_domains su cataloghi: Tannico (Rosso Conero DOC, Conero DOCG 'Rossini'), Vivino (Rossini Conero Riserva, Il Palazzo Conero Riserva; scheda cantina con il rosato Lucubratio), Callmewine (Rosso Conero vigna 'degli angeli'). Cantina di Amedeo Giustini sulle colline di Ancona."
   },
   {
    "id": "pieri",
@@ -4050,28 +4258,49 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "sito sassodivino.it indicizzato solo in home (vino e olio biologico, e-commerce) senza nomi dei vini; nessuna fonte esterna"
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino (trovata pagina Facebook 'Cantina SassodiVino', facebook.com/cantina.sassodivino, Sasso di Serra San Quirico, senza nomi di vini); dominio sassodivino.it con query di prodotto/carrello: nessun risultato; ricerca aperta '\"SassodiVino\" OR \"Sasso di Vino\" ... Verdicchio': solo altre cantine."
   },
   {
    "id": "sauie-srl-az-agr-montecoriolano",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessun sito; nessun risultato per Montecoriolano / Sauie srl a Potenza Picena"
+   "note": "Secondo giro: facebook/instagram/vivino/winedering 'Montecoriolano Potenza Picena vino' (solo Andrea Giorgetti, Grappolo d'Oro, Montesanto Magnana: altre realta', scartate), ricerca aperta '\"Montecoriolano\" azienda agricola vino Ribona Rosso Piceno' (nessun risultato pertinente), '\"Sauie\" srl Potenza Picena' (solo omonimi Saie/Sau srl fuori regione). Nessuna prova."
   },
   {
    "id": "sauro-carletti",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessun sito; nessun risultato su Sauro Carletti a Camerano (solo omonimi Carletti di Poliziano, Toscana: scartati)"
+   "wines": [
+    {
+     "name": "Roscio",
+     "url": "https://www.vivino.com/it/carletti-sauro-roscio/w/2431736",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Antico Casale",
+     "url": "https://www.vivino.com/IT/it/carletti-sauro-antico-casale/w/1743769",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Alba Clara",
+     "url": "https://www.vivino.com/en/carletti-sauro-alba-clara/w/6622460",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Rosso Conero",
+     "url": "https://www.vivino.com/DK/da/carletti-sauro-rosso-conero/w/4712216",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Trovato con 'Carletti Sauro vino' (nome invertito) su vivino/facebook: pagina Facebook ufficiale 'Azienda Vitivinicola Sauro Carletti' (pendici del Conero, Camerano) e 4 vini su Vivino (produttore Carletti Sauro, Marche). Le prime due ricerche (Rosso Conero Camerano, 'Carletti' azienda agricola) davano solo Poliziano (Toscana)."
   },
   {
    "id": "sciauerta",
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "sciauerta.it indicizzato solo in home senza contenuti su prodotti; nessuna fonte esterna (risultati solo su Cossignani, altra cantina: scartati)"
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino 'Sciauerta Cossignano vino' (solo Cossignani e omonimi toscani, scartati); ricerca aperta '\"Sciauerta\"' (nessun risultato pertinente); dominio sciauerta.it con query su denominazioni picene: ancora solo la home (vigneto tra Tesino e Menocchia, vini con 50-70 mg SO2), nessun nome di vino."
   },
   {
    "id": "selvagrossa",
@@ -4642,7 +4871,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun sito e nessuna fonte su Tenimenti Le Ginestre a Ripatransone; i risultati 'Le Ginestre' riguardano omonimi in Veneto (Lazise) e Piemonte (Grinzane Cavour), scartati."
+   "note": "Secondo giro: facebook/instagram/vivino/winedering 'Le Ginestre Ripatransone Offida Pecorino' (solo altre cantine di Ripatransone: Santori, Cocci Grifoni, Gozzana, Le Caniette), frase esatta '\"Tenimenti Le Ginestre\"' (solo omonimi toscani/B&B). Nessuna prova."
   },
   {
    "id": "tenimenti-spinsanti-spinsanti-catia",
@@ -5079,7 +5308,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Nessun sito e nessuna fonte esterna trovata per Tenuta di Pirano a Tavullia (risultati solo su Pirano/Slovenia e altre cantine)."
+   "note": "Secondo giro: trovato il profilo Instagram https://www.instagram.com/tenuta.di.pirano/ ('Agricoltori dal 1960', degustazioni vini e aperitivi in vigna) ma senza nomi di vini; provati anche ricerca aperta con Sangiovese/Colli Pesaresi e instagram/facebook/vivino con 'vino rosso bianco bollicine etichetta': nessuna etichetta."
   },
   {
    "id": "tenuta-grimaldi",
@@ -5410,10 +5639,41 @@
   },
   {
    "id": "tenuta-seghetti-panichi",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "dominio indicato filippopanichi.it (Az. Agrivitivinicola Filippo Panichi, Via Scirola 37, Castel di Lama): trovata solo la scheda del Verdone; nessun altro vino indicizzato. Ricerca aperta 'Seghetti Panichi' restituisce solo il Borgo Storico (villa/hotel)."
+   "wines": [
+    {
+     "name": "Il Moro Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/US/en/seghetti-panichi-il-moro-rosso-piceno-superiore/w/1546821",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Castello della Lama Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/IT/it/seghetti-panichi-castello-della-lama-rosso-piceno-superiore/w/2029919",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/IT/it/seghetti-panichi-rosso-piceno-superiore/w/2667685",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Verdone Pecorino",
+     "url": "https://www.vivino.com/US/en/seghetti-panichi-verdone-pecorino/w/1678934",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "La Lama Passerina",
+     "url": "https://www.vivino.com/IT/it/seghetti-panichi-la-lama-passerina/w/7588836",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Rubens Rosso",
+     "url": "https://www.vivino.com/pt-BR/seghetti-panichi-rubens-rosso/w/2582042",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: allowed_domains vivino/facebook/instagram. Schede Vivino del produttore 'Seghetti Panichi' (Marche, 15 vini; Rosso Piceno, Offida); collegamento con Castel di Lama dato da Borgo Storico Seghetti Panichi (Via dei Fossi 12, Castel di Lama) e dai nomi 'Castello della Lama'/'La Lama'. Esclusa la scheda separata 'Il Moro Rosso Piceno' (/w/5409958) come probabile doppione di Il Moro Rosso Piceno Superiore."
   },
   {
    "id": "tenuta-siliquini",
@@ -5541,10 +5801,31 @@
   },
   {
    "id": "tenute-il-crinale-di-quitadamo-michele",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "il sito ilcrinale.it (agriturismo con cantina, Castorano) non elenca vini. Unica fonte esterna: vinovoss 'Il Crinale Sprigione', rosso delle Marche (Montepulciano/Cabernet/Merlot); fonte aggregatore di qualità incerta, verificare."
+   "wines": [
+    {
+     "name": "Sprigione",
+     "url": "https://www.vivino.com/US/en/il-crinale-sprigione/w/1885769",
+     "evidence": "altro"
+    },
+    {
+     "name": "Re Nero Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/en/il-crinale-re-nero-superiore-rosso-piceno/w/1632100",
+     "evidence": "altro"
+    },
+    {
+     "name": "Micaur Offida Pecorino",
+     "url": "https://www.vivino.com/wineries/il-crinale",
+     "evidence": "altro"
+    },
+    {
+     "name": "Castrum Passerina",
+     "url": "https://www.vivino.com/wineries/il-crinale",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: pagina Facebook ufficiale 'Cantina Il Crinale' (https://www.facebook.com/CantinailCrinale/, via Ferretti 30 Castorano) e Instagram @cantina.ilcrinale (famiglia Quitadamo); vini dalla pagina produttore Vivino 'Il Crinale' (Marche, 25 vini, denominazioni picene coerenti con Castorano). Micaur e Castrum citati solo nella pagina cantina Vivino."
   },
   {
    "id": "tenute-malavolta",
@@ -5964,7 +6245,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessun sito; nessun risultato che citi Terre Cerquaferrata (solo altre cantine del Piceno)"
+   "note": "Secondo giro: provati allowed_domains vivino/facebook/instagram/winedering/vinipiceni ('Cerquaferrata vino Acquaviva Picena'), variante '\"Cerqua Ferrata\"' con Offida/Pecorino/Rosso Piceno e '\"Terre Cerquaferrata\"' secco: nessun risultato sul nome (solo Cherri d'Acquaviva, Capecci, Bonaventura e altre cantine di Acquaviva)."
   },
   {
    "id": "terre-cortesi-moncaro-soc-coop",
@@ -6196,7 +6477,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "nessun sito; nessun risultato che citi Torretti Walter ad Arcevia"
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino 'Torretti Arcevia vino cantina' (solo omonimi 'La Torretta' di Lazio/Puglia/Abruzzo e altre aziende di Arcevia: Broccanera, Cantina di Bacco); ricerca aperta '\"Torretti Walter\" OR \"Walter Torretti\" Arcevia' e '\"Torretti\" Verdicchio vino azienda agricola Marche': nessun risultato che citi il titolare."
   },
   {
    "id": "valter-mattoni",
@@ -6228,10 +6509,46 @@
   },
   {
    "id": "vara-pesaresi-vignaioli",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "vara.it restituisce solo una home 'Vara S.r.l.' senza riferimenti al vino; nessuna fonte esterna su Varà Pesaresi Vignaioli"
+   "wines": [
+    {
+     "name": "Vulé",
+     "url": "https://varavignaioli.it/vule/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Nerto Rosso Conero",
+     "url": "https://varavignaioli.it/nerto/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Clou de Varà",
+     "url": "https://varavignaioli.it/clou-de-vara/",
+     "evidence": "altro"
+    },
+    {
+     "name": "La Collina",
+     "url": "https://varavignaioli.it/la-collina/",
+     "evidence": "altro"
+    },
+    {
+     "name": "La Festa",
+     "url": "https://varavignaioli.it/i-vini/",
+     "evidence": "altro"
+    },
+    {
+     "name": "Erto",
+     "url": "https://varavignaioli.it/i-vini/",
+     "evidence": "altro"
+    },
+    {
+     "name": "La Baia",
+     "url": "https://varavignaioli.it/i-vini/",
+     "evidence": "altro"
+    }
+   ],
+   "note": "Secondo giro: la pagina Facebook ufficiale (Varano 293, Ancona) indica il sito reale varavignaioli.it (non vara.it); Casa Vinicola Pesaresi, Rosso Conero. Pagine prodotto per Vulé, Nerto, Clou de Varà, La Collina; La Festa, Erto, La Baia citati nella pagina 'I Vini'. Anche Vivino: https://www.vivino.com/en/casa-vinicola-pesaresi-vara-vule/w/3311833"
   },
   {
    "id": "veneranda-vite",
@@ -6402,10 +6719,16 @@
   },
   {
    "id": "viconari",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "nessun sito; nessun risultato che citi Viconari (solo altre cantine di Montefiore dell'Aso)"
+   "wines": [
+    {
+     "name": "Jone Marche Rosso",
+     "url": "https://www.vivino.com/en/viconari-jone-marche-rosso/w/12431227",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Trovato con 'viconari' secco su vivino/facebook/instagram: Vivino elenca la cantina Viconari (Marche) con Jone Marche Rosso. Le ricerche 'Viconari vino Montefiore dell'Aso' e '\"Viconari\" cantina azienda agricola' davano solo altre cantine (Domodimonti, Cossignani, Vicari di Morro d'Alba)."
   },
   {
    "id": "vigna-degli-estensi",
@@ -6907,10 +7230,51 @@
   },
   {
    "id": "vini-firmanum",
-   "status": "none",
+   "status": "found",
    "complete": true,
-   "wines": [],
-   "note": "Nessun risultato che citi 'Firmanum' come cantina/vino a Montottone; nessun sito, nessuna fonte esterna"
+   "wines": [
+    {
+     "name": "Antio Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/en/firmanum-antio-rosso-piceno-superiore/w/3797196",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Firma Marche Merlot",
+     "url": "https://www.vivino.com/firmanum-firma-marche-merlot/w/2219027",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Firma Rosso Piceno Superiore",
+     "url": "https://www.vivino.com/en/firmanum-firma-rosso-piceno-superiore/w/1743503?year=2015",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Alisso Falerio",
+     "url": "https://www.vivino.com/US/en/firmanum-alisso-falerio/w/3777362",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Solchi",
+     "url": "https://www.vivino.com/en/firmanum-solchi/w/5527146",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Terre Picene Corte Lama Rosso Offida Rosso",
+     "url": "https://www.vivino.com/US/en/firmanum-terre-picene-corte-lama-rosso-offida-rosso/w/1133156",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Terre Picene Montepulciano d'Abruzzo",
+     "url": "https://www.vivino.com/en/firmanum-terre-picene-montepulciano-d-abruzzo/w/16894?year=2006",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Sibillino Verdicchio dei Castelli di Jesi",
+     "url": "https://www.vivino.com/US/en/firmanum-sibillino-verdicchio-dei-castelli-di-jesi/w/3786215",
+     "evidence": "rivenditore"
+    }
+   ],
+   "note": "Secondo giro: allowed_domains facebook/instagram/vivino. Pagine ufficiali 'Vini Firmanum' (facebook.com/vinifirmanum, 'Cantina di Montottone'; Instagram @vinifirmanum, sedi nel Fermano) e schede Vivino del produttore 'Firmanum' (Marche, 38 vini). Le schede Firma Rosso Piceno Superiore e Terre Picene Montepulciano d'Abruzzo erano indicizzate solo con URL di annata."
   },
   {
    "id": "vini-maraviglia",
@@ -6993,7 +7357,7 @@
    "status": "none",
    "complete": true,
    "wines": [],
-   "note": "Solo la home del sito (Azienda Vitivinicola Muraro Gloria, Borgo Massano; 'produzione IGT Marche e Romagna') senza nomi di vini; nessuna fonte esterna"
+   "note": "Secondo giro: facebook/instagram/vivino/winedering 'Muraro Montecalvo in Foglia Borgo Massano' (solo omonimi veneti: Cantina Muraro '952 Colli Berici, Fratelli Muraro Belluno, Muraro Vicenza; Borgo Massano e' una ASD sportiva), dominio vinimuraro.it con 'rosso bianco Sangiovese IGT' (solo home, nessun vino nominato), frase esatta '\"Muraro Gloria\" vino' (solo omonimi Trentino/Veneto e Nusserhof 'Gloria'). Nessuna prova."
   },
   {
    "id": "vini-rocchi",
@@ -7047,6 +7411,405 @@
     }
    ],
    "note": "Pagine vino sul sito cantina; Verdicchio solo dallo shop; esclusa grappa di Vernaccia"
+  },
+  {
+   "id": "vini-simonetti",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Rosso Piceno",
+     "url": "https://vinisimonetti.it/en-US/home/productidn/2584808/rosso-piceno",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico DOC",
+     "url": "http://www.vinisimonetti.it/index.php?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio Classico Superiore Simonetti",
+     "url": "http://www.vinisimonetti.it/index.php?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio Classico Superiore Staphylè",
+     "url": "https://www.vinisimonetti.it/en-US/home",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Metodo Classico Brut Nonno Dino",
+     "url": "https://www.vinisimonetti.it/en-US/home",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Sito della cantina (Az. Agr. Simonetti Dino di Candi Michele): pagina prodotto Rosso Piceno; gli altri vini dalla home page del sito. Esclusi olio e sapa."
+  },
+  {
+   "id": "vini-valmusone",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Athos Spumante Metodo Ancestrale",
+     "url": "https://www.vinivalmusone.it/prodotto/athos/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ibis Marche IGT Bianco",
+     "url": "https://www.vinivalmusone.it/prodotto/ibis/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Peparo Syrah Marche IGT",
+     "url": "https://www.vinivalmusone.it/prodotto/peparo-syrah-marche-igt/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Edonè Verdicchio dei Castelli di Jesi Classico DOC",
+     "url": "https://www.vinivalmusone.it/prodotto/edone-verdicchio-doc-classico/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto sul sito della cantina (famiglia Castellani). Il sito cita anche Montepulciano, Sangiovese, Passerina ecc. ma senza pagine prodotto trovate."
+  },
+  {
+   "id": "vinicola-carassanese",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Sul dominio indicizzato solo un PDF sugli aiuti di Stato 2020 (Azienda Vinicola Carassanese snc); nessun nome di vino nel sito né in fonti esterne (ricerche aperte senza risultati pertinenti)."
+  },
+  {
+   "id": "vinicola-del-tesino-srl",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Grotte sul Mare Marche Bianco IGT",
+     "url": "https://www.carminucci.com/products/falerio-doc-grotte",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Grotte sul Mare Marche IGT Rosato",
+     "url": "https://www.carminucci.com/products/marche-igt-rosato",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Grotte sul Mare Rosso Piceno DOC",
+     "url": "https://www.carminucci.com/products/rosso-piceno-doc",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Viabore Rosso Piceno DOC",
+     "url": "https://www.carminucci.com/products/viabore",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Viabore Marche Bianco IGT",
+     "url": "https://www.carminucci.com/products/falerio-doc",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Belato Offida DOCG Pecorino",
+     "url": "https://www.carminucci.com/products/offida-docg-pecorino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Casta Marche IGT Passerina",
+     "url": "https://www.carminucci.com/products/marche-igt-passerina-1",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Casta Marche IGT Passerina Spumante",
+     "url": "https://www.carminucci.com/collections/e-shop",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Naumakos Falerio DOC",
+     "url": "https://www.carminucci.com/products/falerio-doc-naumakos",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Veglio Offida DOCG Pecorino non filtrato",
+     "url": "https://www.carminucci.com/collections/linea-le-selezioni",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Paccaosso",
+     "url": "https://www.carminucci.com/collections/linea-le-selezioni",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Novanta",
+     "url": "https://www.carminucci.com/collections/linea-le-selezioni",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Sito Casa Vinicola Carminucci (ragione sociale Vinicola del Tesino s.r.l., Grottammare): pagine prodotto e pagine collezione (linea Le Selezioni, e-shop)."
+  },
+  {
+   "id": "vinidicagnore",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Le Càgnore",
+     "url": "https://www.vinidicagnore.com/en/wines/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina Wines del sito della cantina (Vini di Cagnore Srl): un solo vino rosso, Le Càgnore (Vernaccia nera, Montepulciano, Sangiovese). Progetto avviato nel 2022."
+  },
+  {
+   "id": "vitali-augusto",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Villa Alta",
+     "url": "https://www.vinivitali.it/vini/villa-alta/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "In Villis",
+     "url": "https://www.vinivitali.it/vini/in-villis-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "JN",
+     "url": "https://www.vinivitali.it/vini/jn/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Gessara Bianchello del Metauro Superiore",
+     "url": "https://www.vinivitali.it/vini/gessara/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine /vini/ sul sito della cantina Vini Vitali (Sant'Andrea in Villis, Fano). Citato anche un rosso amabile sfuso, non incluso (senza nome)."
+  },
+  {
+   "id": "vitivinicola-costadoro-soc-agr-srl",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Marche Bianco Lo Puro IGP",
+     "url": "https://vinicostadoro.it/vini/marche-bianco-lo-puro-i-g-p/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosso Lo Puro IGP",
+     "url": "https://vinicostadoro.it/en/wines/marche-rosso-lo-puro-i-g-p/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Passerina La Ferola IGP",
+     "url": "https://vinicostadoro.it/vini/marche-passerina-la-ferola-igp-biologico/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOP",
+     "url": "https://vinicostadoro.it/en/wines/rosso-piceno-dop-biological/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno Superiore DOP",
+     "url": "https://vinicostadoro.it/vini/rosso-piceno-superiore-dop-classico/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno Superiore Il Cardinale DOP",
+     "url": "https://vinicostadoro.it/en/wines/rosso-piceno-superiore-il-cardinale-dop-biological/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Pecorino Danù DOCG",
+     "url": "https://vinicostadoro.it/en/wines/offida-pecorino-danu-docg-biological/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falerio Le Ginestre DOP",
+     "url": "https://vinicostadoro.it/linee/linea-biologica/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vino Spumante Passerina Brut",
+     "url": "https://vinicostadoro.it/linee/linea-biologica/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino e pagina Linea Biologica sul sito Vini Costadoro (Costadoro Soc. Agricola s.r.l.). Pagine indicizzate datate (6-11 anni): la gamma attuale potrebbe differire."
+  },
+  {
+   "id": "vitivinicola-dangelo-s-s-a",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Arcis Pecorino Falerio DOC",
+     "url": "https://www.cantinadangelo.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "OroDiVite Passerina Marche IGT",
+     "url": "https://www.cantinadangelo.it/negozio/orodivite-passerina-marche-igt",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bianco Divino",
+     "url": "https://www.cantinadangelo.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Divino",
+     "url": "https://www.cantinadangelo.it/negozio/rosso-divino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Xò Chardonnay Frizzante",
+     "url": "https://www.cantinadangelo.it/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Marche IGT",
+     "url": "https://www.cantinadangelo.it/negozio/passerina-marche-igt",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Bianco IGT uve Pecorino",
+     "url": "https://www.cantinadangelo.it/negozio/marche-bianco-igt-uve-pecorino",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.cantinadangelo.it/negozio/rosso-piceno-d-o-c-copia",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso di una Volta",
+     "url": "https://www.cantinadangelo.it/negozio/rosso-di-una-volta",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Fiordì Rosso Vino Amabile",
+     "url": "https://www.cantinadangelo.it/negozio/fiordi-rosso-vino-amabile",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso San Martino",
+     "url": "https://www.cantinadangelo.it/negozio/rosso-san-martino",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Negozio online del sito Cantina D'Angelo (C.da San Lazzaro, Offida): pagine prodotto /negozio/ e home page (Arcis, Bianco Divino, Xò). Escluse le pagine bag-in-box generiche."
+  },
+  {
+   "id": "vittorini-di-nico-speranza",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Marche Bianco IGT",
+     "url": "https://www.vittorini.it/en/wines/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Crocifisso Marche Bianco IGT",
+     "url": "https://www.vittorini.it/en/wines/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche Rosso IGT",
+     "url": "https://www.vittorini.it/en/wines/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina Wines del sito Cantina Vittorini (Monsampietro Morico, FM), con schede per annata: Marche Bianco IGT (Pecorino/Incrocio Bruni), Crocifisso (Marche Bianco IGT) e Marche Rosso IGT."
+  },
+  {
+   "id": "zaccagnini",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico DOC",
+     "url": "https://zaccagnini.it/prodotto/verdicchio-dei-castelli-di-jesi-classico-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Salmagina Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://zaccagnini.it/selezioni-riserve/salmagina/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Maestro di Staffolo Castelli di Jesi Verdicchio Riserva Classico DOCG",
+     "url": "https://zaccagnini.it/selezioni-riserve/maestro-di-staffolo/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Pier delle Vigne Verdicchio dei Castelli di Jesi Classico Riserva DOCG",
+     "url": "https://zaccagnini.it/prodotto/pier-delle-vigne/?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Argonauta",
+     "url": "https://zaccagnini.it/prodotto/argonauta/?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vigna Vescovi Marche IGT Rosso",
+     "url": "https://zaccagnini.it/selezioni-riserve/vigna-vescovi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cesolano Passito",
+     "url": "https://zaccagnini.it/categoria-prodotto/selezioni-e-riserve/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche IGT Pecorino",
+     "url": "https://zaccagnini.it/prodotto/marche-igt-pecorino/?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche IGT Passerina",
+     "url": "https://zaccagnini.it/categoria-prodotto/linea-zeta/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrima di Morro d'Alba DOC",
+     "url": "https://zaccagnini.it/categoria-prodotto/linea-zeta/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://zaccagnini.it/categoria-prodotto/linea-zeta/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Conero DOC",
+     "url": "https://zaccagnini.it/prodotto/rosso-conero-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Montepulciano d'Abruzzo DOC",
+     "url": "https://zaccagnini.it/prodotto/montepulciano-abruzzo-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosato Rosa Rosae",
+     "url": "https://zaccagnini.it/prodotto/rosato-rosa-rosae/?lang=en",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosella Frizzante",
+     "url": "http://www.zaccagnini.it/zaccagnini_rosella_frizzante.htm",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Sito Azienda Agricola Zaccagnini (C.da Salmagina, Staffolo): pagine prodotto, Selezioni & Riserve e categoria Linea Zeta; Rosella Frizzante da pagina del vecchio sito. Esclusi Grappa Salmagina e Prugnotto (tipo non chiaro); omessi Boezio e i Brut generici (URL non certo)."
   }
  ]
 }
