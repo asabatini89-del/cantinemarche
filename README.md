@@ -7,7 +7,7 @@ Lo stack previsto è Astro + Cloudflare Workers + D1/R2/KV, con deploy continuo 
 
 ```bash
 npm install
-npm run db:reset:local   # crea il D1 locale: schema + tassonomie + 365 cantine e 1.494 anteprime vini
+npm run db:reset:local   # crea il D1 locale: schema + tassonomie + 365 cantine e i loro vini
 npm run dev              # http://localhost:4321/cantine  (Astro su workerd, binding D1 reale)
 ```
 
@@ -42,7 +42,7 @@ Identità “Radical Chic” (manifesto e copertina anni Settanta, mappa animata
 |---|---|
 | `/` | Mappa SVG delle Marche con le 307 cantine geolocalizzate (cartiglio al tocco), ricerca, province, i sette territori, le DOCG |
 | `/cantine` | Catalogo dalla A alla Z: ricerca full-text, filtri provincia/denominazione/vitigno/servizi nell'URL, paginazione |
-| `/cantine/[slug]` | Scheda: contatti, mappa di posizione, denominazioni, vini (link al sito della cantina), fonti, cantine nei paraggi, **richiesta di visita** |
+| `/cantine/[slug]` | Scheda: contatti, mappa di posizione, denominazioni, vini (ognuno rimanda alla sua fonte), fonti, cantine nei paraggi, **richiesta di visita** |
 | `/territori`, `/territori/[slug]` | I sette territori come collana: copertina, denominazioni, mappa inquadrata, elenco cantine |
 | `/denominazioni`, `/denominazioni/[slug]` | DOCG, DOC, IGT con le cantine che le producono |
 | `/per-le-cantine` | Pagina per i produttori + **modulo di rivendicazione** della scheda |
@@ -97,6 +97,8 @@ Fase 2 (account, verifica del claim, dashboard cantina) e Fase 3 (shop multi-ven
 | [`db/migrations/`](db/migrations/) | Schema D1 per tutte e tre le fasi + richieste dai moduli pubblici |
 | [`src/`](src/) | App Astro: `pages/` (home, cantine, territori, denominazioni, per-le-cantine, api), `components/` (MarcheMap, WineryCard, FilterBar), `lib/` (D1, filtri, mappa, moduli) |
 | [`data/export-2026-10-09/`](data/export-2026-10-09/) | Export del portale attuale usato per l'import (cantine, anteprime, territori, denominazioni, licenze) |
+| [`data/vini-ricerca-2026-10-10.json`](data/vini-ricerca-2026-10-10.json) | Vini trovati con ricerca web per le cantine che l'export lasciava senza: ogni vino ha l'URL della pagina che lo prova; le cantine senza fonti hanno la nota di cosa è stato cercato |
+| [`data/import-report.md`](data/import-report.md) | Report dell'import: conteggi, anomalie, cantine ancora senza vini con il motivo |
 | [`scripts/build-seed.mjs`](scripts/build-seed.mjs) → [`db/seed/`](db/seed/) | Normalizzazione dell'export e generazione dei seed SQL, deterministica |
 | [`docs/05-identita.md`](docs/05-identita.md) | Identità visiva “Radical Chic”: principi, colori, caratteri, componenti, mappa animata, voce |
 
