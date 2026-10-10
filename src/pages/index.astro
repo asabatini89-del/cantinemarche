@@ -3,16 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import MarcheMap from '../components/MarcheMap.astro';
 import Mascotte from '../components/Mascotte.astro';
 import TerritoryCover from '../components/TerritoryCover.astro';
-import { getFacets, getStats, listDenominations, listTerritories, mapPoints } from '../lib/db';
-import { PROVINCE_COVER } from '../lib/palette';
+import { featuredExperiences, getFacets, getStats, listDenominations, listTerritories, mapPoints } from '../lib/db';
+import { PROVINCE_COVER, shortName } from '../lib/palette';
 
-const [stats, points, facets, territories, denominations] = await Promise.all([
+const [stats, points, facets, territories, denominations, experiences] = await Promise.all([
   getStats(),
   mapPoints(),
   getFacets(),
   listTerritories(),
   listDenominations(),
+  featuredExperiences(6),
 ]);
+const KIND_LABEL = { tasting: 'Degustazione', tour: 'Visita', meal: 'A tavola', event: 'Evento', stay: 'Ospitalità' } as const;
+const KIND_BG = { tasting: 'bg-giallo', tour: 'bg-azzurro', meal: 'bg-albicocca', event: 'bg-rosa', stay: 'bg-menta' } as const;
+const fmtPrice = (c: number) => `${(c / 100).toLocaleString('it-IT', { maximumFractionDigits: 2 })} €`;
+const fmtDuration = (m: number) => (m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60}′` : ''}` : `${m}′`);
 const docg = denominations.filter((d) => d.level === 'DOCG');
 const fmt = (n: number) => n.toLocaleString('it-IT');
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
@@ -85,6 +90,34 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600,
       </li>
     </ul>
   </section>
+
+  <!-- Le esperienze: degustazioni e visite in cantina -->
+  {experiences.length > 0 && (
+    <section aria-labelledby="h-esperienze" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+      <div class="copertina-titolo flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-3">
+        <h2 id="h-esperienze" class="display text-4xl sm:text-6xl">Da assaggiare <em>in cantina</em></h2>
+        <a href="/cantine?servizio=degustazioni" class="pillola hover:bg-giallo">{stats.experience_wineries} cantine con esperienze →</a>
+      </div>
+      <p class="mano mt-4 -rotate-1 text-2xl sm:text-3xl">Domani degustazione? Eccone qualcuna.</p>
+      <ul role="list" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {experiences.map((e) => (
+          <li>
+            <a href={`/cantine/${e.winery_slug}#esperienze`} class="group flex h-full flex-col rounded-2xl border-2 border-inchiostro bg-carta shadow-[5px_5px_0_var(--color-inchiostro)] transition-transform hover:-translate-y-1">
+              <span class={`flex items-center justify-between gap-3 rounded-t-[14px] border-b-2 border-inchiostro px-4 py-2 ${KIND_BG[e.kind]}`}>
+                <span class="meta">{KIND_LABEL[e.kind]}</span>
+                <span class="meta">{[e.duration_min !== null ? fmtDuration(e.duration_min) : null, e.price_cents !== null ? fmtPrice(e.price_cents) : null].filter(Boolean).join(' · ')}</span>
+              </span>
+              <span class="flex flex-1 flex-col p-4">
+                <span class="display text-2xl group-hover:underline">{e.title}</span>
+                {e.description_md && <span class="mt-2 line-clamp-3 text-sm">{e.description_md}</span>}
+                <span class="meta mt-auto pt-4 text-grafite">{shortName(e.winery_name)} · {e.municipality}{e.province_code ? ` (${e.province_code})` : ''}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <!-- Le DOCG -->
   <section aria-labelledby="h-docg" class="mx-auto mt-20 grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_2fr]">

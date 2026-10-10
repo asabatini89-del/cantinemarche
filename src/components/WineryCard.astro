@@ -12,10 +12,13 @@ const { winery: w, headingLevel: H = 'h3' } = Astro.props;
 const denominations = w.denominations?.split('|') ?? [];
 const services = w.services?.split('|') ?? [];
 const place = w.municipality ? `${w.municipality}${w.province_code ? ` (${w.province_code})` : ''}` : w.province_name;
+// Le esperienze contano già degustazioni e visite: non si ripetono i servizi corrispondenti.
+const experienceCount = w.experience_count ?? 0;
 const facts = [
   w.rating_count > 0 ? `★ ${w.rating_avg.toFixed(1).replace('.', ',')} (${w.rating_count})` : null,
   w.wine_count > 0 ? `${w.wine_count} ${w.wine_count === 1 ? 'vino' : 'vini'}` : null,
-  ...services,
+  experienceCount > 0 ? `${experienceCount} ${experienceCount === 1 ? 'esperienza' : 'esperienze'}` : null,
+  ...services.filter((s) => experienceCount === 0 || !/^(Degustazioni|Visita guidata)$/.test(s)),
 ].filter(Boolean);
 ---
 <article class="group relative flex h-full flex-col border-t-2 border-inchiostro px-1 pb-6 pt-3 transition-colors duration-300 hover:bg-carta-2">

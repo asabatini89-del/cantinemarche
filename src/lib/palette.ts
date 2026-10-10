@@ -43,3 +43,17 @@ export function displayName(name: string) {
     })
     .join('');
 }
+
+/** Nome breve per gli spazi stretti: toglie forme societarie e prefissi tipo "Az. Agr.", mai l'intero nome. */
+export function shortName(name: string) {
+  const legal = /[\s,–-]*\b(s\.?\s?r\.?\s?l\.?|s\.?\s?n\.?\s?c\.?|s\.?\s?a\.?\s?s\.?|s\.?\s?p\.?\s?a\.?|s\.?\s?s\.?(\s?a\.?)?|soc(ietà|ieta['’])?\.?\s+(agr(icola)?\.?|coop(erativa)?\.?)(\s+(semplice|a\s*r\.?\s*l\.?))?|semplice)\s*\.?$/iu;
+  const prefix = /^(az(ienda)?\.?\s+agr(icola|aria)?\.?|soc(ietà)?\.?\s+agr(icola)?\.?)\s+/iu;
+  let s = displayName(name).trim();
+  for (let i = 0; i < 3; i++) {
+    const next = s.replace(legal, '').trim();
+    if (!next || next === s) break;
+    s = next;
+  }
+  const noPrefix = s.replace(prefix, '').trim();
+  return noPrefix.length > 2 ? noPrefix : s;
+}

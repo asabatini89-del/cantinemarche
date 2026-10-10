@@ -24,6 +24,7 @@ export interface WineryListItem {
   rating_avg: number;
   rating_count: number;
   wine_count: number;
+  experience_count: number;
   denominations: string | null; // "Nome DOC|Nome DOCG"
   services: string | null; // "Degustazioni|Vendita diretta"
   cover_thumb: string | null; // chiave R2 della foto di copertina (640 px)
@@ -71,6 +72,7 @@ function where(f: CatalogFilters) {
 const LIST_COLUMNS = `w.id, w.slug, w.name, ${CATALOG_NO} AS num, w.municipality, w.province_code, p.name AS province_name,
   w.territory_id, t.name AS territory_name, w.claim_status, w.rating_avg, w.rating_count,
   (SELECT COUNT(*) FROM wines v WHERE v.winery_id = w.id AND v.status = 'published') AS wine_count,
+  (SELECT COUNT(*) FROM experiences e WHERE e.winery_id = w.id AND e.status = 'published') AS experience_count,
   (SELECT group_concat(d.name, '|') FROM winery_denominations wd
      JOIN denominations d ON d.id = wd.denomination_id WHERE wd.winery_id = w.id) AS denominations,
   (SELECT group_concat(s.name, '|') FROM winery_services ws
@@ -126,9 +128,11 @@ export async function getStats() {
               (SELECT COUNT(*) FROM wines WHERE status = 'published') AS wines,
               (SELECT COUNT(*) FROM denominations) AS denominations,
               (SELECT COUNT(*) FROM territories) AS territories,
-              (SELECT COUNT(DISTINCT municipality) FROM wineries WHERE status = 'published') AS municipalities`,
+              (SELECT COUNT(DISTINCT municipality) FROM wineries WHERE status = 'published') AS municipalities,
+              (SELECT COUNT(*) FROM experiences WHERE status = 'published') AS experiences,
+              (SELECT COUNT(DISTINCT winery_id) FROM experiences WHERE status = 'published') AS experience_wineries`,
     )
-    .first<{ wineries: number; wines: number; denominations: number; territories: number; municipalities: number }>();
+    .first<{ wineries: number; wines: number; denominations: number; territories: number; municipalities: number; experiences: number; experience_wineries: number }>();
   return r!;
 }
 
@@ -308,6 +312,22 @@ export async function getWinery(slug: string) {
     experiences: rows<Experience>(experiences),
     sources: winery.sources_json ? (JSON.parse(winery.sources_json) as string[]) : [],
   };
+}
+
+/** Esperienze da mettere in vetrina in home: una per cantina, prima quelle con prezzo e durata dichiarati. */
+export async function featuredExperiences(limit = 6) {
+  const res = await db()
+    .prepare(
+      `SELECT e.id, e.title, e.kind, e.description_md, e.duration_min, e.price_cents,
+              w.slug AS winery_slug, w.name AS winery_name, w.municipality, w.province_code
+       FROM experiences e JOIN wineries w ON w.id = e.winery_id
+       WHERE e.status = 'published' AND w.status = 'published' AND e.kind IN ('tasting', 'tour', 'meal')
+       ORDER BY (e.price_cents IS NULL), (e.duration_min IS NULL), (e.description_md IS NULL), e.id
+       LIMIT 60`,
+    )
+    .all<Experience & { winery_slug: string; winery_name: string; municipality: string | null; province_code: string | null }>();
+  const seen = new Set<string>();
+  return res.results.filter((e) => !seen.has(e.winery_slug) && seen.add(e.winery_slug)).slice(0, limit);
 }
 
 export interface Experience {
