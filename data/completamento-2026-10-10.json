@@ -6302,6 +6302,594 @@
     }
    ],
    "note": "Linee I Classici/Spumanti del sito: nessun vino nuovo con nome certo (bag-in-box esclusi). Degustazioni e visite guidate su prenotazione dalla pagina La Cantina; evento Popsophia 2019 escluso perché vecchio."
+  },
+  {
+   "id": "conti-di-buscareto",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Nero Dry",
+     "url": "https://buscareto.com/en/sparkling-line/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione Dalla Terra",
+     "kind": "tasting",
+     "description": "Degustazione di vini con abbinamento gastronomico prenotabile online; lo staff ricontatta per fissare la data.",
+     "duration_min": null,
+     "price_eur": 20,
+     "url": "https://buscareto.com/prodotto/degustazione-dalla-terra/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://buscareto.com/prodotto/degustazione-dalla-terra/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://buscareto.com/en/shop/"
+    }
+   ],
+   "note": "Sito buscareto.com: linea spumanti include Nero Dry (rosato da Lacrima); shop con degustazione 'Dalla Terra' da 20 EUR. Linee Goccia e Selezioni gia' in catalogo."
+  },
+  {
+   "id": "de-angelis-c-srl",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Oro Bianco Offida Pecorino DOCG",
+     "url": "https://www.tenutadeangelis.it/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: oltre ai vini in catalogo cita il Pecorino 'Oro Bianco'; 'Quiete' e' il Pecorino Bio gia' presente. Nessuna offerta di degustazione/visita documentata (risultati Winedering riguardano altre cantine)."
+  },
+  {
+   "id": "filodivino",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ali 2.0",
+     "url": "https://www.filodivino.it/en/wine/our-wines/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Tasting in the Winery",
+     "kind": "tasting",
+     "description": "Visita guidata della cantina e 3 calici a scelta tra percorsi Classici, Selezioni o Eccellenze, con pane artigianale e olio EVO.",
+     "duration_min": null,
+     "price_eur": 20,
+     "url": "https://www.filodivino.it/en/experience/tasting-in-the-winery/"
+    },
+    {
+     "title": "Evening in the Winery",
+     "kind": "meal",
+     "description": "Serata con visita guidata della cantina e cinque vini abbinati a cinque piatti, il giovedi' e il sabato dalle 20.",
+     "duration_min": 180,
+     "price_eur": 65,
+     "url": "https://www.filodivino.it/en/experience/evening-in-the-winery/"
+    },
+    {
+     "title": "Cena in Veranda",
+     "kind": "meal",
+     "description": "Cena sulla veranda del wine resort, su prenotazione via telefono o email.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.filodivino.it/proposte/cena-in-veranda/"
+    },
+    {
+     "title": "Wine Tasting and Spa Weekend",
+     "kind": "stay",
+     "description": "Pacchetto di due notti nel wine resort con trattamenti spa e serata in cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.filodivino.it/en/experience/weekend-in-filodivino/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.filodivino.it/en/experience/tasting-in-the-winery/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.filodivino.it/en/experience/tasting-in-the-winery/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.filodivino.it/en/experience/evening-in-the-winery/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.filodivino.it/en/"
+    }
+   ],
+   "note": "Sito filodivino.it: aggiunto Ali 2.0 (Pet Nat rosato da Lacrima). Degustazioni ven/dom fino al 24/10/2026 (20/25/30 EUR), cena in cantina 65 EUR, resort con spa; weekend da 1010 EUR a coppia (prezzo non a persona, omesso)."
+  },
+  {
+   "id": "fontorfio",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Salomé",
+     "url": "https://www.fontorfio.it/salome",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fontorfio.it/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.fontorfio.it/"
+    }
+   ],
+   "note": "Sito fontorfio.it: aggiunto Salomé (rosso da Cordisco). Il sito prevede acquisto e degustazioni in cantina previa telefonata, senza offerte strutturate con prezzo."
+  },
+  {
+   "id": "il-conte-villa-prandone",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Emmanuel Maria Passerina Spumante",
+     "url": "https://ilcontevini.it/en/prodotto/emmanuel-maria-en/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ceppo Marche Passerina IGP",
+     "url": "https://ilcontevini.it/prodotto/ceppo-marche-passerina-igp/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione TERRA",
+     "kind": "tasting",
+     "description": "Passeggiata in vigna, visita alla cantina sotterranea e assaggio di tre vini della linea Terra.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    },
+    {
+     "title": "Degustazione PREMIUM",
+     "kind": "tasting",
+     "description": "Passeggiata in vigna, visita alla cantina sotterranea e assaggio di quattro vini cru.",
+     "duration_min": 90,
+     "price_eur": null,
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    },
+    {
+     "title": "Esperienza LU KONT",
+     "kind": "tasting",
+     "description": "Passeggiata in vigna, visita alla cantina sotterranea e assaggio di sei vini, tra cui uno spumante.",
+     "duration_min": 90,
+     "price_eur": null,
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://ilcontevini.it/en/wine-experience/"
+    }
+   ],
+   "note": "Sito ilcontevini.it: aggiunti spumante Emmanuel Maria e Ceppo Passerina (Conte Rosso = Conterosso gia' presente). Pagina Wine Experience con tre formati da 90 min (TERRA 25 EUR), sconto 10% su acquisto di 6 bottiglie."
+  },
+  {
+   "id": "le-corti-dei-farfensi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.lecortideifarfensi.it/contatti.html"
+    }
+   ],
+   "note": "Sito lecortideifarfensi.it: nessun vino nuovo oltre a quelli in catalogo; pagina contatti indica wine shop a Fermo (Viale Trieste 86) con orari. Nessuna offerta di degustazione/visita documentata."
+  },
+  {
+   "id": "mercante",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Alba del Monte Esino Bianco DOC",
+     "url": "https://rossoconero.it/prodotto/alba-del-monte",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.rossoconero.it/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.rossoconero.it/"
+    }
+   ],
+   "note": "Sito rossoconero.it: aggiunto Alba del Monte (Esino Bianco). Cantina aperta lun-sab, domenica degustazioni su appuntamento. Eventi trovati (cene in vigna 2019-2020, degustazione maggio 2024) sono passati: esclusi."
+  },
+  {
+   "id": "san-giovanni-soc-agricola-srl",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Marche IGT Passerina Marta",
+     "url": "https://www.vinisangiovanni.it/marche-igt-passerina-marta.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in sala a Offida",
+     "kind": "tasting",
+     "description": "Degustazione dei vini aziendali nella sala di Via Roma a Offida, aperta tutti i giorni, su prenotazione via telefono o email.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vinisangiovanni.it/degustazione.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vinisangiovanni.it/degustazione.html"
+    }
+   ],
+   "note": "Sito vinisangiovanni.it: aggiunta la Passerina ferma Marta (distinta da Marta Brut). Sala degustazione in Via Roma a Offida, 10-13 e 16-19.30 tutti i giorni."
+  },
+  {
+   "id": "tenuta-ca-sciampagne",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Canonnic",
+     "url": "https://tenutacasciampagne.com/en/prodotti/canonnic/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina",
+     "kind": "tasting",
+     "description": "Degustazione per singoli e gruppi su prenotazione, nella sala del vin santo tra le botti, all'aperto sui prati o in sala degustazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://tenutacasciampagne.com/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://tenutacasciampagne.com/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://tenutacasciampagne.com/"
+    }
+   ],
+   "note": "Sito tenutacasciampagne.com: aggiunto il passito Canonnic (Bianchello vendemmia tardiva). Degustazioni su prenotazione e shop in azienda; la pagina Ospitalita' riguarda eventi privati (feste), nessun pernottamento documentato."
+  },
+  {
+   "id": "tenuta-cocci-grifoni",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Tasting for wine lovers",
+     "kind": "tasting",
+     "description": "Visita a cantina e vinoteca, assaggio di olio e pane, tre vini DOC/DOCG con un piatto in terrazza panoramica.",
+     "duration_min": 90,
+     "price_eur": 45,
+     "url": "https://www.tenutacoccigrifoni.it/en/esperienze/tasting-for-wine-lovers/"
+    },
+    {
+     "title": "Essential tasting at the wine shop",
+     "kind": "tasting",
+     "description": "Degustazione guidata di quattro vini nel wine shop, centrata solo sul vino.",
+     "duration_min": 30,
+     "price_eur": 15,
+     "url": "https://www.tenutacoccigrifoni.it/en/esperienze/essential-tasting-at-the-wine-shop/"
+    },
+    {
+     "title": "Aperitivo degustazione in collina",
+     "kind": "tasting",
+     "description": "Aperitivo in terrazza panoramica con due vini DOC/DOCG e un piatto, dal martedi' al sabato.",
+     "duration_min": 90,
+     "price_eur": 38,
+     "url": "https://www.tenutacoccigrifoni.it/esperienze/aperitivo-degustazione-in-collina/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.tenutacoccigrifoni.it/en/esperienze/tasting-for-wine-lovers/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.tenutacoccigrifoni.it/en/esperienze/tasting-for-wine-lovers/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.tenutacoccigrifoni.it/en/esperienze/essential-tasting-at-the-wine-shop/"
+    }
+   ],
+   "note": "Sito tenutacoccigrifoni.it: esperienze in terrazza con prezzi (15-45 EUR), visita cantina 10 EUR solo abbinata a degustazione, prenotazione 3 giorni prima. Brochure 2022 con prezzi vecchi ignorata. Nessun vino nuovo cercato (1 sola query)."
+  },
+  {
+   "id": "terra-argillosa",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione di 4 vini con pane, olio e salumi",
+     "kind": "tasting",
+     "description": "Visita a cantina e vigna (meteo permettendo) e assaggio di spumante, due bianchi e un rosso; gruppi condivisi fino a 10 persone.",
+     "duration_min": 60,
+     "price_eur": 15,
+     "url": "https://terrargillosa.com/degustazioni-argillose/"
+    },
+    {
+     "title": "Degustazione di 5 vini con pane, olio e salumi",
+     "kind": "tasting",
+     "description": "Visita a cantina e vigna (meteo permettendo) e assaggio di cinque vini con pane, olio e salumi; gruppi fino a 10 persone.",
+     "duration_min": 90,
+     "price_eur": 20,
+     "url": "https://terrargillosa.com/degustazioni-argillose/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://terrargillosa.com/degustazioni-argillose/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://terrargillosa.com/degustazioni-argillose/"
+    }
+   ],
+   "note": "Sito terrargillosa.com, pagina Degustazioni Argillose: lun-sab ore 10 e 15 su prenotazione via email; due formati ('Sorsi di Ciafone' e 'Racconto dei Vignaioli', abbinamento nome-formato non certo, titoli resi descrittivi). Nessun vino nuovo."
+  },
+  {
+   "id": "terracruda",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Weekend tra i vigneti in agriturismo",
+     "kind": "stay",
+     "description": "Una o due notti in agriturismo per due persone con l'esperienza Vigna inclusa.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://terracruda.it/calici-dautunno-degustazioni-in-cantina-e-weekend-tra-i-vigneti-nelle-marche/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://terracruda.it/calici-dautunno-degustazioni-in-cantina-e-weekend-tra-i-vigneti-nelle-marche/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://terracruda.it/calici-dautunno-degustazioni-in-cantina-e-weekend-tra-i-vigneti-nelle-marche/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://terracruda.it/calici-dautunno-degustazioni-in-cantina-e-weekend-tra-i-vigneti-nelle-marche/"
+    }
+   ],
+   "note": "Sito terracruda.it: rassegna Calici d'Autunno 11/09-17/10/2026 con 4 formati (20-35 EUR) e soggiorni (160/250 EUR a coppia, prezzo non a persona omesso). Eventi estivi 2026 (Sul Far della Sera) e pagine 2015-2024 conclusi: esclusi. Nessun vino nuovo."
+  },
+  {
+   "id": "villa-romita-di-brugiaferri-maurilio-e-giorgi-simonetta-s",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.villaromita.com/shop"
+    }
+   ],
+   "note": "Sito villaromita.com: gamma coincide con il catalogo; vendita diretta dal produttore e shop online. Nessuna degustazione, visita o ospitalita' documentata."
+  },
+  {
+   "id": "cantina-sor-rico",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione di vini e tour presso l'azienda vinicola Sor Rico",
+     "kind": "tour",
+     "description": "Visita della cantina con degustazione dei vini, in italiano e inglese, cancellazione gratuita fino a 48 ore prima.",
+     "duration_min": 30,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-visita-alla-cantina-sor-rico/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-visita-alla-cantina-sor-rico/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-visita-alla-cantina-sor-rico/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://sorrico.com/"
+    }
+   ],
+   "note": "Sito sorrico.com: shop online, nessun vino nuovo. Esperienza visita+degustazione (30 min) su winetourism.com; prezzo da 26 EUR su Winedering non attribuibile con certezza a Sor Rico, omesso."
+  },
+  {
+   "id": "castrum-morisci",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://castrummorisci.it/shop/focagno-vino-cotto/"
+    }
+   ],
+   "note": "Sito castrummorisci.it: gamma coincide con il catalogo, shop online. Blog GialloZafferano cita aperture al pubblico solo in occasioni non specificate: nessuna esperienza documentata."
+  },
+  {
+   "id": "centanni-giacomo-az-agr",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Floralia",
+     "url": "https://vinicentanni.it/site/en/category/rose-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Profumo di Rosa Marche Rosato IGT",
+     "url": "https://vinicentanni.it/site/en/category/rose-wine/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione base di tre vini",
+     "kind": "tasting",
+     "description": "Assaggio di tre vini con pane e olio, con visita a cantina e/o vigna inclusa (vigna con luce diurna), lun-sab su prenotazione.",
+     "duration_min": null,
+     "price_eur": 15,
+     "url": "https://vinicentanni.it/site/en/taste-our-wine/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://vinicentanni.it/site/en/taste-our-wine/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://vinicentanni.it/site/en/taste-our-wine/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://vinicentanni.it/shop/"
+    }
+   ],
+   "note": "Sito vinicentanni.it: aggiunti i rosati Floralia e Profumo di Rosa (esiste anche una versione spumante rosé brut, nome esatto non chiaro: omessa). Nuovo spazio degustazione da maggio 2025, degustazione base 15 EUR."
+  },
+  {
+   "id": "colonnara",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ubaldo Rosi",
+     "url": "https://www.colonnara.it/en/sparklings/ubaldo-rosi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Luigi Ghislieri",
+     "url": "https://www.colonnara.it/en/sparklings",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Le sfumature del Verdicchio",
+     "kind": "tasting",
+     "description": "Visita guidata alla cantina di affinamento e degustazione di quattro vini con prodotti tipici locali, minimo 2 persone.",
+     "duration_min": 60,
+     "price_eur": 20,
+     "url": "https://visit.colonnara.it/le-sfumature-del-verdicchio/"
+    },
+    {
+     "title": "Visita alla cantina di affinamento",
+     "kind": "tour",
+     "description": "Percorso nella cantina di affinamento dedicato agli spumanti metodo classico e ai Verdicchio di vecchie annate, tutto l'anno su prenotazione.",
+     "duration_min": 45,
+     "price_eur": null,
+     "url": "https://www.colonnara.it/en/visit-us"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://visit.colonnara.it/le-sfumature-del-verdicchio/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.colonnara.it/en/visit-us"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://shop.colonnara.it/Prodotti/p/ubaldo-rosi"
+    }
+   ],
+   "note": "Sito colonnara.it: aggiunti i metodo classico Ubaldo Rosi (Riserva) e Luigi Ghislieri. Visite e degustazioni su prenotazione via visit.colonnara.it (20 EUR, 60 min). Cantine Aperte 2019-2023 passate: escluse."
+  },
+  {
+   "id": "la-cantina-srl",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita Classica",
+     "kind": "tour",
+     "description": "Visita della cantina e degustazione guidata dallo staff in sala dedicata, su prenotazione.",
+     "duration_min": 45,
+     "price_eur": null,
+     "url": "https://www.ilpollenza.it/en/visite/"
+    },
+    {
+     "title": "Visita Elegance",
+     "kind": "tour",
+     "description": "Visita della cantina e degustazione guidata dallo staff in sala dedicata, su prenotazione.",
+     "duration_min": 60,
+     "price_eur": null,
+     "url": "https://www.ilpollenza.it/en/visite/"
+    },
+    {
+     "title": "Visita Vintage Exclusive",
+     "kind": "tour",
+     "description": "Visita della cantina e degustazione guidata dallo staff in sala dedicata, su prenotazione.",
+     "duration_min": 75,
+     "price_eur": null,
+     "url": "https://www.ilpollenza.it/en/visite/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.ilpollenza.it/en/visite/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.ilpollenza.it/en/visite/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.ilpollenza.it/en/contacts/"
+    }
+   ],
+   "note": "Sito ilpollenza.it: gamma coincide con il catalogo. Pagina Visite con tre formati (30/45/100 EUR), pagina datata circa 2 anni ma senza date di scadenza: prezzi da verificare. Wine shop lun-sab."
   }
  ]
 }

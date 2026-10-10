@@ -14,14 +14,14 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine senza coordinate (scheda visibile, niente mappa) | 58 |
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
-| Cantine con servizi (degustazioni, visite, vendita) | 190 |
-| Vini importati | 2862 (2788 pubblicati, 74 in bozza perché non sono vini) |
+| Cantine con servizi (degustazioni, visite, vendita) | 206 |
+| Vini importati | 2875 (2801 pubblicati, 74 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
 | — di cui da ricerca web, con URL di prova | 1175 su 214 cantine (sito-cantina: 1020, altro: 55, rivenditore: 87, guida: 14) |
-| — di cui dal completamento delle schede | 192 su 92 cantine (2 doppioni scartati) |
+| — di cui dal completamento delle schede | 205 su 102 cantine (2 doppioni scartati) |
 | Cantine pubblicate con almeno un vino | 336 su 365 |
-| Esperienze (degustazioni, visite, pranzi, ospitalità) | 186 su 114 cantine |
-| Servizi aggiunti dal completamento | 314 |
+| Esperienze (degustazioni, visite, pranzi, ospitalità) | 209 su 126 cantine |
+| Servizi aggiunti dal completamento | 351 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
