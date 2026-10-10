@@ -15,10 +15,10 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
 | Cantine con servizi (degustazioni, visite, vendita) | 74 |
-| Vini importati | 2026 (1953 pubblicati, 73 in bozza perché non sono vini) |
+| Vini importati | 2436 (2363 pubblicati, 73 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
-| — di cui da ricerca web, con URL di prova | 532 su 107 cantine (sito-cantina: 470, rivenditore: 32, altro: 18, guida: 12) |
-| Cantine pubblicate con almeno un vino | 227 su 365 |
+| — di cui da ricerca web, con URL di prova | 942 su 173 cantine (sito-cantina: 853, rivenditore: 46, altro: 29, guida: 14) |
+| Cantine pubblicate con almeno un vino | 293 su 365 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -68,7 +68,7 @@ Nel dato originale la provincia è vuota.
 - nessuno
 
 ### 7. Cantine ancora senza vini
-138 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 107, none 35. Le schede invitano la cantina ad aggiungerli.
+72 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 173, none 47. Le schede invitano la cantina ad aggiungerli.
 - `agriarcuata-soc-coop-agricola` Agriarcuata Soc. Coop. Agricola — none: Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette
 - `amadio-vini-s-r-l` AMADIO VINI S.R.L. — none: Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia).
 - `aniballi` Aniballi — none: Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini.
@@ -104,84 +104,18 @@ Nel dato originale la provincia è vuota.
 - `la-meravigna` La Meravigna — none: Nessun risultato su 'La Meravigna'; solo altre cantine dell'area di Ancona.
 - `peruzzi-liana` Peruzzi Liana — none: nessuna fonte che colleghi Peruzzi Liana/Monte Roberto a vini; esistono citazioni di un 'Peruzzi' Verdicchio Metodo Classico Dosage Zero (jancisrobinson, ilfattoquotidiano) ma senza localita': non attribuito
 - `piantate-lunghe` Piantate Lunghe — none: piantatelunghe.it senza risultati; solo il Rosso Conero DOC (vigna 'degli angeli') da listino trovaprezzi
-- `sabbionare` Sabbionare — ricerca web non ancora eseguita
-- `saladini-pilastri-srl-soc-agricola` Saladini Pilastri Srl Soc. Agricola — ricerca web non ancora eseguita
-- `san-giovanni-soc-agricola-srl` San Giovanni Soc. Agricola Srl — ricerca web non ancora eseguita
-- `santa-barbara` Santa Barbara — ricerca web non ancora eseguita
-- `santa-cassella` Santa Cassella — ricerca web non ancora eseguita
-- `santa-liberata-di-savini-giorgio-az-agricola` Santa Liberata di Savini Giorgio Az. Agricola — ricerca web non ancora eseguita
-- `sassodivino` SASSODIVINO — ricerca web non ancora eseguita
-- `sauie-srl-az-agr-montecoriolano` SAUIE SRL – AZ. AGR. MONTECORIOLANO — ricerca web non ancora eseguita
-- `sauro-carletti` Sauro Carletti — ricerca web non ancora eseguita
-- `sciauerta` Sciauerta — ricerca web non ancora eseguita
-- `selvagrossa` Selvagrossa — ricerca web non ancora eseguita
-- `serboni-massimo-azienda-agricola` SERBONI MASSIMO AZIENDA AGRICOLA — ricerca web non ancora eseguita
-- `sergio-marani` Sergio Marani — ricerca web non ancora eseguita
-- `soc-agr-la-pila-di-matteo-toniolo-s-s` Soc. Agr. La Pila di Matteo Toniolo S.S. — ricerca web non ancora eseguita
-- `soc-agr-montebianco120-s-s` SOC. AGR. MONTEBIANCO120 S.S. — ricerca web non ancora eseguita
-- `soc-agricola-san-filippo-s-s` Soc. Agricola San Filippo S.S. — ricerca web non ancora eseguita
-- `soc-agr-vini-gagliardi-gino-di-gagliardi-lara-e-umberto-snc` SOC.AGR.VINI GAGLIARDI GINO DI GAGLIARDI LARA E UMBERTO SNC — ricerca web non ancora eseguita
-- `socci` SOCCI — ricerca web non ancora eseguita
-- `societa-agricola-bucchini-davide-e-romani-stefania-s-s` SOCIETÀ AGRICOLA BUCCHINI DAVIDE E ROMANI STEFANIA S.S. — ricerca web non ancora eseguita
-- `societa-agricola-capriotti` SOCIETÀ AGRICOLA CAPRIOTTI — ricerca web non ancora eseguita
-- `societa-agricola-fausti-srl` Società Agricola Fausti Srl — ricerca web non ancora eseguita
-- `societa-agricola-ronconi-di-ronconi-samuele-c-s-s` SOCIETA’ AGRICOLA RONCONI DI RONCONI SAMUELE & C. S.S. — ricerca web non ancora eseguita
-- `societa-agricola-villa-lazzarini-srl` SOCIETA’ AGRICOLA VILLA LAZZARINI SRL — ricerca web non ancora eseguita
-- `spallacci-giordano` SPALLACCI GIORDANO — ricerca web non ancora eseguita
-- `sparapani-snc-di-sparapani-giuseppe-c` SPARAPANI SNC DI SPARAPANI GIUSEPPE & C. — ricerca web non ancora eseguita
-- `stefano-mancinelli` Stefano Mancinelli — ricerca web non ancora eseguita
-- `strologo` Strologo — ricerca web non ancora eseguita
-- `tenimenti-le-ginestre-srl` Tenimenti Le Ginestre Srl — ricerca web non ancora eseguita
-- `tenimenti-spinsanti-spinsanti-catia` TENIMENTI SPINSANTI - SPINSANTI CATIA — ricerca web non ancora eseguita
-- `tenuta-agricola-la-riserva-di-mattioli-dina` Tenuta Agricola La Riserva di Mattioli Dina — ricerca web non ancora eseguita
-- `tenuta-barbarossa` Tenuta Barbarossa — ricerca web non ancora eseguita
-- `tenuta-ca-sciampagne` Tenuta Ca' Sciampagne — ricerca web non ancora eseguita
-- `tenuta-carlini-di-andrea-carlini` TENUTA CARLINI DI ANDREA CARLINI — ricerca web non ancora eseguita
-- `tenuta-cocci-grifoni` Tenuta Cocci Grifoni — ricerca web non ancora eseguita
-- `tenuta-colpaola` Tenuta Colpaola — ricerca web non ancora eseguita
-- `tenuta-conte-lucangeli` Tenuta Conte Lucangeli — ricerca web non ancora eseguita
-- `tenuta-dell-ugolino` Tenuta dell'Ugolino — ricerca web non ancora eseguita
-- `tenuta-di-fra` Tenuta di Frà — ricerca web non ancora eseguita
-- `tenuta-di-pirano` Tenuta di Pirano — ricerca web non ancora eseguita
-- `tenuta-grimaldi` Tenuta Grimaldi — ricerca web non ancora eseguita
-- `tenuta-manoylo-by-moresco-soc-agr-semplice` Tenuta Manoylo by Moresco Soc. Agr. Semplice — ricerca web non ancora eseguita
-- `tenuta-marino` Tenuta Marino — ricerca web non ancora eseguita
-- `tenuta-mattei` Tenuta Mattei — ricerca web non ancora eseguita
-- `tenuta-musone` Tenuta Musone — ricerca web non ancora eseguita
-- `tenuta-piano-di-rustano` Tenuta Piano di Rustano — ricerca web non ancora eseguita
-- `tenuta-san-marcello` Tenuta San Marcello — ricerca web non ancora eseguita
-- `tenuta-san-martino-di-cerioni-mauro` TENUTA SAN MARTINO DI CERIONI MAURO — ricerca web non ancora eseguita
-- `tenuta-santi-giacomo-e-filippo` Tenuta Santi Giacomo e Filippo — ricerca web non ancora eseguita
-- `tenuta-seghetti-panichi` Tenuta Seghetti Panichi — ricerca web non ancora eseguita
-- `tenuta-siliquini` Tenuta Siliquini — ricerca web non ancora eseguita
-- `tenuta-spinelli-di-spinelli-simone` Tenuta Spinelli di Spinelli Simone — ricerca web non ancora eseguita
-- `tenute-del-borgo` Tenute del Borgo — ricerca web non ancora eseguita
-- `tenute-il-crinale-di-quitadamo-michele` Tenute Il Crinale di Quitadamo Michele — ricerca web non ancora eseguita
-- `tenute-malavolta` Tenute Malavolta — ricerca web non ancora eseguita
-- `tenute-polini-societa-agricola-semplice` Tenute Polini Società Agricola Semplice — ricerca web non ancora eseguita
-- `tenute-priori-galdelli` Tenute Priori & Galdelli — ricerca web non ancora eseguita
-- `tenute-recchi-franceschini-eredi-az-agr-la-via-sistina` Tenute Recchi Franceschini Eredi Az. Agr. La Via Sistina — ricerca web non ancora eseguita
-- `tenute-urani` Tenute Urani — ricerca web non ancora eseguita
-- `terra-argillosa` Terra Argillosa — ricerca web non ancora eseguita
-- `terra-divina` Terra Divina — ricerca web non ancora eseguita
-- `terra-libera` Terra Libera — ricerca web non ancora eseguita
-- `terra-premiata-di-graziano-mazza-figli` Terra Premiata di Graziano Mazza & Figli — ricerca web non ancora eseguita
-- `terracruda` Terracruda — ricerca web non ancora eseguita
-- `terrafageto` TERRAFAGETO — ricerca web non ancora eseguita
-- `terre-cerquaferrata` Terre Cerquaferrata — ricerca web non ancora eseguita
-- `terre-cortesi-moncaro-soc-coop` Terre Cortesi Moncaro Soc. Coop. — ricerca web non ancora eseguita
-- `terre-d-arengo` Terre d'Arengo — ricerca web non ancora eseguita
-- `terre-di-san-ginesio` Terre di San Ginesio — ricerca web non ancora eseguita
-- `terre-di-serrapetrona-societa-agricola-semplice` TERRE DI SERRAPETRONA SOCIETA’ AGRICOLA SEMPLICE — ricerca web non ancora eseguita
-- `tomassetti` tomassetti. — ricerca web non ancora eseguita
-- `torretti-walter` TORRETTI WALTER — ricerca web non ancora eseguita
-- `valter-mattoni` Valter Mattoni — ricerca web non ancora eseguita
-- `vara-pesaresi-vignaioli` VARÀ PESARESI VIGNAIOLI — ricerca web non ancora eseguita
-- `veneranda-vite` Veneranda Vite — ricerca web non ancora eseguita
-- `venturi-roberto` Venturi Roberto — ricerca web non ancora eseguita
-- `verser-cantina-e-vigneti` VerSer | Cantina e Vigneti — ricerca web non ancora eseguita
-- `vicari` Vicari — ricerca web non ancora eseguita
-- `viconari` Viconari — ricerca web non ancora eseguita
+- `sassodivino` SASSODIVINO — none: sito sassodivino.it indicizzato solo in home (vino e olio biologico, e-commerce) senza nomi dei vini; nessuna fonte esterna
+- `sauie-srl-az-agr-montecoriolano` SAUIE SRL – AZ. AGR. MONTECORIOLANO — none: nessun sito; nessun risultato per Montecoriolano / Sauie srl a Potenza Picena
+- `sauro-carletti` Sauro Carletti — none: nessun sito; nessun risultato su Sauro Carletti a Camerano (solo omonimi Carletti di Poliziano, Toscana: scartati)
+- `sciauerta` Sciauerta — none: sciauerta.it indicizzato solo in home senza contenuti su prodotti; nessuna fonte esterna (risultati solo su Cossignani, altra cantina: scartati)
+- `tenimenti-le-ginestre-srl` Tenimenti Le Ginestre Srl — none: Nessun sito e nessuna fonte su Tenimenti Le Ginestre a Ripatransone; i risultati 'Le Ginestre' riguardano omonimi in Veneto (Lazise) e Piemonte (Grinzane Cavour), scartati.
+- `tenuta-di-pirano` Tenuta di Pirano — none: Nessun sito e nessuna fonte esterna trovata per Tenuta di Pirano a Tavullia (risultati solo su Pirano/Slovenia e altre cantine).
+- `tenuta-seghetti-panichi` Tenuta Seghetti Panichi — none: dominio indicato filippopanichi.it (Az. Agrivitivinicola Filippo Panichi, Via Scirola 37, Castel di Lama): trovata solo la scheda del Verdone; nessun altro vino indicizzato. Ricerca aperta 'Seghetti Panichi' restituisce solo il Borgo Storico (villa/hotel).
+- `tenute-il-crinale-di-quitadamo-michele` Tenute Il Crinale di Quitadamo Michele — none: il sito ilcrinale.it (agriturismo con cantina, Castorano) non elenca vini. Unica fonte esterna: vinovoss 'Il Crinale Sprigione', rosso delle Marche (Montepulciano/Cabernet/Merlot); fonte aggregatore di qualità incerta, verificare.
+- `terre-cerquaferrata` Terre Cerquaferrata — none: nessun sito; nessun risultato che citi Terre Cerquaferrata (solo altre cantine del Piceno)
+- `torretti-walter` TORRETTI WALTER — none: nessun sito; nessun risultato che citi Torretti Walter ad Arcevia
+- `vara-pesaresi-vignaioli` VARÀ PESARESI VIGNAIOLI — none: vara.it restituisce solo una home 'Vara S.r.l.' senza riferimenti al vino; nessuna fonte esterna su Varà Pesaresi Vignaioli
+- `viconari` Viconari — none: nessun sito; nessun risultato che citi Viconari (solo altre cantine di Montefiore dell'Aso)
 - `vigna-degli-estensi` Vigna degli Estensi — ricerca web non ancora eseguita
 - `vigna-della-cava` Vigna della Cava — ricerca web non ancora eseguita
 - `vignamato` Vignamato — ricerca web non ancora eseguita
