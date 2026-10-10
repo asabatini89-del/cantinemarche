@@ -481,7 +481,7 @@ Generato da \`scripts/build-seed.mjs\`.
 | Cantine con territorio univoco | ${count((w) => w.territory_id)} |
 | Cantine con servizi (degustazioni, visite, vendita) | ${new Set(out.ws.map((r) => r.winery_id)).size} |
 | Vini importati | ${out.wines.length} (${winesPublished} pubblicati, ${out.wines.length - winesPublished} in bozza perché non sono vini) |
-| — di cui anteprime dal portale | ${out.wines.filter((w) => !w.id.startsWith('web-')).length} |
+| — di cui anteprime dal portale | ${out.wines.filter((w) => !/^(web|cmp)-/.test(w.id)).length} |
 | — di cui da ricerca web, con URL di prova | ${researchStats.wines} su ${researchStats.wineries} cantine (${[...researchStats.byEvidence].map(([k, n]) => `${k}: ${n}`).join(', ') || '—'}) |
 | — di cui dal completamento delle schede | ${completionStats.wines} su ${completionStats.wineries} cantine (${completionStats.duplicates} doppioni scartati) |
 | Cantine pubblicate con almeno un vino | ${winesByWinery.size} su ${pub.length} |
