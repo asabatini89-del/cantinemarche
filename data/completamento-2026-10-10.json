@@ -1200,6 +1200,546 @@
     }
    ],
    "note": "Sito ufficiale con shop (Veridio 13,90 EUR): vini indicizzati Mittera, Theresia, Veridio, Visciola gia' presenti. Nessuna visita/degustazione documentata."
+  },
+  {
+   "id": "azienda-felice",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Willi",
+     "url": "https://www.aziendafelice.it/en/cantina-en/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina su prenotazione",
+     "kind": "tasting",
+     "description": "Degustazione dei Bianchello della cantina biologica, da prenotare in anticipo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.aziendafelice.it/en/cantina-en/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.aziendafelice.it/en/cantina-en/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.aziendafelice.it/en/"
+    }
+   ],
+   "note": "Sito ufficiale: pagina cantina cita Willi (Bianchello 12 mesi in botte) e degustazioni su prenotazione; azienda con agriturismo."
+  },
+  {
+   "id": "broccanera",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Asco Rosso Marche IGT",
+     "url": "http://www.broccanera.it/images/schede-tecniche-vini/asco-eng.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Guzzo Verdicchio dei Castelli di Jesi DOC",
+     "url": "http://www.broccanera.it/vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita e degustazione in cantina",
+     "kind": "tour",
+     "description": "Visita che segue il percorso del vino dall'uva alla bottiglia, con degustazione e Wine Corner con tutte le annate.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://broccanera.it/tour.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "http://broccanera.it/tour.html"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "http://broccanera.it/tour.html"
+    }
+   ],
+   "note": "Sito ufficiale: scheda Asco (Syrah/Merlot) e pagina vini con Guzzo; pagina tour con visite e degustazioni. Dosaggio Zero e rosato citati senza nome etichetta: esclusi."
+  },
+  {
+   "id": "ca-le-suore",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Venco",
+     "url": "https://www.calesuore.it/page/la-cantina",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Donna Agnese",
+     "url": "https://www.calesuore.it/page/la-cantina",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione del mercoledì con passeggiata in vigna",
+     "kind": "tasting",
+     "description": "D'estate, il mercoledì, degustazione in cantina per gli ospiti preceduta da una passeggiata lungo la vigna.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.calesuore.it/page/la-cantina"
+    },
+    {
+     "title": "Soggiorno in agriturismo",
+     "kind": "stay",
+     "description": "Camere e appartamenti (es. bilocale) nell'agriturismo della cantina, con piscina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://www.calesuore.it/agriturismo/room_category/bilocale/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.calesuore.it/page/la-cantina"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.calesuore.it/en"
+    },
+    {
+     "id": "ospitalita",
+     "url": "http://www.calesuore.it/agriturismo/room_category/bilocale/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.calesuore.it/page/ristorante"
+    }
+   ],
+   "note": "Sito ufficiale: 6 vini (rossi Mochetto, Burano, Venco, Massimo; bianchi Ca' le Suore, Donna Agnese); visite guidate e degustazioni su richiesta, degustazione estiva del mercoledi; agriturismo con camere e ristorante."
+  },
+  {
+   "id": "cantina-maroni",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita in cantina con degustazione",
+     "kind": "tour",
+     "description": "Visita alla cantina di Offida alla scoperta dei sapori del Piceno e di come nascono i vini, prenotabile dal sito.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.vinimaroni.it/prenota-ora/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.vinimaroni.it/prenota-ora/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.vinimaroni.it/prenota-ora/"
+    }
+   ],
+   "note": "Sito ufficiale: pagina 'I nostri vini' elenca solo vini gia presenti (Crociaiolo, Domenico, Moretto); pagina 'Prenota ora' per visita e degustazione, prezzi non indicati."
+  },
+  {
+   "id": "cantina-offida-srl",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Pecorino Offida",
+     "url": "https://www.cantinaoffida.com/pecorino-offida/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida D.O.C.G. Passerina Offidella",
+     "url": "https://www.cantinaoffida.com/en/offida-passerina-offidella/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Piceno D.O.P. Superiore Il Podestà",
+     "url": "https://www.cantinaoffida.com/piceno-superiore-podesta",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Falerio D.O.P.",
+     "url": "https://www.cantinaoffida.com/en/falerio-dop/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Serpente Aureo",
+     "url": "https://www.cantinaoffida.com/en/serpente-aureo-docg-rosso/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi D.O.C. Classico",
+     "url": "https://www.cantinaoffida.com/en/verdicchio-castelli-di-jesi-classico/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "L'Osteria di Cantina Offida",
+     "kind": "meal",
+     "description": "Osteria in Piazza del Popolo a Offida con cucina di prodotti locali, vendita dei vini della cantina e serate di degustazione.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.cantinaoffida.com/en/the-osteria-cantina-offida/"
+    }
+   ],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinaoffida.com/en/the-osteria-cantina-offida/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.cantinaoffida.com/en/the-osteria-cantina-offida/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://www.cantinaoffida.com/en/the-osteria-cantina-offida/"
+    }
+   ],
+   "note": "Sito ufficiale (pagine prodotto). Escluso 'Marche I.G.P. Passerina' (possibile coincidenza con La Pastorella) e 'Monaco dei Vini OC' (natura non chiara). Pagine datate (~5 anni)."
+  },
+  {
+   "id": "cantina-santori",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ottava Musa",
+     "url": "https://www.cantinasantori.it/en/our-wines",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: aggiunto Ottava Musa (bianco IGT da Pecorino); citato anche un Ribona DOC senza nome di etichetta, escluso. Nessuna informazione su visite/degustazioni."
+  },
+  {
+   "id": "geminiani-wine",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazioni in cantina",
+     "kind": "tasting",
+     "description": "Degustazioni organizzate nella cantina di Geminiani Wine.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://geminianiwines.com/"
+    },
+    {
+     "title": "Tour enogastronomici",
+     "kind": "tour",
+     "description": "Tour enogastronomici proposti dalla cantina, anche come eventi personalizzati.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://geminianiwines.com/"
+    },
+    {
+     "title": "Corsi di enologia",
+     "kind": "event",
+     "description": "Corsi di enologia organizzati dalla cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://geminianiwines.com/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://geminianiwines.com/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://geminianiwines.com/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://geminianiwines.com/"
+    }
+   ],
+   "note": "Sito ufficiale: cita degustazioni in cantina, tour enogastronomici, eventi personalizzati, vendita diretta e corsi di enologia. Rosso Marche IGT e linea senza solfiti citati senza nome etichetta: esclusi."
+  },
+  {
+   "id": "la-montata",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Taddeo 10",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Tifernum Brut",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Tifernum Rosé",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Trabaria",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sciango",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vino Santo",
+     "url": "https://vinilamontata.it/vini/-passito/estasi-.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Wine Tasting and Tour at Azienda Vitivinicola La Montata",
+     "kind": "tour",
+     "description": "Passeggiata guidata tra vigne e cantina (affumicatura uve, imbottigliamento) e degustazione di 4-6 vini in sala; in italiano e inglese.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/wine-tasting-and-tour-at-azienda-vitivinicola-la-montata/"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/wine-tasting-and-tour-at-azienda-vitivinicola-la-montata/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/wine-tasting-and-tour-at-azienda-vitivinicola-la-montata/"
+    }
+   ],
+   "note": "Vini dal sito ufficiale (elenco gamma); 'Angelicus 10' escluso perche forse coincide con Angelicus, sauvignon senza nome escluso. Esperienza da winetourism.com, senza prezzo/durata."
+  },
+  {
+   "id": "lucchetti",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Birbacciò Verdicchio dei Castelli di Jesi DOC Classico",
+     "url": "https://mariolucchetti.it/prodotti/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vittoria Verdicchio dei Castelli di Jesi DOC Classico Superiore",
+     "url": "https://mariolucchetti.it/prodotti/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale (pagina Prodotti): aggiunti i due Verdicchio. Nessuna fonte su visite/degustazioni (ricerca aperta solo con guide generiche). Lacrima da uve appassite e cherry wine citati senza nome: esclusi."
+  },
+  {
+   "id": "lucidimezzo",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.lucidimezzo.it/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.lucidimezzo.it/"
+    }
+   ],
+   "note": "Sito ufficiale: solo i 4 vini gia presenti; nuova struttura con flagship store e spazi per eventi e degustazioni, senza dettagli su esperienze. Pagina indicizzata ~4 anni fa."
+  },
+  {
+   "id": "madonnabruna",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Rivafiorita Marche Passerina IGT",
+     "url": "https://www.madonnabruna.it/index.php/it/vini-it/rivafiorita-it",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Maree",
+     "url": "https://www.madonnabruna.it/index.php/en/vigneti-en/pecorino-en",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione del mercoledì d'estate",
+     "kind": "tasting",
+     "description": "Da metà giugno, ogni mercoledì estivo alle 18: degustazione completa dei vini con salumi e formaggi tipici nel giardino dell'agriturismo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.madonnabruna.it/index.php/it/piscina"
+    },
+    {
+     "title": "Appartamenti in agriturismo",
+     "kind": "stay",
+     "description": "Appartamenti con cucina, aria condizionata e terrazza nelle case Casa dei Conigli e Casa Il Picchio dell'agriturismo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "http://www.madonnabruna.it/index.php/it/appartamenti"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.madonnabruna.it/index.php/it/piscina"
+    },
+    {
+     "id": "ospitalita",
+     "url": "http://www.madonnabruna.it/index.php/it/appartamenti"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunti Rivafiorita e Maree (Pecorino); Rosso Piceno base escluso (possibile coincidenza con vini presenti). Degustazione estiva del mercoledi e agriturismo con appartamenti e piscina."
+  },
+  {
+   "id": "marchetti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: emergono solo i 4 vini gia presenti; nessuna informazione su visite o degustazioni (solo contatti). Pagine datate ~4 anni."
+  },
+  {
+   "id": "montecappone",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Ricerca su montecappone.com senza risultati; ricerca aperta: recensioni Wanderlog citano degustazioni con il titolare e punto vendita. Linea 'Mirizzi' citata come linea, non come singolo vino: esclusa. Scheda winedering presente ma senza dettagli."
+  },
+  {
+   "id": "piantate-lunghe",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Ricerca su piantatelunghe.it senza risultati; ricerca aperta: solo listino trovaprezzi del Rosso Conero DOC (gia presente). Nessuna info su visite/degustazioni."
+  },
+  {
+   "id": "podere-sabbioni",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ribona della Famiglia",
+     "url": "https://poderesabbioni.com/en/product/colli-maceratesi-ribona-doc-riserva-della-famiglia/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione in cantina con visita al vigneto",
+     "kind": "tasting",
+     "description": "Visita al vigneto e degustazione dei vini in cantina con salumi e formaggi, tra cui ciauscolo e pecorino dei Sibillini.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://poderesabbioni.com/en/wine-lovers/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://poderesabbioni.com/en/book-a-tasting-2/?re-product-id=245256"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://poderesabbioni.com/en/wine-lovers/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunta la Ribona Riserva della Famiglia; pagina Enoturismo e 'Book a tasting' con degustazione abbinata a salumi e formaggi. Prezzo/durata non indicati."
+  },
+  {
+   "id": "poderi-san-lazzaro",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Passerina Corolla",
+     "url": "https://www.callmewine.com/en/passerina-corolla-poderi-san-lazzaro-2024-P60025.htm",
+     "evidence": "rivenditore"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: solo schede Podere 72 e Grifola (gia presenti); rivenditori (Callmewine, SommSelect) aggiungono Passerina Corolla. Nessuna info su visite/degustazioni."
+  },
+  {
+   "id": "polenta",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Vespuccio Rosso Conero",
+     "url": "https://www.cantinapolenta.it/negozio/vespuccio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Gianco Conero Riserva",
+     "url": "https://www.cantinapolenta.it/negozio/gianco/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Ristorante dell'Agriturismo Accipicchia",
+     "kind": "meal",
+     "description": "Ristorante dell'agriturismo della cantina che abbina i piatti ai vini aziendali.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.cantinapolenta.it/agriturismo-accipicchia/"
+    },
+    {
+     "title": "Camere all'Agriturismo Accipicchia",
+     "kind": "stay",
+     "description": "Camere nell'agriturismo Accipicchia della cantina, nel Parco del Conero sopra Portonovo.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.cantinapolenta.it/agriturismo-accipicchia/"
+    }
+   ],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "http://www.cantinapolenta.it/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.cantinapolenta.it/agriturismo-accipicchia/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.cantinapolenta.it/agriturismo-accipicchia/"
+    }
+   ],
+   "note": "Sito ufficiale: shop con Vespuccio e Gianco; prodotto 'Accipicchia' nello shop non chiaramente un vino, escluso. Agriturismo Accipicchia con ristorante, camere e spazi eventi; nessuna info su degustazioni."
+  },
+  {
+   "id": "ripawine-soc-coop-agricola",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Klausura",
+     "url": "https://ripawine.it/en/prodotto/klausura-pack-of-6/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: shop con Moro Matto, Trufo e Klausura; Offida DOCG Rosso citato senza nome etichetta, escluso. Nessuna info su visite/degustazioni."
   }
  ]
 }
