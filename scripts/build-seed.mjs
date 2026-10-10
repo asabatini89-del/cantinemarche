@@ -401,6 +401,16 @@ if (completion) {
   }
 }
 
+// Correzioni puntuali emerse dai controlli: voci che non sono vini restano in bozza.
+const JUNK_WINE = /^punti vendita|:\s*$/i;
+const NOT_WINE = new Set(['la-lepre-e-la-luna|Selva']); // infuso di visciole, non un vino
+for (const v of out.wines) {
+  if (v.status === 'published' && (JUNK_WINE.test(v.name.trim()) || NOT_WINE.has(`${v.winery_id}|${v.name.trim()}`))) {
+    v.status = 'draft';
+    warn(`\`${v.winery_id}\`: “${v.name}” messo in bozza (non è un vino)`);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Scrittura SQL
 // ---------------------------------------------------------------------------

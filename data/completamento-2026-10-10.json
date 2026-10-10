@@ -6958,11 +6958,6 @@
      "name": "Imperatore",
      "url": "https://tenutedelborgo.com/prodotto/imperatore/",
      "evidence": "sito-cantina"
-    },
-    {
-     "name": "Maliscia",
-     "url": "https://tenutedelborgo.com/passatempo/",
-     "evidence": "sito-cantina"
     }
    ],
    "experiences": [],
@@ -7089,6 +7084,229 @@
     }
    ],
    "note": "Sito ufficiale: aggiunto Ergon Rosso (Marche Rosso IGT); shop online. Esperienza da Winetourism (visita+degustazione ~1h, prezzo non indicato). Escluso evento UniCredit del 5 settembre (passato)."
+  },
+  {
+   "id": "cantina-santisidoro",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinasantisidoro.it/it/contatti.html"
+    }
+   ],
+   "note": "Sito ufficiale: vini già in catalogo (il 'Ribona Spumante metodo classico' coincide verosimilmente con 'Ribona'). Punto vendita a Civitanova Marche. Nessuna esperienza trovata (risultati su omonimi umbri). NB: in vini_presenti c'è la voce spuria 'PUNTI VENDITA DIRETTI:'."
+  },
+  {
+   "id": "castellani-sauro",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinacastellani.it/contatti-cantina-castellani-vino-ancona-marche/"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo (Bolignano, Vigna Clari, Primonato, Emozioni). Vendita in cantina mar-sab 15-19 previa telefonata. Eventi trovati tutti passati (2022-2025) o fiere esterne: esclusi."
+  },
+  {
+   "id": "fattoria-coroncino",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.coroncino.it/contattaci"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.coroncino.it/contattaci"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo. Pagina Contattaci: niente punto vendita ma possibilità di assaggiare e acquistare previo appuntamento telefonico. Nessuna esperienza strutturata trovata."
+  },
+  {
+   "id": "fattoria-le-terrazze",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Geo",
+     "url": "https://www.fattorialeterrazze.it/en/who-we-are",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione al calice nel Farm Shop",
+     "kind": "tasting",
+     "description": "Calici di vini base (3 €) o riserva (5 €) con pane, vista Adriatico; tagliere a 15 € solo nei pomeriggi del weekend. Gruppi oltre 6 su prenotazione.",
+     "duration_min": null,
+     "price_eur": 3,
+     "url": "https://www.fattorialeterrazze.it/en/farm-shop"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fattorialeterrazze.it/en/farm-shop"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.fattorialeterrazze.it/en/farm-shop"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Geo (passito creato nel 2020). Farm shop a Numana con degustazioni al calice (pagina recente). Planet Waves citato solo come etichetta storica (2004) e non aggiunto."
+  },
+  {
+   "id": "federico-mencaroni",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Degustazione e tour di vini da Federico Mencaroni",
+     "kind": "tour",
+     "description": "Passeggiata in vigna, visita a cantina e sala degustazione con 4-6 vini (rossi, bianchi, spumanti) abbinati a piatti regionali.",
+     "duration_min": 90,
+     "price_eur": null,
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-tour-della-cantina-di-federico-mencaroni/"
+    },
+    {
+     "title": "From soil to soul: degustazione sensoriale con abbinamento",
+     "kind": "tasting",
+     "description": "Camminata in vigna, focus sulla produzione di metodo classico in cantina e degustazione sensoriale con cibo; gruppi da 4 a 10 persone.",
+     "duration_min": 90,
+     "price_eur": 25,
+     "url": "https://www.winedering.com/it/from-soil-to-soul-sensory-wine-tasting-with-food-pairing-at-azienda-agricola-mencaroni-on-verdicchio-dei-castelli-di-jesi-area_d8592_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winetourism.com/it/visita-in-cantina/degustazione-e-tour-della-cantina-di-federico-mencaroni/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://www.winedering.com/it/from-soil-to-soul-sensory-wine-tasting-with-food-pairing-at-azienda-agricola-mencaroni-on-verdicchio-dei-castelli-di-jesi-area_d8592_travel"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo. Esperienze da Winetourism (tour+degustazione 1h30) e Winedering ('From soil to soul', 1h30, 25 €)."
+  },
+  {
+   "id": "la-lepre-e-la-luna",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://lalepreelaluna.it/en/contatti/"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://lalepreelaluna.it/en/contatti/"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo (NB: Selva è un'infusione di visciole). Visite e degustazioni su appuntamento telefonico (pagina contatti); nessuna esperienza strutturata con dettagli."
+  },
+  {
+   "id": "mariotti-cesare",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Asdrubale",
+     "url": "https://www.cantinemariotti.it/prodotti/vini-bianchi/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.cantinemariotti.it/eventi/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Asdrubale (Bianchello del Metauro). Eventi (cene in vigna, apericena, degustazioni 15-20 €) solo del calendario 2025 o precedenti: esclusi perché passati. Esiste una pagina 'Agriturismo' sul sito ma senza dettagli nei risultati: non segnata."
+  },
+  {
+   "id": "marotti-campi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Vigna Sant'Amico Country House",
+     "kind": "stay",
+     "description": "Agriturismo collegato alla cantina, gestito da Francesca della famiglia Marotti Campi.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.italysfinestwines.it/marotti-campi-2/"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.doctorwine.wine/portfolio/marotti-campi/?lang=en"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://www.italysfinestwines.it/marotti-campi-2/"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo. Doctorwine segnala visite all'azienda; Italy's Finest Wines cita l'agriturismo Vigna Sant'Amico Country House gestito in famiglia. Nessun prezzo/orario per degustazioni."
+  },
+  {
+   "id": "vignamato",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.italysfinestwines.it/vignamato/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.italysfinestwines.it/vignamato/"
+    }
+   ],
+   "note": "Sito ufficiale: vini già tutti in catalogo. Scheda Italy's Finest Wines: degustazione in azienda e vendita diretta (SI). Nessuna esperienza strutturata su Winedering/Winetourism."
+  },
+  {
+   "id": "vigne-di-leo-tre-castelli",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata e degustazione ai Tre Castelli",
+     "kind": "tour",
+     "description": "Vigna, cantina e barricaia con calice di benvenuto; degustazione di 3-4 vini con salumi e pecorino di Staffolo. In italiano e inglese.",
+     "duration_min": 120,
+     "price_eur": 28,
+     "url": "https://www.winedering.com/it/guided-tour-and-wine-tasting_d6767_travel?gift=1"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://www.winedering.com/it/guided-tour-and-wine-tasting_d6767_travel?gift=1"
+    }
+   ],
+   "note": "Sito ufficiale (pagine datate): vini già in catalogo; citato anche un 'Sangiovese' senza pagina prodotto, non aggiunto. Esperienza su Winedering (2h, da 28 €)."
+  },
+  {
+   "id": "vinicola-del-tesino-srl",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.carminucci.com/collections/e-shop"
+    }
+   ],
+   "note": "Sito/e-shop ufficiale Carminucci: vini già in catalogo. Il riassunto cita 'Naumakos Rosso Piceno Superiore DOC' (in catalogo c'è 'Naumakos Falerio DOC': possibile errore di denominazione, non aggiunto come nuovo). Nessuna esperienza trovata."
   },
   {
    "id": "belisario",
@@ -7298,7 +7516,7 @@
      "kind": "tasting",
      "description": "Visita della cantina e 4 calici di vino con pane e olio EVO biologico aziendale; massimo 15 persone, animali ammessi.",
      "duration_min": 60,
-     "price_eur": 25,
+     "price_eur": null,
      "url": "https://www.crespaia.it/products/degustazione-semplice"
     },
     {
@@ -7306,7 +7524,7 @@
      "kind": "tasting",
      "description": "Visita e 4 calici abbinati a prodotti locali a km zero (salumi, formaggi, prodotti da forno), pane e olio aziendale; gruppi da 5 a 15 persone.",
      "duration_min": 90,
-     "price_eur": 40,
+     "price_eur": null,
      "url": "https://www.crespaia.it/en/products/degustazione-maggiore"
     }
    ],
@@ -7344,19 +7562,251 @@
    "note": "Sito ufficiale: tutti i vini già presenti (Wihsila è bevanda aromatizzata). Degustazioni possibili su appuntamento e punto vendita in cantina a Pergola, ma nessun pacchetto esperienza con dettagli."
   },
   {
-   "id": "gobbi-mannocchi",
+   "id": "lucarelli-vigneti-e-cantina",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "LA RIPE Bianchello del Metauro Doc Biologico",
+     "url": "https://www.roberto-lucarelli.com/prodotto/bianchello-del-metauro/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione Linea Base",
+     "kind": "tasting",
+     "description": "Degustazione di 5 vini (escluse Riserve e Metodo Classico) con pane e olio extravergine aziendale, su prenotazione lun-sab.",
+     "duration_min": null,
+     "price_eur": 15,
+     "url": "https://www.roberto-lucarelli.com/degustazioni/"
+    },
+    {
+     "title": "Degustazione Linea Premium",
+     "kind": "tasting",
+     "description": "Degustazione di 5 vini incluse Riserve e Metodo Classico, con pane e olio extravergine di produzione propria, su prenotazione.",
+     "duration_min": null,
+     "price_eur": 25,
+     "url": "https://www.roberto-lucarelli.com/degustazioni/"
+    },
+    {
+     "title": "Degustazione Ripalta",
+     "kind": "tasting",
+     "description": "Degustazione Ripalta proposta dalla cantina di Cartoceto, su prenotazione.",
+     "duration_min": null,
+     "price_eur": 35,
+     "url": "https://www.roberto-lucarelli.com/degustazioni/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.roberto-lucarelli.com/degustazioni/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.roberto-lucarelli.com/contatti/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto La Ripe Bianchello (Villapiana probabilmente già presente con altra denominazione). Pagina Degustazioni (circa 1 anno): Linea Base 15 EUR, Premium 25 EUR, Ripalta 35 EUR; punto vendita a Fano."
+  },
+  {
+   "id": "casaleta-di-manieri-oretta",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Sito ufficiale: vini trovati (Barasta, Augesco, La Posta, Castijo, Albore, Caroggio, Metodo Classico) già presenti. Ricerca aperta: solo omonimie (La Casetta ecc.), nessuna esperienza."
+  },
+  {
+   "id": "conte-leopardi",
    "complete": true,
    "wines_added": [],
    "experiences": [
     {
-     "title": "An authentic experience among vineyards and in the winery",
+     "title": "Basic Tasting",
      "kind": "tasting",
-     "description": "Visita in cantina con assaggio di 3 vini a scelta (bianco, rosato o rosso) e prodotti locali: olio, olive, salumi e formaggi.",
+     "description": "Degustazione base dei vini Conte Leopardi a Numana, prenotabile per telefono, email o WhatsApp.",
      "duration_min": null,
-     "price_eur": null,
-     "url": "https://www.airbnb.co.in/experiences/6987063"
+     "price_eur": 22,
+     "url": "https://conteleopardi.com/en"
     }
    ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://en.conteleopardi.com/degustazioni-e-orari"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://en.conteleopardi.com/degustazioni-e-orari"
+    }
+   ],
+   "note": "Sito ufficiale: nessun vino nuovo identificabile con certezza. Basic Tasting a 22 EUR nello shop; punto vendita aperto lun-sab. 'Oltremare Picnic' è evento estivo: escluso (stagione finita)."
+  },
+  {
+   "id": "fiorini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita guidata della cantina con degustazione",
+     "kind": "tour",
+     "description": "Visita guidata di circa un'ora seguita da degustazione, gruppi da 5 a 8 persone, disponibile anche in inglese; su prenotazione.",
+     "duration_min": 60,
+     "price_eur": null,
+     "url": "https://www.fioriniwines.it/en/tasting-wines-from-marche/"
+    },
+    {
+     "title": "Degustazione Pop Experience",
+     "kind": "tasting",
+     "description": "Percorso di degustazione dei vini Fiorini, acquistabile anche come gift card da prenotare direttamente con la cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fioriniwines.it/shop/gift-card/gift-card-degustazione-pop-experience/"
+    },
+    {
+     "title": "Degustazione Extra-ordinary Experience",
+     "kind": "tasting",
+     "description": "Percorso di degustazione superiore dei vini Fiorini, acquistabile anche come gift card da prenotare direttamente con la cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.fioriniwines.it/shop/gift-card/gift-card-degustazione-extra-ordinary-experience/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.fioriniwines.it/en/tasting-wines-from-marche/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.fioriniwines.it/en/tasting-wines-from-marche/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.fioriniwines.it/en/shop/wines/buccinato/"
+    }
+   ],
+   "note": "Sito ufficiale: nessun vino nuovo con nome certo (bag-in-box generici esclusi). Pagina degustazioni: menu da 'medium' a 'luxury' con pane e olio aziendale, tagliere su prenotazione, visite guidate ~1 h. Eventi 2026 (Cantine Aperte, Summer Vibes) già passati, esclusi."
+  },
+  {
+   "id": "zaccagnini",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Brut Metodo Classico Res",
+     "url": "https://zaccagnini.it/selezioni-riserve/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita in cantina dalla vigna al bicchiere",
+     "kind": "tour",
+     "description": "Visita su prenotazione alla cantina di Staffolo per scoprire il percorso delle uve dalla vigna al bicchiere.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://zaccagnini.it/?lang=en"
+    },
+    {
+     "title": "Degustazione delle riserve nella vecchia bottaia",
+     "kind": "tasting",
+     "description": "Assaggio dei vini riserva nella vecchia bottaia dell'agriturismo aziendale.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://zaccagnini.it/accoglienza-in-agriturismo/"
+    },
+    {
+     "title": "Agriturismo Zaccagnini",
+     "kind": "stay",
+     "description": "Agriturismo della cantina a Staffolo con camere e ristorante.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://zaccagnini.it/accoglienza-in-agriturismo/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://zaccagnini.it/accoglienza-in-cantina/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://zaccagnini.it/?lang=en"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://zaccagnini.it/negozio/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://zaccagnini.it/accoglienza-in-agriturismo/"
+    },
+    {
+     "id": "ospitalita",
+     "url": "https://zaccagnini.it/accoglienza-in-agriturismo/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto il Brut Metodo Classico Res (pagina Selezioni & Riserve; grappa esclusa). Accoglienza in cantina con degustazioni, agriturismo con camere, ristorante e assaggio riserve in bottaia; nessun prezzo."
+  },
+  {
+   "id": "berluti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://berlutivini.it/contatti/"
+    }
+   ],
+   "note": "Sito ufficiale: solo vini già presenti (Rosso Conero Gualtiero/Kronos, San Ciriaco, rosato, bag-in-box). Vendita in cantina/online con ritiro in sede. Degustazioni citate solo in una recensione 2020 (pre-Covid): escluse."
+  },
+  {
+   "id": "cherri-dacquaviva",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Falerio DOC",
+     "url": "https://www.vinicherri.it/prodotto/falerio-doc/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.vinicherri.it/negozio/"
+    }
+   ],
+   "note": "Sito ufficiale: aggiunto Falerio DOC; Altissimo, Tumbulus ecc. già presenti; Falerio Pecorino solo su pagina del vecchio sito (non aggiunto). Ricerca aperta: solo Fattoria Acquaviva (Toscana, omonimia), nessuna esperienza."
+  },
+  {
+   "id": "az-agr-di-sante-soc-agr-s-s",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.disantevini.it/en/the-winery/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.disantevini.it/en/the-winery/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.disantevini.it/en/the-winery/"
+    }
+   ],
+   "note": "Sito ufficiale: tutti i vini già presenti (grappa e succo esclusi). Pagina 'The Winery' (circa 7 anni) cita degustazioni, visite guidate a cantina/vigneti/uliveto e punto vendita in via Antinori a Fano: solo servizi, nessuna esperienza perché la fonte è datata."
+  },
+  {
+   "id": "gobbi-mannocchi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
    "services": [
     {
      "id": "degustazioni",
@@ -7612,13 +8062,7 @@
   {
    "id": "guerrieri",
    "complete": true,
-   "wines_added": [
-    {
-     "name": "ALE",
-     "url": "https://www.aziendaguerrieri.it/en/prodotto/acquavite-di-bianchello-2/",
-     "evidence": "sito-cantina"
-    }
-   ],
+   "wines_added": [],
    "experiences": [],
    "services": [
     {
@@ -7635,6 +8079,273 @@
     }
    ],
    "note": "ALE: spumante rosso da Sangiovese e Lacrima (pagina prodotto con slug 'acquavite', ma testo descrive vino). Esperienze solo su pagine blog 2015-2019 (degustazioni gratuite, tour estivi, Cantine Aperte): escluse perche' datate."
+  },
+  {
+   "id": "la-canosa",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "L'esperienza Canoso: Panoramica",
+     "kind": "tasting",
+     "description": "Visita della cantina di Rotella con degustazione di vini della tenuta, prenotabile su Winedering.",
+     "duration_min": 120,
+     "price_eur": 18,
+     "url": "https://www.winedering.com/it/complete-canoso-experience-the-overview_d1522_travel"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://www.winedering.com/it/complete-canoso-experience-the-overview_d1522_travel"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.lacanosaagricola.it/ita/visite-in-cantina/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.lacanosaagricola.it/site/shop/"
+    }
+   ],
+   "note": "Etichette Servator, Peko', Signator, Nummaria, Passerina Brut corrispondono alle denominazioni gia' presenti: non aggiunte. Esperienza su Winedering (da 18 EUR, ~2 ore); pagina visite-in-cantina sul sito."
+  },
+  {
+   "id": "alberto-quacquarini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Vini del sito gia' presenti (grappa esclusa). Nessuna pagina di visite/degustazioni della cantina; solo evento comunale Appassimenti Aperti (edizione 2022, date 2026 non confermate) e omonimo Quaquarini dell'Oltrepo' (scartato)."
+  },
+  {
+   "id": "umani-ronchi",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Classic Tour",
+     "kind": "tour",
+     "description": "Visita della cantina di Osimo con assaggio di tre vini.",
+     "duration_min": 90,
+     "price_eur": null,
+     "url": "https://umanironchi.com/en/experience/thematic-routes"
+    },
+    {
+     "title": "Winery Tour and Tasting Dinner",
+     "kind": "meal",
+     "description": "Visita in cantina seguita da cena dello chef al bistrot Wine Not? di Ancona, sul porto antico, in abbinamento ai vini.",
+     "duration_min": null,
+     "price_eur": 65,
+     "url": "https://www.umanironchi.com/en/experience/thematic-routes/winery-tour-and-tasting-dinner"
+    },
+    {
+     "title": "Wine Weekend",
+     "kind": "stay",
+     "description": "Pacchetto con una notte e colazione in hotel ad Ancona e visita con degustazione in cantina, da settembre a giugno.",
+     "duration_min": null,
+     "price_eur": 95,
+     "url": "https://www.umanironchi.com/en/experience/thematic-routes/wine-weekend"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://umanironchi.com/en/experience/thematic-routes"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://umanironchi.com/en/experience/thematic-routes"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://www.umanironchi.com/en/experience/thematic-routes/winery-tour-and-tasting-dinner"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.umanironchi.com/en/experience/la-bottaia"
+    }
+   ],
+   "note": "Vini gia' tutti presenti. Percorsi tematici sul sito (Classic Tour, tour+cena, Wine Weekend); La Bottaia aperta mar-sab. Pagine eventi 2016-2017 e Estate 2022 escluse."
+  },
+  {
+   "id": "velenosi-srl",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Roggio del Filare / Rosso Piceno Doc Superiore",
+     "url": "https://www.velenosivini.com/en/products/roggio-del-filare-rosso-piceno-doc-superiore/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ludi / Offida DOCG Rosso",
+     "url": "https://velenosivini.com/prodotto/ludi-offida-docg-rosso/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Gran Cuvée / Metodo Classico",
+     "url": "https://velenosivini.com/prodotto/gran-cuvee-metodo-classico/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Velenosi / Montepulciano D’Abruzzo Doc",
+     "url": "https://velenosivini.com/prodotto/velenosi-montepulciano-dabruzzo-doc/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione CLASSICA + specialità locali",
+     "kind": "tasting",
+     "description": "Assaggio di 4 vini con specialita' locali, su prenotazione lun-ven 9-17 (sabato secondo disponibilita').",
+     "duration_min": null,
+     "price_eur": 20,
+     "url": "https://velenosivini.com/degustazioni-in-cantina/"
+    },
+    {
+     "title": "Degustazione TOP + specialità locali",
+     "kind": "tasting",
+     "description": "Degustazione classica arricchita da due vini premium, con specialita' del territorio, su prenotazione.",
+     "duration_min": null,
+     "price_eur": 30,
+     "url": "https://velenosivini.com/degustazioni-in-cantina/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://velenosivini.com/degustazioni-in-cantina/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://www.velenosivini.com/en/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://velenosivini.com/en/shop/"
+    }
+   ],
+   "note": "Aggiunti 4 vini dal sito (Roggio del Filare, Ludi, Gran Cuvee Metodo Classico, Montepulciano d'Abruzzo). Pagina Degustazioni in Cantina con due formule 20/30 EUR e form di prenotazione."
+  },
+  {
+   "id": "cantine-di-castignano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://www.cantinedicastignano.com/en/stores/"
+    }
+   ],
+   "note": "Vini trovati gia' presenti; nessun passito. Eventi solo datati (Frantoio aperto 2019, inaugurazione frantoio 2021): esclusi. Punti vendita e shop online sul sito."
+  },
+  {
+   "id": "casa-vinicola-silvestroni",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Lacrima di Morro D'Alba D.O.C.",
+     "url": "https://silvestroni.it/prodotto/lacrima-di-morro-dalba-d-o-c/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi Anfora D.O.C",
+     "url": "https://www.silvestroni.it/verdicchio-dei-castelli-di-jesi/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Extra Dry Passerina",
+     "url": "https://silvestroni.it/collezione-travanesca/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [],
+   "services": [
+    {
+     "id": "vendita-diretta",
+     "url": "https://silvestroni.it/shop/"
+    }
+   ],
+   "note": "Aggiunti Lacrima, Verdicchio Anfora e Passerina Extra Dry (collezione Travanesca); Pecorino Brut e Moscato Travanesca omessi come probabili doppioni della linea 50 S. Nessuna esperienza attribuibile con certezza (listing Winetourism generico 'Casa Vinicola' non verificato)."
+  },
+  {
+   "id": "fontezoppa",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Ribona",
+     "url": "https://cantinefontezoppa.com/prodotto/ribona-2/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Visita guidata in cantina e in vigna",
+     "kind": "tour",
+     "description": "Visita della cantina e dei vigneti per gruppi piccoli o grandi, guidata da staff, sommelier o cantinieri.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://cantinefontezoppa.com/esperienze/"
+    },
+    {
+     "title": "Degustazione vini con salumi e formaggi",
+     "kind": "tasting",
+     "description": "Degustazione dei vini della cantina abbinabile a salumi e formaggi locali della Locanda; prenotazione via telefono o email.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://cantinefontezoppa.com/esperienze/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://cantinefontezoppa.com/esperienze/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://cantinefontezoppa.com/esperienze/"
+    },
+    {
+     "id": "ristorazione",
+     "url": "https://cantinefontezoppa.com/locanda/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://cantinefontezoppa.com/shop/"
+    }
+   ],
+   "note": "Aggiunto Ribona DOC (pagina prodotto). Ribona Silver/Gold/Platinum/Brut visti solo nel riassunto dello shop senza pagina propria: omessi. Pagina Esperienze con visite e degustazioni; ristorante Locanda Fontezoppa."
+  },
+  {
+   "id": "casalfarneto",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita cantina e vigneto con degustazione",
+     "kind": "tasting",
+     "description": "Tour di cantina e vigneti seguito da degustazione in formula Standard, Premium o Top; tagliere di prodotti tipici su richiesta.",
+     "duration_min": 60,
+     "price_eur": null,
+     "url": "https://enoturismo.casalfarneto.it/en/tastings/"
+    }
+   ],
+   "services": [
+    {
+     "id": "degustazioni",
+     "url": "https://enoturismo.casalfarneto.it/en/tastings/"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://enoturismo.casalfarneto.it/en/tastings/"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://shop.casalfarneto.it/"
+    }
+   ],
+   "note": "Vini trovati gia' presenti; prodotto TONOS visto solo come titolo pagina, tipologia ignota: omesso. Prezzi degustazione contrastanti tra versioni della pagina: omessi. Cantine Aperte 2026 (maggio) gia' passato."
   },
   {
    "id": "la-cantina-dei-colli-ripani-soc-coop",
@@ -7838,6 +8549,112 @@
    "note": "Nessuna fonte online su Cantina Buongarzoni: risultati solo su altre cantine maceratesi o omonimie lontane, scartati."
   },
   {
+   "id": "cantina-fortezza-marche",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte su Cantina Fortezza Marche: solo altre cantine di Acquaviva Picena (Bonaventura, Moncaro) e omonimie in Toscana/Campania, scartate."
+  },
+  {
+   "id": "cantina-marzialetti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Cantina Marzialetti: risultati solo su altre cantine (Fermano, Toscana, Salento), scartati."
+  },
+  {
+   "id": "casa-pierini",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Casa Pierini di Pesaro; unico 'Pierini' trovato è Pierini & Brugi in Toscana (omonimia, scartata)."
+  },
+  {
+   "id": "casa-vinicola-bruni",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Casa Vinicola Bruni: risultati solo su altre cantine di Monteprandone (Il Conte Villa Prandone, Saladini Pilastri), scartati."
+  },
+  {
+   "id": "corinaldesi-vignaioli-artigiani",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Corinaldesi Vignaioli Artigiani: risultati solo su altre cantine di Osimo/Conero (Umani Ronchi, Strologo), scartati."
+  },
+  {
+   "id": "i-sassi-di-san-giuseppe",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Soggiorno in agriturismo",
+     "kind": "stay",
+     "description": "Mini appartamenti indipendenti ristrutturati nell'agriturismo, con giardino di circa 7.000 m² e piscina riscaldata.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://p1117.atraveo.com/us_en/176607"
+    }
+   ],
+   "services": [
+    {
+     "id": "ospitalita",
+     "url": "https://p1117.atraveo.com/us_en/176607"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://p1117.atraveo.com/us_en/176607"
+    }
+   ],
+   "note": "Solo annunci di alloggio (atraveo, trip.com): agriturismo con cantina interrata, vendita di vini rossi bio, vino cotto e olio; nessuna etichetta di vino nominata, nessuna degustazione documentata."
+  },
+  {
+   "id": "la-meravigna",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su La Meravigna: risultati solo su altre cantine della provincia di Ancona o pagine generiche sulle Marche, scartati."
+  },
+  {
+   "id": "sauie-srl-az-agr-montecoriolano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Az. Agr. Montecoriolano (Sauie Srl): risultati solo omonimie (Montecariano in Valpolicella) o eventi generici di Potenza Picena, scartati."
+  },
+  {
+   "id": "tenimenti-le-ginestre-srl",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte su Tenimenti Le Ginestre di Ripatransone: solo omonimie (Le Ginestre in Toscana, Piemonte, Lazise) e altre cantine di Ripatransone, scartate."
+  },
+  {
+   "id": "tenuta-di-pirano",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Tenuta di Pirano di Tavullia: risultati su Tenuta di Tavignano (Cingoli), Pirano in Slovenia e altre cantine pesaresi, scartati."
+  },
+  {
+   "id": "terre-cerquaferrata",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte online su Terre Cerquaferrata (1 sola ricerca, budget esaurito): risultati su Fattoria Acquaviva (Toscana) e Moncaro, scartati."
+  },
+  {
    "id": "torretti-walter",
    "complete": true,
    "wines_added": [],
@@ -7872,38 +8689,7 @@
   {
    "id": "finocchi-sandro-azienda-agraria",
    "complete": true,
-   "wines_added": [
-    {
-     "name": "Vivolo Verdicchio dei Castelli di Jesi DOC Classico Superiore",
-     "url": "https://www.finocchiviticoltori.it/en/vivolo-verdicchio-dei-castelli-di-jesi-doc-classico-superiore.html",
-     "evidence": "altro"
-    },
-    {
-     "name": "Il Pojo Verdicchio dei Castelli di Jesi DOC Classico Superiore",
-     "url": "https://www.finocchiviticoltori.it/en/il-pojo-verdicchio-dei-castelli-di-jesi-doc-classico-superiore.html",
-     "evidence": "altro"
-    },
-    {
-     "name": "Fiore Castelli di Jesi Verdicchio Riserva Classico DOCG",
-     "url": "https://www.finocchiviticoltori.it/it/fiore-castelli-di-jesi-verdicchio-riserva-classico-docg.html",
-     "evidence": "altro"
-    },
-    {
-     "name": "Giove Marche Rosso IGT",
-     "url": "https://www.finocchiviticoltori.it/it/itnews/item/56-nuovo-prodotto-giove-marche-rosso-i-g-t",
-     "evidence": "altro"
-    },
-    {
-     "name": "Incrocio Bruni 54",
-     "url": "https://www.finocchiviticoltori.it/en/",
-     "evidence": "altro"
-    },
-    {
-     "name": "Rosso Piceno",
-     "url": "https://www.finocchiviticoltori.it/en/",
-     "evidence": "altro"
-    }
-   ],
+   "wines_added": [],
    "experiences": [],
    "services": [],
    "note": "Vini da finocchiviticoltori.it (Finocchi Viticoltori, Staffolo, Via Donatori del Sangue 6). ATTENZIONE: identità dedotta da cognome+comune+Verdicchio; nessuna fonte cita esplicitamente 'Sandro'. Escluso Visciole (vino aromatizzato) e pagina 'Metodo Classico' (nome etichetta ignoto). Nessuna esperienza trovata."
@@ -7963,6 +8749,165 @@
    "experiences": [],
    "services": [],
    "note": "Trovate solo recensioni (Jancis Robinson, Il Fatto Quotidiano 2013) di un Peruzzi Metodo Classico Verdicchio Dosaggio Zero/Extra Brut Nature, probabilmente lo stesso vino già presente e senza legame esplicito con Monte Roberto: non aggiunto. Nessuna esperienza."
+  },
+  {
+   "id": "viconari",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte su Viconari: risultati solo su altre cantine di Montefiore dell'Aso (Centanni, Domodimonti, GroMonte) e su Vicari di Morro d'Alba (omonimia): scartati."
+  },
+  {
+   "id": "azienda-agricola-federico-castellucci",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte su Federico Castellucci a Montecarotto; risultati solo su altre cantine (Col di Corte, Moncaro, Mencaroni, Ronchi di Castelluccio, Castellucci Miano): scartati."
+  },
+  {
+   "id": "fratelli-badiali",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Trovati solo i due vini già presenti (Delectable: Lacrima di Morro d'Alba; dn.no: Superiore Paucca). Nessun sito ufficiale, nessun altro vino né esperienza."
+  },
+  {
+   "id": "sergio-marani",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Aggiunto il cru Oppano (Bottle of Italy, produttore Marani). Altri risultati (Jancis Robinson, Leon & Son, Biondivino) riguardano vini già presenti. Nessun sito ufficiale né esperienze; una sola ricerca per risparmiare budget."
+  },
+  {
+   "id": "cantina-di-esanatoglia",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte sulla Cantina di Esanatoglia né sui suoi vini; risultati solo su Gagliardi, Borgo Paglianetto, Tenuta Grimaldi (Matelica) e pagine generiche: scartati."
+  },
+  {
+   "id": "casa-lucciola",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [
+    {
+     "title": "Visita in cantina con assaggio dei vini",
+     "kind": "tour",
+     "description": "Visita su prenotazione (telefono o email) per vedere la cantina e il lavoro dell'azienda e assaggiare i vini.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://casalucciola.it/it/contatti"
+    }
+   ],
+   "services": [
+    {
+     "id": "visita-guidata",
+     "url": "https://casalucciola.it/it/contatti"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://casalucciola.it/it/contatti"
+    },
+    {
+     "id": "vendita-diretta",
+     "url": "https://casalucciola.it/it/vini"
+    }
+   ],
+   "note": "Sito casalucciola.it: vini in elenco (Blunadir Ancestrale, Riserva Notte) già presenti. Pagina contatti offre visite e assaggi su prenotazione; prezzi in pagina vini. Nessuna ospitalità confermata."
+  },
+  {
+   "id": "contrada-contro",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Una sola ricerca (budget): solo pagine mappa/immobiliari di Gualdo, nessuna fonte sulla cantina o sui vini. Nessun dato aggiunto."
+  },
+  {
+   "id": "fiorano-az-agr",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "Giulia Erminia",
+     "url": "https://us.callmewine.com/winery/agricola-fiorano-B1460.htm",
+     "evidence": "rivenditore"
+    }
+   ],
+   "experiences": [
+    {
+     "title": "Degustazione di vini e olio extravergine biologico",
+     "kind": "tasting",
+     "description": "Su prenotazione, degustazione dei vini e dell'olio bio aziendali con stuzzichini e prodotti della fattoria; possibile visita a vigne, uliveti e cantina.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://ecobnb.com/IT-ascoli-piceno/farm-house/agriturismo-fiorano/nMln5"
+    },
+    {
+     "title": "Agriturismo Fiorano",
+     "kind": "stay",
+     "description": "Agriturismo biologico in Contrada Fiorano a Cossignano, tra vigneti e uliveti dell'azienda, con camere e un appartamento indipendente.",
+     "duration_min": null,
+     "price_eur": null,
+     "url": "https://www.agriturismi.it/it/marche/cossignano/agriturismo_fiorano.html"
+    }
+   ],
+   "services": [
+    {
+     "id": "ospitalita",
+     "url": "https://www.agriturismi.it/it/marche/cossignano/agriturismo_fiorano.html"
+    },
+    {
+     "id": "degustazioni",
+     "url": "https://ecobnb.com/IT-ascoli-piceno/farm-house/agriturismo-fiorano/nMln5"
+    },
+    {
+     "id": "visita-guidata",
+     "url": "https://ecobnb.com/IT-ascoli-piceno/farm-house/agriturismo-fiorano/nMln5"
+    }
+   ],
+   "note": "Agricola Fiorano (Paolo Beretta e Paola Massi). Vini da Callmewine (pagina produttore); 'Sangiovese' citato ma nome etichetta non chiaro: escluso. Esperienze da ecobnb/agriturismi.it; prezzo camere (circa 80 euro/notte per 2) non a persona: omesso. Offerta Pasqua scartata (stagione passata)."
+  },
+  {
+   "id": "la-marca-di-san-michele",
+   "complete": true,
+   "wines_added": [
+    {
+     "name": "La Fuga",
+     "url": "https://shop.kermitlynch.com/product/detail/24FMR05",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Numerosei",
+     "url": "https://shop.kermitlynch.com/product/detail/21FMR03",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Numerocinque",
+     "url": "https://shop.kermitlynch.com/product/detail/16FMR01.html",
+     "evidence": "rivenditore"
+    },
+    {
+     "name": "Bastian Contrario",
+     "url": "https://www.openingabottle.com/?p=19624",
+     "evidence": "altro"
+    }
+   ],
+   "experiences": [],
+   "services": [],
+   "note": "Vini da Kermit Lynch (importatore USA) e Opening a Bottle. Nessuna informazione su visite/degustazioni (risultati winedering su Cupramontana riguardano altre cantine, es. Brunori)."
+  },
+  {
+   "id": "sauro-carletti",
+   "complete": true,
+   "wines_added": [],
+   "experiences": [],
+   "services": [],
+   "note": "Nessuna fonte su Sauro Carletti a Camerano (2 ricerche, anche con i nomi dei vini noti); risultati su Poliziano/Lohsa (famiglia Carletti, Toscana) = omonimia, scartati; altri risultati su cantine diverse del Conero."
   },
   {
    "id": "cantina-valdimiro",

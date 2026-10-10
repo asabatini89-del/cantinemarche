@@ -14,14 +14,14 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine senza coordinate (scheda visibile, niente mappa) | 58 |
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
-| Cantine con servizi (degustazioni, visite, vendita) | 230 |
-| Vini importati | 2910 (2836 pubblicati, 74 in bozza perché non sono vini) |
+| Cantine con servizi (degustazioni, visite, vendita) | 252 |
+| Vini importati | 2920 (2844 pubblicati, 76 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
 | — di cui da ricerca web, con URL di prova | 1174 su 214 cantine (sito-cantina: 1020, altro: 54, rivenditore: 87, guida: 14) |
-| — di cui dal completamento delle schede | 241 su 116 cantine (2 doppioni scartati) |
+| — di cui dal completamento delle schede | 251 su 124 cantine (2 doppioni scartati) |
 | Cantine pubblicate con almeno un vino | 336 su 365 |
-| Esperienze (degustazioni, visite, pranzi, ospitalità) | 245 su 147 cantine |
-| Servizi aggiunti dal completamento | 413 |
+| Esperienze (degustazioni, visite, pranzi, ospitalità) | 272 su 162 cantine |
+| Servizi aggiunti dal completamento | 469 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -73,6 +73,8 @@ Nel dato originale la provincia è vuota.
 - `az-agricola-bastianelli-francesco`: sito non valido “#”, scartato
 - `societa-agricola-capriotti`: sito ripulito da “http://www.societaagricolacapriotti.com target=” a http://www.societaagricolacapriotti.com
 - `tenimenti-le-ginestre-srl`: sito non valido “#”, scartato
+- `cantina-santisidoro`: “PUNTI VENDITA DIRETTI:” messo in bozza (non è un vino)
+- `la-lepre-e-la-luna`: “Selva” messo in bozza (non è un vino)
 
 ### 7. Cantine ancora senza vini
 29 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 214, none 31. Le schede invitano la cantina ad aggiungerli.
