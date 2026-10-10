@@ -15,10 +15,10 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
 | Cantine con servizi (degustazioni, visite, vendita) | 74 |
-| Vini importati | 1670 (1597 pubblicati, 73 in bozza perché non sono vini) |
+| Vini importati | 2026 (1953 pubblicati, 73 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
-| — di cui da ricerca web, con URL di prova | 176 su 40 cantine (sito-cantina: 157, rivenditore: 10, altro: 8, guida: 1) |
-| Cantine pubblicate con almeno un vino | 160 su 365 |
+| — di cui da ricerca web, con URL di prova | 532 su 107 cantine (sito-cantina: 470, rivenditore: 32, altro: 18, guida: 12) |
+| Cantine pubblicate con almeno un vino | 227 su 365 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -68,7 +68,7 @@ Nel dato originale la provincia è vuota.
 - nessuno
 
 ### 7. Cantine ancora senza vini
-205 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 40, none 22. Le schede invitano la cantina ad aggiungerli.
+138 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 107, none 35. Le schede invitano la cantina ad aggiungerli.
 - `agriarcuata-soc-coop-agricola` Agriarcuata Soc. Coop. Agricola — none: Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette
 - `amadio-vini-s-r-l` AMADIO VINI S.R.L. — none: Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia).
 - `aniballi` Aniballi — none: Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini.
@@ -86,91 +86,24 @@ Nel dato originale la provincia è vuota.
 - `cantina-marzialetti` Cantina Marzialetti — none: nessun sito; nessuna fonte online collega il nome Marzialetti a una cantina o a vini (risultati solo su omonimi 'Torre' e info generiche Marche)
 - `cantina-rovelli` Cantina Rovelli — none: nessuna fonte su Cantina Rovelli a Pergola (risultati solo Villa Ligi e omonimi)
 - `cantina-stefano-maccaroni` Cantina Stefano Maccaroni — none: Nessuna fonte su Stefano Maccaroni o cantina Maccaroni a Recanati.
-- `cantina-tavio` Cantina Tavio — ricerca web non ancora eseguita
 - `cantina-tiberi` CANTINA TIBERI — none: Solo scheda generica enprimeurclub (Tiberi Loro Piceno) senza nomi di vini; podcast 'Cantina Tiberi' senza localita'; altri risultati su Tiberini/Tiberio (Toscana/Abruzzo), scartati
 - `cantina-valdimiro` cantina valdimiro — none: Solo schede winetourism.com (Verdicchio di Matelica, Montepulciano, Cabernet; una 'riserva' citata in recensioni) senza nomi di vini; nessun sito
 - `cantina-vitula` Cantina Vitula — none: il dominio cantinavitula.com non restituisce risultati (anche extended); nessuna fonte esterna
-- `cantina-zamponi` Cantina Zamponi — ricerca web non ancora eseguita
+- `cantina-zamponi` Cantina Zamponi — none: Sul dominio solo la pagina contatti (Az. Agr. Zamponi Mirco, C.da Forchiusa, Serra San Quirico); nessun nome di vino né fonti esterne.
 - `cantine-paci` Cantine Paci — none: Il sito cantine-paci.com (Montegaudio di Pesaro, biologico dal 1977) non mostra nei risultati un elenco vini; nessuna fonte esterna. Ricerca interrotta: limite di ricerche web esaurito, da riprovare.
-- `cantine-politi` Cantine Politi — ricerca web non ancora eseguita
-- `casa-pierini` Casa Pierini — ricerca web non ancora eseguita
-- `casa-vinicola-bruni` Casa Vinicola Bruni — ricerca web non ancora eseguita
-- `centanni-giacomo-az-agr` Centanni Giacomo Az. Agr. — ricerca web non ancora eseguita
-- `cherubini` Cherubini — ricerca web non ancora eseguita
-- `cignano` Cignano — ricerca web non ancora eseguita
-- `collemara` COLLEMARA — ricerca web non ancora eseguita
-- `collestefano` ColleStefano — ricerca web non ancora eseguita
-- `conti-di-buscareto` Conti di Buscareto — ricerca web non ancora eseguita
+- `casa-pierini` Casa Pierini — none: Nessun risultato per 'Casa Pierini' a Pesaro/Marche; solo omonimi (Pierini e Brugi in Toscana, Casa Pierina altrove) scartati.
+- `casa-vinicola-bruni` Casa Vinicola Bruni — none: Nessuna fonte su 'Casa Vinicola Bruni' a Monteprandone; i risultati riguardano altre cantine (Il Conte Villa Prandone, Saladini Pilastri) e sono stati scartati.
+- `cignano` Cignano — none: Dominio cantinacignano.it senza risultati. Articolo Gazzetta del Gusto sui produttori 'Bianchello d'Autore' cita Cantina Cignano con Bianco Assoluto e San Leone Bianchello del Metauro (URL = primo risultato per la ricerca esatta, da verificare). Anche delectable.com/wine/cignano/bianchello-del-metauro/2020 elenca un Bianchello del Metauro Cignano (probabilmente lo stesso San Leone, non aggiunto per evitare doppioni).
 - `conti-maria` Conti Maria — none: Sito contimaria.it indicizzato solo con home/chi siamo/contatti, sezione 'I nostri vini' senza nomi; nessuna fonte esterna.
-- `contrada-contro` Contrada Contro — ricerca web non ancora eseguita
-- `corinaldesi-vignaioli-artigiani` CORINALDESI - Vignaioli Artigiani — ricerca web non ancora eseguita
-- `cossignani-l-e-tempo` Cossignani L.E. Tempo — ricerca web non ancora eseguita
-- `crocevia` Crocevia — ricerca web non ancora eseguita
-- `de-angelis-c-srl` De Angelis & C. SRL — ricerca web non ancora eseguita
-- `de-leyva-di-leva-davide-az-agr` DE LEYVA DI LEVA DAVIDE AZ. AGR. — ricerca web non ancora eseguita
-- `dianetti` Dianetti — ricerca web non ancora eseguita
-- `domodimonti` Domodimonti — ricerca web non ancora eseguita
-- `eredi-cesaroni-srl-soc-agr` EREDI CESARONI SRL SOC. AGR. — ricerca web non ancora eseguita
-- `failoni-rocco` FAILONI ROCCO — ricerca web non ancora eseguita
-- `fattoria-colmone-della-marca` Fattoria Colmone della Marca — ricerca web non ancora eseguita
-- `fattoria-fontegeloni` Fattoria Fontegeloni — ricerca web non ancora eseguita
-- `fattoria-gens-camuria-soc-coop-agricola` FATTORIA GENS CAMURIA SOC.COOP AGRICOLA — ricerca web non ancora eseguita
-- `fattoria-nanni` Fattoria Nannì — ricerca web non ancora eseguita
-- `fattoria-san-lorenzo-di-crognaletti-natalino` FATTORIA SAN LORENZO DI CROGNALETTI NATALINO — ricerca web non ancora eseguita
-- `fattoria-villa-ligi` FATTORIA VILLA LIGI — ricerca web non ancora eseguita
-- `filodivino` Filodivino — ricerca web non ancora eseguita
-- `finocchi-sandro-azienda-agraria` FINOCCHI SANDRO AZIENDA AGRARIA — ricerca web non ancora eseguita
-- `finocchi-viticoltori` Finocchi Viticoltori — ricerca web non ancora eseguita
-- `fiorano-az-agr` FIORANO AZ. AGR. — ricerca web non ancora eseguita
-- `fioretti-brera` Fioretti Brera — ricerca web non ancora eseguita
-- `fratelli-badiali` Fratelli Badiali — ricerca web non ancora eseguita
-- `fulvia-tombolini` Fulvia Tombolini — ricerca web non ancora eseguita
-- `gatti-marco` GATTI MARCO — ricerca web non ancora eseguita
-- `geminiani-wine` Geminiani Wine — ricerca web non ancora eseguita
-- `giorgetti-andrea` GIORGETTI ANDREA — ricerca web non ancora eseguita
-- `guerri-giorgio` GUERRI GIORGIO — ricerca web non ancora eseguita
-- `i-sassi-di-san-giuseppe` I SASSI DI SAN GIUSEPPE — ricerca web non ancora eseguita
-- `il-conte-villa-prandone` IL CONTE VILLA PRANDONE — ricerca web non ancora eseguita
-- `il-conventino-di-monteciccardo-sas-societa-agricola` IL CONVENTINO DI MONTECICCARDO SAS SOCIETA’ AGRICOLA — ricerca web non ancora eseguita
-- `la-fontursia` La Fontursia — ricerca web non ancora eseguita
-- `la-lepre-e-la-luna` La Lepre e la Luna — ricerca web non ancora eseguita
-- `la-marca-di-san-michele` La Marca di San Michele — ricerca web non ancora eseguita
-- `la-meravigna` La Meravigna — ricerca web non ancora eseguita
-- `la-montata` La Montata — ricerca web non ancora eseguita
-- `la-valle-del-sole` La Valle Del Sole — ricerca web non ancora eseguita
-- `la-villa-mergo` La Villa Mergo — ricerca web non ancora eseguita
-- `laila-libenzi-azienda-agricola-di-chiara-refe` LAILA LIBENZI AZIENDA AGRICOLA DI CHIARA REFE — ricerca web non ancora eseguita
-- `le-senate-az-agr-di-visi-giulio` LE SENATE AZ. AGR. DI VISI GIULIO — ricerca web non ancora eseguita
-- `lucchetti` Lucchetti — ricerca web non ancora eseguita
-- `lucidimezzo` LucidiMezzo — ricerca web non ancora eseguita
-- `luigi-giusti` Luigi Giusti — ricerca web non ancora eseguita
-- `lumavite` Lumavite — ricerca web non ancora eseguita
-- `macondo` Macondo — ricerca web non ancora eseguita
-- `madonnabruna` Madonnabruna — ricerca web non ancora eseguita
-- `marchetti` Marchetti — ricerca web non ancora eseguita
-- `marconi-vini` Marconi Vini — ricerca web non ancora eseguita
-- `mazzola` MAZZOLA — ricerca web non ancora eseguita
-- `moncaro` Moncaro — ricerca web non ancora eseguita
-- `montecappone` Montecappone — ricerca web non ancora eseguita
-- `montecoriolano-casalis-douhet` Montecoriolano Casalis Douhet — ricerca web non ancora eseguita
-- `moroder` Moroder — ricerca web non ancora eseguita
-- `murola` Muròla — ricerca web non ancora eseguita
-- `oasi-degli-angeli` Oasi degli Angeli — ricerca web non ancora eseguita
-- `officina-del-sole` Officina del Sole — ricerca web non ancora eseguita
-- `oppeddentro` Oppeddentro — ricerca web non ancora eseguita
-- `peruzzi-liana` Peruzzi Liana — ricerca web non ancora eseguita
-- `piantate-lunghe` Piantate Lunghe — ricerca web non ancora eseguita
-- `pieri` Pieri — ricerca web non ancora eseguita
-- `piersanti` Piersanti — ricerca web non ancora eseguita
-- `pietro17-winery` PIETRO17 WINERY — ricerca web non ancora eseguita
-- `pilandro` Pilandro — ricerca web non ancora eseguita
-- `podere-linfinito-soc-semplice-agricola` PODERE L’INFINITO SOC. SEMPLICE AGRICOLA — ricerca web non ancora eseguita
-- `podere-santa-lucia` Podere Santa Lucia — ricerca web non ancora eseguita
-- `poderi-san-lazzaro` PODERI SAN LAZZARO — ricerca web non ancora eseguita
-- `ripawine-soc-coop-agricola` Ripawine Soc. Coop. Agricola — ricerca web non ancora eseguita
-- `rocca-dei-forti` Rocca dei Forti — ricerca web non ancora eseguita
-- `ronconi-ex-badiali-candelaresi` Ronconi (ex Badiali&Candelaresi) — ricerca web non ancora eseguita
-- `root-s-r-l-societa-agricola` ROOT S.R.L. SOCIETA’ AGRICOLA — ricerca web non ancora eseguita
+- `corinaldesi-vignaioli-artigiani` CORINALDESI - Vignaioli Artigiani — none: Nessun risultato per Corinaldesi a Osimo né come produttore di vino; risultati solo su altre cantine (Umani Ronchi, Coroncino) scartati.
+- `crocevia` Crocevia — none: Dominio agricolacrocevia.it senza risultati; nessuna fonte esterna su Crocevia a Montegiorgio (solo omonimi come Crocizia, Crocedimezzo, scartati).
+- `fattoria-fontegeloni` Fattoria Fontegeloni — none: Il sito parla di circa 27 ha di vigneti Verdicchio DOC, olio e ospitalità, ma nessuna etichetta di vino; nessuna fonte esterna.
+- `finocchi-sandro-azienda-agraria` FINOCCHI SANDRO AZIENDA AGRARIA — none: Nessuna fonte nomina Finocchi Sandro. Esiste Finocchi Viticoltori (Staffolo, famiglia Finocchi, vino Vivolo) ma il collegamento con questa ragione sociale non è dimostrato.
+- `guerri-giorgio` GUERRI GIORGIO — none: Sito cantinaguerri.it non indicizzato; ricerche aperte senza risultati pertinenti (solo altre cantine di San Marcello).
+- `i-sassi-di-san-giuseppe` I SASSI DI SAN GIUSEPPE — none: Solo schede di agriturismo (trip.com, kayak) che citano una cantina annessa, nessun nome di vino.
+- `la-meravigna` La Meravigna — none: Nessun risultato su 'La Meravigna'; solo altre cantine dell'area di Ancona.
+- `peruzzi-liana` Peruzzi Liana — none: nessuna fonte che colleghi Peruzzi Liana/Monte Roberto a vini; esistono citazioni di un 'Peruzzi' Verdicchio Metodo Classico Dosage Zero (jancisrobinson, ilfattoquotidiano) ma senza localita': non attribuito
+- `piantate-lunghe` Piantate Lunghe — none: piantatelunghe.it senza risultati; solo il Rosso Conero DOC (vigna 'degli angeli') da listino trovaprezzi
 - `sabbionare` Sabbionare — ricerca web non ancora eseguita
 - `saladini-pilastri-srl-soc-agricola` Saladini Pilastri Srl Soc. Agricola — ricerca web non ancora eseguita
 - `san-giovanni-soc-agricola-srl` San Giovanni Soc. Agricola Srl — ricerca web non ancora eseguita
