@@ -6408,22 +6408,645 @@
    "note": "nessun sito; nessun risultato che citi Viconari (solo altre cantine di Montefiore dell'Aso)"
   },
   {
-   "id": "vigneti-vallorani",
+   "id": "vigna-degli-estensi",
    "status": "found",
-   "complete": false,
+   "complete": true,
    "wines": [
     {
-     "name": "Offida Passerina DOCG",
-     "url": "https://www.winedering.com/it/winery-vigneti-vallorani_d112",
-     "evidence": "altro"
+     "name": "Koris Marche Fiano IGT",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini/",
+     "evidence": "sito-cantina"
     },
     {
-     "name": "Falerio DOP",
-     "url": "https://www.winedering.com/it/winery-vigneti-vallorani_d112",
-     "evidence": "altro"
+     "name": "Logos Verdicchio Riserva DOCG",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Soteria Verdicchio dei Castelli di Jesi Classico Superiore DOC",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi DOC",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ius Lacrimae Lacrima di Morro d'Alba Superiore DOC",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Piramo Lacrima di Morro d'Alba DOC",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Aestus Rosso Piceno DOC",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brut Rosé",
+     "url": "https://www.vignadegliestensi.it/copia-di-i-nostri-vini3/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vicer",
+     "url": "https://www.vignadegliestensi.it/en/i-nostri-vini/copia-di-i-nostri-vini3/",
+     "evidence": "sito-cantina"
     }
    ],
-   "note": "PARZIALE: due vini emersi per caso (scheda winedering di Vigneti Vallorani) durante la ricerca per Vallerosa; ricerca dedicata non eseguita per budget WebSearch esaurito, da completare."
+   "note": "Pagine categoria (bianchi/rossi/spumante/sparkling and dessert) sul sito cantina; Vicer e' vino alle visciole (tipo Visner)"
+  },
+  {
+   "id": "vigna-della-cava",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Magia IGT Marche Bianco",
+     "url": "https://vignadellacava.com/prodotto/igt-marche-bianco-magia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Flò Rosato IGT Marche",
+     "url": "https://vignadellacava.com/en/wines/rose-wine-flo/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "FLOak IGT Rosato Marche",
+     "url": "https://vignadellacava.com/en/wines/floak-rose-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Corniolo Rosso Conero DOC",
+     "url": "https://vignadellacava.com/vini/vino-rosso-corniolo/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino/prodotto sul sito cantina"
+  },
+  {
+   "id": "vignamato",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Terra delle Lame Verdicchio dei Castelli di Jesi DOC Classico",
+     "url": "https://www.vignamato.com/en/terra-delle-lame-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ambrosia Castelli di Jesi Verdicchio Riserva Classico DOCG",
+     "url": "https://www.vignamato.com/en/ambrosia-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Versiano Verdicchio dei Castelli di Jesi DOC Classico Superiore",
+     "url": "https://www.vignamato.com/schede/it/versiano.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Antares Verdicchio dei Castelli di Jesi DOC Passito",
+     "url": "https://www.vignamato.com/schede/it/antares.pdf",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ale Vino Spumante Brut Bianco",
+     "url": "https://www.vignamato.com/it/prodotti/spumanti/ale-vino-spumante-brut-bianco.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Ale Vino Spumante Brut Rosè",
+     "url": "https://www.vignamato.com/it/prodotti/spumanti/ale-vino-spumante-brut-rose",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Versus",
+     "url": "https://www.vignamato.com/it/prodotti/selezionati/versus.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosolaccio Esino Rosso DOP",
+     "url": "https://www.vignamato.com/en/rosolaccio-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Campalliano IGT Marche Rosso",
+     "url": "https://www.vignamato.com/en/campalliano-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Amato",
+     "url": "https://www.vignamato.com/en/amato-wine/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrima di Morro d'Alba DOP",
+     "url": "https://www.vignamato.com/en/products/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Violetta",
+     "url": "https://www.vignamato.com/en/products/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino, schede PDF e pagina prodotti sul sito cantina; Amato e Violetta solo nome"
+  },
+  {
+   "id": "vigne-di-leo-tre-castelli",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico",
+     "url": "https://www.vignedileo.it/it/prodotti/vini/verdicchio.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Frocco Verdicchio dei Castelli di Jesi Classico Superiore",
+     "url": "https://www.vignedileo.it/it/prodotti/vini/frocco.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Esino Rosso DOC",
+     "url": "https://www.vignedileo.it/it/prodotti/vini/esino-rosso.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lalocco IGT Marche Rosso",
+     "url": "https://www.vignedileo.it/it/prodotti/riserve/lalocco.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brut Vino Spumante",
+     "url": "https://vignedileo.it/it/prodotti/spumanti/brut.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Vino di Visciola",
+     "url": "https://www.vignedileo.it/it/prodotti/vino-e-acquavite/visciola.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "ILBIANCO",
+     "url": "https://www.vignedileo.it/it/prodotti/vini/ilbianco.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "ILROSSO",
+     "url": "https://www.vignedileo.it/it/prodotti.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Issimo",
+     "url": "https://www.vignedileo.it/it/prodotti.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosato",
+     "url": "https://www.vignedileo.it/it/prodotti.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno",
+     "url": "https://www.vignedileo.it/it/prodotti.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brut Aquarium",
+     "url": "https://www.vignedileo.it/en/products.html",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto e pagina prodotti sul sito cantina; Issimo, ILROSSO, Rosato, Rosso Piceno, Brut Aquarium solo dall'elenco prodotti; Visciola = vino alle visciole"
+  },
+  {
+   "id": "vigneti-vallorani",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Avora Falerio DOC",
+     "url": "https://www.vignetivallorani.com/en/vini/avora/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Zaccarì Offida Passerina DOCG",
+     "url": "https://www.vignetivallorani.com/en/vini-biologici/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Polisia Piceno Superiore DOP",
+     "url": "https://www.vignetivallorani.com/doctorwine-polisia-piceno-superiore-2013/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Konè Piceno Superiore DOP",
+     "url": "https://www.vignetivallorani.com/en/vini-biologici/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sorlivio IGP Marche Rosso",
+     "url": "https://www.vignetivallorani.com/en/vini-biologici/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Philumene IGP Marche Rosso",
+     "url": "https://www.vignetivallorani.com/en/vini-biologici/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lefric",
+     "url": "https://www.vignetivallorani.com/masterclass-sfida-del-tempo-vincenzo-donatiello/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagina vini biologici, pagina Avora e news sul sito cantina; Lefric solo nome (citato in masterclass 2024)"
+  },
+  {
+   "id": "vigneto-fernando-alberto",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio di Matelica DOC",
+     "url": "http://www.vignetofernandoalberto.it",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Solo il titolo della home del sito cantina ('Vigneto Fernando Alberto Verdicchio Matelica DOC'); nessun nome di etichetta, nessuna fonte esterna"
+  },
+  {
+   "id": "villa-forano",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.fattoriaforano.it/en/rosso-piceno-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bulciano Rosso Piceno DOC",
+     "url": "https://www.fattoriaforano.it/en/bulciano-rosso-piceno-doc-2/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Le Piagge Ribona",
+     "url": "https://www.fattoriaforano.it/en/le-piagge/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Montelipa Colli Maceratesi Rosso DOC",
+     "url": "https://www.fattoriaforano.it/en/montelipa-colli-maceratesi-rosso-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Monteferro Colli Maceratesi Ribona DOC",
+     "url": "https://www.fattoriaforano.it/en/monteferro-colli-maceratesi-ribona-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Occhio di Gallo IGT Marche Rosato",
+     "url": "https://www.fattoriaforano.it/en/occhio-di-gallo-igt-marche-rosato/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino sul sito fattoriaforano.it (linea Villa Forano); escluso distillato di uve rosse"
+  },
+  {
+   "id": "villa-imperium",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Falerio",
+     "url": "https://www.villaimperium.it/vini/falerio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Passerina",
+     "url": "https://www.villaimperium.it/vini/offida-passerina/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Pecorino",
+     "url": "https://www.villaimperium.it/en/vini/offida-pecorino/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Rosso",
+     "url": "https://www.villaimperium.it/en/vini/offida-rosso/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Imperium",
+     "url": "https://www.villaimperium.it/en/vini/rosso-imperium/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cabernet Sauvignon - Merlot",
+     "url": "https://www.villaimperium.it/vini/cabernet-sauvignon-merlot/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Spumante Brut",
+     "url": "https://www.villaimperium.it/en/products/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno Superiore",
+     "url": "https://www.villaimperium.it/en/products/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Offida Pecorino DOCG Fior di Cogrigi",
+     "url": "https://www.villaimperium.it/en/products/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino sul sito cantina; Passerina Spumante Brut, Rosso Piceno Superiore e Fior di Cogrigi solo dall'elenco prodotti; escluso olio EVO"
+  },
+  {
+   "id": "villa-manu",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Choralis Barriques Rosso Piceno DOC",
+     "url": "https://www.vinivillamanu.it/prodotto/rosso-piceno-choralis-barriques/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Il Regnante Marche IGT Rosso Bio",
+     "url": "https://www.vinivillamanu.it/prodotto/rosso-piceno-doc-bio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Petalus Rosato Bio",
+     "url": "https://www.vinivillamanu.it/prodotto/petalus-rosato-bio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina IGP Bio",
+     "url": "https://www.vinivillamanu.it/prodotto/passerina-igp-bio/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Incanto Falerio DOC Pecorino",
+     "url": "https://www.vinivillamanu.it/2023/07/08/premio-wine-without-walls-vinitaly-international-wine-guide-2023/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto shop sul sito cantina; Incanto dalla news premio 2023 (probabilmente coincide con il prodotto 'Falerio doc Pecorino bio', non duplicato); escluso olio"
+  },
+  {
+   "id": "villa-romita-di-brugiaferri-maurilio-e-giorgi-simonetta-s",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Verdicchio dei Castelli di Jesi Classico DOC (Verdicchio base)",
+     "url": "https://en.villaromita.com/verdicchio-base",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Sincero Verdicchio dei Castelli di Jesi Classico DOC",
+     "url": "https://en.villaromita.com/sincero",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Strabacco Verdicchio dei Castelli di Jesi DOC Classico",
+     "url": "https://www.villaromita.com/strabacco",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Lacrima di Morro d'Alba DOC",
+     "url": "https://www.villaromita.com/lacrima",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Amante Rosso Conero DOC",
+     "url": "https://en.villaromita.com/rosso-conero",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Brusko",
+     "url": "https://www.villaromita.com/brusko",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Monte Adamo",
+     "url": "https://www.villaromita.com/i-nostri-prodotti",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina IGT",
+     "url": "https://www.villaromita.com/i-nostri-prodotti",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno DOC",
+     "url": "https://www.villaromita.com/i-nostri-prodotti",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Impavido",
+     "url": "https://www.villaromita.com/i-nostri-prodotti",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino e pagina 'I nostri prodotti' sul sito cantina; Brusko, Monte Adamo, Impavido solo nome"
+  },
+  {
+   "id": "vini-accattoli",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Ribona Colli Maceratesi DOC",
+     "url": "https://shop.viniaccattoli.it/en/products/ribona-colli-maceratesi",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina IGT",
+     "url": "https://shop.viniaccattoli.it/products/passerina-igt-3l-bag-in-box",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Passerina Spumante Extra Dry",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Turrito IGT",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso del Monte IGT",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Santa Paolina 17 IGT Marche Rosso",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Oscuro IGT Marche Rosso",
+     "url": "https://shop.viniaccattoli.it/en/collections/i-nostri-vini",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Shop online della cantina (shop.viniaccattoli.it); rosato metodo ancestrale e Chardonnay citati senza nome etichetta, non inseriti"
+  },
+  {
+   "id": "vini-firmanum",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Nessun risultato che citi 'Firmanum' come cantina/vino a Montottone; nessun sito, nessuna fonte esterna"
+  },
+  {
+   "id": "vini-maraviglia",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Grappoli d'Oro Verdicchio di Matelica Riserva DOCG",
+     "url": "https://www.vinimaraviglia.com/product/grappoli-doro-verdicchio-di-matelica-riserva-d-o-c-g/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Alarico Verdicchio di Matelica DOC",
+     "url": "https://www.vinimaraviglia.com/product/alarico-verdicchio-di-matelica-d-o-c/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Archè Verdicchio di Matelica DOC",
+     "url": "https://www.vinimaraviglia.com/product/arche-verdicchio-di-matelica-d-o-c/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Onorio Colli Maceratesi Rosso DOC",
+     "url": "http://www.vinimaraviglia.com/onorio.html",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Bosco Colli Maceratesi Rosso DOC",
+     "url": "https://www.vinimaraviglia.com/cantina/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Melodia Marche Rosso IGT",
+     "url": "https://www.vinimaraviglia.com/cantina/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto e pagina cantina sul sito; esclusa La Sybilla (birra IGA)"
+  },
+  {
+   "id": "vini-montesanto",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Marolino Colli Maceratesi Ribona",
+     "url": "https://www.vinimontesanto.com/prodotto.php?id=1",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cumano Falerio",
+     "url": "http://www.vinimontesanto.com/prodotto.php?id=3",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Monaldo Rosso Piceno DOC",
+     "url": "http://www.vinimontesanto.com/prodotto.php?id=6",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Montesanto",
+     "url": "https://www.vinimontesanto.com/prodotto.php?id=7",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Montarice Verdicchio di Matelica",
+     "url": "https://www.vinimontesanto.com/prodotti.php",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Cabernet Sauvignon",
+     "url": "https://www.vinimontesanto.com/prodotti.php",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine prodotto e pagina bottiglie sul sito della cantina sociale; 'Montesanto' solo nome etichetta"
+  },
+  {
+   "id": "vini-muraro",
+   "status": "none",
+   "complete": true,
+   "wines": [],
+   "note": "Solo la home del sito (Azienda Vitivinicola Muraro Gloria, Borgo Massano; 'produzione IGT Marche e Romagna') senza nomi di vini; nessuna fonte esterna"
+  },
+  {
+   "id": "vini-rocchi",
+   "status": "found",
+   "complete": true,
+   "wines": [
+    {
+     "name": "Vernaccia di Serrapetrona DOCG",
+     "url": "https://www.vinirocchi.it/spumante-vernaccia/vernaccia-serrapetrona-docg/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Serrapetrona DOC Rosso",
+     "url": "https://www.vinirocchi.it/vini-rossi/vino-rosso-serrapetrona-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "San Ginesio Spumante Dolce DOC Uve Vernaccia",
+     "url": "https://www.vinirocchi.it/spumante-vernaccia/san-ginesio-spumante-dolce-doc-uve-vernaccia/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Dolce da Mosto d'Uva",
+     "url": "https://www.vinirocchi.it/spumante-vernaccia/spumante-dolce-da-mosto-duva/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Spumante Brut Ribona Colli Maceratesi DOC",
+     "url": "https://www.vinirocchi.it/spumante-vernaccia/spumante-brut-ribona-colli-maceratesi-doc/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rosso Piceno",
+     "url": "https://www.vinirocchi.it/vini-rossi/rosso-piceno/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Marche IGT Merlot",
+     "url": "https://www.vinirocchi.it/vini-rossi/marche-igt-merlot/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Rocchi IGT Marche Bianco Vivace",
+     "url": "https://www.vinirocchi.it/vini-bianchi/rocchi-igt-marche-bianco-vivace/",
+     "evidence": "sito-cantina"
+    },
+    {
+     "name": "Verdicchio dei Castelli di Jesi",
+     "url": "https://www.vinirocchi.it/negozio/",
+     "evidence": "sito-cantina"
+    }
+   ],
+   "note": "Pagine vino sul sito cantina; Verdicchio solo dallo shop; esclusa grappa di Vernaccia"
   }
  ]
 }

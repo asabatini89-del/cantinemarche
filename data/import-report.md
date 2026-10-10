@@ -15,10 +15,10 @@ Generato da `scripts/build-seed.mjs`.
 | Cantine con almeno una denominazione | 133 |
 | Cantine con territorio univoco | 72 |
 | Cantine con servizi (degustazioni, visite, vendita) | 74 |
-| Vini importati | 2436 (2363 pubblicati, 73 in bozza perché non sono vini) |
+| Vini importati | 2537 (2463 pubblicati, 74 in bozza perché non sono vini) |
 | — di cui anteprime dal portale | 1494 |
-| — di cui da ricerca web, con URL di prova | 942 su 173 cantine (sito-cantina: 853, rivenditore: 46, altro: 29, guida: 14) |
-| Cantine pubblicate con almeno un vino | 293 su 365 |
+| — di cui da ricerca web, con URL di prova | 1042 su 186 cantine (sito-cantina: 956, rivenditore: 46, altro: 27, guida: 14) |
+| Cantine pubblicate con almeno un vino | 306 su 365 |
 | Anteprime con immagine sul sito della cantina | 1346 (URL conservato, **non** mostrato: vedi sotto) |
 
 ### Cantine per provincia
@@ -72,7 +72,7 @@ Nel dato originale la provincia è vuota.
 - `tenimenti-le-ginestre-srl`: sito non valido “#”, scartato
 
 ### 7. Cantine ancora senza vini
-72 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 173, none 47. Le schede invitano la cantina ad aggiungerli.
+59 cantine pubblicate non hanno vini con una fonte verificabile. Esito della ricerca web (2026-10-10): found 186, none 49. Le schede invitano la cantina ad aggiungerli.
 - `agriarcuata-soc-coop-agricola` Agriarcuata Soc. Coop. Agricola — none: Trovata solo scheda italia.it di 'Agriarquata' (cantina vitivinicola e pizzeria, Pescara del Tronto) senza nomi di vini; nessuna fonte esterna con etichette
 - `amadio-vini-s-r-l` AMADIO VINI S.R.L. — none: Nessun risultato su amadiovini.it (anche extended); ricerche aperte restituiscono solo Tenuta Amadio (Veneto, omonimia).
 - `aniballi` Aniballi — none: Sito aniballivini.com indicizzato solo in home page (indirizzo Novilara), senza nomi di vini; unica menzione esterna: elenco produttori evento Vignaioli al Castello, senza vini.
@@ -120,21 +120,8 @@ Nel dato originale la provincia è vuota.
 - `torretti-walter` TORRETTI WALTER — none: nessun sito; nessun risultato che citi Torretti Walter ad Arcevia
 - `vara-pesaresi-vignaioli` VARÀ PESARESI VIGNAIOLI — none: vara.it restituisce solo una home 'Vara S.r.l.' senza riferimenti al vino; nessuna fonte esterna su Varà Pesaresi Vignaioli
 - `viconari` Viconari — none: nessun sito; nessun risultato che citi Viconari (solo altre cantine di Montefiore dell'Aso)
-- `vigna-degli-estensi` Vigna degli Estensi — ricerca web non ancora eseguita
-- `vigna-della-cava` Vigna della Cava — ricerca web non ancora eseguita
-- `vignamato` Vignamato — ricerca web non ancora eseguita
-- `vigne-di-leo-tre-castelli` Vigne di Leo – Tre Castelli — ricerca web non ancora eseguita
-- `vigneto-fernando-alberto` Vigneto Fernando Alberto — ricerca web non ancora eseguita
-- `villa-forano` Villa Forano — ricerca web non ancora eseguita
-- `villa-imperium` Villa Imperium — ricerca web non ancora eseguita
-- `villa-manu` Villa Manù — ricerca web non ancora eseguita
-- `villa-romita-di-brugiaferri-maurilio-e-giorgi-simonetta-s` VILLA ROMITA DI BRUGIAFERRI MAURILIO E GIORGI SIMONETTA S. — ricerca web non ancora eseguita
-- `vini-accattoli` Vini Accattoli — ricerca web non ancora eseguita
-- `vini-firmanum` Vini Firmanum — ricerca web non ancora eseguita
-- `vini-maraviglia` Vini Maraviglia — ricerca web non ancora eseguita
-- `vini-montesanto` Vini Montesanto — ricerca web non ancora eseguita
-- `vini-muraro` Vini Muraro — ricerca web non ancora eseguita
-- `vini-rocchi` Vini Rocchi — ricerca web non ancora eseguita
+- `vini-firmanum` Vini Firmanum — none: Nessun risultato che citi 'Firmanum' come cantina/vino a Montottone; nessun sito, nessuna fonte esterna
+- `vini-muraro` Vini Muraro — none: Solo la home del sito (Azienda Vitivinicola Muraro Gloria, Borgo Massano; 'produzione IGT Marche e Romagna') senza nomi di vini; nessuna fonte esterna
 - `vini-simonetti` Vini Simonetti — ricerca web non ancora eseguita
 - `vini-valmusone` Vini Valmusone — ricerca web non ancora eseguita
 - `vinicola-carassanese` Vinicola Carassanese — ricerca web non ancora eseguita
