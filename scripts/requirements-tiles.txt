@@ -1,0 +1,8 @@
+# Dipendenze di scripts/build-tiles.py (le tile della mappa 3D della home).
+#   python -m venv .venv-tiles && .venv-tiles/bin/pip install -r scripts/requirements-tiles.txt
+mercantile==1.2.1
+numpy==2.5.4
+pillow==12.3.0
+rasterio==1.5.2
+rio-tiler==9.4.12
+shapely==2.2.0

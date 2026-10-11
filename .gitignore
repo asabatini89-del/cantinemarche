@@ -7,3 +7,11 @@ dist/
 worker-configuration.d.ts
 media-out/
 preview-dist/
+
+# Tile della mappa: generate da scripts/build-tiles.py
+public/tiles/
+.cache/
+
+# Python (scripts/build-tiles.py)
+__pycache__/
+.venv-tiles/
