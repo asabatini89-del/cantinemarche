@@ -11,6 +11,8 @@ npm run db:reset:local   # crea il D1 locale: schema + tassonomie + 365 cantine 
 npm run dev              # http://localhost:4321/cantine  (Astro su workerd, binding D1 reale)
 ```
 
+La mappa 3D della home usa tile satellitari generate in locale (non sono in git): `pip install -r scripts/requirements-tiles.txt` e `python scripts/build-tiles.py` (qualche minuto, ~60 MB in `public/tiles`). Senza tile la home mostra la mappa illustrata.
+
 Altri comandi: `npm run build` (bundle per Workers), `npm run preview` (il worker compilato con `wrangler dev`), `npm run check` (typecheck), `npm run seed:build` (rigenera i seed dall'export).
 
 ### Primo deploy su Cloudflare
@@ -21,6 +23,7 @@ npx wrangler d1 create cantine-marche          # copia il database_id in wrangle
 npx wrangler d1 migrations apply cantine-marche --remote
 npx wrangler d1 execute cantine-marche --remote --file db/seed/0001_taxonomies.sql
 npx wrangler d1 execute cantine-marche --remote --file db/seed/0002_catalog.sql
+python scripts/build-tiles.py                   # tile della mappa 3D (vedi sopra)
 npm run deploy
 ```
 

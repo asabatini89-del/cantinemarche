@@ -9,7 +9,7 @@
 // Ricerca libera, filtri combinati e moduli richiedono il server: nell'anteprima
 // lo spiega un avviso.
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 const args = process.argv.slice(2);
@@ -17,6 +17,7 @@ const opt = (name, def) => (args.includes(`--${name}`) ? args[args.indexOf(`--${
 const ORIGIN = opt('origin', 'http://localhost:8788');
 const BASE = (opt('base', '') ?? '').replace(/\/$/, '');
 const OUT = opt('out', 'preview-dist');
+const DIST = opt('dist', 'dist/client'); // output di `astro build` (per copiare /_astro intero)
 const FACETS = ['provincia', 'denominazione', 'vitigno', 'servizio'];
 
 // --- URL del sito → file statico -------------------------------------------
@@ -24,7 +25,7 @@ const FACETS = ['provincia', 'denominazione', 'vitigno', 'servizio'];
 function staticPath(url) {
   const u = new URL(url, ORIGIN);
   if (u.origin !== new URL(ORIGIN).origin) return null;
-  const params = [...u.searchParams].filter(([k, v]) => v !== '');
+  const params = [...u.searchParams].filter(([, v]) => v !== '');
   if (params.length === 0) return u.pathname;
   if (u.pathname !== '/cantine') return null;
   const page = u.searchParams.get('pagina');
@@ -92,7 +93,8 @@ const rewriteHtml = (s) =>
   s
     .replace(/\b(href|src|action)="(\/(?!\/)[^"]*)"/g, (_, a, v) => `${a}="${linkTo(v)}"`)
     .replace(/\bsrcset="([^"]+)"/g, (_, v) => `srcset="${v.split(',').map((p) => p.trim().replace(/^\/(?!\/)\S+/, (u) => `${BASE}${u}`)).join(', ')}"`)
-    .replace(/(["'(])\/_astro\//g, `$1${BASE}/_astro/`)
+    .replace(/(["'(`])\/_astro\//g, `$1${BASE}/_astro/`)
+    .replace('data-base=""', `data-base="${BASE}"`) // percorsi costruiti in JS (tile e confini della mappa)
     .replace('<body', `<body data-anteprima`)
     .replace('</body>', `${PREVIEW_UI}</body>`);
 
@@ -129,23 +131,50 @@ const write = (file, data) => {
 };
 for (const [path, body] of html) write(path === '/404' ? '404.html' : fileFor(path), rewriteHtml(body));
 
-// Asset: CSS e JS possono a loro volta riferirsi a /_astro/ (font, moduli).
-const assetQueue = [...assets];
+// JS e CSS del build: i riferimenti a /_astro/ (anche nelle template string) prendono la base;
+// il precaricamento dei moduli di Vite risolve "_astro/…" dalla radice del sito, e prende la base anche lui.
+const fixText = (text) =>
+  text
+    .replace(/(["'(`])\/_astro\//g, `$1${BASE}/_astro/`)
+    .replace(/function\((\w)\)\{return`\/`\+\1\}/g, (_, v) => `function(${v}){return\`${BASE}/\`+${v}}`);
+
+// /_astro si copia intero dal build: i moduli si caricano tra loro con percorsi relativi
+// (chunk condivisi, import dinamici, worker della mappa) che dalle pagine non si vedono.
 const seen = new Set();
+const astroDir = join(DIST, '_astro');
+if (existsSync(astroDir)) {
+  for (const f of readdirSync(astroDir, { recursive: true, withFileTypes: true })) {
+    if (!f.isFile()) continue;
+    const src = join(f.parentPath ?? f.path, f.name);
+    const rel = src.slice(DIST.replace(/\/$/, '').length + 1);
+    write(rel, /\.(css|m?js)$/.test(f.name) ? fixText(readFileSync(src, 'utf8')) : readFileSync(src));
+    seen.add(`/${rel}`);
+  }
+} else {
+  console.warn(`! manca ${astroDir}: /_astro si ricostruisce dai riferimenti (meno completo)`);
+}
+
+// Altri asset (media, immagini, e /_astro se manca il build): CSS e JS possono riferirsi a /_astro/.
+const assetQueue = [...assets];
 while (assetQueue.length) {
   const a = assetQueue.shift();
   if (seen.has(a)) continue;
   seen.add(a);
   const res = await get(a);
   if (!res.ok) { console.warn(`! ${res.status} ${a}`); continue; }
-  if (/\.(css|js)$/.test(a)) {
-    let text = await res.text();
-    for (const m of text.matchAll(/["'(]\/(_astro\/[^"')\s]+)/g)) assetQueue.push(`/${m[1]}`);
-    text = text.replace(/(["'(])\/_astro\//g, `$1${BASE}/_astro/`);
-    write(a.slice(1), text);
+  if (/\.(css|m?js)$/.test(a)) {
+    const text = await res.text();
+    for (const m of text.matchAll(/["'(`]\/(_astro\/[^"'`)\s]+)/g)) assetQueue.push(`/${m[1]}`);
+    write(a.slice(1), fixText(text));
   } else {
     write(a.slice(1), Buffer.from(await res.arrayBuffer()));
   }
+}
+// Mappa 3D della home: tile satellitari/rilievo (scripts/build-tiles.py) e confini, letti dal JS.
+for (const dir of ['tiles', 'geo']) {
+  const src = join('public', dir);
+  if (existsSync(src)) cpSync(src, join(OUT, dir), { recursive: true });
+  else console.warn(`! manca public/${dir}: la mappa 3D userà la versione semplice`);
 }
 write('.nojekyll', '');
 console.log(`Anteprima: ${html.size} pagine, ${seen.size} file statici → ${OUT}/ (base "${BASE || '/'}")`);

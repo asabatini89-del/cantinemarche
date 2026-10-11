@@ -55,13 +55,27 @@ La testata (`PosterHeader`) adatta il corpo della parola-manifesto alla larghezz
 
 ## La mappa che si muove
 
-La mappa della home (`MarcheMap explore` + `src/scripts/map-explorer.ts`) è una motion graphic a ritagli di carta:
+La home è la mappa: le Marche vere, a tutto schermo e in 3D (`src/components/MappaViva.astro` + `src/scripts/mappa-viva.ts`, MapLibre GL). Il manifesto “CANTINE delle MARCHE” sta su un velo albicocca a sinistra; il resto è satellite.
 
-- **Province come carta tagliata:** ogni provincia ha un'ombra piena in inchiostro. Al passaggio si solleva di qualche pixel; quando è a fuoco si stacca dal foglio e le altre sbiadiscono.
-- **Volo di camera:** cliccando una provincia (o una pillola “Vola su una provincia”) la camera vola sull'area con il percorso di van Wijk e Nuij, lo stesso di `d3.interpolateZoom`: si allontana un poco, trasla e si avvicina, con durata proporzionale alla distanza.
-- **Zoom fino ai puntini:** secondo clic, pulsanti +/−, rotella (dopo aver toccato la mappa, o con Ctrl/⌘) e pinch su mobile, fino a circa 28×. Punti, testi e filetti restano della stessa dimensione a schermo, così le cantine vicine si separano invece di ingrandirsi. Da 2,2× compaiono i nomi dei comuni della provincia a fuoco.
-- **Trascinamento** con mouse e dito, Esc per tornare alle Marche, `#provincia-AN` nell'indirizzo per condividere la vista.
-- Con `prefers-reduced-motion` la camera salta senza animazione. Senza JavaScript la mappa resta un SVG con un link per cantina.
+- **Le immagini:** composizione a colori naturali di Sentinel-2 dell'estate 2024 (con qualche scena 2025 per i buchi e i dintorni), senza nuvole grazie alla classificazione SCL, corretta nei colori e fusa con un rilievo ombreggiato multidirezionale. Il mare prende il colore dalla profondità. Tutto è generato da `scripts/build-tiles.py` in tile WebP auto-ospitate (vedi più sotto).
+- **Il rilievo:** terreno 3D (Terrain Tiles, esagerazione 1,6), cielo e foschia calda all'orizzonte.
+- **La regia d'ingresso:** la camera parte dall'alto, il contorno della regione si disegna come un tratto di penna, poi la camera scende inclinata sulla regione e i puntini delle cantine entrano a scatti. Dopo qualche secondo di quiete la mappa gira piano su se stessa (pulsante ↻ per fermarla).
+- **Le province:** passando sopra, la provincia si accende del suo colore; con un clic (o una pillola “Vola su una provincia”) la camera ci vola sopra, le altre si spengono e il conteggio si aggiorna. `#provincia-AN` nell'indirizzo per condividere la vista.
+- **Le cantine:** puntini colorati per provincia, raggruppati in cerchi numerati finché sono troppo vicini (un clic sul cerchio avvicina). Un clic sulla cantina fa volare la camera fino a lei (inclinata, ruotando un poco), apre la scheda a molla con vini, esperienze e azioni e manda via il manifesto; “Vicina” salta alla cantina più vicina non ancora vista, “Indietro” ripercorre il giro. `#cantina-…` nell'indirizzo, Esc per chiudere.
+- **Dalla mappa alla scheda:** il nome della cantina vola dalla mappa (o dalla card del catalogo) al titolo della sua pagina con le View Transitions tra documenti.
+- **Gesti:** su desktop la rotellina avvicina con Ctrl/⌘, così la pagina scorre normalmente; su mobile si usano due dita. La scheda su mobile sale dal basso.
+- Con `prefers-reduced-motion` niente voli né giri: la camera salta. Senza WebGL, o se le tile non ci sono, resta la mappa illustrata a ritagli di carta (`MarcheMap explore` + `src/scripts/map-explorer.ts`); senza JavaScript un SVG con un link per cantina.
+
+![Una cantina aperta sulla mappa](img/home-cantina.jpg)
+
+### Le tile
+
+```bash
+python -m venv .venv-tiles && .venv-tiles/bin/pip install -r scripts/requirements-tiles.txt
+.venv-tiles/bin/python scripts/build-tiles.py      # ~60 MB in public/tiles (non versionate)
+```
+
+Le scene sono fissate in `data/sentinel-scenes.json` (in ordine di priorità), così il risultato è riproducibile. Lo zoom va da 6 a 12 per le immagini (512 px) e da 6 a 11 per la quota; oltre lo zoom 10 si generano solo le tile vicine alla regione. Il workflow di anteprima le genera e le tiene in cache finché non cambiano script, scene o confini. Per il deploy su Cloudflare vanno generate prima di `npm run deploy`.
 
 ## Voce
 

@@ -29,6 +29,24 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Tile della mappa 3D (Sentinel-2 + rilievo): si rigenerano solo se cambiano script, scene o confini.
+      - name: Cache delle tile della mappa
+        id: tiles-cache
+        uses: actions/cache@v4
+        with:
+          path: public/tiles
+          key: tiles-${{ hashFiles('scripts/build-tiles.py', 'scripts/requirements-tiles.txt', 'data/sentinel-scenes.json', 'public/geo/marche-province.json') }}
+      - uses: actions/setup-python@v5
+        if: steps.tiles-cache.outputs.cache-hit != 'true'
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: scripts/requirements-tiles.txt
+      - name: Genera le tile della mappa
+        if: steps.tiles-cache.outputs.cache-hit != 'true'
+        run: |
+          pip install -r scripts/requirements-tiles.txt
+          python scripts/build-tiles.py --workers 8
       - name: Database locale (schema + catalogo)
         run: npm run db:reset:local
       - run: npm run build
