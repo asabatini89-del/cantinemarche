@@ -1,0 +1,76 @@
+---
+// Dove sta la cantina: prima il locatore illustrato delle Marche; quando la figura entra nello
+// schermo, se il browser ha WebGL e le tile esistono, arriva la vista dal satellite in 3D
+// (src/scripts/vista-cantina.ts) e il locatore si fa piccolo nell'angolo.
+import MarcheMap from './MarcheMap.astro';
+
+interface Props {
+  slug: string;
+  name: string;
+  municipality: string | null;
+  province_code: string | null;
+  lat: number;
+  lng: number;
+  approximate: boolean;
+}
+const { slug, name, municipality, province_code, lat, lng, approximate } = Astro.props;
+---
+<div class="w-full max-w-sm lg:justify-self-end">
+  <figure class="vista" data-vista data-lng={lng} data-lat={lat}>
+    <div class="vista-stage" data-vista-stage aria-hidden="true"></div>
+    <div class="vista-locator">
+      <MarcheMap points={[{ slug, name, municipality, province_code, lat, lng }]}
+        highlight={province_code} interactive={false} locator label={`Posizione di ${name} nelle Marche`} />
+    </div>
+  </figure>
+  <p class="meta mt-2 text-grafite">
+    {approximate ? 'Posizione approssimativa' : 'Posizione © OpenStreetMap'}<span class="vista-only"> · vista Copernicus Sentinel-2</span>
+  </p>
+</div>
+
+<script>
+  import { terraAvailable } from '../scripts/terra';
+  for (const fig of document.querySelectorAll<HTMLElement>('[data-vista]')) {
+    const io = new IntersectionObserver(async (entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      const base = document.documentElement.dataset.base ?? '';
+      if (!(await terraAvailable(base))) return;
+      const { mountVista } = await import('../scripts/vista-cantina');
+      mountVista(fig, base);
+    }, { rootMargin: '300px' });
+    io.observe(fig);
+  }
+</script>
+
+<style>
+  .vista {
+    position: relative; aspect-ratio: 1 / 1; overflow: hidden; isolation: isolate;
+    border: 2px solid var(--color-inchiostro); border-radius: 1.5rem; background: var(--color-carta);
+    box-shadow: 6px 6px 0 var(--color-inchiostro);
+  }
+  .vista-stage { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+  /* il minimo del CSS di MapLibre che serve a una mappa senza controlli */
+  .vista-stage :global(.maplibregl-canvas-container), .vista-stage :global(.maplibregl-canvas) { position: absolute; left: 0; top: 0; }
+  .vista-stage :global(.maplibregl-canvas) { outline: none; }
+  .vista-locator {
+    position: absolute; z-index: 1; left: 0; bottom: 0; width: 100%; height: 100%; padding: 1rem;
+    display: grid; place-items: center; border-radius: 1.4rem; border: 2px solid transparent;
+    transition: left .9s cubic-bezier(.2,1,.3,1), bottom .9s cubic-bezier(.2,1,.3,1), width .9s cubic-bezier(.2,1,.3,1),
+      height .9s cubic-bezier(.2,1,.3,1), padding .9s, background-color .9s, border-color .9s, border-radius .9s;
+  }
+  .vista-locator :global(.marche-map) { width: 100%; height: 100%; }
+  .vista-locator :global(svg) { width: 100%; height: 100%; aspect-ratio: auto !important; }
+  .vista-only { display: none; }
+
+  .vista[data-vista='ready'] .vista-stage { opacity: 1; }
+  .vista[data-vista='ready'] .vista-locator {
+    left: .7rem; bottom: .7rem; width: 30%; height: 30%; padding: .3rem;
+    background-color: rgb(251 244 232 / .9); border-color: var(--color-inchiostro); border-radius: .9rem;
+  }
+  :global(div:has(> .vista[data-vista='ready'])) .vista-only { display: inline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vista-stage, .vista-locator { transition: none; }
+  }
+</style>

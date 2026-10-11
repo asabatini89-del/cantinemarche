@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import MarcheMap from '../../components/MarcheMap.astro';
+import VistaCantina from '../../components/VistaCantina.astro';
 import WineryCard from '../../components/WineryCard.astro';
 import FormNotice from '../../components/FormNotice.astro';
 import { getWinery, nearbyWineries } from '../../lib/db';
@@ -71,7 +71,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
       <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-end">
         <div>
           <p class="meta">{[w.province_name, w.territory_name].filter(Boolean).join(' · ')}</p>
-          <h1 class="display copertina-titolo mt-3 py-3 text-[3rem] sm:text-[5.2rem]">{title}</h1>
+          <h1 class="display copertina-titolo mt-3 py-3 text-[3rem] sm:text-[5.2rem]"><span style={`view-transition-name:c-${w.slug}`}>{title}</span></h1>
           {(w.address_line || place) && <p class="mt-5 max-w-xl text-lg">{w.address_line ?? place}</p>}
           {wines.length > 0 && <p class="mano mt-3 -rotate-1 text-2xl sm:text-3xl">{wines.length === 1 ? 'un’etichetta' : `${wines.length} etichette`}, da assaggiare</p>}
           <div class="mt-7 flex flex-wrap gap-2">
@@ -84,11 +84,8 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           </div>
         </div>
         {hasCoords && (
-          <div class="w-full max-w-sm lg:justify-self-end">
-            <MarcheMap points={[{ slug: w.slug, name: w.name, municipality: w.municipality, province_code: w.province_code, lat: w.lat!, lng: w.lng! }]}
-              highlight={w.province_code} interactive={false} locator label={`Posizione di ${w.name} nelle Marche`} />
-            <p class="meta mt-1 text-grafite">{w.coordinate_status === 'approximate' ? 'Posizione approssimativa' : 'Posizione © OpenStreetMap'}</p>
-          </div>
+          <VistaCantina slug={w.slug} name={w.name} municipality={w.municipality} province_code={w.province_code}
+            lat={w.lat!} lng={w.lng!} approximate={w.coordinate_status === 'approximate'} />
         )}
       </div>
       </div>
@@ -144,7 +141,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           </section>
         )}
 
-        <section aria-labelledby="h-vini">
+        <section data-reveal aria-labelledby="h-vini">
           <h2 id="h-vini" class="display copertina-titolo flex items-baseline justify-between gap-4 py-3 text-4xl sm:text-5xl">I vini {wines.length > 0 && <span class="manifesto text-5xl sm:text-6xl">{wines.length}</span>}</h2>
           {wines.length > 0 ? (
             <>
@@ -185,7 +182,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
         </section>
 
         {experiences.length > 0 && (
-          <section id="esperienze" aria-labelledby="h-esperienze" class="scroll-mt-6">
+          <section data-reveal id="esperienze" aria-labelledby="h-esperienze" class="scroll-mt-6">
             <h2 id="h-esperienze" class="display copertina-titolo flex items-baseline justify-between gap-4 py-3 text-4xl sm:text-5xl"><span>Le <em>esperienze</em></span> <span class="manifesto text-5xl sm:text-6xl">{experiences.length}</span></h2>
             <p class="mt-2 max-w-lg text-grafite">Quello che la cantina propone a chi passa di qui, come lo descrive la fonte. Orari e disponibilità vanno sempre confermati.</p>
             <ul role="list" class="mt-6 grid gap-4 sm:grid-cols-2">
@@ -213,7 +210,7 @@ const field = 'mt-1.5 h-11 w-full rounded-lg border-[1.5px] border-inchiostro bg
           </section>
         )}
 
-        <section id="visita" aria-labelledby="h-visita" class="scroll-mt-6">
+        <section data-reveal id="visita" aria-labelledby="h-visita" class="scroll-mt-6">
           <h2 id="h-visita" class="display copertina-titolo py-3 text-4xl sm:text-5xl">Richiedi <em>una visita</em></h2>
           <p class="mt-2 max-w-lg text-grafite">La richiesta arriva alla redazione, che la inoltra alla cantina. Non è una prenotazione: ti risponderanno per confermare giorno e orario.</p>
           <FormNotice sent={sent} error={error} sentText="Richiesta ricevuta. Ti scriveremo all’indirizzo che hai indicato." />
