@@ -121,6 +121,41 @@ export async function mapPoints(f?: CatalogFilters) {
   return rows<MapPoint>(r);
 }
 
+/** Scheda rapida per la mappa 3D della home: tutto quello che serve al pannello, senza altre richieste. */
+export interface MapCard {
+  slug: string;
+  num: number;
+  name: string;
+  municipality: string | null;
+  province_code: string | null;
+  territory: string | null;
+  lat: number;
+  lng: number;
+  wines: number;
+  top_wines: string; // JSON: string[]
+  exps: number;
+  exp: string | null; // JSON: { t, k, p, d } | null
+  cover: string | null;
+}
+
+export async function mapCards() {
+  const r = await db()
+    .prepare(
+      `SELECT w.slug, ${CATALOG_NO} AS num, w.name, w.municipality, w.province_code, t.name AS territory, w.lat, w.lng,
+              (SELECT COUNT(*) FROM wines v WHERE v.winery_id = w.id AND v.status = 'published') AS wines,
+              (SELECT json_group_array(name) FROM (SELECT v.name FROM wines v WHERE v.winery_id = w.id AND v.status = 'published' ORDER BY v.sort LIMIT 4)) AS top_wines,
+              (SELECT COUNT(*) FROM experiences e WHERE e.winery_id = w.id AND e.status = 'published') AS exps,
+              (SELECT json_object('t', e.title, 'k', e.kind, 'p', e.price_cents, 'd', e.duration_min) FROM experiences e
+                 WHERE e.winery_id = w.id AND e.status = 'published'
+                 ORDER BY CASE e.kind WHEN 'tasting' THEN 0 WHEN 'tour' THEN 1 ELSE 2 END, (e.price_cents IS NULL), e.sort LIMIT 1) AS exp,
+              (SELECT COALESCE(m.thumb_key, m.r2_key) FROM media m WHERE m.id = w.cover_media_id) AS cover
+       FROM wineries w LEFT JOIN territories t ON t.id = w.territory_id
+       WHERE w.status = 'published' AND w.lat IS NOT NULL ORDER BY w.lat DESC`,
+    )
+    .all();
+  return rows<MapCard>(r);
+}
+
 export async function getStats() {
   const r = await db()
     .prepare(

@@ -12,12 +12,15 @@ interface Props {
   description?: string;
   canonical?: string;
   noindex?: boolean;
+  /** Intestazione flottante sopra un contenuto a tutto schermo (la mappa della home). */
+  overlayHeader?: boolean;
 }
 const {
   title,
   description = 'Catalogo ragionato delle cantine marchigiane: produttori, territori, denominazioni. Per chi beve con un libro in tasca.',
   canonical,
   noindex = false,
+  overlayHeader = false,
 } = Astro.props;
 const fullTitle = title === 'Cantine delle Marche' ? `${title} — Catalogo ragionato` : `${title} — Cantine delle Marche`;
 const path = Astro.url.pathname;
@@ -29,7 +32,7 @@ const nav = [
 ];
 ---
 <!doctype html>
-<html lang="it">
+<html lang="it" data-base="">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -48,8 +51,8 @@ const nav = [
   <body class="flex min-h-dvh flex-col">
     <a href="#contenuto" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-inchiostro focus:px-4 focus:py-2 focus:text-carta">Vai al contenuto</a>
 
-    <header class="border-b-2 border-inchiostro bg-carta">
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+    <header data-site-header class:list={['site-header z-40', overlayHeader ? 'is-overlay' : 'border-b-2 border-inchiostro bg-carta']}>
+      <div class="site-header-bar mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
         <a href="/" class="group flex items-center gap-3 leading-none" aria-label="Cantine delle Marche, alla home">
           <span class="manifesto whitespace-nowrap text-[1.12rem] tracking-[0.05em] sm:text-[1.75rem]">Cantine <span class="italic normal-case tracking-normal">delle</span> Marche</span>
           <span class="pillola hidden text-[10px] lg:inline-flex">Catalogo · 2026</span>
@@ -83,6 +86,32 @@ const nav = [
         </details>
       </div>
     </header>
+
+    <script is:inline>
+      // Rivelazione allo scroll per gli elementi con data-reveal.
+      document.documentElement.setAttribute('data-js', '');
+      addEventListener('DOMContentLoaded', () => {
+        const els = document.querySelectorAll('[data-reveal]');
+        if (!('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('is-in')); return; }
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach((e) => io.observe(e));
+      });
+      // L'intestazione si ritira scorrendo verso il basso e torna appena si risale.
+      (() => {
+        const h = document.querySelector('[data-site-header]');
+        if (!h) return;
+        let last = scrollY;
+        addEventListener('scroll', () => {
+          const y = scrollY;
+          if (Math.abs(y - last) < 6) return;
+          h.toggleAttribute('data-hidden', y > last && y > 140 && !h.querySelector('details[open]'));
+          h.toggleAttribute('data-scrolled', y > 20);
+          last = y;
+        }, { passive: true });
+      })();
+    </script>
 
     <main id="contenuto" class="flex-1">
       <slot />

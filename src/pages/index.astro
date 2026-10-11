@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MarcheMap from '../components/MarcheMap.astro';
+import MappaViva from '../components/MappaViva.astro';
 import Mascotte from '../components/Mascotte.astro';
 import TerritoryCover from '../components/TerritoryCover.astro';
-import { featuredExperiences, getFacets, getStats, listDenominations, listTerritories, mapPoints } from '../lib/db';
-import { PROVINCE_COVER, shortName } from '../lib/palette';
+import { featuredExperiences, getFacets, getStats, listDenominations, listTerritories, mapCards, mapPoints } from '../lib/db';
+import { shortName } from '../lib/palette';
 
-const [stats, points, facets, territories, denominations, experiences] = await Promise.all([
+const [stats, points, facets, territories, denominations, experiences, cards] = await Promise.all([
   getStats(),
   mapPoints(),
   getFacets(),
   listTerritories(),
   listDenominations(),
   featuredExperiences(6),
+  mapCards(),
 ]);
 const KIND_LABEL = { tasting: 'Degustazione', tour: 'Visita', meal: 'A tavola', event: 'Evento', stay: 'Ospitalità' } as const;
 const KIND_BG = { tasting: 'bg-giallo', tour: 'bg-azzurro', meal: 'bg-albicocca', event: 'bg-rosa', stay: 'bg-menta' } as const;
@@ -22,66 +23,19 @@ const docg = denominations.filter((d) => d.level === 'DOCG');
 const fmt = (n: number) => n.toLocaleString('it-IT');
 Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
 ---
-<BaseLayout title="Cantine delle Marche" canonical="/">
-  <!-- Il manifesto: parola, figura (la mappa), parola -->
-  <section class="grana border-b-2 border-inchiostro bg-pesca">
-    <h1 class="sr-only">Cantine delle Marche: mappa e catalogo delle cantine marchigiane</h1>
-    <div class="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
-      <p class="manifesto text-center text-[clamp(4.2rem,17.5vw,13.5rem)]" aria-hidden="true">Cantine</p>
-    </div>
-
-    <div class="mx-auto grid max-w-6xl items-start gap-8 px-4 pt-4 sm:px-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)]">
-      <div class="relative">
-        <p class="mano pointer-events-none absolute right-[11%] top-[16%] z-10 hidden sm:block max-w-[8.5rem] rotate-[-8deg] text-right text-[clamp(1.15rem,2.4vw,1.7rem)]" aria-hidden="true">Domani degustazione?<svg viewBox="0 0 60 40" class="ml-auto mr-8 mt-1 block h-6 w-10 text-cobalto"><path d="M54 4 C 40 20, 22 30, 4 36 M4 36 l 10 -1 M4 36 l 6 -8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" /></svg></p>
-        <MarcheMap points={points} explore label={`Mappa delle Marche con ${points.length} cantine`} />
-      </div>
-
-      <div class="flex flex-col gap-6 lg:pt-14">
-        <p class="text-lg leading-snug">
-          {fmt(stats.wineries)} cantine, {fmt(stats.municipalities)} comuni, {stats.denominations} denominazioni. Il vino delle Marche <em class="font-serif text-[1.15em]">in ordine sparso</em>: tocca una provincia per volarci sopra, poi avvicinati finché i puntini diventano cantine.
-        </p>
-
-        <form method="get" action="/cantine" role="search" class="flex rounded-full border-2 border-inchiostro bg-carta p-1">
-          <label for="home-q" class="sr-only">Cerca cantina, comune o vino</label>
-          <input id="home-q" name="q" type="search" required placeholder="Cantina, borgo o vino…" enterkeyhint="search"
-            class="h-10 min-w-0 flex-1 rounded-full bg-transparent px-4 text-base placeholder:text-grafite focus:outline-none" />
-          <button type="submit" class="h-10 rounded-full bg-inchiostro px-5 text-sm font-medium text-carta hover:bg-rosso">Cerca</button>
-        </form>
-
-        <nav aria-labelledby="h-province">
-          <h2 id="h-province" class="meta">Vola su una provincia</h2>
-          <ul role="list" class="mt-3 flex flex-wrap gap-2">
-            <li><a href="/cantine" data-map-goto="all" aria-current="true" class="pillola h-9 bg-carta py-0 hover:bg-giallo aria-[current=true]:bg-inchiostro aria-[current=true]:text-carta">Tutte</a></li>
-            {facets.provincia.map((p) => (
-              <li>
-                <a href={`/cantine?provincia=${p.value}`} data-map-goto={p.value}
-                  class="pillola h-9 gap-2 bg-carta py-0 hover:bg-giallo aria-[current=true]:bg-inchiostro aria-[current=true]:text-carta">
-                  <span class={`size-2.5 rounded-full border border-inchiostro ${PROVINCE_COVER[p.value]?.bg}`} aria-hidden="true"></span>
-                  {p.label} <span class="opacity-60">{p.count}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p class="mt-4 text-sm"><a href="/cantine" data-list-link class="font-medium underline decoration-rosso decoration-2">Tutte le cantine in elenco →</a></p>
-          <p class="meta mt-3 text-grafite">Le {stats.wineries - points.length} cantine senza posizione sono nel catalogo.</p>
-        </nav>
-      </div>
-    </div>
-
-    <div class="mx-auto max-w-6xl px-4 pb-8 pt-6 sm:px-6">
-      <p class="manifesto spaziato text-center text-[clamp(3.2rem,12vw,9.5rem)]" aria-hidden="true">Marche</p>
-    </div>
-  </section>
+<BaseLayout title="Cantine delle Marche" canonical="/" overlayHeader>
+  <!-- La mappa viva: le Marche vere, a tutto schermo -->
+  <MappaViva cards={cards} points={points} provinces={facets.provincia} total={stats.wineries} />
 
   <!-- I territori come copertine di una collana -->
-  <section aria-labelledby="h-territori" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+  <section id="dopo-la-mappa" aria-labelledby="h-territori" class="mx-auto mt-20 max-w-6xl scroll-mt-24 px-4 sm:px-6">
     <div class="copertina-titolo flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-3">
       <h2 id="h-territori" class="display text-4xl sm:text-6xl">Sette territori &amp; <em>sette letture</em></h2>
       <a href="/territori" class="pillola hover:bg-giallo">Tutta la collana →</a>
     </div>
     <ul role="list" class="mt-8 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-      {territories.map((t, i) => <li><TerritoryCover territory={t} index={i} /></li>)}
-      <li class="hidden lg:block">
+      {territories.map((t, i) => <li data-reveal style={`--i:${i % 4}`}><TerritoryCover territory={t} index={i} /></li>)}
+      <li class="hidden lg:block" data-reveal style="--i:3">
         <a href="/cantine" class="group flex aspect-[2/3] flex-col justify-between rounded-sm border-2 border-inchiostro bg-carta p-4 transition-transform hover:-translate-y-1 hover:shadow-[6px_6px_0_var(--color-inchiostro)]">
           <span class="meta">Fuori collana</span>
           <span class="display text-[2.1rem]">Tutte le {fmt(stats.wineries)} cantine, <em class="text-rosso">dalla A alla Z.</em></span>
@@ -100,8 +54,8 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600,
       </div>
       <p class="mano mt-4 -rotate-1 text-2xl sm:text-3xl">Domani degustazione? Eccone qualcuna.</p>
       <ul role="list" class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {experiences.map((e) => (
-          <li>
+        {experiences.map((e, i) => (
+          <li data-reveal style={`--i:${i % 3}`}>
             <a href={`/cantine/${e.winery_slug}#esperienze`} class="group flex h-full flex-col rounded-2xl border-2 border-inchiostro bg-carta shadow-[5px_5px_0_var(--color-inchiostro)] transition-transform hover:-translate-y-1">
               <span class={`flex items-center justify-between gap-3 rounded-t-[14px] border-b-2 border-inchiostro px-4 py-2 ${KIND_BG[e.kind]}`}>
                 <span class="meta">{KIND_LABEL[e.kind]}</span>
@@ -128,7 +82,7 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600,
     </div>
     <ol class="border-t-2 border-inchiostro">
       {docg.map((d, i) => (
-        <li class="border-b-2 border-inchiostro">
+        <li class="border-b-2 border-inchiostro" data-reveal style={`--i:${i}`}>
           <a href={`/denominazioni/${d.slug}`} class="group flex items-baseline gap-4 px-2 py-4 transition-colors hover:bg-giallo">
             <span class="display w-10 shrink-0 text-2xl text-rosso">{['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'][i]}</span>
             <span class="display text-2xl sm:text-[2.1rem]">{d.name.replace(/ DOCG$/, '')}</span>
@@ -141,7 +95,7 @@ Astro.response.headers.set('Cache-Control', 'public, max-age=300, s-maxage=3600,
 
   <!-- Per i produttori -->
   <section aria-labelledby="h-cantine" class="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-    <div class="grid items-center gap-6 rounded-sm border-2 border-inchiostro bg-giallo p-6 shadow-[8px_8px_0_var(--color-inchiostro)] sm:p-10 md:grid-cols-[2fr_1fr]">
+    <div data-reveal class="grid items-center gap-6 rounded-sm border-2 border-inchiostro bg-giallo p-6 shadow-[8px_8px_0_var(--color-inchiostro)] sm:p-10 md:grid-cols-[2fr_1fr]">
       <div>
         <p class="meta">Per i produttori</p>
         <h2 id="h-cantine" class="display mt-3 text-4xl sm:text-6xl">Sei una cantina? <em class="text-rosso">La scheda è tua.</em></h2>

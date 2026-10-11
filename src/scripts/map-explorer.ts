@@ -72,7 +72,9 @@ export function initMapExplorer(fig: HTMLElement) {
   function render() {
     const h = cam.w * aspect();
     svg.setAttribute('viewBox', `${cam.x - cam.w / 2} ${cam.y - h / 2} ${cam.w} ${h}`);
-    const k = 1 / pxPerUnit(); // unità SVG per pixel
+    const px = pxPerUnit();
+    if (!(px > 0)) return; // figura nascosta (es. fallback della mappa 3D): niente da scalare
+    const k = 1 / px; // unità SVG per pixel
     const zoom = home.w / cam.w;
     const r = (zoom > 3 ? 5.5 : 4.5) * k;
     for (const d of dots) d.setAttribute('r', String(r));
